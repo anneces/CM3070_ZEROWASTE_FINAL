@@ -359,6 +359,8 @@ UnityEngine.Camera::get_farClipPlane_Injected
 UnityEngine.Camera::get_fieldOfView_Injected
 UnityEngine.Camera::get_nearClipPlane_Injected
 UnityEngine.Camera::get_orthographicSize_Injected
+UnityEngine.Camera::CopyFrom_Injected
+UnityEngine.Camera::RenderWithShader_Injected
 UnityEngine.Camera::ScreenPointToRay_Injected
 UnityEngine.Camera::ScreenToViewportPoint_Injected
 UnityEngine.Camera::ScreenToWorldPoint_Injected
@@ -373,11 +375,15 @@ UnityEngine.Camera::get_pixelRect_Injected
 UnityEngine.Camera::get_projectionMatrix_Injected
 UnityEngine.Camera::get_rect_Injected
 UnityEngine.Camera::get_worldToCameraMatrix_Injected
+UnityEngine.Camera::set_allowHDR_Injected
+UnityEngine.Camera::set_allowMSAA_Injected
 UnityEngine.Camera::set_backgroundColor_Injected
 UnityEngine.Camera::set_clearFlags_Injected
 UnityEngine.Camera::set_depthTextureMode_Injected
 UnityEngine.Camera::set_fieldOfView_Injected
+UnityEngine.Camera::set_forceIntoRenderTexture_Injected
 UnityEngine.Camera::set_rect_Injected
+UnityEngine.Camera::set_renderingPath_Injected
 UnityEngine.Camera::set_targetTexture_Injected
 UnityEngine.Camera::get_clearFlags_Injected
 UnityEngine.Camera::get_cameraType_Injected
@@ -666,6 +672,7 @@ UnityEngine.Graphics::CopyTexture_Region_Injected
 UnityEngine.Graphics::CopyTexture_Slice_Injected
 UnityEngine.Graphics::ExecuteCommandBuffer_Injected
 UnityEngine.Graphics::Internal_DrawMeshInstanced_Injected
+UnityEngine.Graphics::Internal_DrawMeshNow2_Injected
 UnityEngine.Graphics::Internal_DrawMesh_Injected
 UnityEngine.Graphics::Internal_SetNullRT
 UnityEngine.Graphics::Internal_SetRTSimple_Injected
@@ -919,6 +926,7 @@ UnityEngine.Material::ComputeCRC_Injected
 UnityEngine.Material::FindPass_Injected
 UnityEngine.Material::GetFirstPropertyNameIdByAttribute_Injected
 UnityEngine.Material::get_passCount_Injected
+UnityEngine.Material::GetDefaultMaterial_Injected
 UnityEngine.Material::GetTextureImpl_Injected
 UnityEngine.Material::get_shader_Injected
 UnityEngine.Material::GetFloatImpl_Injected
@@ -995,6 +1003,7 @@ UnityEngine.Mesh::ClearImpl_Injected
 UnityEngine.Mesh::GetArrayFromChannelImpl_Injected
 UnityEngine.Mesh::GetIndicesImpl_Injected
 UnityEngine.Mesh::GetSubMesh_Injected
+UnityEngine.Mesh::GetTrianglesImpl_Injected
 UnityEngine.Mesh::Internal_Create
 UnityEngine.Mesh::MarkDynamicImpl_Injected
 UnityEngine.Mesh::PrintErrorCantAccessChannel_Injected
@@ -1007,14 +1016,20 @@ UnityEngine.Mesh::get_bounds_Injected
 UnityEngine.Mesh::set_bounds_Injected
 UnityEngine.Mesh::set_indexBufferTarget_Injected
 UnityEngine.Mesh::set_indexFormat_Injected
+UnityEngine.Mesh::set_subMeshCount_Injected
 UnityEngine.Mesh::set_vertexBufferTarget_Injected
 UnityEngine.Mesh::get_indexBufferTarget_Injected
 UnityEngine.Mesh::get_vertexBufferTarget_Injected
+UnityEngine.Mesh::GetTopologyImpl_Injected
 UnityEngine.Mesh::get_indexFormat_Injected
 UnityEngine.Mesh::GetVertexAttributeFormat_Injected
 UnityEngine.MeshCollider::get_convex_Injected
+UnityEngine.MeshCollider::set_convex_Injected
+UnityEngine.MeshCollider::set_sharedMesh_Injected
 UnityEngine.MeshFilter::get_sharedMesh_Injected
+UnityEngine.MeshFilter::set_mesh_Injected
 UnityEngine.MeshFilter::set_sharedMesh_Injected
+UnityEngine.MeshRenderer::get_additionalVertexStreams_Injected
 UnityEngine.MonoBehaviour::Internal_IsInvokingAll_Injected
 UnityEngine.MonoBehaviour::IsInvoking_Injected
 UnityEngine.MonoBehaviour::IsObjectMonoBehaviour_Injected
@@ -1060,6 +1075,12 @@ UnityEngine.ObjectDispatcher::EnableTransformTracking
 UnityEngine.ObjectDispatcher::EnableTypeTracking
 UnityEngine.ObjectGUIState::Internal_Create
 UnityEngine.ObjectGUIState::Internal_Destroy
+UnityEngine.ParticleSystem::EmitOld_Internal_Injected
+UnityEngine.ParticleSystem::Emit_Injected
+UnityEngine.ParticleSystem::Emit_Internal_Injected
+UnityEngine.ParticleSystem/ShapeModule::get_meshRenderer_Injected
+UnityEngine.ParticleSystem/ShapeModule::set_meshRenderer_Injected
+UnityEngine.ParticleSystemRenderer::GetMeshes_Injected
 UnityEngine.Physics::GetIgnoreCollision_Injected
 UnityEngine.Physics::get_invokeCollisionCallbacks
 UnityEngine.Physics::get_queriesHitTriggers
@@ -1104,8 +1125,10 @@ UnityEngine.QualitySettings::get_billboardsFaceCameraPosition
 UnityEngine.QualitySettings::get_enableLODCrossFade
 UnityEngine.QualitySettings::get_antiAliasing
 UnityEngine.QualitySettings::get_maximumLODLevel
+UnityEngine.QualitySettings::get_INTERNAL_renderPipeline_Injected
 UnityEngine.QualitySettings::get_lodBias
 UnityEngine.QualitySettings::get_meshLodThreshold
+UnityEngine.QualitySettings::set_INTERNAL_renderPipeline_Injected
 UnityEngine.QualitySettings::set_antiAliasing
 UnityEngine.QualitySettings::set_enableLODCrossFade
 UnityEngine.QualitySettings::get_activeColorSpace
@@ -1155,6 +1178,7 @@ UnityEngine.ReflectionProbe::get_defaultTextureHDRDecodeValues_Injected
 UnityEngine.ReflectionProbe::get_mode_Injected
 UnityEngine.ReflectionProbe::get_refreshMode_Injected
 UnityEngine.Renderer::get_enabled_Injected
+UnityEngine.Renderer::get_isPartOfStaticBatch_Injected
 UnityEngine.Renderer::GetMaterialCount_Injected
 UnityEngine.Renderer::get_sortingGroupID_Injected
 UnityEngine.Renderer::get_sortingGroupOrder_Injected
@@ -1385,6 +1409,8 @@ UnityEngine.Rendering.GraphicsSettings::HasShaderDefine
 UnityEngine.Rendering.GraphicsSettings::get_lightsUseLinearIntensity
 UnityEngine.Rendering.GraphicsSettings::Internal_GetSettingsForRenderPipeline_Injected
 UnityEngine.Rendering.GraphicsSettings::get_INTERNAL_currentRenderPipeline_Injected
+UnityEngine.Rendering.GraphicsSettings::get_INTERNAL_defaultRenderPipeline_Injected
+UnityEngine.Rendering.GraphicsSettings::set_INTERNAL_defaultRenderPipeline_Injected
 UnityEngine.Rendering.GraphicsSettings::set_lightsUseColorTemperature
 UnityEngine.Rendering.GraphicsSettings::set_lightsUseLinearIntensity
 UnityEngine.Rendering.GraphicsSettings::set_useScriptableRenderPipelineBatching
@@ -1764,6 +1790,7 @@ UnityEngine.Texture2D::ReadPixelsImpl_Injected
 UnityEngine.Texture2D::SetAllPixels32_Injected
 UnityEngine.Texture2D::SetPixelImpl_Injected
 UnityEngine.Texture2D::SetPixelsImpl_Injected
+UnityEngine.Texture2D::GetPixels32_Injected
 UnityEngine.Texture2D::get_format_Injected
 UnityEngine.Texture2DArray::Internal_CreateImpl_Injected
 UnityEngine.Texture2DArray::get_isReadable_Injected
@@ -1887,6 +1914,7 @@ UnityEngine.UISystemProfilerApi::EndSample
 UnityEngine.UnityConsent.EndUserConsent::GetConsentState_Injected
 UnityEngine.UnityLogWriter::WriteStringToUnityLogImpl_Injected
 UnityEngine.Vector3::Internal_Slerp_Injected
+UnityEngine.Vector3::OrthoNormalize2
 UnityEngine.VFX.VFXEventAttribute::Internal_Create
 UnityEngine.VFX.VFXEventAttribute::Internal_Destroy
 UnityEngine.VFX.VFXEventAttribute::Internal_InitFromAsset_Injected
