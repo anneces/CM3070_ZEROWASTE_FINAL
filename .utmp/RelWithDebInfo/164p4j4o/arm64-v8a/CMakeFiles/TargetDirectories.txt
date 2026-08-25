@@ -1,0 +1,5 @@
+C:/CM3070/CM3070_ZEROWASTE_FINAL/.utmp/RelWithDebInfo/164p4j4o/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/CM3070/CM3070_ZEROWASTE_FINAL/.utmp/RelWithDebInfo/164p4j4o/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/CM3070/CM3070_ZEROWASTE_FINAL/.utmp/RelWithDebInfo/164p4j4o/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/CM3070/CM3070_ZEROWASTE_FINAL/.utmp/RelWithDebInfo/164p4j4o/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/CM3070/CM3070_ZEROWASTE_FINAL/.utmp/RelWithDebInfo/164p4j4o/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
