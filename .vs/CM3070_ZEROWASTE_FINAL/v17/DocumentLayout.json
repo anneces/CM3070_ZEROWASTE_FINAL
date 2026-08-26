@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\CM3070\\CM3070_ZEROWASTE_FINAL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F1D48DA-01BD-2740-D1D4-C4D2895BA97A}|Assembly-CSharp.csproj|c:\\cm3070\\cm3070_zerowaste_final\\assets\\zw scripts\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F1D48DA-01BD-2740-D1D4-C4D2895BA97A}|Assembly-CSharp.csproj|solutionrelative:assets\\zw scripts\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainMenuManager.cs",
+              "DocumentMoniker": "C:\\CM3070\\CM3070_ZEROWASTE_FINAL\\Assets\\ZW SCRIPTS\\MainMenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\ZW SCRIPTS\\MainMenuManager.cs",
+              "ToolTip": "C:\\CM3070\\CM3070_ZEROWASTE_FINAL\\Assets\\ZW SCRIPTS\\MainMenuManager.cs",
+              "RelativeToolTip": "Assets\\ZW SCRIPTS\\MainMenuManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T14:40:32.687Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
