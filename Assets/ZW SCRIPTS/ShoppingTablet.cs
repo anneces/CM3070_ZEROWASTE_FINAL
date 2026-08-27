@@ -5,18 +5,25 @@ using TMPro;
 
 public class ShoppingTablet : MonoBehaviour
 {
-    [Header("Budget & Progression")]
+    [Header("Budget & Wallet Settings")]
     public float startingBudget = 50.0f;
-    public float currentBudget;
+    public float walletBalance;
+    public float totalSpent = 0.0f;
 
-    [Header("UI References")]
-    public TMP_Text budgetText;
+    [Header("UI Header References")]
+    public TMP_Text walletBalanceText;
+    public TMP_Text totalSpentText;
     public TMP_Text dayText;
-    public Transform spawnPoint;
+
+    [Header("Spawn Settings")]
+    [Tooltip("Assign 3 spawn point transforms located above the kitchen counter.")]
+    public Transform[] spawnPoints = new Transform[3];
+    public float spawnHeightOffset = 0.15f; // Extra height so item drops onto the counter
+    private int currentSpawnIndex = 0;
 
     [Header("Scroll View Settings")]
-    public Transform contentParent;        // Drag Viewport -> Content here
-    public GameObject foodItemRowPrefab;    // Drag your FoodItemRow UI prefab here
+    public Transform contentParent;
+    public GameObject foodItemRowPrefab;
 
     [System.Serializable]
     public struct ShopEntry
@@ -30,14 +37,13 @@ public class ShoppingTablet : MonoBehaviour
 
     private void Start()
     {
-        currentBudget = startingBudget;
+        walletBalance = startingBudget;
         PopulateScrollView();
         UpdateUI();
     }
 
     private void PopulateScrollView()
     {
-        // Clear old children if any exist
         foreach (Transform child in contentParent)
         {
             Destroy(child.gameObject);
@@ -45,16 +51,15 @@ public class ShoppingTablet : MonoBehaviour
 
         for (int i = 0; i < availableItems.Count; i++)
         {
-            int index = i; // Local copy for button listener closure
+            int index = i;
             ShopEntry entry = availableItems[i];
-            FoodItem foodScript = entry.foodPrefab.GetComponent<FoodItem>();
+            if (entry.foodPrefab == null) continue;
 
+            FoodItem foodScript = entry.foodPrefab.GetComponent<FoodItem>();
             if (foodScript == null) continue;
 
-            // Spawn row prefab inside Content transform
             GameObject row = Instantiate(foodItemRowPrefab, contentParent);
 
-            // Assign Text values (Assumes order: 0 = Name Text, 1 = Price Text)
             TMP_Text[] texts = row.GetComponentsInChildren<TMP_Text>();
             if (texts.Length >= 2)
             {
@@ -62,7 +67,6 @@ public class ShoppingTablet : MonoBehaviour
                 texts[1].text = $"${foodScript.price:F2}";
             }
 
-            // Hook up Buy Button event dynamically
             Button buyBtn = row.GetComponentInChildren<Button>();
             if (buyBtn != null)
             {
@@ -74,18 +78,39 @@ public class ShoppingTablet : MonoBehaviour
     public void BuyFoodItem(int itemIndex)
     {
         if (itemIndex < 0 || itemIndex >= availableItems.Count) return;
+        if (spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogError("No spawn points assigned to ShoppingTablet!");
+            return;
+        }
 
         GameObject prefabToSpawn = availableItems[itemIndex].foodPrefab;
         FoodItem foodScript = prefabToSpawn.GetComponent<FoodItem>();
 
-        if (foodScript != null && currentBudget >= foodScript.price)
+        if (foodScript != null)
         {
-            currentBudget -= foodScript.price;
+            if (walletBalance >= foodScript.price)
+            {
+                walletBalance -= foodScript.price;
+                totalSpent += foodScript.price;
 
-            Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), 0, Random.Range(-0.1f, 0.1f));
-            Instantiate(prefabToSpawn, spawnPoint.position + randomOffset, Quaternion.identity);
+                // Get target transform from current index
+                Transform targetPoint = spawnPoints[currentSpawnIndex];
+                Vector3 spawnPosition = targetPoint.position + (Vector3.up * spawnHeightOffset);
 
-            UpdateUI();
+                // Instantiate item above the counter spawn position
+                Instantiate(prefabToSpawn, spawnPosition, targetPoint.rotation);
+
+                // Cycle to the next spawn point (0, 1, 2)
+                currentSpawnIndex = (currentSpawnIndex + 1) % spawnPoints.Length;
+
+                UpdateUI();
+                Debug.Log($"Purchased {foodScript.foodName} for ${foodScript.price:F2}. Spawned at Spot {currentSpawnIndex + 1}.");
+            }
+            else
+            {
+                Debug.LogWarning($"Insufficient Funds! Wallet: ${walletBalance:F2}, Item Price: ${foodScript.price:F2}");
+            }
         }
     }
 
@@ -100,8 +125,11 @@ public class ShoppingTablet : MonoBehaviour
 
     public void UpdateUI()
     {
-        if (budgetText != null)
-            budgetText.text = $"Budget: ${currentBudget:F2}";
+        if (walletBalanceText != null)
+            walletBalanceText.text = $"Wallet: ${walletBalance:F2}";
+
+        if (totalSpentText != null)
+            totalSpentText.text = $"Spent: ${totalSpent:F2}";
 
         if (dayText != null && DayManager.Instance != null)
             dayText.text = $"Day {DayManager.Instance.currentDay} / {DayManager.Instance.maxDays}";
