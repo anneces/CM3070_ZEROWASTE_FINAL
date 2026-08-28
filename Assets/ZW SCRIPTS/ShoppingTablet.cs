@@ -5,6 +5,17 @@ using TMPro;
 
 public class ShoppingTablet : MonoBehaviour
 {
+    // Updated category enum: Fruits & Vegetables combined
+    public enum FoodCategory { FruitsAndVegetables, Protein, Grains, Others }
+
+    [System.Serializable]
+    public struct ShopEntry
+    {
+        public string itemName;
+        public FoodCategory category;
+        public GameObject foodPrefab;
+    }
+
     [Header("Budget & Wallet Settings")]
     public float startingBudget = 50.0f;
     public float walletBalance;
@@ -21,16 +32,10 @@ public class ShoppingTablet : MonoBehaviour
     public float spawnHeightOffset = 0.15f;
     private int currentSpawnIndex = 0;
 
-    [Header("Scroll View Settings")]
-    public Transform contentParent;
-    public GameObject foodItemRowPrefab;
-
-    [System.Serializable]
-    public struct ShopEntry
-    {
-        public string itemName;
-        public GameObject foodPrefab;
-    }
+    [Header("Categorized Layout References")]
+    public Transform mainContentParent;       // Parent for category sections (Vertical Layout)
+    public GameObject categorySectionPrefab; // Prefab with Title + ScrollRect for horizontal items
+    public GameObject foodCardPrefab;         // UI card prefab for food item
 
     [Header("Shop Catalog")]
     public List<ShopEntry> availableItems;
@@ -38,78 +43,108 @@ public class ShoppingTablet : MonoBehaviour
     private void Start()
     {
         walletBalance = startingBudget;
-        PopulateScrollView();
+        PopulateCategorizedCatalog();
         UpdateUI();
     }
 
-    private void PopulateScrollView()
+    private void PopulateCategorizedCatalog()
     {
-        if (contentParent == null || foodItemRowPrefab == null)
+        if (mainContentParent == null || categorySectionPrefab == null || foodCardPrefab == null)
         {
-            Debug.LogError("ShoppingTablet: Missing contentParent or foodItemRowPrefab references!");
+            Debug.LogError("ShoppingTablet: Ensure mainContentParent, categorySectionPrefab, and foodCardPrefab are assigned!");
             return;
         }
 
-        // Clear existing children inside Content
-        foreach (Transform child in contentParent)
+        // Clear existing category blocks
+        foreach (Transform child in mainContentParent)
         {
             Destroy(child.gameObject);
         }
 
+        // Group items by enum category
+        Dictionary<FoodCategory, List<int>> categorizedIndices = new Dictionary<FoodCategory, List<int>>();
+        foreach (FoodCategory cat in System.Enum.GetValues(typeof(FoodCategory)))
+        {
+            categorizedIndices[cat] = new List<int>();
+        }
+
         for (int i = 0; i < availableItems.Count; i++)
         {
-            int index = i;
-            ShopEntry entry = availableItems[i];
+            categorizedIndices[availableItems[i].category].Add(i);
+        }
 
-            // 1. Instantiate the UI Row Prefab
-            GameObject rowObj = Instantiate(foodItemRowPrefab, contentParent);
-            FoodItemRow rowScript = rowObj.GetComponent<FoodItemRow>();
+        // Build each category section horizontally
+        foreach (KeyValuePair<FoodCategory, List<int>> pair in categorizedIndices)
+        {
+            if (pair.Value.Count == 0) continue; // Skip empty categories
 
-            // 2. Fetch price/name safely from 3D FoodPrefab component if available
-            string displayName = entry.itemName;
-            float displayPrice = 0.0f;
+            // 1. Instantiate Category Section
+            GameObject sectionObj = Instantiate(categorySectionPrefab, mainContentParent);
 
-            if (entry.foodPrefab != null)
+            // Set Category Header Title
+            TMP_Text headerText = sectionObj.GetComponentInChildren<TMP_Text>();
+            if (headerText != null)
             {
-                FoodItem foodScript = entry.foodPrefab.GetComponent<FoodItem>();
-                if (foodScript != null)
+                // Format display name (e.g., FruitsAndVegetables -> FRUITS & VEGETABLES)
+                if (pair.Key == FoodCategory.FruitsAndVegetables)
                 {
-                    if (!string.IsNullOrEmpty(foodScript.foodName)) displayName = foodScript.foodName;
-                    displayPrice = foodScript.price;
+                    headerText.text = "FRUITS & VEGETABLES";
+                }
+                else
+                {
+                    headerText.text = pair.Key.ToString().ToUpper();
                 }
             }
 
-            // 3. Populate via FoodItemRow component (Best Practice)
-            if (rowScript != null)
+            // Find horizontal content container in section prefab
+            ScrollRect scrollRect = sectionObj.GetComponentInChildren<ScrollRect>();
+            Transform horizontalContent = (scrollRect != null) ? scrollRect.content : sectionObj.transform;
+
+            // 2. Instantiate Item Cards inside Category horizontal row
+            foreach (int index in pair.Value)
             {
-                if (rowScript.nameText != null) rowScript.nameText.text = displayName;
-                if (rowScript.priceText != null) rowScript.priceText.text = $"${displayPrice:F2}";
-                if (rowScript.buyButton != null)
-                {
-                    rowScript.buyButton.onClick.RemoveAllListeners();
-                    rowScript.buyButton.onClick.AddListener(() => BuyFoodItem(index));
-                }
-            }
-            // Fallback: Component search if FoodItemRow script isn't used directly
-            else
-            {
-                Button buyBtn = rowObj.GetComponentInChildren<Button>();
-                TMP_Text[] allTexts = rowObj.GetComponentsInChildren<TMP_Text>();
+                ShopEntry entry = availableItems[index];
+                GameObject cardObj = Instantiate(foodCardPrefab, horizontalContent);
 
-                List<TMP_Text> labelTexts = new List<TMP_Text>();
-                foreach (TMP_Text t in allTexts)
+                string displayName = entry.itemName;
+                float displayPrice = 0.0f;
+
+                if (entry.foodPrefab != null)
                 {
-                    if (buyBtn != null && t.transform.IsChildOf(buyBtn.transform)) continue;
-                    labelTexts.Add(t);
+                    FoodItem foodScript = entry.foodPrefab.GetComponent<FoodItem>();
+                    if (foodScript != null)
+                    {
+                        if (!string.IsNullOrEmpty(foodScript.foodName)) displayName = foodScript.foodName;
+                        displayPrice = foodScript.price;
+                    }
                 }
 
-                if (labelTexts.Count >= 1) labelTexts[0].text = displayName;
-                if (labelTexts.Count >= 2) labelTexts[1].text = $"${displayPrice:F2}";
-
-                if (buyBtn != null)
+                // Populate Card UI via FoodItemRow script or direct references
+                FoodItemRow rowScript = cardObj.GetComponent<FoodItemRow>();
+                if (rowScript != null)
                 {
-                    buyBtn.onClick.RemoveAllListeners();
-                    buyBtn.onClick.AddListener(() => BuyFoodItem(index));
+                    if (rowScript.nameText != null) rowScript.nameText.text = displayName;
+                    if (rowScript.priceText != null) rowScript.priceText.text = $"${displayPrice:F2}";
+                    if (rowScript.buyButton != null)
+                    {
+                        rowScript.buyButton.onClick.RemoveAllListeners();
+                        rowScript.buyButton.onClick.AddListener(() => BuyFoodItem(index));
+                    }
+                }
+                else
+                {
+                    Button buyBtn = cardObj.GetComponent<Button>();
+                    if (buyBtn == null) buyBtn = cardObj.GetComponentInChildren<Button>();
+
+                    TMP_Text[] texts = cardObj.GetComponentsInChildren<TMP_Text>();
+                    if (texts.Length >= 1) texts[0].text = displayName;
+                    if (texts.Length >= 2) texts[1].text = $"${displayPrice:F2}";
+
+                    if (buyBtn != null)
+                    {
+                        buyBtn.onClick.RemoveAllListeners();
+                        buyBtn.onClick.AddListener(() => BuyFoodItem(index));
+                    }
                 }
             }
         }
@@ -128,7 +163,7 @@ public class ShoppingTablet : MonoBehaviour
         GameObject prefabToSpawn = availableItems[itemIndex].foodPrefab;
         if (prefabToSpawn == null)
         {
-            Debug.LogWarning($"No food prefab assigned to item at index {itemIndex}!");
+            Debug.LogWarning($"No food prefab assigned to item '{availableItems[itemIndex].itemName}' at index {itemIndex}!");
             return;
         }
 

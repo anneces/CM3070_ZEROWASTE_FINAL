@@ -1954,7 +1954,7 @@ GameObject:
   - component: {fileID: 492474255}
   - component: {fileID: 492474256}
   m_Layer: 5
-  m_Name: Content
+  m_Name: MainContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1968,7 +1968,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492474254}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1976,7 +1976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00081172766}
+  m_AnchoredPosition: {x: -0, y: -0.00034528095}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &492474256
@@ -1997,7 +1997,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 10
+  m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -6143,7 +6143,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 10
   m_PresetInfoIsWorld: 1
 --- !u!223 &1573476525
 Canvas:
@@ -6775,50 +6775,72 @@ MonoBehaviour:
   - {fileID: 1089844401}
   - {fileID: 802733427}
   spawnHeightOffset: 0.15
-  contentParent: {fileID: 492474255}
-  foodItemRowPrefab: {fileID: 4809723900864393530, guid: 0137c426fcf88234a88fd16a8beaa72d, type: 3}
+  mainContentParent: {fileID: 492474255}
+  categorySectionPrefab: {fileID: 4333139790111947214, guid: d8267e1cd66796a41b3e824ec773635b, type: 3}
+  foodCardPrefab: {fileID: 4809723900864393530, guid: 0137c426fcf88234a88fd16a8beaa72d, type: 3}
   availableItems:
   - itemName: Apple
+    category: 0
     foodPrefab: {fileID: 8426444967028768477, guid: 1b7fc50dd28c1864494765f86a16f0c0, type: 3}
   - itemName: Brocoli
+    category: 0
     foodPrefab: {fileID: 542007891516966571, guid: e98ab8b47f8d41844a98cdbd434c8454, type: 3}
   - itemName: Carrot
+    category: 0
     foodPrefab: {fileID: 5710501627666910053, guid: 1765078e6117c09409d1dd52ff845781, type: 3}
   - itemName: Cheese
+    category: 1
     foodPrefab: {fileID: 8562072081867878427, guid: 569259ffc50485449aa0013c8a2dd0db, type: 3}
   - itemName: Chicken Breast
+    category: 1
     foodPrefab: {fileID: 608923132654629405, guid: b94ab7da87ad9b64ea5de14a1386cb4a, type: 3}
   - itemName: Corn
+    category: 0
     foodPrefab: {fileID: 5154658524005526494, guid: 7108daa062e5b5944909c4c63187b984, type: 3}
   - itemName: Dough
+    category: 2
     foodPrefab: {fileID: 7591780336848734152, guid: 671265bef6e8cf04faaf322d4728ea7e, type: 3}
   - itemName: Egg
+    category: 1
     foodPrefab: {fileID: 9071659583447747728, guid: 00803d75fafdb1046a2f00d17541c716, type: 3}
   - itemName: Ground Meat
+    category: 1
     foodPrefab: {fileID: 4535248453748992037, guid: cda8962333f6b4448856153ad6fd4729, type: 3}
   - itemName: Lettuce
+    category: 0
     foodPrefab: {fileID: 5720285338712286093, guid: 6b9a2bbc6735ed6458b3c2e79ab01371, type: 3}
   - itemName: Milk
+    category: 1
     foodPrefab: {fileID: 8186623087508151264, guid: 755f8a013b22f0747ad737276699dacc, type: 3}
   - itemName: Oil
+    category: 3
     foodPrefab: {fileID: 6085981871669629956, guid: 2ef4e46461643a54bbcb6197617108b4, type: 3}
   - itemName: Pea
+    category: 0
     foodPrefab: {fileID: 27113418321222342, guid: 770fa77b4335e2041a330043bbbfba2a, type: 3}
   - itemName: Potato
+    category: 0
     foodPrefab: {fileID: 2817605336962275934, guid: 27939212bf7273c458be59e3580257f7, type: 3}
   - itemName: Pumpkin
+    category: 0
     foodPrefab: {fileID: 2524835308121582378, guid: f3e6ad16aec32ac4e827fccd1ff394d0, type: 3}
   - itemName: Rice
+    category: 2
     foodPrefab: {fileID: 7009007725563173873, guid: d4142b59b77b9f24e98a6da1a680139c, type: 3}
   - itemName: Soup Base
+    category: 3
     foodPrefab: {fileID: 839541649468765173, guid: ae337ef308ea82d4984071e5c1e7b7bd, type: 3}
   - itemName: Tomato
+    category: 0
     foodPrefab: {fileID: 5660012488778253253, guid: 574744f87d096264183481560eb7f5c1, type: 3}
   - itemName: Tortilla
+    category: 3
     foodPrefab: {fileID: 4192043903450163284, guid: c5d60e9d2d6f4884086d0452321ae09d, type: 3}
   - itemName: Turkey Breast
+    category: 1
     foodPrefab: {fileID: 5880402177144009074, guid: f80ce1ec688763641a51f0b68b313a73, type: 3}
   - itemName: Pasta
+    category: 2
     foodPrefab: {fileID: 8788420780756854341, guid: ccda4ece1b48c6045b59f29af808fed6, type: 3}
 --- !u!1 &1890540231
 GameObject:
