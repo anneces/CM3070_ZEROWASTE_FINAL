@@ -1022,7 +1022,9 @@
           },
           {
             "name": "Rigidbody",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainGame.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

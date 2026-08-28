@@ -18,7 +18,7 @@ public class ShoppingTablet : MonoBehaviour
     [Header("Spawn Settings")]
     [Tooltip("Assign 3 spawn point transforms located above the kitchen counter.")]
     public Transform[] spawnPoints = new Transform[3];
-    public float spawnHeightOffset = 0.15f; // Extra height so item drops onto the counter
+    public float spawnHeightOffset = 0.15f;
     private int currentSpawnIndex = 0;
 
     [Header("Scroll View Settings")]
@@ -44,6 +44,13 @@ public class ShoppingTablet : MonoBehaviour
 
     private void PopulateScrollView()
     {
+        if (contentParent == null || foodItemRowPrefab == null)
+        {
+            Debug.LogError("ShoppingTablet: Missing contentParent or foodItemRowPrefab references!");
+            return;
+        }
+
+        // Clear existing children inside Content
         foreach (Transform child in contentParent)
         {
             Destroy(child.gameObject);
@@ -53,24 +60,57 @@ public class ShoppingTablet : MonoBehaviour
         {
             int index = i;
             ShopEntry entry = availableItems[i];
-            if (entry.foodPrefab == null) continue;
 
-            FoodItem foodScript = entry.foodPrefab.GetComponent<FoodItem>();
-            if (foodScript == null) continue;
+            // 1. Instantiate the UI Row Prefab
+            GameObject rowObj = Instantiate(foodItemRowPrefab, contentParent);
+            FoodItemRow rowScript = rowObj.GetComponent<FoodItemRow>();
 
-            GameObject row = Instantiate(foodItemRowPrefab, contentParent);
+            // 2. Fetch price/name safely from 3D FoodPrefab component if available
+            string displayName = entry.itemName;
+            float displayPrice = 0.0f;
 
-            TMP_Text[] texts = row.GetComponentsInChildren<TMP_Text>();
-            if (texts.Length >= 2)
+            if (entry.foodPrefab != null)
             {
-                texts[0].text = foodScript.foodName;
-                texts[1].text = $"${foodScript.price:F2}";
+                FoodItem foodScript = entry.foodPrefab.GetComponent<FoodItem>();
+                if (foodScript != null)
+                {
+                    if (!string.IsNullOrEmpty(foodScript.foodName)) displayName = foodScript.foodName;
+                    displayPrice = foodScript.price;
+                }
             }
 
-            Button buyBtn = row.GetComponentInChildren<Button>();
-            if (buyBtn != null)
+            // 3. Populate via FoodItemRow component (Best Practice)
+            if (rowScript != null)
             {
-                buyBtn.onClick.AddListener(() => BuyFoodItem(index));
+                if (rowScript.nameText != null) rowScript.nameText.text = displayName;
+                if (rowScript.priceText != null) rowScript.priceText.text = $"${displayPrice:F2}";
+                if (rowScript.buyButton != null)
+                {
+                    rowScript.buyButton.onClick.RemoveAllListeners();
+                    rowScript.buyButton.onClick.AddListener(() => BuyFoodItem(index));
+                }
+            }
+            // Fallback: Component search if FoodItemRow script isn't used directly
+            else
+            {
+                Button buyBtn = rowObj.GetComponentInChildren<Button>();
+                TMP_Text[] allTexts = rowObj.GetComponentsInChildren<TMP_Text>();
+
+                List<TMP_Text> labelTexts = new List<TMP_Text>();
+                foreach (TMP_Text t in allTexts)
+                {
+                    if (buyBtn != null && t.transform.IsChildOf(buyBtn.transform)) continue;
+                    labelTexts.Add(t);
+                }
+
+                if (labelTexts.Count >= 1) labelTexts[0].text = displayName;
+                if (labelTexts.Count >= 2) labelTexts[1].text = $"${displayPrice:F2}";
+
+                if (buyBtn != null)
+                {
+                    buyBtn.onClick.RemoveAllListeners();
+                    buyBtn.onClick.AddListener(() => BuyFoodItem(index));
+                }
             }
         }
     }
@@ -78,6 +118,7 @@ public class ShoppingTablet : MonoBehaviour
     public void BuyFoodItem(int itemIndex)
     {
         if (itemIndex < 0 || itemIndex >= availableItems.Count) return;
+
         if (spawnPoints == null || spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points assigned to ShoppingTablet!");
@@ -85,32 +126,34 @@ public class ShoppingTablet : MonoBehaviour
         }
 
         GameObject prefabToSpawn = availableItems[itemIndex].foodPrefab;
-        FoodItem foodScript = prefabToSpawn.GetComponent<FoodItem>();
-
-        if (foodScript != null)
+        if (prefabToSpawn == null)
         {
-            if (walletBalance >= foodScript.price)
-            {
-                walletBalance -= foodScript.price;
-                totalSpent += foodScript.price;
+            Debug.LogWarning($"No food prefab assigned to item at index {itemIndex}!");
+            return;
+        }
 
-                // Get target transform from current index
-                Transform targetPoint = spawnPoints[currentSpawnIndex];
-                Vector3 spawnPosition = targetPoint.position + (Vector3.up * spawnHeightOffset);
+        FoodItem foodScript = prefabToSpawn.GetComponent<FoodItem>();
+        float price = (foodScript != null) ? foodScript.price : 0.0f;
+        string name = (foodScript != null) ? foodScript.foodName : availableItems[itemIndex].itemName;
 
-                // Instantiate item above the counter spawn position
-                Instantiate(prefabToSpawn, spawnPosition, targetPoint.rotation);
+        if (walletBalance >= price)
+        {
+            walletBalance -= price;
+            totalSpent += price;
 
-                // Cycle to the next spawn point (0, 1, 2)
-                currentSpawnIndex = (currentSpawnIndex + 1) % spawnPoints.Length;
+            Transform targetPoint = spawnPoints[currentSpawnIndex];
+            Vector3 spawnPosition = targetPoint.position + (Vector3.up * spawnHeightOffset);
 
-                UpdateUI();
-                Debug.Log($"Purchased {foodScript.foodName} for ${foodScript.price:F2}. Spawned at Spot {currentSpawnIndex + 1}.");
-            }
-            else
-            {
-                Debug.LogWarning($"Insufficient Funds! Wallet: ${walletBalance:F2}, Item Price: ${foodScript.price:F2}");
-            }
+            Instantiate(prefabToSpawn, spawnPosition, targetPoint.rotation);
+
+            currentSpawnIndex = (currentSpawnIndex + 1) % spawnPoints.Length;
+
+            UpdateUI();
+            Debug.Log($"Purchased {name} for ${price:F2}. Spawned at Spot {currentSpawnIndex + 1}.");
+        }
+        else
+        {
+            Debug.LogWarning($"Insufficient Funds! Wallet: ${walletBalance:F2}, Item Price: ${price:F2}");
         }
     }
 
