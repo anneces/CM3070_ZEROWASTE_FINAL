@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5902134289034861868}
   - component: {fileID: 1201932302906143195}
   - component: {fileID: 2524987362356284880}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Oil
   m_TagString: Untagged
   m_Icon: {fileID: 0}

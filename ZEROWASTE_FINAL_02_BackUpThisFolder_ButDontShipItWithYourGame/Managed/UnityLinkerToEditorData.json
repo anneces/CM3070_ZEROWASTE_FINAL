@@ -1030,7 +1030,9 @@
           },
           {
             "name": "SphereCollider",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainGame.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

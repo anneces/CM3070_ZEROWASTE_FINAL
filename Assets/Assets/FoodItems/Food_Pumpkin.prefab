@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5294951126392112204}
   - component: {fileID: 195874922085727317}
   - component: {fileID: 4446685334832424286}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Pumpkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

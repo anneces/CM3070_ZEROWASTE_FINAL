@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1689635708096349338}
   - component: {fileID: 9128876429663267726}
   - component: {fileID: 8477411283654924383}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Pea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

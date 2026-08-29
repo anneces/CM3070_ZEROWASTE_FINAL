@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5696999079513199547}
   - component: {fileID: 5081621351718034979}
   - component: {fileID: 1296183754608156814}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Tortilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}

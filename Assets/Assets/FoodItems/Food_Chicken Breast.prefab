@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2673833878020642428}
   - component: {fileID: 9139373498864244372}
   - component: {fileID: 3054926171835237548}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Chicken Breast
   m_TagString: Untagged
   m_Icon: {fileID: 0}

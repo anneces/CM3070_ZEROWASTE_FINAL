@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5919731425497365224}
   - component: {fileID: 6577481673383861539}
   - component: {fileID: 5188393903740463318}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Ground Meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

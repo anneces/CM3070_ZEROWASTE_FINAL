@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 481326465817651732}
   - component: {fileID: 6698757556238435543}
   - component: {fileID: 8559117460219878844}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}

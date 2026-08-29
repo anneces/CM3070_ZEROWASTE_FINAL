@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2915097981008687396}
   - component: {fileID: 226411170125312871}
   - component: {fileID: 8364947684813352494}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Pasta
   m_TagString: Untagged
   m_Icon: {fileID: 0}

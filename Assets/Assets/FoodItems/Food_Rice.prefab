@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5975425396027339336}
   - component: {fileID: 7854114381734009216}
   - component: {fileID: 7034327663295037748}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Rice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

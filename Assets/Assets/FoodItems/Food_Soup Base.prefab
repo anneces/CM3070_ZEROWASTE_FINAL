@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8430821031094740546}
   - component: {fileID: 7927118201240534629}
   - component: {fileID: 7698576967280870552}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Food_Soup Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
