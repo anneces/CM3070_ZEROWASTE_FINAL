@@ -32,7 +32,7 @@ public class FoodItem : MonoBehaviour
     {
         currentFreshnessDays = maxFreshnessDays;
         itemRenderer = GetComponentInChildren<Renderer>();
-        if (itemRenderer != null)
+        if (itemRenderer != null && itemRenderer.material.HasProperty("_Color"))
         {
             originalColor = itemRenderer.material.color;
         }
@@ -48,14 +48,16 @@ public class FoodItem : MonoBehaviour
 
         int daysToDeduct = 1;
 
-        // Apply decay penalties based on storage location
-        if (currentStorage == StorageZone.ZoneType.KitchenCounter)
+        // Corrected Priority: 
+        // 1. If stored in its ideal location -> Standard 1-day decay.
+        // 2. If stored improperly anywhere else (counter, wrong zone) -> 2x Spoil Multiplier.
+        if (currentStorage == idealStorage)
         {
-            daysToDeduct = 1; // Standard 1-day decay on counter
+            daysToDeduct = 1;
         }
-        else if (currentStorage != idealStorage)
+        else
         {
-            daysToDeduct = 2; // Spoil Multiplier: 2x decay for improper storage
+            daysToDeduct = 2; // Spoil Multiplier for improper storage (e.g., milk on counter)
         }
 
         currentFreshnessDays -= daysToDeduct;
@@ -75,10 +77,10 @@ public class FoodItem : MonoBehaviour
     {
         isExpired = true;
         currentFreshnessDays = 0;
-        Debug.Log($"[SPOIL WARNING] {foodName} has spoiled! Financial loss: ${price}, Carbon penalty: {co2Points} kg CO2.");
+        Debug.Log($"[SPOIL WARNING] {foodName} has spoiled! Financial loss: ${price:F2}, Carbon penalty: {co2Points} kg CO2.");
 
         // Darkens material to indicate rot
-        if (itemRenderer != null)
+        if (itemRenderer != null && itemRenderer.material.HasProperty("_Color"))
         {
             itemRenderer.material.color = originalColor * 0.3f;
         }

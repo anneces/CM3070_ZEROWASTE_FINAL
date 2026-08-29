@@ -103,7 +103,9 @@ public class ShoppingTablet : MonoBehaviour
             // 2. Instantiate Item Cards inside Category horizontal row
             foreach (int index in pair.Value)
             {
-                ShopEntry entry = availableItems[index];
+                int capturedIndex = index; // Safely capture loop index for closure
+
+                ShopEntry entry = availableItems[capturedIndex];
                 GameObject cardObj = Instantiate(foodCardPrefab, horizontalContent);
 
                 string displayName = entry.itemName;
@@ -128,7 +130,7 @@ public class ShoppingTablet : MonoBehaviour
                     if (rowScript.buyButton != null)
                     {
                         rowScript.buyButton.onClick.RemoveAllListeners();
-                        rowScript.buyButton.onClick.AddListener(() => BuyFoodItem(index));
+                        rowScript.buyButton.onClick.AddListener(() => BuyFoodItem(capturedIndex));
                     }
                 }
                 else
@@ -143,7 +145,7 @@ public class ShoppingTablet : MonoBehaviour
                     if (buyBtn != null)
                     {
                         buyBtn.onClick.RemoveAllListeners();
-                        buyBtn.onClick.AddListener(() => BuyFoodItem(index));
+                        buyBtn.onClick.AddListener(() => BuyFoodItem(capturedIndex));
                     }
                 }
             }
