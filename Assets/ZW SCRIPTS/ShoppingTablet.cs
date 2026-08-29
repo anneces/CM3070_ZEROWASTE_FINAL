@@ -21,6 +21,11 @@ public class ShoppingTablet : MonoBehaviour
     public float walletBalance;
     public float totalSpent = 0.0f;
 
+    [Header("Purchase Cooldown Settings")]
+    [Tooltip("Time in seconds to wait between purchases to prevent accidental double clicks.")]
+    public float buyCooldown = 0.5f;
+    private float lastBuyTime = -10.0f;
+
     [Header("UI Header References")]
     public TMP_Text walletBalanceText;
     public TMP_Text totalSpentText;
@@ -35,7 +40,7 @@ public class ShoppingTablet : MonoBehaviour
     [Header("Categorized Layout References")]
     public Transform mainContentParent;       // Parent for category sections (Vertical Layout)
     public GameObject categorySectionPrefab; // Prefab with Title + ScrollRect for horizontal items
-    public GameObject foodCardPrefab;         // UI card prefab for food item
+    public GameObject foodCardPrefab;          // UI card prefab for food item
 
     [Header("Shop Catalog")]
     public List<ShopEntry> availableItems;
@@ -154,6 +159,13 @@ public class ShoppingTablet : MonoBehaviour
 
     public void BuyFoodItem(int itemIndex)
     {
+        // Prevent rapid double clicking using cooldown check
+        if (Time.time < lastBuyTime + buyCooldown)
+        {
+            Debug.Log("Purchase requested too quickly; click ignored for cooldown.");
+            return;
+        }
+
         if (itemIndex < 0 || itemIndex >= availableItems.Count) return;
 
         if (spawnPoints == null || spawnPoints.Length == 0)
@@ -175,6 +187,8 @@ public class ShoppingTablet : MonoBehaviour
 
         if (walletBalance >= price)
         {
+            lastBuyTime = Time.time; // Update timestamp upon successful purchase check
+
             walletBalance -= price;
             totalSpent += price;
 

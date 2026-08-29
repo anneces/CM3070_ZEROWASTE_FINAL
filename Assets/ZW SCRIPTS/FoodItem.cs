@@ -28,6 +28,45 @@ public class FoodItem : MonoBehaviour
     private Renderer itemRenderer;
     private Color originalColor;
 
+    /// <summary>
+    /// Calculates the remaining freshness percentage.
+    /// </summary>
+    public float FreshnessPercentage
+    {
+        get
+        {
+            if (maxFreshnessDays <= 0) return 0f;
+            float pct = ((float)currentFreshnessDays / maxFreshnessDays) * 100f;
+            return Mathf.Clamp(pct, 0f, 100f);
+        }
+    }
+
+    /// <summary>
+    /// Returns Status text: Fresh (>50%), Spotting (1%-50%), or Spoiled (<=0%).
+    /// </summary>
+    public string FreshnessStatus
+    {
+        get
+        {
+            if (isExpired || currentFreshnessDays <= 0) return "Spoiled";
+            if (FreshnessPercentage <= 50f) return "Spotting";
+            return "Fresh";
+        }
+    }
+
+    /// <summary>
+    /// Returns color codes for TextMeshPro UI formatting matching the freshness stage.
+    /// </summary>
+    public string FreshnessStatusColor
+    {
+        get
+        {
+            if (isExpired || currentFreshnessDays <= 0) return "#EF4444"; // Red (Spoiled)
+            if (FreshnessPercentage <= 50f) return "#EAB308";             // Yellow/Orange (Spotting)
+            return "#22C55E";                                            // Green (Fresh)
+        }
+    }
+
     private void Awake()
     {
         currentFreshnessDays = maxFreshnessDays;
