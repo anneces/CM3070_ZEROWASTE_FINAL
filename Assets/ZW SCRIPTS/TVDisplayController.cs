@@ -6,8 +6,21 @@ public class TVDisplayController : MonoBehaviour
 {
     public static TVDisplayController Instance { get; private set; }
 
-    [Header("UI Reference")]
-    [SerializeField] private TMP_Text tvTextDisplay;
+    [Header("Headers")]
+    [SerializeField] private TMP_Text foodHeader;
+    [SerializeField] private TMP_Text placementHeader;
+    [SerializeField] private TMP_Text statusHeader;
+    [SerializeField] private TMP_Text freshHeader;
+    [SerializeField] private TMP_Text co2Header;
+    [SerializeField] private TMP_Text storageHeader;
+
+    [Header("Data Columns")]
+    [SerializeField] private TMP_Text foodColumn;
+    [SerializeField] private TMP_Text placementColumn;
+    [SerializeField] private TMP_Text statusColumn;
+    [SerializeField] private TMP_Text freshColumn;
+    [SerializeField] private TMP_Text co2Column;
+    [SerializeField] private TMP_Text storageColumn;
 
     private void Awake()
     {
@@ -23,6 +36,7 @@ public class TVDisplayController : MonoBehaviour
 
     private void Start()
     {
+        SetHeaderLabels();
         RefreshDisplay();
     }
 
@@ -32,35 +46,35 @@ public class TVDisplayController : MonoBehaviour
         RefreshDisplay();
     }
 
+    private void SetHeaderLabels()
+    {
+        if (foodHeader != null) foodHeader.text = "FOOD";
+        if (placementHeader != null) placementHeader.text = "PLACEMENT";
+        if (statusHeader != null) statusHeader.text = "STATUS";
+        if (freshHeader != null) freshHeader.text = "FRESH(%)";
+        if (co2Header != null) co2Header.text = "CO2pts";
+        if (storageHeader != null) storageHeader.text = "STORAGE";
+    }
+
     /// <summary>
-    /// Reads dynamic food item states and updates formatted text on the World-Space TV Canvas.
+    /// Reads dynamic food item states and updates separate column UI components on the World-Space TV Canvas.
     /// </summary>
     public void RefreshDisplay()
     {
-        if (tvTextDisplay == null) return;
-
         FoodItem[] allFood = FindObjectsOfType<FoodItem>();
 
         if (allFood.Length == 0)
         {
-            tvTextDisplay.text = "<color=#888888>No food items detected in kitchen.</color>";
+            ClearColumns("<color=#888888>None</color>");
             return;
         }
 
-        StringBuilder sb = new StringBuilder();
-
-        // Monospace character spacing tag (0.5em provides a clean, readable width)
-        string mspaceTag = "<mspace=0.5em>";
-
-        // Padded headers matching the row padding lengths below
-        string hFood = "FOOD".PadRight(16);
-        string hStatus = "STATUS".PadRight(13);
-        string hFresh = "FRESH(%)".PadRight(11);
-        string hCo2 = "CO2pts".PadRight(9);
-        string hStorage = "STORAGE".PadRight(16);
-        string hPlacement = "PLACEMENT";
-
-        sb.AppendLine($"{mspaceTag}<b><color=#555555>{hFood}{hStatus}{hFresh}{hCo2}{hStorage}{hPlacement}</color></b></mspace>");
+        StringBuilder foodSb = new StringBuilder();
+        StringBuilder placementSb = new StringBuilder();
+        StringBuilder statusSb = new StringBuilder();
+        StringBuilder freshSb = new StringBuilder();
+        StringBuilder co2Sb = new StringBuilder();
+        StringBuilder storageSb = new StringBuilder();
 
         foreach (FoodItem food in allFood)
         {
@@ -69,22 +83,38 @@ public class TVDisplayController : MonoBehaviour
             string placementText = isOptimal ? "Optimal" : "Sub-Optimal";
             string placementColor = isOptimal ? "#22C55E" : "#EF4444"; // Green vs Red
 
-            // Plain text padding for clean column alignment
-            string foodNameCol = food.foodName.PadRight(16);
-            string statusText = food.FreshnessStatus.PadRight(13);
-            string freshPctText = $"{Mathf.RoundToInt(food.FreshnessPercentage)}%".PadRight(11);
-            string co2Col = $"{food.co2Points:F1} kg".PadRight(9);
-            string storageCol = food.currentStorage.ToString().PadRight(16);
+            // Raw values
+            string foodNameText = food.foodName;
+            string statusText = food.FreshnessStatus;
+            string freshPctText = $"{Mathf.RoundToInt(food.FreshnessPercentage)}%";
+            string co2Text = $"{food.co2Points:F1} kg";
+            string storageText = food.currentStorage.ToString();
 
-            // Apply Rich Text colors to padded string variables
-            string coloredStatus = $"<color={food.FreshnessStatusColor}>{statusText}</color>";
-            string coloredFreshPct = $"<color={food.FreshnessStatusColor}>{freshPctText}</color>";
-            string coloredPlacement = $"<color={placementColor}>{placementText}</color>";
-
-            // Append row wrapped in mspace tag so character widths are locked
-            sb.AppendLine($"{mspaceTag}{foodNameCol}{coloredStatus}{coloredFreshPct}{co2Col}{storageCol}{coloredPlacement}</mspace>");
+            // Append each field to its respective column string builder
+            foodSb.AppendLine(foodNameText);
+            placementSb.AppendLine($"<color={placementColor}>{placementText}</color>");
+            statusSb.AppendLine($"<color={food.FreshnessStatusColor}>{statusText}</color>");
+            freshSb.AppendLine($"<color={food.FreshnessStatusColor}>{freshPctText}</color>");
+            co2Sb.AppendLine(co2Text);
+            storageSb.AppendLine(storageText);
         }
 
-        tvTextDisplay.text = sb.ToString();
+        // Apply updated strings to individual UI text references
+        if (foodColumn != null) foodColumn.text = foodSb.ToString();
+        if (placementColumn != null) placementColumn.text = placementSb.ToString();
+        if (statusColumn != null) statusColumn.text = statusSb.ToString();
+        if (freshColumn != null) freshColumn.text = freshSb.ToString();
+        if (co2Column != null) co2Column.text = co2Sb.ToString();
+        if (storageColumn != null) storageColumn.text = storageSb.ToString();
+    }
+
+    private void ClearColumns(string defaultText)
+    {
+        if (foodColumn != null) foodColumn.text = defaultText;
+        if (placementColumn != null) placementColumn.text = "";
+        if (statusColumn != null) statusColumn.text = "";
+        if (freshColumn != null) freshColumn.text = "";
+        if (co2Column != null) co2Column.text = "";
+        if (storageColumn != null) storageColumn.text = "";
     }
 }

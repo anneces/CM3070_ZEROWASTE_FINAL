@@ -3522,7 +3522,18 @@ struct StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1  : public MonoBehav
 };
 struct TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___tvTextDisplay;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___foodHeader;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___placementHeader;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___statusHeader;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___freshHeader;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___co2Header;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___storageHeader;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___foodColumn;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___placementColumn;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___statusColumn;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___freshColumn;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___co2Column;
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___storageColumn;
 };
 struct TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -4294,9 +4305,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9176[5] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9177[1] = 
 {
 	static_cast<int32_t>(offsetof(StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1, ___zoneType)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9178[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9178[13] = 
 {
-	static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630_StaticFields, ___U3CInstanceU3Ek__BackingField)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___tvTextDisplay)),};
+	static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630_StaticFields, ___U3CInstanceU3Ek__BackingField)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___foodHeader)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___placementHeader)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___statusHeader)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___freshHeader)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___co2Header)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___storageHeader)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___foodColumn)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___placementColumn)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___statusColumn)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___freshColumn)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___co2Column)),static_cast<int32_t>(offsetof(TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630, ___storageColumn)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9179[4] = 
 {
 	static_cast<int32_t>(offsetof(U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473, ___targetRotation)),};

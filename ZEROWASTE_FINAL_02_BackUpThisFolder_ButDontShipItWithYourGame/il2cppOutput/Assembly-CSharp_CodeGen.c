@@ -76,7 +76,9 @@ extern void TVDisplayController_set_Instance_m70B01A0B2589879DDBD43ADEF1FF1CF228
 extern void TVDisplayController_Awake_mC27DB9D4398A106F889DE865DB62E4C0E68D108E (void);
 extern void TVDisplayController_Start_m97B0E96D2C5214DD093D60AC684EEB9BF57924D9 (void);
 extern void TVDisplayController_Update_m9D46D0AD712438BC71061E433894A8302DBACF8A (void);
+extern void TVDisplayController_SetHeaderLabels_m7F81A6F179A2E5673D66562AD255C79CC08CA183 (void);
 extern void TVDisplayController_RefreshDisplay_m6237F8B3610E050123D8CC671357D12BB5DBD4CE (void);
+extern void TVDisplayController_ClearColumns_mCE12C23B72D6AAB2D73408BA8E33D0D0CEAF9B93 (void);
 extern void TVDisplayController__ctor_m064CE96C05E026BB5E46B9470537B0A45AC6DFF2 (void);
 extern void VRDoorToggle_Awake_m5F725E889A15C371201A7DCBC4446930E6E4EEDC (void);
 extern void VRDoorToggle_ToggleDoor_mC2D9A4343F215117C04625AD78069820B6F53943 (void);
@@ -90,7 +92,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[83] = 
+static Il2CppMethodPointer s_methodPointers[85] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -161,7 +163,9 @@ static Il2CppMethodPointer s_methodPointers[83] =
 	TVDisplayController_Awake_mC27DB9D4398A106F889DE865DB62E4C0E68D108E,
 	TVDisplayController_Start_m97B0E96D2C5214DD093D60AC684EEB9BF57924D9,
 	TVDisplayController_Update_m9D46D0AD712438BC71061E433894A8302DBACF8A,
+	TVDisplayController_SetHeaderLabels_m7F81A6F179A2E5673D66562AD255C79CC08CA183,
 	TVDisplayController_RefreshDisplay_m6237F8B3610E050123D8CC671357D12BB5DBD4CE,
+	TVDisplayController_ClearColumns_mCE12C23B72D6AAB2D73408BA8E33D0D0CEAF9B93,
 	TVDisplayController__ctor_m064CE96C05E026BB5E46B9470537B0A45AC6DFF2,
 	VRDoorToggle_Awake_m5F725E889A15C371201A7DCBC4446930E6E4EEDC,
 	VRDoorToggle_ToggleDoor_mC2D9A4343F215117C04625AD78069820B6F53943,
@@ -176,7 +180,7 @@ static Il2CppMethodPointer s_methodPointers[83] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[83] = 
+static const int32_t s_InvokerIndices[85] = 
 {
 	14475,
 	14686,
@@ -249,6 +253,8 @@ static const int32_t s_InvokerIndices[83] =
 	14686,
 	14686,
 	14686,
+	11146,
+	14686,
 	14686,
 	14686,
 	9551,
@@ -266,7 +272,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	83,
+	85,
 	s_methodPointers,
 	0,
 	NULL,
