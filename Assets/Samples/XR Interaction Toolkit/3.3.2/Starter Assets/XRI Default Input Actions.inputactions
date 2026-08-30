@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "XRI Default Input Actions",
     "maps": [
         {
@@ -975,6 +976,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "e9919385-4318-469a-92f4-83c695707555",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Stand Tall",
+                    "type": "Button",
+                    "id": "3a68e1e3-e109-45fd-99e5-80f427a0b3d6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1283,6 +1302,28 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "",
                     "action": "Translate Manipulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1414acec-2cff-45b6-a7c5-ae28dc721a31",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfdc0a83-7df5-40e9-8097-567e390de10a",
+                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stand Tall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

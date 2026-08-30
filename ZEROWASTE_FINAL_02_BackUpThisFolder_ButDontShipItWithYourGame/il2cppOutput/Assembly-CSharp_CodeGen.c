@@ -23,6 +23,11 @@ extern void TabletInput_Update_m7C73AFEBB45E4A8BCE7CE3C1873BBA6AE0C5AB01 (void);
 extern void TabletInput__ctor_m595DD27EB1C649B94E96EA845B9732CE72108EB3 (void);
 extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
 extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
+extern void CameraOffsetHeightAdjust_Awake_mC43F9927E383BB571BD0AE853388A1BC0A16137B (void);
+extern void CameraOffsetHeightAdjust_OnEnable_m4BED9CE07124657F0B08B2E80D72A3D764F2444E (void);
+extern void CameraOffsetHeightAdjust_OnDisable_m68F589BC5F1FF53F9D717DDFD1290E8AC90982AB (void);
+extern void CameraOffsetHeightAdjust_Update_m147CE93DD6CB991C3F6EC84A9B671658C35472B1 (void);
+extern void CameraOffsetHeightAdjust__ctor_mFD85503870F50DEB5B2CA83938CE98202270BA5D (void);
 extern void DayManager_get_Instance_m6205CD694B380816091A94B1D0E92B6B402BF0A3 (void);
 extern void DayManager_set_Instance_m2C961B50053DE7F7AB15258257DF202036577AEE (void);
 extern void DayManager_Awake_mA15E2DAA6AECC785E6854185939FBDC7E0458BAF (void);
@@ -85,7 +90,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[78] = 
+static Il2CppMethodPointer s_methodPointers[83] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -103,6 +108,11 @@ static Il2CppMethodPointer s_methodPointers[78] =
 	TabletInput__ctor_m595DD27EB1C649B94E96EA845B9732CE72108EB3,
 	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
 	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
+	CameraOffsetHeightAdjust_Awake_mC43F9927E383BB571BD0AE853388A1BC0A16137B,
+	CameraOffsetHeightAdjust_OnEnable_m4BED9CE07124657F0B08B2E80D72A3D764F2444E,
+	CameraOffsetHeightAdjust_OnDisable_m68F589BC5F1FF53F9D717DDFD1290E8AC90982AB,
+	CameraOffsetHeightAdjust_Update_m147CE93DD6CB991C3F6EC84A9B671658C35472B1,
+	CameraOffsetHeightAdjust__ctor_mFD85503870F50DEB5B2CA83938CE98202270BA5D,
 	DayManager_get_Instance_m6205CD694B380816091A94B1D0E92B6B402BF0A3,
 	DayManager_set_Instance_m2C961B50053DE7F7AB15258257DF202036577AEE,
 	DayManager_Awake_mA15E2DAA6AECC785E6854185939FBDC7E0458BAF,
@@ -166,9 +176,14 @@ static Il2CppMethodPointer s_methodPointers[78] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[78] = 
+static const int32_t s_InvokerIndices[83] = 
 {
 	14475,
+	14686,
+	14686,
+	14686,
+	14686,
+	14686,
 	14686,
 	14686,
 	14686,
@@ -251,7 +266,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	78,
+	83,
 	s_methodPointers,
 	0,
 	NULL,

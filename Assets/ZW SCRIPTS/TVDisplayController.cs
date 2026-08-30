@@ -49,8 +49,18 @@ public class TVDisplayController : MonoBehaviour
 
         StringBuilder sb = new StringBuilder();
 
-        // Standard header with spaces matched to plain text padding below
-        sb.AppendLine("<b><color=#555555>FOOD            STATUS       FRESH(%)   CO2pts   STORAGE         PLACEMENT</color></b>");
+        // Monospace character spacing tag (0.5em provides a clean, readable width)
+        string mspaceTag = "<mspace=0.5em>";
+
+        // Padded headers matching the row padding lengths below
+        string hFood = "FOOD".PadRight(16);
+        string hStatus = "STATUS".PadRight(13);
+        string hFresh = "FRESH(%)".PadRight(11);
+        string hCo2 = "CO2pts".PadRight(9);
+        string hStorage = "STORAGE".PadRight(16);
+        string hPlacement = "PLACEMENT";
+
+        sb.AppendLine($"{mspaceTag}<b><color=#555555>{hFood}{hStatus}{hFresh}{hCo2}{hStorage}{hPlacement}</color></b></mspace>");
 
         foreach (FoodItem food in allFood)
         {
@@ -71,8 +81,8 @@ public class TVDisplayController : MonoBehaviour
             string coloredFreshPct = $"<color={food.FreshnessStatusColor}>{freshPctText}</color>";
             string coloredPlacement = $"<color={placementColor}>{placementText}</color>";
 
-            // Append row without mspace tag so font isn't horizontally compressed
-            sb.AppendLine($"{foodNameCol}{coloredStatus}{coloredFreshPct}{co2Col}{storageCol}{coloredPlacement}");
+            // Append row wrapped in mspace tag so character widths are locked
+            sb.AppendLine($"{mspaceTag}{foodNameCol}{coloredStatus}{coloredFreshPct}{co2Col}{storageCol}{coloredPlacement}</mspace>");
         }
 
         tvTextDisplay.text = sb.ToString();

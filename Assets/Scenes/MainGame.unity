@@ -3123,7 +3123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b421d4d6b9d173b46975f8d0fe13d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRDoorToggle
-  openYAngle: -90
+  openYAngle: 90
   animationSpeed: 4
 --- !u!114 &794954250
 MonoBehaviour:
@@ -4190,6 +4190,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6520291404937146767, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_ActionAssets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520291404937146767, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: 'm_ActionAssets.Array.data[1]'
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 6520291404937146767, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: 'm_ActionAssets.Array.data[2]'
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6678509202150728127, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_StartingGroupMembers.Array.size
       value: 3
@@ -4213,6 +4225,9 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 10875005}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2131799683}
     - targetCorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 133210811}
@@ -6144,7 +6159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b421d4d6b9d173b46975f8d0fe13d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRDoorToggle
-  openYAngle: 90
+  openYAngle: -90
   animationSpeed: 4
 --- !u!114 &1448689002
 MonoBehaviour:
@@ -6265,7 +6280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b421d4d6b9d173b46975f8d0fe13d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRDoorToggle
-  openYAngle: 90
+  openYAngle: -90
   animationSpeed: 4
 --- !u!114 &1448689005
 MonoBehaviour:
@@ -7084,7 +7099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b421d4d6b9d173b46975f8d0fe13d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRDoorToggle
-  openYAngle: 90
+  openYAngle: -90
   animationSpeed: 4
 --- !u!114 &1545520754
 MonoBehaviour:
@@ -7098,7 +7113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b421d4d6b9d173b46975f8d0fe13d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRDoorToggle
-  openYAngle: -90
+  openYAngle: 90
   animationSpeed: 4
 --- !u!1 &1573476521
 GameObject:
@@ -8166,7 +8181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b421d4d6b9d173b46975f8d0fe13d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRDoorToggle
-  openYAngle: -90
+  openYAngle: 90
   animationSpeed: 4
 --- !u!114 &1896552071
 MonoBehaviour:
@@ -9156,6 +9171,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StorageZone
   zoneType: 0
+--- !u!114 &2131799681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1093383514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131799682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2131799682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1093383514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2131799683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131799682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c4c093d7391c84aba883031b2aeaf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraOffsetHeightAdjust
+  xrOrigin: {fileID: 2131799681}
+  crouchAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Crouch
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 40d5f6c1-79fa-4557-8507-8364684967af
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -956655272168177862, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  standTallAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Stand Tall
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 10b40c6f-a23e-40c8-82cf-f853e3e80f8a
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 8562892858117736212, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  normalOffset: 0
+  crouchOffset: -15
+  standTallOffset: 15
+  adjustSpeed: 12
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
