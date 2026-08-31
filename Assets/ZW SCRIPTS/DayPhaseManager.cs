@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,6 +13,9 @@ public enum DayPhase
 public class DayPhaseManager : MonoBehaviour
 {
     public static DayPhaseManager Instance { get; private set; }
+
+    // Event broadcast for external UI components (Clock, Tablet, TV)
+    public static event Action OnPhaseChanged;
 
     [Header("Day & Phase Tracking")]
     [SerializeField] private int currentDay = 1;
@@ -62,6 +66,14 @@ public class DayPhaseManager : MonoBehaviour
 
         UpdateEnvironment();
         UpdateClockUI();
+    }
+
+    /// <summary>
+    /// Alias method to prevent CS1061 errors from external scripts calling ConfirmNextPhase.
+    /// </summary>
+    public void ConfirmNextPhase()
+    {
+        ConfirmAdvancePhase();
     }
 
     /// <summary>
@@ -133,6 +145,9 @@ public class DayPhaseManager : MonoBehaviour
         {
             TVDisplayController.Instance.RefreshDisplay();
         }
+
+        // 3. Broadcast phase update event to all subscribed canvases
+        OnPhaseChanged?.Invoke();
     }
 
     private void UpdateClockUI()

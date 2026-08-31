@@ -1308,7 +1308,7 @@
                 {
                     "name": "",
                     "id": "1414acec-2cff-45b6-a7c5-ae28dc721a31",
-                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1319,7 +1319,7 @@
                 {
                     "name": "",
                     "id": "dfdc0a83-7df5-40e9-8097-567e390de10a",
-                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

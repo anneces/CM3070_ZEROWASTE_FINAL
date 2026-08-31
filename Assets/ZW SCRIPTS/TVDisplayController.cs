@@ -37,6 +37,16 @@ public class TVDisplayController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        DayPhaseManager.OnPhaseChanged += RefreshDisplay;
+    }
+
+    private void OnDisable()
+    {
+        DayPhaseManager.OnPhaseChanged -= RefreshDisplay;
+    }
+
     private void Start()
     {
         SetHeaderLabels();

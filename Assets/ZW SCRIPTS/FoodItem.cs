@@ -44,15 +44,18 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns Status text: Fresh (>50%), Spotting (1%-50%), or Spoiled (<=0%).
+    /// Returns Status text: Fresh (100%-66%), Spotting (65%-1%), or Spoiled (0%).
     /// </summary>
     public string FreshnessStatus
     {
         get
         {
             if (isExpired || currentFreshnessDays <= 0) return "Spoiled";
-            if (FreshnessPercentage <= 50f) return "Spotting";
-            return "Fresh";
+
+            float pct = FreshnessPercentage;
+            if (pct >= 66f) return "Fresh";
+            if (pct >= 1f) return "Spotting";
+            return "Spoiled";
         }
     }
 
@@ -64,8 +67,11 @@ public class FoodItem : MonoBehaviour
         get
         {
             if (isExpired || currentFreshnessDays <= 0) return "#EF4444"; // Red (Spoiled)
-            if (FreshnessPercentage <= 50f) return "#EAB308";             // Yellow/Orange (Spotting)
-            return "#22C55E";                                             // Green (Fresh)
+
+            float pct = FreshnessPercentage;
+            if (pct >= 66f) return "#22C55E"; // Green (Fresh)
+            if (pct >= 1f) return "#EAB308";  // Yellow/Orange (Spotting)
+            return "#EF4444";                 // Red (Spoiled)
         }
     }
 
@@ -95,14 +101,31 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the _DecayAmount property on the custom Shader Graph material (0.0 = Fresh, 1.0 = Fully Moldy).
+    /// Updates the _DecayAmount property on the custom Shader Graph material 
+    /// (0.0 = Fresh, scales 0.0 to 1.0 during Spotting, 1.0 = Fully Moldy).
     /// </summary>
     private void UpdateMoldVisuals()
     {
         if (foodMaterialInstance == null) return;
 
-        // Calculate decay value normalized from 0.0 to 1.0 based on current freshness days
-        float decayNormalized = 1f - (FreshnessPercentage / 100f);
+        float pct = FreshnessPercentage;
+        float decayNormalized = 0f;
+
+        if (pct >= 66f)
+        {
+            // Fresh phase: Texture clean, Decay set to 0
+            decayNormalized = 0f;
+        }
+        else if (pct >= 1f)
+        {
+            // Spotting phase: Remap 65%..1% to 0.0..1.0 linearly
+            decayNormalized = Mathf.InverseLerp(65f, 1f, pct);
+        }
+        else
+        {
+            // Spoiled phase: Maximum mold & darkened surface (1.0)
+            decayNormalized = 1.0f;
+        }
 
         if (foodMaterialInstance.HasProperty(DecayAmountProperty))
         {
