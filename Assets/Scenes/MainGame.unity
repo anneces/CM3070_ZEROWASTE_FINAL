@@ -1776,7 +1776,7 @@ Transform:
   m_GameObject: {fileID: 283528276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.296, z: 0}
+  m_LocalPosition: {x: 0, y: 1.296, z: 0.067000076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1801,7 +1801,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.03, z: 0.5}
+  m_Size: {x: 2, y: 0.03, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &300627913 stripped
 GameObject:
@@ -2069,7 +2069,7 @@ Transform:
   m_GameObject: {fileID: 317549692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.297, z: 0}
+  m_LocalPosition: {x: 0, y: 0.297, z: 0.067000076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2094,7 +2094,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.03, z: 0.5}
+  m_Size: {x: 2, y: 0.03, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &327569108
 GameObject:
@@ -2122,7 +2122,7 @@ Transform:
   m_GameObject: {fileID: 327569108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.793, z: 0}
+  m_LocalPosition: {x: 0, y: 1.793, z: 0.067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2147,7 +2147,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.03, z: 0.5}
+  m_Size: {x: 2, y: 0.03, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &330023147
 GameObject:
@@ -2242,7 +2242,7 @@ Transform:
   m_GameObject: {fileID: 445990051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.798, z: 0}
+  m_LocalPosition: {x: 0, y: 0.798, z: 0.067000076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2267,7 +2267,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.03, z: 0.5}
+  m_Size: {x: 2, y: 0.03, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &451081076
 GameObject:
@@ -2400,16 +2400,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TVLEDDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 4544684931045374558, guid: ee59c090669404c4da6b94e48cb60cf1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3772369905349288164, guid: ee59c090669404c4da6b94e48cb60cf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1800131189}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4544684931045374558, guid: ee59c090669404c4da6b94e48cb60cf1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1970436073}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee59c090669404c4da6b94e48cb60cf1, type: 3}
 --- !u!1 &465889200
 GameObject:
@@ -7186,7 +7187,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202006840}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4999999, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9436,7 +9437,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704277647}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -28}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10878,7 +10879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56698a31d96b09649914b006bdc8c741, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 61.112946
+      value: 64.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56698a31d96b09649914b006bdc8c741, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11193,40 +11194,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968222540}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1970436069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4544684931045374558, guid: ee59c090669404c4da6b94e48cb60cf1, type: 3}
-  m_PrefabInstance: {fileID: 464016058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1970436072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3772369905349288164, guid: ee59c090669404c4da6b94e48cb60cf1, type: 3}
   m_PrefabInstance: {fileID: 464016058}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1970436073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970436069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7690e6ad39a721c4eb446848fe1322b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TVDisplayController
-  foodHeader: {fileID: 0}
-  placementHeader: {fileID: 0}
-  statusHeader: {fileID: 0}
-  freshHeader: {fileID: 0}
-  co2Header: {fileID: 0}
-  storageHeader: {fileID: 0}
-  foodColumn: {fileID: 0}
-  placementColumn: {fileID: 0}
-  statusColumn: {fileID: 0}
-  freshColumn: {fileID: 0}
-  co2Column: {fileID: 0}
-  storageColumn: {fileID: 0}
 --- !u!1 &1971676821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11622,8 +11594,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12013,8 +11985,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124577748}
-  m_LocalRotation: {x: -0.13052624, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 0, z: -41.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -43.9}
   m_LocalScale: {x: 0.3, y: 0.2, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12023,10 +11995,10 @@ RectTransform:
   - {fileID: 1202006841}
   - {fileID: 176267111}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -53.9, y: 24.6}
+  m_AnchoredPosition: {x: -53.9, y: 37.6}
   m_SizeDelta: {x: 767.5, y: 285.49997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124577753
@@ -12169,7 +12141,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 8562892858117736212, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   normalOffset: 0
-  crouchOffset: -15
+  crouchOffset: -25
   standTallOffset: 15
   adjustSpeed: 12
 --- !u!1660057539 &9223372036854775807

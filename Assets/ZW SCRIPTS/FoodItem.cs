@@ -27,6 +27,8 @@ public class FoodItem : MonoBehaviour
 
     private Renderer itemRenderer;
     private Color originalColor;
+    private Material foodMaterialInstance;
+    private static readonly int DecayAmountProperty = Shader.PropertyToID("_DecayAmount");
 
     /// <summary>
     /// Calculates the remaining freshness percentage.
@@ -63,7 +65,7 @@ public class FoodItem : MonoBehaviour
         {
             if (isExpired || currentFreshnessDays <= 0) return "#EF4444"; // Red (Spoiled)
             if (FreshnessPercentage <= 50f) return "#EAB308";             // Yellow/Orange (Spotting)
-            return "#22C55E";                                            // Green (Fresh)
+            return "#22C55E";                                             // Green (Fresh)
         }
     }
 
@@ -71,9 +73,40 @@ public class FoodItem : MonoBehaviour
     {
         currentFreshnessDays = maxFreshnessDays;
         itemRenderer = GetComponentInChildren<Renderer>();
-        if (itemRenderer != null && itemRenderer.material.HasProperty("_Color"))
+        if (itemRenderer != null)
         {
-            originalColor = itemRenderer.material.color;
+            foodMaterialInstance = itemRenderer.material; // Unique material instance clone
+
+            if (foodMaterialInstance.HasProperty("_Color"))
+            {
+                originalColor = foodMaterialInstance.color;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Called by DayPhaseManager during phase shift ticks.
+    /// Drives both shelf life deduction and visual mold shader progression.
+    /// </summary>
+    public void OnPhaseTick()
+    {
+        AdvanceDay();
+        UpdateMoldVisuals();
+    }
+
+    /// <summary>
+    /// Updates the _DecayAmount property on the custom Shader Graph material (0.0 = Fresh, 1.0 = Fully Moldy).
+    /// </summary>
+    private void UpdateMoldVisuals()
+    {
+        if (foodMaterialInstance == null) return;
+
+        // Calculate decay value normalized from 0.0 to 1.0 based on current freshness days
+        float decayNormalized = 1f - (FreshnessPercentage / 100f);
+
+        if (foodMaterialInstance.HasProperty(DecayAmountProperty))
+        {
+            foodMaterialInstance.SetFloat(DecayAmountProperty, decayNormalized);
         }
     }
 

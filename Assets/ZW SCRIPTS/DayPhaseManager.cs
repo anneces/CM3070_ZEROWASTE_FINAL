@@ -120,6 +120,19 @@ public class DayPhaseManager : MonoBehaviour
 
         UpdateEnvironment();
         UpdateClockUI();
+
+        // 1. Notify all food items in scene to execute decay tick
+        FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
+        foreach (FoodItem food in foodItems)
+        {
+            food.OnPhaseTick();
+        }
+
+        // 2. Refresh TV Display UI values
+        if (TVDisplayController.Instance != null)
+        {
+            TVDisplayController.Instance.RefreshDisplay();
+        }
     }
 
     private void UpdateClockUI()

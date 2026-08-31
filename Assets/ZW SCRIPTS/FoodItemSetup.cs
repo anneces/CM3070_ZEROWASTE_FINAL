@@ -1,20 +1,34 @@
 // FoodItemSetup.cs - Script preview for grabbable food objects
 using UnityEngine;
-
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable))]
+[RequireComponent(typeof(XRGrabInteractable))]
 public class FoodItemBase : MonoBehaviour
 {
-    public string foodName;
-    public StorageZone.ZoneType idealStorage;
+    public string foodName = "Apple";
+    public StorageZone.ZoneType idealStorage = StorageZone.ZoneType.Fridge;
 
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
+    private XRGrabInteractable grabInteractable;
+    private Rigidbody rb;
 
     private void Awake()
     {
-        grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-        // Ensure continuous collision detection to prevent dropping through counters
-        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        rb = GetComponent<Rigidbody>();
+
+        // Ensure collision detection mode is set safely to prevent passing through counters/tables
+        if (rb != null)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        }
+
+        // Sync with FoodItem component if present on the same GameObject
+        FoodItem foodItem = GetComponent<FoodItem>();
+        if (foodItem != null)
+        {
+            if (!string.IsNullOrEmpty(foodName)) foodItem.foodName = foodName;
+            foodItem.idealStorage = idealStorage;
+        }
     }
 }

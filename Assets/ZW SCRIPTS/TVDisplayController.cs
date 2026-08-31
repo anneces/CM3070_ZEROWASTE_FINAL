@@ -22,6 +22,9 @@ public class TVDisplayController : MonoBehaviour
     [SerializeField] private TMP_Text co2Column;
     [SerializeField] private TMP_Text storageColumn;
 
+    private float updateTimer = 0f;
+    private const float UPDATE_INTERVAL = 0.2f; // Refreshes 5 times per second instead of every frame
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -42,8 +45,13 @@ public class TVDisplayController : MonoBehaviour
 
     private void Update()
     {
-        // Refreshes display dynamically every frame so zone changes reflect immediately on TV
-        RefreshDisplay();
+        // Throttle updates slightly to optimize VR performance while maintaining real-time feel
+        updateTimer += Time.deltaTime;
+        if (updateTimer >= UPDATE_INTERVAL)
+        {
+            updateTimer = 0f;
+            RefreshDisplay();
+        }
     }
 
     private void SetHeaderLabels()
@@ -61,7 +69,7 @@ public class TVDisplayController : MonoBehaviour
     /// </summary>
     public void RefreshDisplay()
     {
-        FoodItem[] allFood = FindObjectsOfType<FoodItem>();
+        FoodItem[] allFood = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
 
         if (allFood.Length == 0)
         {

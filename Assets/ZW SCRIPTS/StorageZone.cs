@@ -12,6 +12,12 @@ public class StorageZone : MonoBehaviour
         {
             item.currentStorage = zoneType;
             Debug.Log($"[StorageZone] {item.foodName} placed in {zoneType}. Ideal: {item.idealStorage}");
+
+            // Refresh TV UI display when item is stored
+            if (TVDisplayController.Instance != null)
+            {
+                TVDisplayController.Instance.RefreshDisplay();
+            }
         }
     }
 
@@ -23,6 +29,12 @@ public class StorageZone : MonoBehaviour
         {
             item.currentStorage = zoneType;
             Debug.Log($"[StorageZone] {item.foodName} updated to {zoneType} via Stay check.");
+
+            // Refresh TV UI display on state change
+            if (TVDisplayController.Instance != null)
+            {
+                TVDisplayController.Instance.RefreshDisplay();
+            }
         }
     }
 
@@ -35,6 +47,12 @@ public class StorageZone : MonoBehaviour
             // Revert back to KitchenCounter status when removed from this zone
             item.currentStorage = ZoneType.KitchenCounter;
             Debug.Log($"[StorageZone] {item.foodName} removed from {zoneType}. Defaulted to KitchenCounter.");
+
+            // Refresh TV UI display when item is picked up / removed
+            if (TVDisplayController.Instance != null)
+            {
+                TVDisplayController.Instance.RefreshDisplay();
+            }
         }
     }
 

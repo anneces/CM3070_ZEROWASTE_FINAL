@@ -35,11 +35,11 @@ public class DayManager : MonoBehaviour
         currentDay++;
         Debug.Log($"================ ADVANCING TO DAY {currentDay} ================");
 
-        // Find all food items currently in the scene and degrade them by 1 day cycle
-        FoodItem[] allFoodItems = FindObjectsOfType<FoodItem>();
+        // Find all food items currently in the scene and trigger their phase tick (decay + shader update)
+        FoodItem[] allFoodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
         foreach (FoodItem item in allFoodItems)
         {
-            item.AdvanceDay();
+            item.OnPhaseTick();
         }
     }
 }
