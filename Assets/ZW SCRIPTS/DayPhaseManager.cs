@@ -107,6 +107,8 @@ public class DayPhaseManager : MonoBehaviour
 
     private void AdvancePhase()
     {
+        bool isNewDay = false;
+
         if (currentPhase == DayPhase.Morning)
         {
             currentPhase = DayPhase.Afternoon;
@@ -121,6 +123,7 @@ public class DayPhaseManager : MonoBehaviour
             {
                 currentDay++;
                 currentPhase = DayPhase.Morning;
+                isNewDay = true; // Set flag when rolling over from Evening to Morning
             }
             else
             {
@@ -133,11 +136,14 @@ public class DayPhaseManager : MonoBehaviour
         UpdateEnvironment();
         UpdateClockUI();
 
-        // 1. Notify all food items in scene to execute decay tick
-        FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
-        foreach (FoodItem food in foodItems)
+        // 1. Notify all food items in scene to execute decay tick ONLY when entering a new day
+        if (isNewDay)
         {
-            food.OnPhaseTick();
+            FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
+            foreach (FoodItem food in foodItems)
+            {
+                food.OnPhaseTick();
+            }
         }
 
         // 2. Refresh TV Display UI values

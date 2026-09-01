@@ -35,10 +35,13 @@ extern void DayManager_EndCurrentDay_m61472690321DF45F393A180C722849A71A9F83A2 (
 extern void DayManager__ctor_m80D7B5D59842F900B2FDA0ACAFDF6B2ABE07A096 (void);
 extern void DayPhaseManager_get_Instance_m88DBFCBCA6B57084F52D8CB6FA3BC3853462177E (void);
 extern void DayPhaseManager_set_Instance_mE32E59B9DA8991B7D3B6914C5A6FDAE439965C6F (void);
+extern void DayPhaseManager_add_OnPhaseChanged_mE994F53E3F635A7A5B3E3F7EAFAF8EE431F8DF59 (void);
+extern void DayPhaseManager_remove_OnPhaseChanged_m793BBB0B40F4D9830A98C1E48B0009A54F232336 (void);
 extern void DayPhaseManager_get_CurrentDay_m8205B6EDC44F5B57171178377E2DEC79EB955215 (void);
 extern void DayPhaseManager_get_CurrentPhase_m855162631197A4996C8784E4EC31DB29B4AB4009 (void);
 extern void DayPhaseManager_Awake_mEAD090B0268948D6DBBF730CCCB33280DDB0C7CD (void);
 extern void DayPhaseManager_Start_mB6F12D54B62CEE342F68BE4760191FA3C96AE303 (void);
+extern void DayPhaseManager_ConfirmNextPhase_m8D614E8743E0DCD6C557769DB14F4183DCABA78C (void);
 extern void DayPhaseManager_OpenPhaseChangeConfirmation_m9D0B35E7D9AA3EDF41A6BFB917521680812893FA (void);
 extern void DayPhaseManager_ConfirmAdvancePhase_m94FEF90237222FC1F4F3F78BBC0CFB09366D4AD6 (void);
 extern void DayPhaseManager_CancelPhaseChange_m95C99D9DC1E507D704D8D3057CFFDE36A1D73A34 (void);
@@ -73,6 +76,12 @@ extern void U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523
 extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97 (void);
 extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C (void);
 extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D (void);
+extern void PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3 (void);
+extern void PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965 (void);
+extern void PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D (void);
+extern void PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283 (void);
+extern void PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF (void);
+extern void PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E (void);
 extern void ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F (void);
 extern void ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E (void);
 extern void ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973 (void);
@@ -90,6 +99,8 @@ extern void StorageZone__ctor_m127BE6D3BDDD01ADC5C908A61529034678C2AD09 (void);
 extern void TVDisplayController_get_Instance_mFF74BEE5F4FB97049A61D76623ADB59CF64175FF (void);
 extern void TVDisplayController_set_Instance_m70B01A0B2589879DDBD43ADEF1FF1CF22815E059 (void);
 extern void TVDisplayController_Awake_mC27DB9D4398A106F889DE865DB62E4C0E68D108E (void);
+extern void TVDisplayController_OnEnable_m3E128F5348A58A856FC25161AF838F60E45EFAC3 (void);
+extern void TVDisplayController_OnDisable_mC92F65C2756BBD095C67691B06842379D7C935EA (void);
 extern void TVDisplayController_Start_m97B0E96D2C5214DD093D60AC684EEB9BF57924D9 (void);
 extern void TVDisplayController_Update_m9D46D0AD712438BC71061E433894A8302DBACF8A (void);
 extern void TVDisplayController_SetHeaderLabels_m7F81A6F179A2E5673D66562AD255C79CC08CA183 (void);
@@ -108,7 +119,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[101] = 
+static Il2CppMethodPointer s_methodPointers[112] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -138,10 +149,13 @@ static Il2CppMethodPointer s_methodPointers[101] =
 	DayManager__ctor_m80D7B5D59842F900B2FDA0ACAFDF6B2ABE07A096,
 	DayPhaseManager_get_Instance_m88DBFCBCA6B57084F52D8CB6FA3BC3853462177E,
 	DayPhaseManager_set_Instance_mE32E59B9DA8991B7D3B6914C5A6FDAE439965C6F,
+	DayPhaseManager_add_OnPhaseChanged_mE994F53E3F635A7A5B3E3F7EAFAF8EE431F8DF59,
+	DayPhaseManager_remove_OnPhaseChanged_m793BBB0B40F4D9830A98C1E48B0009A54F232336,
 	DayPhaseManager_get_CurrentDay_m8205B6EDC44F5B57171178377E2DEC79EB955215,
 	DayPhaseManager_get_CurrentPhase_m855162631197A4996C8784E4EC31DB29B4AB4009,
 	DayPhaseManager_Awake_mEAD090B0268948D6DBBF730CCCB33280DDB0C7CD,
 	DayPhaseManager_Start_mB6F12D54B62CEE342F68BE4760191FA3C96AE303,
+	DayPhaseManager_ConfirmNextPhase_m8D614E8743E0DCD6C557769DB14F4183DCABA78C,
 	DayPhaseManager_OpenPhaseChangeConfirmation_m9D0B35E7D9AA3EDF41A6BFB917521680812893FA,
 	DayPhaseManager_ConfirmAdvancePhase_m94FEF90237222FC1F4F3F78BBC0CFB09366D4AD6,
 	DayPhaseManager_CancelPhaseChange_m95C99D9DC1E507D704D8D3057CFFDE36A1D73A34,
@@ -176,6 +190,12 @@ static Il2CppMethodPointer s_methodPointers[101] =
 	U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97,
 	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C,
 	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D,
+	PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3,
+	PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965,
+	PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D,
+	PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283,
+	PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF,
+	PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E,
 	ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F,
 	ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E,
 	ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973,
@@ -193,6 +213,8 @@ static Il2CppMethodPointer s_methodPointers[101] =
 	TVDisplayController_get_Instance_mFF74BEE5F4FB97049A61D76623ADB59CF64175FF,
 	TVDisplayController_set_Instance_m70B01A0B2589879DDBD43ADEF1FF1CF22815E059,
 	TVDisplayController_Awake_mC27DB9D4398A106F889DE865DB62E4C0E68D108E,
+	TVDisplayController_OnEnable_m3E128F5348A58A856FC25161AF838F60E45EFAC3,
+	TVDisplayController_OnDisable_mC92F65C2756BBD095C67691B06842379D7C935EA,
 	TVDisplayController_Start_m97B0E96D2C5214DD093D60AC684EEB9BF57924D9,
 	TVDisplayController_Update_m9D46D0AD712438BC71061E433894A8302DBACF8A,
 	TVDisplayController_SetHeaderLabels_m7F81A6F179A2E5673D66562AD255C79CC08CA183,
@@ -212,7 +234,7 @@ static Il2CppMethodPointer s_methodPointers[101] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[101] = 
+static const int32_t s_InvokerIndices[112] = 
 {
 	14475,
 	14686,
@@ -242,8 +264,11 @@ static const int32_t s_InvokerIndices[101] =
 	14686,
 	25263,
 	24112,
+	24112,
+	24112,
 	14406,
 	14406,
+	14686,
 	14686,
 	14686,
 	14686,
@@ -282,6 +307,12 @@ static const int32_t s_InvokerIndices[101] =
 	14475,
 	14686,
 	14686,
+	14686,
+	14686,
+	14686,
+	14686,
+	14686,
+	14686,
 	11079,
 	14686,
 	14686,
@@ -296,6 +327,8 @@ static const int32_t s_InvokerIndices[101] =
 	14686,
 	25263,
 	24112,
+	14686,
+	14686,
 	14686,
 	14686,
 	14686,
@@ -320,7 +353,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	101,
+	112,
 	s_methodPointers,
 	0,
 	NULL,

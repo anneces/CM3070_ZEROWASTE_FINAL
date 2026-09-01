@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "2e5175d4bfa44cd495a8a2a553473dd3"
+        },
+        {
+            "m_Id": "0e8656c8e8db436c8f78b5063a3e144e"
         }
     ],
     "m_Keywords": [],
@@ -68,6 +71,9 @@
         },
         {
             "m_Id": "a9390f6ab84d469fb162da34c9c477fd"
+        },
+        {
+            "m_Id": "eaa32aa6bcad4bc1b9c14008c16011ff"
         }
     ],
     "m_GroupDatas": [],
@@ -155,6 +161,20 @@
                     "m_Id": "a9390f6ab84d469fb162da34c9c477fd"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "eaa32aa6bcad4bc1b9c14008c16011ff"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "8cb475d12b614eaa815209a079ed0bc1"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -263,6 +283,39 @@
         "g": 0.0,
         "b": 0.0,
         "a": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
+    "m_ObjectId": "0e8656c8e8db436c8f78b5063a3e144e",
+    "m_Guid": {
+        "m_GuidSerialized": "0f41c374-d304-40b1-b249-b0470f08c986"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "MoldTiling",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "MoldTiling",
+    "m_DefaultReferenceName": "_MoldTiling",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": {
+        "x": 12.0,
+        "y": 12.0,
+        "z": 0.0,
+        "w": 0.0
     }
 }
 
@@ -687,6 +740,27 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "4ee6c8966ebe45c6b1ce76bbd9685c9b",
+    "m_Id": 0,
+    "m_DisplayName": "MoldTiling",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PositionMaterialSlot",
     "m_ObjectId": "4f3a2ebd56454141b54b47e2d8374653",
     "m_Id": 0,
@@ -1078,8 +1152,8 @@
     "m_ShaderOutputName": "Tiling",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 5.0,
-        "y": 5.0
+        "x": 12.0,
+        "y": 12.0
     },
     "m_DefaultValue": {
         "x": 1.0,
@@ -1389,6 +1463,9 @@
         },
         {
             "m_Id": "2e5175d4bfa44cd495a8a2a553473dd3"
+        },
+        {
+            "m_Id": "0e8656c8e8db436c8f78b5063a3e144e"
         }
     ]
 }
@@ -1604,6 +1681,42 @@
     "m_NormalMapSpace": 0,
     "m_EnableGlobalMipBias": true,
     "m_MipSamplingMode": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "eaa32aa6bcad4bc1b9c14008c16011ff",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -812.0000610351563,
+            "y": 688.6666870117188,
+            "width": 132.0,
+            "height": 36.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "4ee6c8966ebe45c6b1ce76bbd9685c9b"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "0e8656c8e8db436c8f78b5063a3e144e"
+    }
 }
 
 {

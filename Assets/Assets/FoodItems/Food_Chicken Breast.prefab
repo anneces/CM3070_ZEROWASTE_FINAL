@@ -288,7 +288,7 @@ MonoBehaviour:
   currentStorage: 3
   price: 5.5
   co2Points: 6.9
-  maxFreshnessDays: 1
+  maxFreshnessDays: 2
   currentFreshnessDays: 0
   isExpired: 0
   trueServingScale: {x: 1, y: 1, z: 1}
