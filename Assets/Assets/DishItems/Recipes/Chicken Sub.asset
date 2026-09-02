@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e0a097ed4a91d478a58d652b78b0a7, type: 3}
+  m_Name: Chicken Sub
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Chicken Sub
+  ingredients:
+  - foodPrefab: {fileID: -1109489912805045563, guid: bd16040c53b2b294b850a16a1292a25e, type: 3}
+    requiredAmount: 1
+  - foodPrefab: {fileID: 3054926171835237548, guid: b94ab7da87ad9b64ea5de14a1386cb4a, type: 3}
+    requiredAmount: 1
+  - foodPrefab: {fileID: 8559117460219878844, guid: 6b9a2bbc6735ed6458b3c2e79ab01371, type: 3}
+    requiredAmount: 1
+  - foodPrefab: {fileID: 8027609954293453409, guid: 574744f87d096264183481560eb7f5c1, type: 3}
+    requiredAmount: 1
+  cookedDishPrefab: {fileID: 7175287562024835708, guid: 566666c160afa10488e9493d1ace6443, type: 3}

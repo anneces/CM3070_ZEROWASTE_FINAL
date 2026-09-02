@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e0a097ed4a91d478a58d652b78b0a7, type: 3}
+  m_Name: Taco
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Taco
+  ingredients:
+  - foodPrefab: {fileID: 8559117460219878844, guid: 6b9a2bbc6735ed6458b3c2e79ab01371, type: 3}
+    requiredAmount: 1
+  - foodPrefab: {fileID: 5188393903740463318, guid: cda8962333f6b4448856153ad6fd4729, type: 3}
+    requiredAmount: 1
+  - foodPrefab: {fileID: 1296183754608156814, guid: c5d60e9d2d6f4884086d0452321ae09d, type: 3}
+    requiredAmount: 1
+  - foodPrefab: {fileID: 604412281986898251, guid: 569259ffc50485449aa0013c8a2dd0db, type: 3}
+    requiredAmount: 1
+  cookedDishPrefab: {fileID: 7614180002582310331, guid: 131c3b6f326f30c4594f3a3a93676a2d, type: 3}

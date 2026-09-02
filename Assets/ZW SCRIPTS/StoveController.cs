@@ -30,17 +30,28 @@ public class StoveController : MonoBehaviour
         FoodItem item = other.GetComponentInParent<FoodItem>();
         if (item != null)
         {
-            // Maps directly to foodName (e.g. "Apple")
             string id = !string.IsNullOrEmpty(item.foodName) ? item.foodName : item.gameObject.name;
 
-            if (activeRecipe.requiredIngredientIDs.Contains(id))
+            // Check if dropped item matches any ingredient requirement in the new RecipeData format
+            foreach (var req in activeRecipe.ingredients)
             {
-                addedIngredients.Add(id);
-                AudioManager.Instance?.PlaySFX(AudioManager.Instance.ingredientDropClip);
-                Destroy(item.gameObject);
+                if (req.foodPrefab != null && req.foodPrefab.foodName == id)
+                {
+                    // Calculate total quantity required for this specific ingredient
+                    int maxNeeded = req.requiredAmount;
+                    int currentCount = addedIngredients.FindAll(x => x == id).Count;
 
-                UpdateRecipeUI();
-                CheckRecipeCompletion();
+                    if (currentCount < maxNeeded)
+                    {
+                        addedIngredients.Add(id);
+                        AudioManager.Instance?.PlaySFX(AudioManager.Instance.ingredientDropClip);
+                        Destroy(item.gameObject);
+
+                        UpdateRecipeUI();
+                        CheckRecipeCompletion();
+                        break;
+                    }
+                }
             }
         }
     }
@@ -48,13 +59,17 @@ public class StoveController : MonoBehaviour
     private void UpdateRecipeUI()
     {
         if (progressCanvas != null) progressCanvas.SetActive(true);
-        if (statusText != null)
-            statusText.text = $"{activeRecipe.recipeName}: {addedIngredients.Count}/{activeRecipe.requiredIngredientIDs.Count}";
+        if (statusText != null && activeRecipe != null)
+        {
+            int totalRequiredCount = GetTotalRequiredIngredientsCount();
+            statusText.text = $"{activeRecipe.recipeName}: {addedIngredients.Count}/{totalRequiredCount}";
+        }
     }
 
     private void CheckRecipeCompletion()
     {
-        if (addedIngredients.Count >= activeRecipe.requiredIngredientIDs.Count)
+        int totalRequiredCount = GetTotalRequiredIngredientsCount();
+        if (addedIngredients.Count >= totalRequiredCount && totalRequiredCount > 0)
         {
             StartCoroutine(StartCookingProcess());
         }
@@ -65,10 +80,13 @@ public class StoveController : MonoBehaviour
         isCooking = true;
         cookTimer = 0f;
 
-        while (cookTimer < activeRecipe.cookDuration)
+        // Uses a 5-second default timer fallback if cookDuration was removed from RecipeData
+        float duration = 5f;
+
+        while (cookTimer < duration)
         {
             cookTimer += Time.deltaTime;
-            if (progressBar != null) progressBar.fillAmount = cookTimer / activeRecipe.cookDuration;
+            if (progressBar != null) progressBar.fillAmount = cookTimer / duration;
             yield return null;
         }
 
@@ -85,5 +103,17 @@ public class StoveController : MonoBehaviour
         addedIngredients.Clear();
         isCooking = false;
         if (progressCanvas != null) progressCanvas.SetActive(false);
+    }
+
+    private int GetTotalRequiredIngredientsCount()
+    {
+        if (activeRecipe == null || activeRecipe.ingredients == null) return 0;
+
+        int total = 0;
+        foreach (var req in activeRecipe.ingredients)
+        {
+            total += req.requiredAmount;
+        }
+        return total;
     }
 }

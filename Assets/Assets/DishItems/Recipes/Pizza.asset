@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e0a097ed4a91d478a58d652b78b0a7, type: 3}
+  m_Name: Pizza
+  m_EditorClassIdentifier: Assembly-CSharp::RecipeData
+  recipeName: Pizza
+  ingredients:
+  - foodPrefab: {fileID: 53883595864270943, guid: 671265bef6e8cf04faaf322d4728ea7e, type: 3}
+    requiredAmount: 0
+  - foodPrefab: {fileID: 604412281986898251, guid: 569259ffc50485449aa0013c8a2dd0db, type: 3}
+    requiredAmount: 0
+  - foodPrefab: {fileID: 8027609954293453409, guid: 574744f87d096264183481560eb7f5c1, type: 3}
+    requiredAmount: 0
+  cookedDishPrefab: {fileID: 8318941024430871883, guid: 4a86c0f8082828241b263c6b136b43f5, type: 3}
