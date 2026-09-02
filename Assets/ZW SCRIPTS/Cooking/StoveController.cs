@@ -1,26 +1,45 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class StoveController : MonoBehaviour
 {
-    [Header("Recipe Settings")]
+    public static StoveController Instance;
+
+    [Header("Recipe & Spawn Settings")]
     public RecipeData activeRecipe;
     public Transform dishSpawnPoint;
 
     [Header("UI References")]
     public GameObject progressCanvas;
-    public Image progressBar;
     public TextMeshProUGUI statusText;
+
+    [Header("VFX References")]
+    public ParticleSystem stoveFireVFX;
+    public ParticleSystem dishSpawnVFX;
 
     private List<string> addedIngredients = new List<string>();
     private bool isCooking = false;
     private float cookTimer = 0f;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     private void Start()
     {
         if (progressCanvas != null) progressCanvas.SetActive(false);
+        if (stoveFireVFX != null) stoveFireVFX.Stop();
+        if (dishSpawnVFX != null) dishSpawnVFX.Stop();
+    }
+
+    public void SetActiveRecipe(RecipeData newRecipe)
+    {
+        activeRecipe = newRecipe;
+        addedIngredients.Clear();
+        UpdateRecipeUI();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,12 +51,10 @@ public class StoveController : MonoBehaviour
         {
             string id = !string.IsNullOrEmpty(item.foodName) ? item.foodName : item.gameObject.name;
 
-            // Check if dropped item matches any ingredient requirement in the new RecipeData format
             foreach (var req in activeRecipe.ingredients)
             {
                 if (req.foodPrefab != null && req.foodPrefab.foodName == id)
                 {
-                    // Calculate total quantity required for this specific ingredient
                     int maxNeeded = req.requiredAmount;
                     int currentCount = addedIngredients.FindAll(x => x == id).Count;
 
@@ -80,13 +97,13 @@ public class StoveController : MonoBehaviour
         isCooking = true;
         cookTimer = 0f;
 
-        // Uses a 5-second default timer fallback if cookDuration was removed from RecipeData
+        if (stoveFireVFX != null && !stoveFireVFX.isPlaying) stoveFireVFX.Play();
+
         float duration = 5f;
 
         while (cookTimer < duration)
         {
             cookTimer += Time.deltaTime;
-            if (progressBar != null) progressBar.fillAmount = cookTimer / duration;
             yield return null;
         }
 
@@ -95,6 +112,9 @@ public class StoveController : MonoBehaviour
 
     private void SpawnDish()
     {
+        if (stoveFireVFX != null) stoveFireVFX.Stop();
+        if (dishSpawnVFX != null) dishSpawnVFX.Play();
+
         if (activeRecipe.cookedDishPrefab != null && dishSpawnPoint != null)
         {
             Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
