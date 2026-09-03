@@ -44,6 +44,7 @@ public class RecipeBookController : MonoBehaviour
 
         if (sparkleVFX != null)
         {
+            sparkleVFX.gameObject.SetActive(true);
             sparkleVFX.Play();
             Debug.Log("[RecipeBookController] Sparkle VFX playing.", this);
         }

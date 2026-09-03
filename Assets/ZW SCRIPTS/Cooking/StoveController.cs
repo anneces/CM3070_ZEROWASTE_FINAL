@@ -33,8 +33,8 @@ public class StoveController : MonoBehaviour
     private void Start()
     {
         if (progressCanvas != null) progressCanvas.SetActive(false);
-        if (stoveFireVFX != null) stoveFireVFX.Stop();
-        if (dishSpawnVFX != null) dishSpawnVFX.Stop();
+        if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        if (dishSpawnVFX != null) dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     public void SetActiveRecipe(RecipeData newRecipe)
@@ -51,6 +51,16 @@ public class StoveController : MonoBehaviour
         activeRecipe = newRecipe;
         addedIngredients.Clear();
         UpdateRecipeUI();
+
+        // Trigger stove fire VFX as soon as recipe confirmation happens
+        if (stoveFireVFX != null)
+        {
+            stoveFireVFX.gameObject.SetActive(true);
+            if (!stoveFireVFX.isPlaying)
+            {
+                stoveFireVFX.Play();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -131,8 +141,6 @@ public class StoveController : MonoBehaviour
         isCooking = true;
         cookTimer = 0f;
 
-        if (stoveFireVFX != null && !stoveFireVFX.isPlaying) stoveFireVFX.Play();
-
         float duration = 5f;
 
         while (cookTimer < duration)
@@ -146,8 +154,19 @@ public class StoveController : MonoBehaviour
 
     private void SpawnDish()
     {
-        if (stoveFireVFX != null) stoveFireVFX.Stop();
-        if (dishSpawnVFX != null) dishSpawnVFX.Play();
+        // Stop stove fire VFX when food spawns
+        if (stoveFireVFX != null)
+        {
+            stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+
+        // Trigger cloud / poof VFX when progress finishes and food spawns
+        if (dishSpawnVFX != null)
+        {
+            dishSpawnVFX.gameObject.SetActive(true);
+            dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            dishSpawnVFX.Play();
+        }
 
         if (activeRecipe.cookedDishPrefab != null && dishSpawnPoint != null)
         {
