@@ -9,6 +9,7 @@ public class StoveController : MonoBehaviour
     [Header("Recipe & Spawn Settings")]
     public RecipeData activeRecipe;
     public Transform dishSpawnPoint;
+    public bool isPlateOccupied = false; // Tracks if plate already has a cooked dish
 
     [Header("UI References")]
     public GameObject progressCanvas;
@@ -38,6 +39,15 @@ public class StoveController : MonoBehaviour
 
     public void SetActiveRecipe(RecipeData newRecipe)
     {
+        // Don't start a new recipe if a dish is currently on the plate
+        if (isPlateOccupied)
+        {
+            if (progressCanvas != null) progressCanvas.SetActive(true);
+            if (headerText != null) headerText.text = "Blocked!";
+            if (statusText != null) statusText.text = "Eat the current dish first!";
+            return;
+        }
+
         activeRecipe = newRecipe;
         addedIngredients.Clear();
         UpdateRecipeUI();
@@ -45,7 +55,8 @@ public class StoveController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isCooking || activeRecipe == null) return;
+        // Block ingredient processing if plate is occupied or currently cooking
+        if (isCooking || activeRecipe == null || isPlateOccupied) return;
 
         FoodItem item = other.GetComponentInParent<FoodItem>();
         if (item != null)
@@ -141,6 +152,7 @@ public class StoveController : MonoBehaviour
         if (activeRecipe.cookedDishPrefab != null && dishSpawnPoint != null)
         {
             Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
+            isPlateOccupied = true; // Set plate occupied status when spawned
         }
 
         addedIngredients.Clear();
