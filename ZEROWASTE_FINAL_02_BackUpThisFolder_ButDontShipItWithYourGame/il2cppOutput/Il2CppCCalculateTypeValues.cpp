@@ -8448,9 +8448,6 @@ struct U3CU3Ec_tB68D78EDA2436237A516D6FBA5198A68382BA381  : public RuntimeObject
 struct MarshalerInstanceKeyComparer_t7DDB718454C9655DA744EFF9FFC4AF19687F0360  : public RuntimeObject
 {
 };
-struct BindingsMarshaller_tB86B35329C1A614DE2FC290DF0C726D01A9747EF  : public RuntimeObject
-{
-};
 struct U3CU3Ec_tBAB1E90D4CAB9C3DE261A8B40E19A31287260065  : public RuntimeObject
 {
 };
@@ -12244,6 +12241,9 @@ struct IgnoredByDeepProfilerAttribute_tA750DD41787D760119920C693C9564A8EDE31E4D 
 {
 };
 struct Il2CppEagerStaticClassConstructionAttribute_t281D90A6001BE0D464C6ACDCCDC3E06401C76390  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
+{
+};
+struct ImageEffectAllowedInSceneView_t1F7C90CBB9520B45DE7107D93DFBF513A2A11AD8  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
 {
 };
 struct ImageSource_t0990262FCFA5C1F3C695C53FB04A35F71CDD63B4 
@@ -68483,9 +68483,9 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize5396 = { sizeof(RenderInstan
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize5397;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize5397 = { sizeof(QualitySettings_tDBD713439F753EF95C66BCCF809E3491BB5D1429), -1, sizeof(QualitySettings_tDBD713439F753EF95C66BCCF809E3491BB5D1429_StaticFields), 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize5398;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5398 = { sizeof(LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5398 = { sizeof(ImageEffectAllowedInSceneView_t1F7C90CBB9520B45DE7107D93DFBF513A2A11AD8), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize5399;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize5399 = { sizeof(BindingsMarshaller_tB86B35329C1A614DE2FC290DF0C726D01A9747EF), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize5399 = { sizeof(LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D), -1, 0, 0 };
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
