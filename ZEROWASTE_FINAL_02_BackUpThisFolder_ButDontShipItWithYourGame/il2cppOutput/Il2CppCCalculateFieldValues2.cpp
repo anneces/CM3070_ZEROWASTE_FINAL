@@ -313,6 +313,7 @@ struct List_1_tF92F6631961760490E9F200E704EE20DBF1D15E1;
 struct List_1_t02DF1539DF01B1631C7DD0DE0AD7ACE8839CB2D1;
 struct List_1_t60791FB9179CEFADA93C6B032DED2E65CB5DA58F;
 struct List_1_tE6BB71ABF15905EFA2BE92C38A2716547AEADB19;
+struct List_1_t2FA2E3511FC580B0762B90C882A71136ED9E1B75;
 struct List_1_tB66D13E0427CA48C600AEA4DBA5B173C3734C6CE;
 struct List_1_t36734ACA044956B5B61977FA4D7D11B59AB0202C;
 struct List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73;
@@ -338,6 +339,7 @@ struct List_1_t3DCA4FF9AA6CD39C7760985C0054B6703B35777D;
 struct List_1_t31E53E1C1BAA65ECAEFCBC9D003166BC01081D6B;
 struct List_1_t91B1721D3B1A32E24157E23543A1A14BBE4A5BCE;
 struct List_1_t8292C421BBB00D7661DC07462822936152BAB446;
+struct List_1_t6DC53FD9F05148AB7E697D166BAD7BB770EB9ED1;
 struct List_1_t6988D2B11937CB8462E839C2DE1714ACD7797AF4;
 struct List_1_t099FA1DB61217A855A3732B3DCA8E909BB24E1AB;
 struct List_1_t5ED555E220A2C0CA4F1CC393401AF0D7BA5B456B;
@@ -754,6 +756,7 @@ struct IndirectDrawIndexedArgsU5BU5D_t84825DD018144B0D90D14B350FEA8277448662FF;
 struct ControlBitRangeNodeU5BU5D_t912A404149DE6D350D1735A026182C409C510F27;
 struct LightCookieMappingU5BU5D_tE1F10A7D54920D3636F1DB7774B3D5F5B560E263;
 struct DrawerGroupU5BU5D_t2E05563720A4ABC6AD6AD373BD31D54CA897C447;
+struct SectionU5BU5D_t9D3017555FFF42E71BE91904A2486EAF429F24C4;
 struct LowerCaseMappingU5BU5D_t62316DC53695F1B45BBB5EB506991F814910A3D1;
 struct ParamInfoU5BU5D_t04997454CB57D422798CB09352BA40CEF46EC967;
 struct TagTypeInfoU5BU5D_t74D146542BA39E421745D69062E8C3C3618DE860;
@@ -773,6 +776,9 @@ struct AndroidJavaRunnable_tF23B9BBDA8C99A48BCEEA6335A47DA3C0EF34A7F;
 struct AnimationTriggers_tA0DC06F89C5280C6DD972F6F4C8A56D7F4F79074;
 struct AsnEncodedData_t9341C847F05FA5D9D579173CBB19B4448445C8A8;
 struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
+struct AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20;
+struct AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B;
+struct AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299;
 struct AxisControl_tD6613A2445A3C2BFA22C77E16CA3201AF72354A7;
 struct AxisEventData_t4AA742BC101B1AA300B16EE7F19E31B91F37A938;
 struct BLASPositionsPool_tDB9B7F63057B7F177EE6F2B078A2ABA6D3FF3832;
@@ -897,6 +903,7 @@ struct Font_tC95270EA3198038970422D78B74A7F2E218A96B6;
 struct FontAsset_t61A6446D934E582651044E33D250EA8D306AB958;
 struct FontData_tB8E562846C6CB59C43260F69AE346B9BF3157224;
 struct FontFeatureTable_t992E0493CD7E9D7834DF204E0198237F0D25B3B7;
+struct FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2;
 struct ForwardLights_t624787957AE9D8E817643720F2199E35331D4DCA;
 struct GBufferPass_t540C12BCC3AFAC32B775694C8A29B69A49C284E7;
 struct GPUDrivenLODGroupDataCallback_t513D83047833752F3C25B9C0AAAB474E94D71DA0;
@@ -933,10 +940,6 @@ struct HDRACESPresetParameter_t9586D8EF5D8B6F14F16BFF618A17E21274FFAE45;
 struct HDRDebugViewPass_t1FC1B0F01FF5DBD18E7813E17D58C428B14800D1;
 struct HDROutputSettings_t6A590B1AA325DD7389D71F502B762BF1592A9F62;
 struct Hashtable_tEFC3B6496E6747787D8BB761B51F2AE3A8CFFE2D;
-struct Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E;
-struct HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8;
-struct HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD;
-struct HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704;
 struct HlbvhBuilder_t145CAA3D4C821B44D90F1A396A2CF73AFE7AC5FB;
 struct HlbvhTopLevelBuilder_t8D7F68E114B1E326DD03F6D53A8442F8CEB9EAF0;
 struct IAttributes_t699EF2D1D5A022C91D27888CE70518262A25928D;
@@ -956,6 +959,7 @@ struct ISubsystemDescriptor_tEF29944D579CC7D70F52CB883150735991D54E6E;
 struct ITextPreprocessor_tDBB49C8B68D7B80E8D233B9D9666C43981EFAAB9;
 struct IXRInteractable_t094DA697CF40A061C2820FDE5B5838D08D7E9609;
 struct Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E;
+struct InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD;
 struct InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1;
 struct InputDevice_t8BCF67533E872A75779C24C93D1D7085B72D364B;
 struct InputEventPartialProvider_tFDCEBCF4CA7DB1E3F965FD1825C5F355AB7B066B;
@@ -991,6 +995,7 @@ struct MemberInfo_t;
 struct Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4;
 struct MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455;
 struct MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5;
+struct MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE;
 struct MethodInfo_t;
 struct MinFloatParameter_tA4BCE8AF64068D3761A8689DB27D0B04238525F9;
 struct MotionBlur_tCC3C4B1EDF692B22533C0ADBCE5D92101E566161;
@@ -1011,6 +1016,7 @@ struct OidCollection_tAAFE5AD288B6365182B7C9D4D66D0DA9A56712B3;
 struct OnCullingCompleteCallback_tF06F0204B04072C0D12E8FD9B2731D24CF3F875C;
 struct OnTilePostProcessPass_t40CBD9401C0C2B6547AF61FCA72E770C200B6ED5;
 struct PaniniProjection_t1E2B2CBC65D2E9BC9D4C6C07163D742F1FE85BDA;
+struct ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1;
 struct PathVisitor_tCD0947C41CDBDB774D22D560E5FFA01EF61C4446;
 struct PhysicsDocumentPicker_t6B9D461697BAEF92BAE3141E17ED34637074159D;
 struct Plane_tB7D8CC6F7AACF5F3AA483AF005C1102A8577BC0C;
@@ -1029,6 +1035,7 @@ struct RadixSort_t8857441838CB4CB2358336D900FBF6FA9F8B2585;
 struct RayTracingAccelerationStructure_tA2CDD2FA1D6A5A8D4BBA504ECCBB0208A3C7919D;
 struct RayTracingResources_t4F2C2153F93648342EFFD0B9DC4CB5166A9533F5;
 struct RayTracingShader_t0CC904310653C677A0886882C057D5161E05580A;
+struct RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED;
 struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670;
 struct RectOffset_t6358774A0DEEABA4586840CB9BC7DC88B39660B5;
 struct RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5;
@@ -1097,6 +1104,7 @@ struct TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9;
 struct TMP_TextElement_t262A55214F712D4274485ABE5676E5254B84D0A5;
 struct TMP_TextInfo_t09A8E906329422C3F0C059876801DD695B8D524D;
 struct TaaHistory_tA203D496A5F23B4717184375DEAA12944359B85D;
+struct TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376;
 struct TeleportationMultiAnchorVolume_t98D1407484A7F4510AA049568E4E07D3B93B70D0;
 struct Terrain_t7F309492F67238DBFBC4566F47385B2A665CF667;
 struct Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62;
@@ -1207,7 +1215,6 @@ struct ShaderResources_t67897398F9447A4A823070509EC373702AC96334;
 struct FullScreenRenderPass_t7AC73942B58AE155BA1A7D0658E4B1C3E2FF9DEA;
 struct LayoutCache_tF844B2FAD6933B78FD5EFEBDE0529BCBAC19BA60;
 struct SkinChangedDelegate_tA6D456E853D58AD2EF8A599F543C7E5BA8E94B98;
-struct HandlerCreatedEventHandler_tA8431665B5DAB9B418CE64AB856392B88F574954;
 struct HistoryRequestDelegate_t463134FCC265006A8BD9F4B5EC9C58B0F6E5BF21;
 struct EndEditEvent_t946A962BA13CF60BB0BE7AD091DA041FD788E655;
 struct OnChangeEvent_tE4829F88300B0E0E0D1B78B453AF25FC1AA55E2F;
@@ -1288,10 +1295,6 @@ struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_marshaled_pinvoke;
 struct GeometryPoolSubmeshData_t0332347418E38A9EF6929F821C89AE8309D26477_marshaled_com;
 struct GeometryPoolSubmeshData_t0332347418E38A9EF6929F821C89AE8309D26477_marshaled_pinvoke;
 struct Glyph_t700CF8EBE04ED4AEAB520885AAA1B309E02A103F_marshaled_com;
-struct HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8_marshaled_com;
-struct HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD_marshaled_com;
-struct HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704;
-struct Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_com;
 struct IOAsyncResult_t667861995468DDF5B2CFED1940CC2BCEEDD2B374_marshaled_com;
 struct IOAsyncResult_t667861995468DDF5B2CFED1940CC2BCEEDD2B374_marshaled_pinvoke;
 struct MarkupAttribute_t256C4CC81B7FA20F3EE3A142770ECB3EEC3BCB10;
@@ -2586,6 +2589,13 @@ struct AdditionalShadowsConstantBuffer_tAB0D333237B8E10269E6114A309925D6B5D74D7B
 struct Managed_t7CB1B315B8E0E50EE8A2993B3E4CDF35E2B4909D  : public RuntimeObject
 {
 };
+struct U3CDelayedPhaseAlertRoutineU3Ed__10_t726AB91ED1F5E6E63D21408EA43DA8F74284CD91  : public RuntimeObject
+{
+	int32_t ___U3CU3E1__state;
+	RuntimeObject* ___U3CU3E2__current;
+	float ___delay;
+	AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* ___U3CU3E4__this;
+};
 struct Try_000000E3U24BurstDirectCall_t8B19E16DB8273E11ED294E2956CB64D7FCE9D00A  : public RuntimeObject
 {
 };
@@ -3101,6 +3111,13 @@ struct ShaderConstants_t13A0B4F83C7BE45B4A78EA8466BE7B32A2C67331  : public Runti
 struct U3CU3Ec_tE72F9F597F9FEDF7A64EF80C525A565836A9D36D  : public RuntimeObject
 {
 };
+struct Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401  : public RuntimeObject
+{
+	String_t* ___heading;
+	String_t* ___text;
+	String_t* ___linkText;
+	String_t* ___url;
+};
 struct U3CU3Ec_t6D8C492F99FC36E8E3C273660058AF34514E0523  : public RuntimeObject
 {
 };
@@ -3196,6 +3213,11 @@ struct U3CU3Ec_t04E77827D54CC7D69F04FDFC5A84C3F7392F9A76  : public RuntimeObject
 };
 struct U3CU3Ec_t077F63D1AD84FB9E7D0A6793234888C38925CAA7  : public RuntimeObject
 {
+};
+struct U3CU3Ec__DisplayClass14_0_t5661D72B49A1584A6B5936CB5F193811FC1C5976  : public RuntimeObject
+{
+	String_t* ___id;
+	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* ___U3CU3E9__0;
 };
 struct SharedStaticCompressionModel_tDB693E63303E00877E05DBECD23B8BABC138B00B  : public RuntimeObject
 {
@@ -5380,112 +5402,6 @@ struct Hash128_t93367F504B687578F893CDBCD13FB95AC8A87A40
 	uint64_t ___u64_0;
 	uint64_t ___u64_1;
 };
-struct HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704 
-{
-	int32_t ___m_Id;
-	int32_t ___m_Version;
-};
-#pragma pack(push, tp, 1)
-struct HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9 
-{
-	union
-	{
-		struct
-		{
-			union
-			{
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704* ___Ptr;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704* ___Ptr_forAlignmentOnly;
-				};
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					char ___Size_OffsetPadding[8];
-					int32_t ___Size;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					char ___Size_OffsetPadding_forAlignmentOnly[8];
-					int32_t ___Size_forAlignmentOnly;
-				};
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					char ___Capacity_OffsetPadding[12];
-					int32_t ___Capacity;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					char ___Capacity_OffsetPadding_forAlignmentOnly[12];
-					int32_t ___Capacity_forAlignmentOnly;
-				};
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					char ___ControlBit_OffsetPadding[16];
-					int32_t ___ControlBit;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					char ___ControlBit_OffsetPadding_forAlignmentOnly[16];
-					int32_t ___ControlBit_forAlignmentOnly;
-				};
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					char ___NullCount_OffsetPadding[20];
-					int32_t ___NullCount;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					char ___NullCount_OffsetPadding_forAlignmentOnly[20];
-					int32_t ___NullCount_forAlignmentOnly;
-				};
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					char ___Reserved0_OffsetPadding[24];
-					int32_t ___Reserved0;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					char ___Reserved0_OffsetPadding_forAlignmentOnly[24];
-					int32_t ___Reserved0_forAlignmentOnly;
-				};
-				#pragma pack(push, tp, 1)
-				struct
-				{
-					char ___Reserved1_OffsetPadding[28];
-					int32_t ___Reserved1;
-				};
-				#pragma pack(pop, tp)
-				struct
-				{
-					char ___Reserved1_OffsetPadding_forAlignmentOnly[28];
-					int32_t ___Reserved1_forAlignmentOnly;
-				};
-			};
-		};
-		uint8_t HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9__padding[32];
-	};
-};
-#pragma pack(pop, tp)
-struct HierarchyNodeType_tF0B0A1E582FD08D79B6BB90BA936D54B13AB47A3 
-{
-	int32_t ___m_Id;
-};
 struct InclusiveRange_t1762A170B7A199C25DAC4CB39CB109710812A54D 
 {
 	int16_t ___start;
@@ -5530,6 +5446,39 @@ struct IndirectInstanceInfo_t94ECCE7BC6DF23C75D2354238F38A0008643F9DB
 {
 	int32_t ___drawOffsetAndSplitMask;
 	int32_t ___instanceIndexAndCrossFade;
+};
+struct IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 
+{
+	FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* ___foodPrefab;
+	int32_t ___requiredAmount;
+};
+struct IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0_marshaled_pinvoke
+{
+	FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* ___foodPrefab;
+	int32_t ___requiredAmount;
+};
+struct IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0_marshaled_com
+{
+	FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* ___foodPrefab;
+	int32_t ___requiredAmount;
+};
+struct InputActionProperty_tE5B1633784A72FC044A0BB5C0BE140DD7BD84FAD 
+{
+	bool ___m_UseReference;
+	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Action;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___m_Reference;
+};
+struct InputActionProperty_tE5B1633784A72FC044A0BB5C0BE140DD7BD84FAD_marshaled_pinvoke
+{
+	int32_t ___m_UseReference;
+	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Action;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___m_Reference;
+};
+struct InputActionProperty_tE5B1633784A72FC044A0BB5C0BE140DD7BD84FAD_marshaled_com
+{
+	int32_t ___m_UseReference;
+	InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* ___m_Action;
+	InputActionReference_t64730C6B41271E0983FC21BFB416169F5D6BC4A1* ___m_Reference;
 };
 struct InputDevice_t882EE3EE8A71D8F5F38BA3F9356A49F24510E8BD 
 {
@@ -8516,16 +8465,6 @@ struct VertexBufferAttribInfo_tC874EEFEFD994F05DB1044F0DBB82276C6746D33_marshale
 	int32_t ___offset;
 	int32_t ___byteCount;
 };
-struct ConstructorScope_t243AC9846E4D3E3E27A0608F35BA425299DDE392 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t ConstructorScope_t243AC9846E4D3E3E27A0608F35BA425299DDE392__padding[1];
-	};
-};
 struct ScratchBufferLayout_t5F4D475A704282C6DF5AA4EF058CEA5CEEA0AA00 
 {
 	uint32_t ___PrimitiveRefs;
@@ -9955,11 +9894,6 @@ struct ParallelWriter_tC8DEC9BCBDF7542649E0D1EE2C1BABEABF500A50
 struct ParallelWriter_t144C35AED5CE65301939F53535A53EF3FDC8DC21 
 {
 	ParallelWriter_tD89A04A3CBCDF16B25033A59321A1711FCD4B7C7 ___m_Writer;
-};
-struct ReadOnlyNativeVector_1_t0DE13C6BA89CEDB2D828D3F45AA93F7EC7AD4A0E 
-{
-	intptr_t ___m_Ptr;
-	int32_t ___m_Count;
 };
 struct TMP_TextProcessingStack_1_tF2CD5BE59E5EB22EA9E3EE3043A004EA918C4BB3 
 {
@@ -19381,56 +19315,6 @@ struct HDRDebugMode_tDAFCB753D916E35C7B9584A0D07B61B7C9B5739A
 {
 	int32_t ___value__;
 };
-struct Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E  : public RuntimeObject
-{
-	intptr_t ___m_Ptr;
-	intptr_t ___m_RootPtr;
-	intptr_t ___m_VersionPtr;
-	bool ___m_IsOwner;
-	HandlerCreatedEventHandler_tA8431665B5DAB9B418CE64AB856392B88F574954* ___HandlerCreated;
-};
-struct Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr;
-	intptr_t ___m_RootPtr;
-	intptr_t ___m_VersionPtr;
-	int32_t ___m_IsOwner;
-	Il2CppMethodPointer ___HandlerCreated;
-};
-struct Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_com
-{
-	intptr_t ___m_Ptr;
-	intptr_t ___m_RootPtr;
-	intptr_t ___m_VersionPtr;
-	int32_t ___m_IsOwner;
-	Il2CppMethodPointer ___HandlerCreated;
-};
-struct HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8  : public RuntimeObject
-{
-	intptr_t ___m_Ptr;
-	bool ___m_IsOwner;
-};
-struct HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr;
-	int32_t ___m_IsOwner;
-};
-struct HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8_marshaled_com
-{
-	intptr_t ___m_Ptr;
-	int32_t ___m_IsOwner;
-};
-struct HierarchyFlattenedNode_t793C747B4D66D72DE99572428261F0A6E59A4300 
-{
-	HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704 ___m_Node;
-	HierarchyNodeType_tF0B0A1E582FD08D79B6BB90BA936D54B13AB47A3 ___m_Type;
-	int32_t ___m_Version;
-	int32_t ___m_ParentOffset;
-	int32_t ___m_NextSiblingOffset;
-	int32_t ___m_ChildIndex;
-	int32_t ___m_ChildrenCount;
-	int32_t ___m_Depth;
-};
 struct HighlightState_tE4F50287E5E2E91D42AB77DEA281D88D3AD6A28B 
 {
 	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___color;
@@ -22679,24 +22563,6 @@ struct Operation_t4202DB2118F4561CD44BC2B734A90A0AA32BF559
 {
 	int32_t ___value__;
 };
-struct Enumerator_t24AA5F11ED3A2E12B531F60032DED228CA0EFD26 
-{
-	IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832* ___m_Handlers;
-	int32_t ___m_Count;
-	int32_t ___m_Index;
-};
-struct Enumerator_t24AA5F11ED3A2E12B531F60032DED228CA0EFD26_marshaled_pinvoke
-{
-	Il2CppSafeArray* ___m_Handlers;
-	int32_t ___m_Count;
-	int32_t ___m_Index;
-};
-struct Enumerator_t24AA5F11ED3A2E12B531F60032DED228CA0EFD26_marshaled_com
-{
-	Il2CppSafeArray* ___m_Handlers;
-	int32_t ___m_Count;
-	int32_t ___m_Index;
-};
 struct FillMethod_t36837ED12068DF1582CC20489D571B0BCAA7AD19 
 {
 	int32_t ___value__;
@@ -25072,81 +24938,6 @@ struct HardwareRayTracingAccelStruct_tA0222D6E6F3D30B7B6B3BE3B0D68E3D107BE459E  
 	int32_t ___m_BuildFlags;
 	Dictionary_2_t6D39865003E656D60A88B22671895E4EA1590710* ___m_Meshes;
 	ReferenceCounter_t4AB2EABD22AF71296CD91AB92C5C2021A8E3580C* ___m_Counter;
-};
-struct HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD  : public RuntimeObject
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E* ___m_Hierarchy;
-	ReadOnlyNativeVector_1_t0DE13C6BA89CEDB2D828D3F45AA93F7EC7AD4A0E ___m_FlattenedNodes;
-	int32_t ___m_Version;
-	bool ___m_IsOwner;
-};
-struct HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_pinvoke ___m_Hierarchy;
-	ReadOnlyNativeVector_1_t0DE13C6BA89CEDB2D828D3F45AA93F7EC7AD4A0E ___m_FlattenedNodes;
-	int32_t ___m_Version;
-	int32_t ___m_IsOwner;
-};
-struct HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD_marshaled_com
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_com* ___m_Hierarchy;
-	ReadOnlyNativeVector_1_t0DE13C6BA89CEDB2D828D3F45AA93F7EC7AD4A0E ___m_FlattenedNodes;
-	int32_t ___m_Version;
-	int32_t ___m_IsOwner;
-};
-struct HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666 
-{
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E* ___m_Hierarchy;
-	HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704* ___m_Ptr;
-	int32_t ___m_Version;
-	int32_t ___m_Count;
-};
-struct HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666_marshaled_pinvoke
-{
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_pinvoke ___m_Hierarchy;
-	HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704* ___m_Ptr;
-	int32_t ___m_Version;
-	int32_t ___m_Count;
-};
-struct HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666_marshaled_com
-{
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_com* ___m_Hierarchy;
-	HierarchyNode_t6A6A738223CC5D7FB463CAF6F379C48726891704* ___m_Ptr;
-	int32_t ___m_Version;
-	int32_t ___m_Count;
-};
-struct HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9  : public RuntimeObject
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E* ___m_Hierarchy;
-	HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8* ___m_CommandList;
-};
-struct HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_pinvoke ___m_Hierarchy;
-	HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8_marshaled_pinvoke ___m_CommandList;
-};
-struct HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9_marshaled_com
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_com* ___m_Hierarchy;
-	HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8_marshaled_com* ___m_CommandList;
-};
-struct HierarchyNodeTypeHandlerBaseEnumerable_t26ADB6758ABA4C29812D07C8087A05BBBC7DEA83 
-{
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E* ___m_Hierarchy;
-};
-struct HierarchyNodeTypeHandlerBaseEnumerable_t26ADB6758ABA4C29812D07C8087A05BBBC7DEA83_marshaled_pinvoke
-{
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_pinvoke ___m_Hierarchy;
-};
-struct HierarchyNodeTypeHandlerBaseEnumerable_t26ADB6758ABA4C29812D07C8087A05BBBC7DEA83_marshaled_com
-{
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E_marshaled_com* ___m_Hierarchy;
 };
 struct IMECompositionEvent_tDB878E24C29EAF63886AD297892F6408D74D9FE4 
 {
@@ -30425,24 +30216,6 @@ struct GeometryPool_t09ACCF0B50D5BBD9996133CC035656D8F6AF9CEA  : public RuntimeO
 	bool ___m_MustClearCmdBuffer;
 	int32_t ___m_PendingCmds;
 };
-struct HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436 
-{
-	HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD* ___m_HierarchyFlattened;
-	HierarchyFlattenedNode_t793C747B4D66D72DE99572428261F0A6E59A4300 ___m_ParentNode;
-	int32_t ___m_ParentIndex;
-};
-struct HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436_marshaled_pinvoke
-{
-	HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD_marshaled_pinvoke ___m_HierarchyFlattened;
-	HierarchyFlattenedNode_t793C747B4D66D72DE99572428261F0A6E59A4300 ___m_ParentNode;
-	int32_t ___m_ParentIndex;
-};
-struct HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436_marshaled_com
-{
-	HierarchyFlattened_t465DE25ECB06310A69E88D6BE1770EA7DBBF74BD_marshaled_com* ___m_HierarchyFlattened;
-	HierarchyFlattenedNode_t793C747B4D66D72DE99572428261F0A6E59A4300 ___m_ParentNode;
-	int32_t ___m_ParentIndex;
-};
 struct IndirectBufferContextStorage_t163864EFB0FCBEC52967FBC133744C5B7381C1E5 
 {
 	IndirectBufferLimits_t6035702207C41A67B85B52BF1019C16EA7CE0076 ___m_BufferLimits;
@@ -31361,6 +31134,19 @@ struct RawDepthHistory_t607F7FC86AFC82992E27C17F6D385CEC443F886B  : public Camer
 	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___m_Ids;
 	RenderTextureDescriptor_t69845881CE6437E4E61F92074F2F84079F23FA46 ___m_Descriptor;
 	Hash128_t93367F504B687578F893CDBCD13FB95AC8A87A40 ___m_DescKey;
+};
+struct Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
+{
+	Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* ___icon;
+	String_t* ___title;
+	SectionU5BU5D_t9D3017555FFF42E71BE91904A2486EAF429F24C4* ___sections;
+	bool ___loadedLayout;
+};
+struct RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED  : public ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A
+{
+	String_t* ___recipeName;
+	List_1_t2FA2E3511FC580B0762B90C882A71136ED9E1B75* ___ingredients;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cookedDishPrefab;
 };
 struct ReflectionProbeManager_tBCF8C782A572C4DFFD98CC746C17B7DB6F6B6B5D 
 {
@@ -32988,21 +32774,6 @@ struct GeometrySlot_tD424D8BAD216C628C1818B196A406745EC8AB5DA_marshaled_com
 	Allocation_tB22CAD44C5AF0C13B3D441F8B419C9BA1D19F70C ___meshChunkTableAlloc;
 	NativeArray_1_tE60150ECC1618145E24B39FDB42788271982A962 ___meshChunks;
 	int32_t ___hasGPUData;
-};
-struct Enumerator_tB394F581EA54AC1A1E8074FCA63A756754BD1235 
-{
-	HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666 ___m_Enumerable;
-	int32_t ___m_Index;
-};
-struct Enumerator_tB394F581EA54AC1A1E8074FCA63A756754BD1235_marshaled_pinvoke
-{
-	HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666_marshaled_pinvoke ___m_Enumerable;
-	int32_t ___m_Index;
-};
-struct Enumerator_tB394F581EA54AC1A1E8074FCA63A756754BD1235_marshaled_com
-{
-	HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666_marshaled_com ___m_Enumerable;
-	int32_t ___m_Index;
 };
 struct CalculateInterpolatedLightAndOcclusionProbesBatchJob_tE9C041455CA23D36663116BFAD6B43917706F319 
 {
@@ -34666,30 +34437,6 @@ struct PassDataDebugView_tF804D2408283BB60F5160AD59E52A5D5C0F4D0FE  : public Run
 	TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388 ___srcColor;
 	TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388 ___dstColor;
 };
-struct Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46 
-{
-	HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436 ___m_Enumerable;
-	int32_t ___m_End;
-	int32_t ___m_Depth;
-	int32_t ___m_Version;
-	int32_t ___m_Current;
-};
-struct Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46_marshaled_pinvoke
-{
-	HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436_marshaled_pinvoke ___m_Enumerable;
-	int32_t ___m_End;
-	int32_t ___m_Depth;
-	int32_t ___m_Version;
-	int32_t ___m_Current;
-};
-struct Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46_marshaled_com
-{
-	HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436_marshaled_com ___m_Enumerable;
-	int32_t ___m_End;
-	int32_t ___m_Depth;
-	int32_t ___m_Version;
-	int32_t ___m_Current;
-};
 struct PassData_tC4BD4215B4324D0ACAAEC921884A7845E53D5AE6  : public RuntimeObject
 {
 	TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388 ___colorTarget;
@@ -35087,6 +34834,26 @@ struct AllocateBinsPerBatch_t5239CCD1592A1183C158D7DBFBCB38CFB8A65904_marshaled_
 	int32_t ___debugCounterIndexBase;
 	NativeArray_1_tA833EB7E3E1C9AF82C37976AD964B8D4BAC38B2C ___splitDebugCounters;
 };
+struct AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___sfxSource;
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___uiClickClip;
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___ingredientDropClip;
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___trashDropClip;
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___phaseTransitionClip;
+};
+struct CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	XROrigin_t5E534A6D886991AF3C1C64127E19A3A510009CFE* ___xrOrigin;
+	InputActionProperty_tE5B1633784A72FC044A0BB5C0BE140DD7BD84FAD ___crouchAction;
+	InputActionProperty_tE5B1633784A72FC044A0BB5C0BE140DD7BD84FAD ___standTallAction;
+	float ___normalOffset;
+	float ___crouchOffset;
+	float ___standTallOffset;
+	float ___adjustSpeed;
+	float ___initialCameraY;
+	float ___targetOffset;
+};
 struct ClimbTeleportDestinationIndicator_t95EC8E13B0E057810A00B57C40978485340B4458  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	ClimbTeleportInteractor_t9AD38301B02FCB18FB1FB1B84192C05C731D1083* ___m_ClimbTeleportInteractor;
@@ -35129,6 +34896,10 @@ struct ControllerInputActionManager_t869A70AE3B62565ADCF8E113AFEF37D3B0DBE90B  :
 	bool ___m_HoveringScrollableUI;
 	HashSet_1_tAB819E09BD04F94C3EA7D69BA059B0DD13F941A3* ___m_LocomotionUsers;
 	BindingsGroup_tD5EC90BB10F9D310FE467A7E3A4CAE2E32D0397A* ___m_BindingsGroup;
+};
+struct CookingManager_t86356C2433AD4022C0D3E97DE2F513F6A6DD7E6E  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	List_1_t6DC53FD9F05148AB7E697D166BAD7BB770EB9ED1* ___allRecipes;
 };
 struct CullingJob_t4206A6B00371EC11303617597A8DA5BFCCF92681 
 {
@@ -35336,6 +35107,10 @@ struct EventTrigger_tAEBFB7A16CA99343EA87722F78884BF8646BAE1B  : public MonoBeha
 {
 	List_1_tA70D786D375D198C77EBB594AE632A6DFC82A440* ___m_Delegates;
 };
+struct FreebieCameraHookupScript_tE960CEDC889A3FC27C4D06DFF2F61B51B47E8346  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___securityCamera;
+};
 struct GazeInputManager_t76600ACADAE6718BABD1166EBED065FFD8C90C83  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	bool ___m_FallbackIfEyeTrackingUnavailable;
@@ -35413,6 +35188,10 @@ struct NativeStreamDisposeJob_tF5229172BA7C2ACF21392FB6493F9D47BA16D001
 {
 	NativeStreamDispose_t1698F2E13348D27AA8B702A7C61C0861D65BB44C ___Data;
 };
+struct ObjectRotator_t01C1E6B39EFE87B7EC66C546EF87AFFD968D4BA8  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rotationPerSecond;
+};
 struct ObjectSpawner_t5ACB5F84845F9E874424BADB585AB17DD4644111  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___m_CameraToFace;
@@ -35460,6 +35239,15 @@ struct PermissionsManager_tA775AB0B85BF28A1804E5DB39BA35739106A151C  : public Mo
 	bool ___m_ProcessPermissionsOnAwake;
 	List_1_t0CE881A0D7899C6B0A75D108E3C7AA135DB11CBE* ___m_PermissionGroups;
 	PermissionRequestGroup_t646393166A187662C80A26CCE0F96A87C449EC8E* ___m_CurrentPlatformPermissionGroup;
+};
+struct RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ___sparkleVFX;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___recipeBookCanvas;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bookRecipeTitleText;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bookIngredientsText;
+	int32_t ___currentRecipeIndex;
+	RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* ___selectedRecipe;
 };
 struct RendererListDesc_t5C51B75B4D539F99345A077545015B8FB99FE78E 
 {
@@ -35542,6 +35330,25 @@ struct TMP_SubMesh_t03A386328B843ADDDC3D5C53D901B38294142214  : public MonoBehav
 	Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* ___m_mesh;
 	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___m_TextComponent;
 	bool ___m_isRegisteredForEvents;
+};
+struct TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	bool ___toggleCamera;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___m_displayRenderer;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___m_cameraRenderMaterial;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___m_disabledMaterial;
+	List_1_t386E09F4F22DDE4D2AC41A8567FFF283C254537B* ___m_currentMaterials;
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___m_securityCamera;
+	String_t* ___m_instanceString;
+	String_t* ___m_cameraRenderMaterialAdjustedName;
+	String_t* ___m_disabledMaterialAdjustedName;
+	int32_t ___m_rendererMaterialIndex;
+	bool ___m_displayOn;
+};
+struct TabletInput_t00EEC4A513EEEA1B0C16C248D0CD40799507644B  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376* ___m_tabletController;
+	int32_t ___m_cameraDisplayToggle;
 };
 struct TeleportVolumeAnchorAffordanceStateLink_t7DA616C919D93B9F3BAE4A646B8A1C035DE7C4AD  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -39771,12 +39578,6 @@ struct GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977_StaticFields
 {
 	GeoPoolEntrySlot_tE1B7B103A90E4C3379CED82C8D6DA55189422977 ___Invalid;
 };
-struct ConstructorScope_t243AC9846E4D3E3E27A0608F35BA425299DDE392_ThreadStaticFields
-{
-	intptr_t ___m_Ptr;
-	Hierarchy_t6C500307C045A73F46DA5BBF9EF6F56DB365B04E* ___m_Hierarchy;
-	HierarchyCommandList_tCB0973CD2E5ADE0F39F3BA4503F5278BA35883E8* ___m_CommandList;
-};
 struct LightCookieMapping_t76B317D9FDE96056FA698B46B45D7F0937BD02D2_StaticFields
 {
 	Func_3_t3E644C82345CE04737DA5CDE018481FE0A88F821* ___s_CompareByCookieSize;
@@ -40106,10 +39907,6 @@ struct GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_StaticFields
 {
 	bool ___showKeyboardFocus;
 	GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* ___s_None;
-};
-struct HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9_StaticFields
-{
-	Dictionary_2_t384D2A0FF42BF1302A3F513FC32DB105F1CD5455* ___s_NodeTypes;
 };
 struct PointerState_t941C910E8B3EACFFAC3594DB09ABBD7ED424E935_StaticFields
 {
@@ -40551,6 +40348,14 @@ struct XRDepthMotionPass_t8877C9053420CA52B0A0FA0C84F3DA61952E2C93_StaticFields
 struct FullScreenRenderPass_t7AC73942B58AE155BA1A7D0658E4B1C3E2FF9DEA_StaticFields
 {
 	MaterialPropertyBlock_t2308669579033A857EFE6E4831909F638B27411D* ___s_SharedPropertyBlock;
+};
+struct AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields
+{
+	AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* ___Instance;
+};
+struct CookingManager_t86356C2433AD4022C0D3E97DE2F513F6A6DD7E6E_StaticFields
+{
+	CookingManager_t86356C2433AD4022C0D3E97DE2F513F6A6DD7E6E* ___Instance;
 };
 struct DecalProjector_tE7CEBAABFEF36162FD325321C1F94173CEFEDF64_StaticFields
 {
@@ -47653,33 +47458,45 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8981[6] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8982[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8988[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8986[1] = 
 {
-	static_cast<int32_t>(offsetof(Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46, ___m_Enumerable)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46, ___m_End)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46, ___m_Depth)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46, ___m_Version)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_t28938591DB7102A66DDBCDE59F8D453F3CCA0F46, ___m_Current)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8989[3] = 
+	static_cast<int32_t>(offsetof(FreebieCameraHookupScript_tE960CEDC889A3FC27C4D06DFF2F61B51B47E8346, ___securityCamera)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8987[1] = 
 {
-	static_cast<int32_t>(offsetof(HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436, ___m_HierarchyFlattened)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436, ___m_ParentNode)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyFlattenedChildrenEnumerable_tF44A88EC6CB4F3581F88044D47048A0AF5134436, ___m_ParentIndex)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8990[2] = 
+	static_cast<int32_t>(offsetof(ObjectRotator_t01C1E6B39EFE87B7EC66C546EF87AFFD968D4BA8, ___rotationPerSecond)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8988[11] = 
 {
-	static_cast<int32_t>(offsetof(Enumerator_tB394F581EA54AC1A1E8074FCA63A756754BD1235, ___m_Enumerable)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_tB394F581EA54AC1A1E8074FCA63A756754BD1235, ___m_Index)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
+	static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___toggleCamera)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_displayRenderer)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_cameraRenderMaterial)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_disabledMaterial)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_currentMaterials)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_securityCamera)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_instanceString)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_cameraRenderMaterialAdjustedName)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_disabledMaterialAdjustedName)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_rendererMaterialIndex)),static_cast<int32_t>(offsetof(TabletDisplayController_t8CC77066B16B987E5CC8527FB3034D92E1AC2376, ___m_displayOn)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8989[2] = 
+{
+	static_cast<int32_t>(offsetof(TabletInput_t00EEC4A513EEEA1B0C16C248D0CD40799507644B, ___m_tabletController)),static_cast<int32_t>(offsetof(TabletInput_t00EEC4A513EEEA1B0C16C248D0CD40799507644B, ___m_cameraDisplayToggle)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8990[4] = 
+{
+	static_cast<int32_t>(offsetof(Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401, ___heading)),static_cast<int32_t>(offsetof(Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401, ___text)),static_cast<int32_t>(offsetof(Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401, ___linkText)),static_cast<int32_t>(offsetof(Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401, ___url)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8991[4] = 
 {
-	static_cast<int32_t>(offsetof(HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666, ___m_Hierarchy)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666, ___m_Ptr)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666, ___m_Version)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildren_t550A622C571274E0C78E7E1265D58E1D88C4E666, ___m_Count)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8992[7] = 
+	static_cast<int32_t>(offsetof(Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB, ___icon)),static_cast<int32_t>(offsetof(Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB, ___title)),static_cast<int32_t>(offsetof(Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB, ___sections)),static_cast<int32_t>(offsetof(Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB, ___loadedLayout)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8992[4] = 
 {
-	static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___Ptr)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___Size)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___Capacity)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___ControlBit)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___NullCount)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___Reserved0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(HierarchyNodeChildrenAlloc_t142E22729631D9801D92179DD54705B830F8C8F9, ___Reserved1)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8994[3] = 
+	static_cast<int32_t>(offsetof(U3CDelayedPhaseAlertRoutineU3Ed__10_t726AB91ED1F5E6E63D21408EA43DA8F74284CD91, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CDelayedPhaseAlertRoutineU3Ed__10_t726AB91ED1F5E6E63D21408EA43DA8F74284CD91, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CDelayedPhaseAlertRoutineU3Ed__10_t726AB91ED1F5E6E63D21408EA43DA8F74284CD91, ___delay)),static_cast<int32_t>(offsetof(U3CDelayedPhaseAlertRoutineU3Ed__10_t726AB91ED1F5E6E63D21408EA43DA8F74284CD91, ___U3CU3E4__this)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8993[6] = 
 {
-	static_cast<int32_t>(offsetof(ConstructorScope_t243AC9846E4D3E3E27A0608F35BA425299DDE392_ThreadStaticFields, ___m_Ptr)) | THREAD_LOCAL_STATIC_MASK,static_cast<int32_t>(offsetof(ConstructorScope_t243AC9846E4D3E3E27A0608F35BA425299DDE392_ThreadStaticFields, ___m_Hierarchy)) | THREAD_LOCAL_STATIC_MASK,static_cast<int32_t>(offsetof(ConstructorScope_t243AC9846E4D3E3E27A0608F35BA425299DDE392_ThreadStaticFields, ___m_CommandList)) | THREAD_LOCAL_STATIC_MASK,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8995[4] = 
+	static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___sfxSource)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___uiClickClip)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___ingredientDropClip)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___trashDropClip)),static_cast<int32_t>(offsetof(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B, ___phaseTransitionClip)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8994[9] = 
 {
-	static_cast<int32_t>(offsetof(HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9, ___m_Ptr)),static_cast<int32_t>(offsetof(HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9, ___m_Hierarchy)),static_cast<int32_t>(offsetof(HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9, ___m_CommandList)),static_cast<int32_t>(offsetof(HierarchyNodeTypeHandlerBase_tFBC87BEE2FAA4002BAF4B067DEBEEB69BAF1E7A9_StaticFields, ___s_NodeTypes)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8996[3] = 
+	static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___xrOrigin)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___crouchAction)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___standTallAction)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___normalOffset)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___crouchOffset)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___standTallOffset)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___adjustSpeed)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___initialCameraY)),static_cast<int32_t>(offsetof(CameraOffsetHeightAdjust_t54FEF4B2C37CAD271B5DD88B2F867D7C23384CBE, ___targetOffset)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8995[2] = 
 {
-	static_cast<int32_t>(offsetof(Enumerator_t24AA5F11ED3A2E12B531F60032DED228CA0EFD26, ___m_Handlers)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_t24AA5F11ED3A2E12B531F60032DED228CA0EFD26, ___m_Count)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(Enumerator_t24AA5F11ED3A2E12B531F60032DED228CA0EFD26, ___m_Index)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8997[1] = 
+	static_cast<int32_t>(offsetof(CookingManager_t86356C2433AD4022C0D3E97DE2F513F6A6DD7E6E_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(CookingManager_t86356C2433AD4022C0D3E97DE2F513F6A6DD7E6E, ___allRecipes)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8996[6] = 
 {
-	static_cast<int32_t>(offsetof(HierarchyNodeTypeHandlerBaseEnumerable_t26ADB6758ABA4C29812D07C8087A05BBBC7DEA83, ___m_Hierarchy)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8998[2] = 
+	static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___sparkleVFX)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___recipeBookCanvas)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___bookRecipeTitleText)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___bookIngredientsText)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___currentRecipeIndex)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___selectedRecipe)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8997[2] = 
 {
-	0,0,};
+	static_cast<int32_t>(offsetof(IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0, ___foodPrefab)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0, ___requiredAmount)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8998[3] = 
+{
+	static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___recipeName)),static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___ingredients)),static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___cookedDishPrefab)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8999[2] = 
+{
+	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass14_0_t5661D72B49A1584A6B5936CB5F193811FC1C5976, ___id)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass14_0_t5661D72B49A1584A6B5936CB5F193811FC1C5976, ___U3CU3E9__0)),};

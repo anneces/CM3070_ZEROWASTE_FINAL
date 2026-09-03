@@ -55,7 +55,8 @@ public class RecipeBookController : MonoBehaviour
 
         if (sparkleVFX != null)
         {
-            sparkleVFX.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            // Updated to StopEmittingAndClear so the particle system resets cleanly for future hover events
+            sparkleVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             Debug.Log("[RecipeBookController] Sparkle VFX stopped.", this);
         }
     }

@@ -12,7 +12,8 @@ public class StoveController : MonoBehaviour
 
     [Header("UI References")]
     public GameObject progressCanvas;
-    public TextMeshProUGUI statusText;
+    public TextMeshProUGUI headerText; // Header for dish name
+    public TextMeshProUGUI statusText; // Ingredients progress list
 
     [Header("VFX References")]
     public ParticleSystem stoveFireVFX;
@@ -76,10 +77,32 @@ public class StoveController : MonoBehaviour
     private void UpdateRecipeUI()
     {
         if (progressCanvas != null) progressCanvas.SetActive(true);
-        if (statusText != null && activeRecipe != null)
+
+        if (activeRecipe != null)
         {
-            int totalRequiredCount = GetTotalRequiredIngredientsCount();
-            statusText.text = $"{activeRecipe.recipeName}: {addedIngredients.Count}/{totalRequiredCount}";
+            // Set Header Text (Dish Name)
+            if (headerText != null)
+            {
+                headerText.text = activeRecipe.recipeName;
+            }
+
+            // Set Progress Text (Individual ingredient counts e.g. Carrot 0/2)
+            if (statusText != null)
+            {
+                string progressList = "";
+                foreach (var req in activeRecipe.ingredients)
+                {
+                    if (req.foodPrefab != null)
+                    {
+                        string id = req.foodPrefab.foodName;
+                        int currentCount = addedIngredients.FindAll(x => x == id).Count;
+                        int maxNeeded = req.requiredAmount;
+
+                        progressList += $"{id} {currentCount}/{maxNeeded}\n";
+                    }
+                }
+                statusText.text = progressList.TrimEnd();
+            }
         }
     }
 
