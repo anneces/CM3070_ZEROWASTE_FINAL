@@ -5872,6 +5872,7 @@ MonoBehaviour:
   dishSpawnPoint: {fileID: 1411501450}
   isPlateOccupied: 0
   progressCanvas: {fileID: 1845872670}
+  eatMeCanvas: {fileID: 847584031}
   headerText: {fileID: 1445711518}
   statusText: {fileID: 1431337297}
   stoveFireVFX: {fileID: 859548890}
@@ -13850,7 +13851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1958897787
 RectTransform:
   m_ObjectHideFlags: 0

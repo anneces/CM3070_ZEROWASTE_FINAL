@@ -4967,16 +4967,16 @@ struct PerfMetrics_tDDB5FFCB3FA9394077551671DC3994207428CE58  : public RuntimeOb
 struct U3CU3Ec_t077F63D1AD84FB9E7D0A6793234888C38925CAA7  : public RuntimeObject
 {
 };
-struct U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA  : public RuntimeObject
+struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
 {
 	String_t* ___id;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* ___U3CU3E9__0;
 };
-struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
+struct U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255  : public RuntimeObject
 {
 	String_t* ___id;
 };
-struct U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE  : public RuntimeObject
+struct U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -45433,6 +45433,7 @@ struct StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065  : public MonoB
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___dishSpawnPoint;
 	bool ___isPlateOccupied;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___progressCanvas;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___eatMeCanvas;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___headerText;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___statusText;
 	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ___stoveFireVFX;
@@ -58612,11 +58613,11 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize8971 = { sizeof(IngredientRe
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize8972;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize8972 = { sizeof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize8973;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize8973 = { sizeof(U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize8973 = { sizeof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize8974;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize8974 = { sizeof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize8974 = { sizeof(U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize8975;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize8975 = { sizeof(U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize8975 = { sizeof(U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize8976;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize8976 = { sizeof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065), -1, sizeof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields), 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize8977;

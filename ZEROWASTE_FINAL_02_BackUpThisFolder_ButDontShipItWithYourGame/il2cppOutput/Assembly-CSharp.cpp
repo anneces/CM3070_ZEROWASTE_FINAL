@@ -276,9 +276,9 @@ struct Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401;
 struct ReapplyDrivenProperties_t3482EA130A01FF7EE2EEFE37F66A5215D08CFE24;
 struct ScrollRectEvent_t812C011901E6101F2A0FFC34C66AC5F65C0DEC26;
 struct U3CU3Ec__DisplayClass18_0_tBEB2055CBADBC639BE2A42033D7F09E18A92287F;
-struct U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA;
 struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B;
-struct U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE;
+struct U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255;
+struct U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B;
 struct MissingCharacterEventCallback_t955241181324E0FEF9A9BDBA400E8780F8979DE6;
 struct U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473;
 
@@ -318,9 +318,9 @@ IL2CPP_EXTERN_C RuntimeClass* TrashBin_t1BC703CBE84DB437AF75681AE60C5E4921D2D853
 IL2CPP_EXTERN_C RuntimeClass* U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CDelayedPhaseAlertRoutineU3Ed__10_t726AB91ED1F5E6E63D21408EA43DA8F74284CD91_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec__DisplayClass18_0_tBEB2055CBADBC639BE2A42033D7F09E18A92287F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnityAction_1_t6D7C8D94300AACA6B0CFB2228AA5572CFBF0531B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var;
@@ -462,9 +462,9 @@ IL2CPP_EXTERN_C const RuntimeMethod* TVDisplayController_RefreshDisplay_m6237F8B
 IL2CPP_EXTERN_C const RuntimeMethod* U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4AE6FBAC17A3B1FE604CC50D2DAD1E79C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CDelayedPhaseAlertRoutineU3Ed__10_System_Collections_IEnumerator_Reset_mD9A1A6D5080CA5BB4F518C3C82981411A8317330_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CStartCookingProcessU3Ed__18_System_Collections_IEnumerator_Reset_m4F168E6B387A8DA33E00624D7899F172AB4B1B8B_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass15_0_U3COnTriggerEnterU3Eb__0_mF4343628509BC4797EAE2C177BF3EF7B4541AB68_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass16_0_U3CUpdateRecipeUIU3Eb__0_m556ABA386C6E34E06F1BC87FF0AB3832B4C6DC48_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CStartCookingProcessU3Ed__19_System_Collections_IEnumerator_Reset_mF404930DC40550AC6D2D5A97F6B096E2E4998C11_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass16_0_U3COnTriggerEnterU3Eb__0_mC2E887DBB738C0793FC6F8880FC09C1EEF66AD5E_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass17_0_U3CUpdateRecipeUIU3Eb__0_mCF05B131F2B1D7A1F274B7567FDCB8C49BBB48CA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass18_0_U3CPopulateCategorizedCatalogU3Eb__0_m6037FD5708DD5BAB508AE46CCB03392EEF33A9EF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CU3Ec__DisplayClass18_0_U3CPopulateCategorizedCatalogU3Eb__1_m7BF52935F0F82D36DE0AB173E49352FDAE180330_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* UnityEvent_1_AddListener_mAE71681FB0832FD7DBA813E5ADDBA574EA32EED2_RuntimeMethod_var;
@@ -637,16 +637,16 @@ struct U3CU3Ec__DisplayClass18_0_tBEB2055CBADBC639BE2A42033D7F09E18A92287F  : pu
 	int32_t ___capturedIndex;
 	ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* ___U3CU3E4__this;
 };
-struct U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA  : public RuntimeObject
+struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
 {
 	String_t* ___id;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* ___U3CU3E9__0;
 };
-struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
+struct U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255  : public RuntimeObject
 {
 	String_t* ___id;
 };
-struct U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE  : public RuntimeObject
+struct U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -2195,6 +2195,7 @@ struct StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065  : public MonoB
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___dishSpawnPoint;
 	bool ___isPlateOccupied;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___progressCanvas;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___eatMeCanvas;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___headerText;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___statusText;
 	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ___stoveFireVFX;
@@ -3476,7 +3477,7 @@ inline FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* Component_GetComponen
 {
 	return ((  FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponentInParent_TisRuntimeObject_m6746D6BB99912B1B509746C993906492F86CD119_gshared)(__this, method);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass15_0__ctor_mE8471D152970C570ABAD93B3F5D428572B1957F9 (U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_m4DFAC35E02773BC987196FC947B8F7B0C9385852 (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478 (String_t* ___0_value, const RuntimeMethod* method) ;
 inline void Predicate_1__ctor_m792445D8ACC019EE3CE897994AF6C04721045A7E (Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method)
 {
@@ -3495,12 +3496,12 @@ inline void List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_inline (List_1_
 	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, String_t*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___0_item, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_CheckRecipeCompletion_m7C016587DB64F50A314B0AD1BCBA7EF4F6AD532B (StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_m4DFAC35E02773BC987196FC947B8F7B0C9385852 (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass17_0__ctor_m5E498E088F501725742EA3EF0C752BE975F764C6 (U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C (String_t* ___0_format, RuntimeObject* ___1_arg0, RuntimeObject* ___2_arg1, RuntimeObject* ___3_arg2, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_TrimEnd_m25B1EA658EE07ADFED51FED61D630E5625336AB5 (String_t* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StoveController_GetTotalRequiredIngredientsCount_m38BFE2E5A63BD2B92ABCABD5885CF90826737ABC (StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* StoveController_StartCookingProcess_m8F74163A19F2CA2463B093CDE0419EEC3A370789 (StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__18__ctor_m67446F7CEE9D6250000B50BE038790A8D1449C5D (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__19__ctor_mE19913EEE3A2AB237FDD5D6F50F6C93ED2CEFAC2 (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 inline GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_original, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_position, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___2_rotation, const RuntimeMethod* method)
@@ -6450,7 +6451,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_Awake_m55404003934B89052
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:29>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:30>
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_0 = ((StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields*)il2cpp_codegen_static_fields_for(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_il2cpp_TypeInfo_var))->___Instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6461,7 +6462,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_Awake_m55404003934B89052
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:29>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:30>
 		((StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields*)il2cpp_codegen_static_fields_for(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_il2cpp_TypeInfo_var))->___Instance = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&((StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields*)il2cpp_codegen_static_fields_for(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_il2cpp_TypeInfo_var))->___Instance), (void*)__this);
 		return;
@@ -6469,12 +6470,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_Awake_m55404003934B89052
 
 IL_0014:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:30>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:31>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:31>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:32>
 		return;
 	}
 }
@@ -6488,7 +6489,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_Start_mE3E21D5D31C37B493
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:35>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:36>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___progressCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6499,7 +6500,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_Start_mE3E21D5D31C37B493
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:35>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:36>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___progressCanvas;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -6507,45 +6508,64 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_Start_mE3E21D5D31C37B493
 
 IL_001a:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:36>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_3 = __this->___stoveFireVFX;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:37>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___eatMeCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_4)
 		{
-			goto IL_0035;
+			goto IL_0034;
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:36>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_5 = __this->___stoveFireVFX;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:37>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___eatMeCanvas;
 		NullCheck(L_5);
-		ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326(L_5, (bool)1, 0, NULL);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_5, (bool)0, NULL);
 	}
 
-IL_0035:
+IL_0034:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:37>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_6 = __this->___dishSpawnVFX;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:38>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_6 = __this->___stoveFireVFX;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
 		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_6, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_7)
 		{
-			goto IL_0050;
+			goto IL_004f;
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:37>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_8 = __this->___dishSpawnVFX;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:38>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_8 = __this->___stoveFireVFX;
 		NullCheck(L_8);
 		ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326(L_8, (bool)1, 0, NULL);
 	}
 
-IL_0050:
+IL_004f:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:38>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:39>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_9 = __this->___dishSpawnVFX;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_10;
+		L_10 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_9, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_10)
+		{
+			goto IL_006a;
+		}
+	}
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:39>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_11 = __this->___dishSpawnVFX;
+		NullCheck(L_11);
+		ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326(L_11, (bool)1, 0, NULL);
+	}
+
+IL_006a:
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:40>
 		return;
 	}
 }
@@ -6562,7 +6582,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SetActiveRecipe_m1BD3119
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:43>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:45>
 		bool L_0 = __this->___isPlateOccupied;
 		if (!L_0)
 		{
@@ -6570,7 +6590,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SetActiveRecipe_m1BD3119
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:45>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:47>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___progressCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -6581,7 +6601,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SetActiveRecipe_m1BD3119
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:45>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:47>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___progressCanvas;
 		NullCheck(L_3);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_3, (bool)1, NULL);
@@ -6589,7 +6609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SetActiveRecipe_m1BD3119
 
 IL_0022:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:46>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:48>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_4 = __this->___headerText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -6600,7 +6620,7 @@ IL_0022:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:46>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:48>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_6 = __this->___headerText;
 		NullCheck(L_6);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_6, _stringLiteralA482AF83EBB8A7DAAFA4449FAC663579E2C95CF2);
@@ -6608,7 +6628,7 @@ IL_0022:
 
 IL_0040:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:47>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:49>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_7 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -6619,7 +6639,7 @@ IL_0040:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:47>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:49>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_9 = __this->___statusText;
 		NullCheck(L_9);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_9, _stringLiteral370E600D27BB8E14F9033866F1EF3B4EB14B63DC);
@@ -6627,60 +6647,79 @@ IL_0040:
 
 IL_005e:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:48>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:50>
 		return;
 	}
 
 IL_005f:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:51>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:53>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_10 = ___0_newRecipe;
 		__this->___activeRecipe = L_10;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___activeRecipe), (void*)L_10);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:52>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:54>
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_11 = __this->___addedIngredients;
 		NullCheck(L_11);
 		List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_inline(L_11, List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_RuntimeMethod_var);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:53>
-		StoveController_UpdateRecipeUI_m2570F09B4671400567C049FCE08AA88251C812AC(__this, NULL);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:56>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_12 = __this->___stoveFireVFX;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:57>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___eatMeCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
 		L_13 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_12, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_13)
 		{
-			goto IL_00ae;
+			goto IL_008b;
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:58>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_14 = __this->___stoveFireVFX;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:57>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___eatMeCanvas;
 		NullCheck(L_14);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15;
-		L_15 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_14, NULL);
-		NullCheck(L_15);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_15, (bool)1, NULL);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:59>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_16 = __this->___stoveFireVFX;
-		NullCheck(L_16);
-		bool L_17;
-		L_17 = ParticleSystem_get_isPlaying_mC5170DA3C904670B88200C8DA1E0F8FC1BC7C42B(L_16, NULL);
-		if (L_17)
-		{
-			goto IL_00ae;
-		}
-	}
-	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:61>
-		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_18 = __this->___stoveFireVFX;
-		NullCheck(L_18);
-		ParticleSystem_Play_mD943E601BFE16CB9BB5D1F5E6AED5C36F5F11EF5(L_18, NULL);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_14, (bool)0, NULL);
 	}
 
-IL_00ae:
+IL_008b:
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:59>
+		StoveController_UpdateRecipeUI_m2570F09B4671400567C049FCE08AA88251C812AC(__this, NULL);
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:62>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_15 = __this->___stoveFireVFX;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_16;
+		L_16 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_15, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_16)
+		{
+			goto IL_00c8;
+		}
+	}
 	{
 		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:64>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_17 = __this->___stoveFireVFX;
+		NullCheck(L_17);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18;
+		L_18 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_17, NULL);
+		NullCheck(L_18);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_18, (bool)1, NULL);
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:65>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_19 = __this->___stoveFireVFX;
+		NullCheck(L_19);
+		bool L_20;
+		L_20 = ParticleSystem_get_isPlaying_mC5170DA3C904670B88200C8DA1E0F8FC1BC7C42B(L_19, NULL);
+		if (L_20)
+		{
+			goto IL_00c8;
+		}
+	}
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:67>
+		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_21 = __this->___stoveFireVFX;
+		NullCheck(L_21);
+		ParticleSystem_Play_mD943E601BFE16CB9BB5D1F5E6AED5C36F5F11EF5(L_21, NULL);
+	}
+
+IL_00c8:
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:70>
 		return;
 	}
 }
@@ -6701,22 +6740,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_OnTriggerEnter_m4D978DCF
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass15_0_U3COnTriggerEnterU3Eb__0_mF4343628509BC4797EAE2C177BF3EF7B4541AB68_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass16_0_U3COnTriggerEnterU3Eb__0_mC2E887DBB738C0793FC6F8880FC09C1EEF66AD5E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* V_0 = NULL;
-	U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* V_1 = NULL;
+	U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* V_1 = NULL;
 	Enumerator_tBBAE8ABE6EB0EF3E2C1EA7FF7F4FD9606C4DD198 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 V_3;
 	memset((&V_3), 0, sizeof(V_3));
 	int32_t V_4 = 0;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* V_5 = NULL;
-	U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* G_B7_0 = NULL;
-	U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* G_B6_0 = NULL;
+	U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* G_B7_0 = NULL;
+	U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* G_B6_0 = NULL;
 	String_t* G_B8_0 = NULL;
-	U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* G_B8_1 = NULL;
+	U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* G_B8_1 = NULL;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* G_B14_0 = NULL;
 	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* G_B14_1 = NULL;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* G_B13_0 = NULL;
@@ -6724,7 +6763,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_OnTriggerEnter_m4D978DCF
 	AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* G_B17_0 = NULL;
 	AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* G_B16_0 = NULL;
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:69>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:75>
 		bool L_0 = __this->___isCooking;
 		if (L_0)
 		{
@@ -6751,19 +6790,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_OnTriggerEnter_m4D978DCF
 
 IL_001e:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:69>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:75>
 		return;
 	}
 
 IL_001f:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:71>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:77>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_4 = ___0_other;
 		NullCheck(L_4);
 		FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_5;
 		L_5 = Component_GetComponentInParent_TisFoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2_mE8FB421071AD48F3473871F00812347BA322425B(L_4, Component_GetComponentInParent_TisFoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2_mE8FB421071AD48F3473871F00812347BA322425B_RuntimeMethod_var);
 		V_0 = L_5;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:72>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:78>
 		FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_6 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
@@ -6774,11 +6813,11 @@ IL_001f:
 		}
 	}
 	{
-		U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_8 = (U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA_il2cpp_TypeInfo_var);
-		U3CU3Ec__DisplayClass15_0__ctor_mE8471D152970C570ABAD93B3F5D428572B1957F9(L_8, NULL);
+		U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_8 = (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B_il2cpp_TypeInfo_var);
+		U3CU3Ec__DisplayClass16_0__ctor_m4DFAC35E02773BC987196FC947B8F7B0C9385852(L_8, NULL);
 		V_1 = L_8;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:74>
-		U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_9 = V_1;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:80>
+		U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_9 = V_1;
 		FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_10 = V_0;
 		NullCheck(L_10);
 		String_t* L_11 = L_10->___foodName;
@@ -6818,7 +6857,7 @@ IL_0059:
 		NullCheck(G_B8_1);
 		G_B8_1->___id = G_B8_0;
 		Il2CppCodeGenWriteBarrier((void**)(&G_B8_1->___id), (void*)G_B8_0);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:76>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:82>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_18 = __this->___activeRecipe;
 		NullCheck(L_18);
 		List_1_t2FA2E3511FC580B0762B90C882A71136ED9E1B75* L_19 = L_18->___ingredients;
@@ -6845,11 +6884,11 @@ FINALLY_0137:
 
 IL_0074_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:76>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:82>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_21;
 				L_21 = Enumerator_get_Current_m6E169FB73FBF4CAAD5C44E450F7BA99AFB4B47DE_inline((&V_2), Enumerator_get_Current_m6E169FB73FBF4CAAD5C44E450F7BA99AFB4B47DE_RuntimeMethod_var);
 				V_3 = L_21;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:78>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:84>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_22 = V_3;
 				FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_23 = L_22.___foodPrefab;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -6865,7 +6904,7 @@ IL_0074_1:
 				FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_26 = L_25.___foodPrefab;
 				NullCheck(L_26);
 				String_t* L_27 = L_26->___foodName;
-				U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_28 = V_1;
+				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_28 = V_1;
 				NullCheck(L_28);
 				String_t* L_29 = L_28->___id;
 				bool L_30;
@@ -6876,13 +6915,13 @@ IL_0074_1:
 				}
 			}
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:80>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:86>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_31 = V_3;
 				int32_t L_32 = L_31.___requiredAmount;
 				V_4 = L_32;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:81>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:87>
 				List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_33 = __this->___addedIngredients;
-				U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_34 = V_1;
+				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_34 = V_1;
 				NullCheck(L_34);
 				Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* L_35 = L_34->___U3CU3E9__0;
 				Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* L_36 = L_35;
@@ -6896,10 +6935,10 @@ IL_0074_1:
 				G_B13_1 = L_33;
 			}
 			{
-				U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_37 = V_1;
-				U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_38 = V_1;
+				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_37 = V_1;
+				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_38 = V_1;
 				Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* L_39 = (Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C*)il2cpp_codegen_object_new(Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C_il2cpp_TypeInfo_var);
-				Predicate_1__ctor_m792445D8ACC019EE3CE897994AF6C04721045A7E(L_39, L_38, (intptr_t)((void*)U3CU3Ec__DisplayClass15_0_U3COnTriggerEnterU3Eb__0_mF4343628509BC4797EAE2C177BF3EF7B4541AB68_RuntimeMethod_var), NULL);
+				Predicate_1__ctor_m792445D8ACC019EE3CE897994AF6C04721045A7E(L_39, L_38, (intptr_t)((void*)U3CU3Ec__DisplayClass16_0_U3COnTriggerEnterU3Eb__0_mC2E887DBB738C0793FC6F8880FC09C1EEF66AD5E_RuntimeMethod_var), NULL);
 				Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* L_40 = L_39;
 				V_5 = L_40;
 				NullCheck(L_37);
@@ -6918,7 +6957,7 @@ IL_00d7_1:
 				NullCheck(L_42);
 				int32_t L_43;
 				L_43 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_42, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:83>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:89>
 				int32_t L_44 = V_4;
 				if ((((int32_t)L_43) >= ((int32_t)L_44)))
 				{
@@ -6926,14 +6965,14 @@ IL_00d7_1:
 				}
 			}
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:85>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:91>
 				List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_45 = __this->___addedIngredients;
-				U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* L_46 = V_1;
+				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_46 = V_1;
 				NullCheck(L_46);
 				String_t* L_47 = L_46->___id;
 				NullCheck(L_45);
 				List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_inline(L_45, L_47, List_1_Add_mF10DB1D3CBB0B14215F0E4F8AB4934A1955E5351_RuntimeMethod_var);
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:86>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:92>
 				AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_48 = ((AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_StaticFields*)il2cpp_codegen_static_fields_for(AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B_il2cpp_TypeInfo_var))->___Instance;
 				AudioManager_t4BE66A4A0E184D85AF74C37BC93BFBEC52953C7B* L_49 = L_48;
 				if (L_49)
@@ -6958,24 +6997,24 @@ IL_0101_1:
 
 IL_0110_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:87>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:93>
 				FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_52 = V_0;
 				NullCheck(L_52);
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_53;
 				L_53 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_52, NULL);
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_53, NULL);
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:89>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:95>
 				StoveController_UpdateRecipeUI_m2570F09B4671400567C049FCE08AA88251C812AC(__this, NULL);
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:90>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:96>
 				StoveController_CheckRecipeCompletion_m7C016587DB64F50A314B0AD1BCBA7EF4F6AD532B(__this, NULL);
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:91>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:97>
 				goto IL_0145;
 			}
 
 IL_0129_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:76>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:82>
 				bool L_54;
 				L_54 = Enumerator_MoveNext_mA94031C2282B27BA1567B5B9C26D955FD12985DC((&V_2), Enumerator_MoveNext_mA94031C2282B27BA1567B5B9C26D955FD12985DC_RuntimeMethod_var);
 				if (L_54)
@@ -6995,7 +7034,7 @@ IL_0129_1:
 
 IL_0145:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:96>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:102>
 		return;
 	}
 }
@@ -7013,8 +7052,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_UpdateRecipeUI_m2570F09B
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass16_0_U3CUpdateRecipeUIU3Eb__0_m556ABA386C6E34E06F1BC87FF0AB3832B4C6DC48_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass17_0_U3CUpdateRecipeUIU3Eb__0_mCF05B131F2B1D7A1F274B7567FDCB8C49BBB48CA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC6E69AB95E5AFE6AD665350034275B8CD88DF17C);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		s_Il2CppMethodInitialized = true;
@@ -7024,11 +7063,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_UpdateRecipeUI_m2570F09B
 	memset((&V_1), 0, sizeof(V_1));
 	IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 V_2;
 	memset((&V_2), 0, sizeof(V_2));
-	U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* V_3 = NULL;
+	U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* V_3 = NULL;
 	int32_t V_4 = 0;
 	int32_t V_5 = 0;
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:100>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:106>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___progressCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -7039,7 +7078,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_UpdateRecipeUI_m2570F09B
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:100>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:106>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___progressCanvas;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)1, NULL);
@@ -7047,7 +7086,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_UpdateRecipeUI_m2570F09B
 
 IL_001a:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:102>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:108>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_3 = __this->___activeRecipe;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -7058,7 +7097,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:105>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:111>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_5 = __this->___headerText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -7069,7 +7108,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:107>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:113>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_7 = __this->___headerText;
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_8 = __this->___activeRecipe;
 		NullCheck(L_8);
@@ -7080,7 +7119,7 @@ IL_001a:
 
 IL_004f:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:111>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:117>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_10 = __this->___statusText;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
@@ -7091,9 +7130,9 @@ IL_004f:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:113>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:119>
 		V_0 = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:114>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:120>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_12 = __this->___activeRecipe;
 		NullCheck(L_12);
 		List_1_t2FA2E3511FC580B0762B90C882A71136ED9E1B75* L_13 = L_12->___ingredients;
@@ -7120,11 +7159,11 @@ FINALLY_00ff:
 
 IL_0079_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:114>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:120>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_15;
 				L_15 = Enumerator_get_Current_m6E169FB73FBF4CAAD5C44E450F7BA99AFB4B47DE_inline((&V_1), Enumerator_get_Current_m6E169FB73FBF4CAAD5C44E450F7BA99AFB4B47DE_RuntimeMethod_var);
 				V_2 = L_15;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:116>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:122>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_16 = V_2;
 				FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_17 = L_16.___foodPrefab;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -7136,11 +7175,11 @@ IL_0079_1:
 				}
 			}
 			{
-				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_19 = (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B_il2cpp_TypeInfo_var);
-				U3CU3Ec__DisplayClass16_0__ctor_m4DFAC35E02773BC987196FC947B8F7B0C9385852(L_19, NULL);
+				U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* L_19 = (U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255*)il2cpp_codegen_object_new(U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255_il2cpp_TypeInfo_var);
+				U3CU3Ec__DisplayClass17_0__ctor_m5E498E088F501725742EA3EF0C752BE975F764C6(L_19, NULL);
 				V_3 = L_19;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:118>
-				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_20 = V_3;
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:124>
+				U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* L_20 = V_3;
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_21 = V_2;
 				FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* L_22 = L_21.___foodPrefab;
 				NullCheck(L_22);
@@ -7148,11 +7187,11 @@ IL_0079_1:
 				NullCheck(L_20);
 				L_20->___id = L_23;
 				Il2CppCodeGenWriteBarrier((void**)(&L_20->___id), (void*)L_23);
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:119>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:125>
 				List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_24 = __this->___addedIngredients;
-				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_25 = V_3;
+				U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* L_25 = V_3;
 				Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* L_26 = (Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C*)il2cpp_codegen_object_new(Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C_il2cpp_TypeInfo_var);
-				Predicate_1__ctor_m792445D8ACC019EE3CE897994AF6C04721045A7E(L_26, L_25, (intptr_t)((void*)U3CU3Ec__DisplayClass16_0_U3CUpdateRecipeUIU3Eb__0_m556ABA386C6E34E06F1BC87FF0AB3832B4C6DC48_RuntimeMethod_var), NULL);
+				Predicate_1__ctor_m792445D8ACC019EE3CE897994AF6C04721045A7E(L_26, L_25, (intptr_t)((void*)U3CU3Ec__DisplayClass17_0_U3CUpdateRecipeUIU3Eb__0_mCF05B131F2B1D7A1F274B7567FDCB8C49BBB48CA_RuntimeMethod_var), NULL);
 				NullCheck(L_24);
 				List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_27;
 				L_27 = List_1_FindAll_mA9A6A4CF9D7A756672A24093EF90D283C1600DD5(L_24, L_26, List_1_FindAll_mA9A6A4CF9D7A756672A24093EF90D283C1600DD5_RuntimeMethod_var);
@@ -7160,13 +7199,13 @@ IL_0079_1:
 				int32_t L_28;
 				L_28 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_27, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
 				V_4 = L_28;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:120>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:126>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_29 = V_2;
 				int32_t L_30 = L_29.___requiredAmount;
 				V_5 = L_30;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:122>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:128>
 				String_t* L_31 = V_0;
-				U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* L_32 = V_3;
+				U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* L_32 = V_3;
 				NullCheck(L_32);
 				String_t* L_33 = L_32->___id;
 				int32_t L_34 = V_4;
@@ -7184,7 +7223,7 @@ IL_0079_1:
 
 IL_00f1_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:114>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:120>
 				bool L_42;
 				L_42 = Enumerator_MoveNext_mA94031C2282B27BA1567B5B9C26D955FD12985DC((&V_1), Enumerator_MoveNext_mA94031C2282B27BA1567B5B9C26D955FD12985DC_RuntimeMethod_var);
 				if (L_42)
@@ -7204,7 +7243,7 @@ IL_00f1_1:
 
 IL_010d:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:125>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:131>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_43 = __this->___statusText;
 		String_t* L_44 = V_0;
 		NullCheck(L_44);
@@ -7216,7 +7255,7 @@ IL_010d:
 
 IL_011e:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:128>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:134>
 		return;
 	}
 }
@@ -7231,11 +7270,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_CheckRecipeCompletion_m7
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:132>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:138>
 		int32_t L_0;
 		L_0 = StoveController_GetTotalRequiredIngredientsCount_m38BFE2E5A63BD2B92ABCABD5885CF90826737ABC(__this, NULL);
 		V_0 = L_0;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:133>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:139>
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_1 = __this->___addedIngredients;
 		NullCheck(L_1);
 		int32_t L_2;
@@ -7254,7 +7293,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_CheckRecipeCompletion_m7
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:135>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:141>
 		RuntimeObject* L_5;
 		L_5 = StoveController_StartCookingProcess_m8F74163A19F2CA2463B093CDE0419EEC3A370789(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_6;
@@ -7263,7 +7302,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_CheckRecipeCompletion_m7
 
 IL_0026:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:137>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:143>
 		return;
 	}
 }
@@ -7273,13 +7312,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* StoveController_StartCookingPr
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* L_0 = (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE*)il2cpp_codegen_object_new(U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE_il2cpp_TypeInfo_var);
-		U3CStartCookingProcessU3Ed__18__ctor_m67446F7CEE9D6250000B50BE038790A8D1449C5D(L_0, 0, NULL);
-		U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* L_1 = L_0;
+		U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* L_0 = (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B*)il2cpp_codegen_object_new(U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B_il2cpp_TypeInfo_var);
+		U3CStartCookingProcessU3Ed__19__ctor_mE19913EEE3A2AB237FDD5D6F50F6C93ED2CEFAC2(L_0, 0, NULL);
+		U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* L_1 = L_0;
 		NullCheck(L_1);
 		L_1->___U3CU3E4__this = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&L_1->___U3CU3E4__this), (void*)__this);
@@ -7298,7 +7337,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SpawnDish_mCA42E195984B9
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:158>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:164>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_0 = __this->___stoveFireVFX;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -7309,7 +7348,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SpawnDish_mCA42E195984B9
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:160>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:166>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_2 = __this->___stoveFireVFX;
 		NullCheck(L_2);
 		ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326(L_2, (bool)1, 1, NULL);
@@ -7317,7 +7356,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_SpawnDish_mCA42E195984B9
 
 IL_001b:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:164>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:170>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_3 = __this->___dishSpawnVFX;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -7328,18 +7367,18 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:166>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:172>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_5 = __this->___dishSpawnVFX;
 		NullCheck(L_5);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
 		L_6 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_5, NULL);
 		NullCheck(L_6);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_6, (bool)1, NULL);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:167>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:173>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_7 = __this->___dishSpawnVFX;
 		NullCheck(L_7);
 		ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326(L_7, (bool)1, 0, NULL);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:168>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:174>
 		ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* L_8 = __this->___dishSpawnVFX;
 		NullCheck(L_8);
 		ParticleSystem_Play_mD943E601BFE16CB9BB5D1F5E6AED5C36F5F11EF5(L_8, NULL);
@@ -7347,7 +7386,7 @@ IL_001b:
 
 IL_0052:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:171>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:177>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_9 = __this->___activeRecipe;
 		NullCheck(L_9);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = L_9->___cookedDishPrefab;
@@ -7356,7 +7395,7 @@ IL_0052:
 		L_11 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_10, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_11)
 		{
-			goto IL_00a1;
+			goto IL_00bb;
 		}
 	}
 	{
@@ -7366,11 +7405,11 @@ IL_0052:
 		L_13 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_12, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_13)
 		{
-			goto IL_00a1;
+			goto IL_00bb;
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:173>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:179>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_14 = __this->___activeRecipe;
 		NullCheck(L_14);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = L_14->___cookedDishPrefab;
@@ -7385,42 +7424,91 @@ IL_0052:
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20;
 		L_20 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4(L_15, L_17, L_19, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m831D2F71DF2AA6C93AFDFEFA04CF2CFC5FBBCDB4_RuntimeMethod_var);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:174>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:180>
 		__this->___isPlateOccupied = (bool)1;
-	}
-
-IL_00a1:
-	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:177>
-		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_21 = __this->___addedIngredients;
-		NullCheck(L_21);
-		List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_inline(L_21, List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_RuntimeMethod_var);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:178>
-		__this->___isCooking = (bool)0;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:179>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = __this->___progressCanvas;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_23;
-		L_23 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_22, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_23)
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:183>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = __this->___eatMeCanvas;
+		bool L_22;
+		L_22 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_21, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_22)
 		{
-			goto IL_00cd;
+			goto IL_00bb;
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:179>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = __this->___progressCanvas;
-		NullCheck(L_24);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_24, (bool)0, NULL);
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:185>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = __this->___eatMeCanvas;
+		NullCheck(L_23);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_23, (bool)1, NULL);
 	}
 
-IL_00cd:
+IL_00bb:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:180>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:189>
+		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_24 = __this->___addedIngredients;
+		NullCheck(L_24);
+		List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_inline(L_24, List_1_Clear_mC6C7AEBB0F980A717A87C0D12377984A464F0934_RuntimeMethod_var);
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:190>
+		__this->___isCooking = (bool)0;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:191>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = __this->___progressCanvas;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_26;
+		L_26 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_25, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_26)
+		{
+			goto IL_00e7;
+		}
+	}
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:191>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_27 = __this->___progressCanvas;
+		NullCheck(L_27);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_27, (bool)0, NULL);
+	}
+
+IL_00e7:
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:192>
 		return;
 	}
 }
 // Method Definition Index: 76143
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController_ClearPlate_mB31C85BFC725710EF52503689560C185D3317B98 (StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:197>
+		__this->___isPlateOccupied = (bool)0;
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:198>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___eatMeCanvas;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
+		{
+			goto IL_0021;
+		}
+	}
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:198>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___eatMeCanvas;
+		NullCheck(L_2);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
+	}
+
+IL_0021:
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:199>
+		return;
+	}
+}
+// Method Definition Index: 76144
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StoveController_GetTotalRequiredIngredientsCount_m38BFE2E5A63BD2B92ABCABD5885CF90826737ABC (StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7439,7 +7527,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StoveController_GetTotalRequiredIngre
 	IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 V_2;
 	memset((&V_2), 0, sizeof(V_2));
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:184>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:203>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_0 = __this->___activeRecipe;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -7461,15 +7549,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t StoveController_GetTotalRequiredIngre
 
 IL_001b:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:184>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:203>
 		return 0;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:186>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:205>
 		V_0 = 0;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:187>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:206>
 		RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* L_4 = __this->___activeRecipe;
 		NullCheck(L_4);
 		List_1_t2FA2E3511FC580B0762B90C882A71136ED9E1B75* L_5 = L_4->___ingredients;
@@ -7496,11 +7584,11 @@ FINALLY_004e:
 
 IL_0032_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:187>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:206>
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_7;
 				L_7 = Enumerator_get_Current_m6E169FB73FBF4CAAD5C44E450F7BA99AFB4B47DE_inline((&V_1), Enumerator_get_Current_m6E169FB73FBF4CAAD5C44E450F7BA99AFB4B47DE_RuntimeMethod_var);
 				V_2 = L_7;
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:189>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:208>
 				int32_t L_8 = V_0;
 				IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0 L_9 = V_2;
 				int32_t L_10 = L_9.___requiredAmount;
@@ -7509,7 +7597,7 @@ IL_0032_1:
 
 IL_0043_1:
 			{
-				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:187>
+				//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:206>
 				bool L_11;
 				L_11 = Enumerator_MoveNext_mA94031C2282B27BA1567B5B9C26D955FD12985DC((&V_1), Enumerator_MoveNext_mA94031C2282B27BA1567B5B9C26D955FD12985DC_RuntimeMethod_var);
 				if (L_11)
@@ -7529,12 +7617,12 @@ IL_0043_1:
 
 IL_005c:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:191>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:210>
 		int32_t L_12 = V_0;
 		return L_12;
 	}
 }
-// Method Definition Index: 76144
+// Method Definition Index: 76145
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController__ctor_m6C623333B9CBCD95ABCD77A6DF5718EB98D946B7 (StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7545,7 +7633,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController__ctor_m6C623333B9CBCD95A
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:23>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:24>
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_0 = (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*)il2cpp_codegen_object_new(List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD_il2cpp_TypeInfo_var);
 		List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E(L_0, List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E_RuntimeMethod_var);
 		__this->___addedIngredients = L_0;
@@ -7562,35 +7650,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StoveController__ctor_m6C623333B9CBCD95A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76145
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass15_0__ctor_mE8471D152970C570ABAD93B3F5D428572B1957F9 (U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* __this, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		return;
-	}
-}
 // Method Definition Index: 76146
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass15_0_U3COnTriggerEnterU3Eb__0_mF4343628509BC4797EAE2C177BF3EF7B4541AB68 (U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA* __this, String_t* ___0_x, const RuntimeMethod* method) 
-{
-	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:81>
-		String_t* L_0 = ___0_x;
-		String_t* L_1 = __this->___id;
-		bool L_2;
-		L_2 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_0, L_1, NULL);
-		return L_2;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// Method Definition Index: 76147
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_m4DFAC35E02773BC987196FC947B8F7B0C9385852 (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7598,11 +7658,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_m4DFAC35
 		return;
 	}
 }
-// Method Definition Index: 76148
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass16_0_U3CUpdateRecipeUIU3Eb__0_m556ABA386C6E34E06F1BC87FF0AB3832B4C6DC48 (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* __this, String_t* ___0_x, const RuntimeMethod* method) 
+// Method Definition Index: 76147
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass16_0_U3COnTriggerEnterU3Eb__0_mC2E887DBB738C0793FC6F8880FC09C1EEF66AD5E (U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B* __this, String_t* ___0_x, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:119>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:87>
 		String_t* L_0 = ___0_x;
 		String_t* L_1 = __this->___id;
 		bool L_2;
@@ -7618,8 +7678,36 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass16_0_U3CUpdateRecip
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// Method Definition Index: 76148
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass17_0__ctor_m5E498E088F501725742EA3EF0C752BE975F764C6 (U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		return;
+	}
+}
 // Method Definition Index: 76149
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__18__ctor_m67446F7CEE9D6250000B50BE038790A8D1449C5D (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass17_0_U3CUpdateRecipeUIU3Eb__0_mCF05B131F2B1D7A1F274B7567FDCB8C49BBB48CA (U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255* __this, String_t* ___0_x, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:125>
+		String_t* L_0 = ___0_x;
+		String_t* L_1 = __this->___id;
+		bool L_2;
+		L_2 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_0, L_1, NULL);
+		return L_2;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Method Definition Index: 76150
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__19__ctor_mE19913EEE3A2AB237FDD5D6F50F6C93ED2CEFAC2 (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -7628,15 +7716,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__18__ctor_m67
 		return;
 	}
 }
-// Method Definition Index: 76150
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__18_System_IDisposable_Dispose_m9D117DBD81C93DB5DB4A589961760C4E20B84148 (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, const RuntimeMethod* method) 
+// Method Definition Index: 76151
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__19_System_IDisposable_Dispose_m50BC465DD666F51397F42C448C836139A52B2C45 (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76151
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CStartCookingProcessU3Ed__18_MoveNext_m01E4A94514DBD08491E798ADD937CDF1CFB3D1D5 (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, const RuntimeMethod* method) 
+// Method Definition Index: 76152
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CStartCookingProcessU3Ed__19_MoveNext_mD6421ED06D46E3B0A0E7EC85D48E77DB21CFA96F (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
 	StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* V_1 = NULL;
@@ -7665,22 +7753,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CStartCookingProcessU3Ed__18_MoveNext_
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:141>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:147>
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_4 = V_1;
 		NullCheck(L_4);
 		L_4->___isCooking = (bool)1;
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:142>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:148>
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_5 = V_1;
 		NullCheck(L_5);
 		L_5->___cookTimer = (0.0f);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:144>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:150>
 		__this->___U3CdurationU3E5__2 = (5.0f);
 		goto IL_0066;
 	}
 
 IL_003d:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:148>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:154>
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_6 = V_1;
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_7 = V_1;
 		NullCheck(L_7);
@@ -7689,7 +7777,7 @@ IL_003d:
 		L_9 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		NullCheck(L_6);
 		L_6->___cookTimer = ((float)il2cpp_codegen_add(L_8, L_9));
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:149>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:155>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -7703,7 +7791,7 @@ IL_005f:
 
 IL_0066:
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:146>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:152>
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_10 = V_1;
 		NullCheck(L_10);
 		float L_11 = L_10->___cookTimer;
@@ -7714,33 +7802,33 @@ IL_0066:
 		}
 	}
 	{
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:152>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:158>
 		StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065* L_13 = V_1;
 		NullCheck(L_13);
 		StoveController_SpawnDish_mCA42E195984B93AB49CF9A10E3FC8EA9CCD15FE0(L_13, NULL);
-		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:153>
+		//<source_info:C:/CM3070/CM3070_ZEROWASTE_FINAL/Assets/ZW SCRIPTS/Cooking/StoveController.cs:159>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76152
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartCookingProcessU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA3BEE410F38140B4ECEE8FC86D4951B3E836E1D7 (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, const RuntimeMethod* method) 
+// Method Definition Index: 76153
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartCookingProcessU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1267BD57529D65762D434A6B53D7AAF023DE069A (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
 		return L_0;
 	}
 }
-// Method Definition Index: 76153
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__18_System_Collections_IEnumerator_Reset_m4F168E6B387A8DA33E00624D7899F172AB4B1B8B (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, const RuntimeMethod* method) 
+// Method Definition Index: 76154
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CStartCookingProcessU3Ed__19_System_Collections_IEnumerator_Reset_mF404930DC40550AC6D2D5A97F6B096E2E4998C11 (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, const RuntimeMethod* method) 
 {
 	{
 		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
 		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CStartCookingProcessU3Ed__18_System_Collections_IEnumerator_Reset_m4F168E6B387A8DA33E00624D7899F172AB4B1B8B_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CStartCookingProcessU3Ed__19_System_Collections_IEnumerator_Reset_mF404930DC40550AC6D2D5A97F6B096E2E4998C11_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76154
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartCookingProcessU3Ed__18_System_Collections_IEnumerator_get_Current_m835C075C14E4A214B1B4A407BAEC611478DB0A8F (U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE* __this, const RuntimeMethod* method) 
+// Method Definition Index: 76155
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartCookingProcessU3Ed__19_System_Collections_IEnumerator_get_Current_m2BA882E6EA807C3CB0192696B78AB4264D585274 (U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
@@ -7755,7 +7843,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartCookingProcessU3Ed__18
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76155
+// Method Definition Index: 76156
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* DayManager_get_Instance_m6205CD694B380816091A94B1D0E92B6B402BF0A3 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7770,7 +7858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266
 		return L_0;
 	}
 }
-// Method Definition Index: 76156
+// Method Definition Index: 76157
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayManager_set_Instance_m2C961B50053DE7F7AB15258257DF202036577AEE (DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7787,7 +7875,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayManager_set_Instance_m2C961B50053DE7F
 		return;
 	}
 }
-// Method Definition Index: 76157
+// Method Definition Index: 76158
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayManager_Awake_mA15E2DAA6AECC785E6854185939FBDC7E0458BAF (DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7836,7 +7924,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76158
+// Method Definition Index: 76159
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayManager_EndCurrentDay_m61472690321DF45F393A180C722849A71A9F83A2 (DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7922,7 +8010,7 @@ IL_0058:
 		return;
 	}
 }
-// Method Definition Index: 76159
+// Method Definition Index: 76160
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayManager__ctor_m80D7B5D59842F900B2FDA0ACAFDF6B2ABE07A096 (DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7950,7 +8038,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayManager__ctor_m80D7B5D59842F900B2FDA0
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76160
+// Method Definition Index: 76161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* DayPhaseManager_get_Instance_m88DBFCBCA6B57084F52D8CB6FA3BC3853462177E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7965,7 +8053,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DayPhaseManager_t43E096AC8D3CA296ED0AAFFB0144
 		return L_0;
 	}
 }
-// Method Definition Index: 76161
+// Method Definition Index: 76162
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_set_Instance_mE32E59B9DA8991B7D3B6914C5A6FDAE439965C6F (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7982,7 +8070,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_set_Instance_mE32E59B9DA
 		return;
 	}
 }
-// Method Definition Index: 76162
+// Method Definition Index: 76163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_add_OnPhaseChanged_mE994F53E3F635A7A5B3E3F7EAFAF8EE431F8DF59 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8025,7 +8113,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 76163
+// Method Definition Index: 76164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_remove_OnPhaseChanged_m793BBB0B40F4D9830A98C1E48B0009A54F232336 (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8068,7 +8156,7 @@ IL_0006:
 		return;
 	}
 }
-// Method Definition Index: 76164
+// Method Definition Index: 76165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DayPhaseManager_get_CurrentDay_m8205B6EDC44F5B57171178377E2DEC79EB955215 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8077,7 +8165,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DayPhaseManager_get_CurrentDay_m8205B
 		return L_0;
 	}
 }
-// Method Definition Index: 76165
+// Method Definition Index: 76166
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DayPhaseManager_get_CurrentPhase_m855162631197A4996C8784E4EC31DB29B4AB4009 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8086,7 +8174,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t DayPhaseManager_get_CurrentPhase_m855
 		return L_0;
 	}
 }
-// Method Definition Index: 76166
+// Method Definition Index: 76167
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_Awake_mEAD090B0268948D6DBBF730CCCB33280DDB0C7CD (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8135,7 +8223,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76167
+// Method Definition Index: 76168
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_Start_mB6F12D54B62CEE342F68BE4760191FA3C96AE303 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8172,7 +8260,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 76168
+// Method Definition Index: 76169
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_ConfirmNextPhase_m8D614E8743E0DCD6C557769DB14F4183DCABA78C (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8182,7 +8270,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_ConfirmNextPhase_m8D614E
 		return;
 	}
 }
-// Method Definition Index: 76169
+// Method Definition Index: 76170
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_OpenPhaseChangeConfirmation_m9D0B35E7D9AA3EDF41A6BFB917521680812893FA (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8215,7 +8303,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 76170
+// Method Definition Index: 76171
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_ConfirmAdvancePhase_m94FEF90237222FC1F4F3F78BBC0CFB09366D4AD6 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8250,7 +8338,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 76171
+// Method Definition Index: 76172
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_CancelPhaseChange_m95C99D9DC1E507D704D8D3057CFFDE36A1D73A34 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8283,7 +8371,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 76172
+// Method Definition Index: 76173
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_AdvancePhase_m83213806427A63E310AD25942B5007BA63054C1A (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8466,7 +8554,7 @@ IL_00ad:
 		return;
 	}
 }
-// Method Definition Index: 76173
+// Method Definition Index: 76174
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_UpdateClockUI_m8461C2AEB48D9726462B8C461238DB451A030699 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8512,7 +8600,7 @@ IL_0044:
 		return;
 	}
 }
-// Method Definition Index: 76174
+// Method Definition Index: 76175
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager_UpdateEnvironment_m8E4FE27488FACD83E17DB4AAFEC8C7166CB4E823 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8660,7 +8748,7 @@ IL_00e5:
 		return;
 	}
 }
-// Method Definition Index: 76175
+// Method Definition Index: 76176
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager__ctor_mB3FF682CD82F11B1296B68B786457DED47F4A119 (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8701,7 +8789,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DayPhaseManager__ctor_mB3FF682CD82F11B12
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76176
+// Method Definition Index: 76177
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float FoodItem_get_FreshnessPercentage_m54126E7420A719F5C20E919FF844BF52470C0D46 (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8728,7 +8816,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 76177
+// Method Definition Index: 76178
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* FoodItem_get_FreshnessStatus_mD6D5F4C18C05F73C358CA13DCD5FF7CB461639DE (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8800,7 +8888,7 @@ IL_003a:
 		return _stringLiteral3F259841829935BDDFED68AB6213B648CD3FF65B;
 	}
 }
-// Method Definition Index: 76178
+// Method Definition Index: 76179
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* FoodItem_get_FreshnessStatusColor_m4E4CB032D0F1E4D23BBFFC51C14F378FB0FFFAAD (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8872,7 +8960,7 @@ IL_003a:
 		return _stringLiteral07810BD836AFDF400A98B8640CB0BDDF50123D6F;
 	}
 }
-// Method Definition Index: 76179
+// Method Definition Index: 76180
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_Awake_mCF7362D4BF0A9019D31EE6C9275034D66726608A (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8935,7 +9023,7 @@ IL_005a:
 		return;
 	}
 }
-// Method Definition Index: 76180
+// Method Definition Index: 76181
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_OnPhaseTick_m867B66189526D0E4B9F3E782380CF5FEAE85C980 (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8947,7 +9035,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_OnPhaseTick_m867B66189526D0E4B9
 		return;
 	}
 }
-// Method Definition Index: 76181
+// Method Definition Index: 76182
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_UpdateMoldVisuals_mA3651751B2A726D7676ECD079CEB7B614F54D472 (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9050,7 +9138,7 @@ IL_0070:
 		return;
 	}
 }
-// Method Definition Index: 76182
+// Method Definition Index: 76183
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_AdvanceDay_m19226D71518985FD73FD558EBE33585E74AAB7A3 (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -9115,7 +9203,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 76183
+// Method Definition Index: 76184
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_ApplyPortionDistortion_m1C262192ED1853C6264730DE15FB859C49CF0C8E (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, bool ___0_enableDistortion, const RuntimeMethod* method) 
 {
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* G_B2_0 = NULL;
@@ -9157,7 +9245,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 76184
+// Method Definition Index: 76185
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem_ExpireItem_m1B854FABC59911F6ACB7DA4BBA342748CC6532A5 (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9228,7 +9316,7 @@ IL_007e:
 		return;
 	}
 }
-// Method Definition Index: 76185
+// Method Definition Index: 76186
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem__ctor_m68AC1D167A2EDB705DF322708CE06C6C6B3EA3CB (FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9264,7 +9352,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem__ctor_m68AC1D167A2EDB705DF32270
 		return;
 	}
 }
-// Method Definition Index: 76186
+// Method Definition Index: 76187
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem__cctor_mAC34BF8CE9D6321021EC83BD695BEB9122773886 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9290,7 +9378,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItem__cctor_mAC34BF8CE9D6321021EC83B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76187
+// Method Definition Index: 76188
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemRow_SetupRow_m5D6ABE9369AE6BDFAADEF3F5429F18BB8B1D1321 (FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88* __this, FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* ___0_itemData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9410,7 +9498,7 @@ IL_00a0:
 		return;
 	}
 }
-// Method Definition Index: 76188
+// Method Definition Index: 76189
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemRow_OnBuyButtonClicked_m21F14D922317F46897747DFA502AB00DFF9F7385 (FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9503,7 +9591,7 @@ IL_0061:
 		return;
 	}
 }
-// Method Definition Index: 76189
+// Method Definition Index: 76190
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemRow__ctor_m961A6A931B52EF77B667C11E38F696EAF52DAC61 (FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9511,7 +9599,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemRow__ctor_m961A6A931B52EF77B667C
 		return;
 	}
 }
-// Method Definition Index: 76190
+// Method Definition Index: 76191
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FoodItemRow_U3COnBuyButtonClickedU3Eb__5_0_mEDB515A6C82EEF19E14E2EDA2E665DDAA9277A26 (FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88* __this, ShopEntry_t9A1911972813782A87BBC935D601957941CE783D ___0_entry, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9559,7 +9647,7 @@ IL_0025:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76191
+// Method Definition Index: 76192
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemBase_Awake_m7FE259FE36F1E7AD9D94CF2497705283FC8A11F3 (FoodItemBase_t701A481A0D28EF9974426E354B2C7DEB1DFBD1B8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9650,7 +9738,7 @@ IL_0067:
 		return;
 	}
 }
-// Method Definition Index: 76192
+// Method Definition Index: 76193
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemBase__ctor_mFF1E49EAB9A732BECF108CFA3850A44D7C6024B2 (FoodItemBase_t701A481A0D28EF9974426E354B2C7DEB1DFBD1B8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9677,7 +9765,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodItemBase__ctor_mFF1E49EAB9A732BECF10
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76193
+// Method Definition Index: 76194
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodRespawner3D_OnTriggerEnter_mA89F0EDC3DBB02FD465C4A93DD07F0A8827374FA (FoodRespawner3D_t746B9238B2A29C48E6730588395EFEC1AB1D4FA8* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	{
@@ -9687,7 +9775,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodRespawner3D_OnTriggerEnter_mA89F0EDC
 		return;
 	}
 }
-// Method Definition Index: 76194
+// Method Definition Index: 76195
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodRespawner3D_ResetAllFoodPositions_m48427621431F748D729C353921915ADEE64D89F6 (FoodRespawner3D_t746B9238B2A29C48E6730588395EFEC1AB1D4FA8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9845,7 +9933,7 @@ IL_00b4:
 		return;
 	}
 }
-// Method Definition Index: 76195
+// Method Definition Index: 76196
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodRespawner3D__ctor_m2477AA551D5663FBC56939A684125676E8A5BB2E (FoodRespawner3D_t746B9238B2A29C48E6730588395EFEC1AB1D4FA8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9861,7 +9949,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FoodRespawner3D__ctor_m2477AA551D5663FBC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76196
+// Method Definition Index: 76197
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B (MainMenuManager_tF7A52AE15B4646A6080DC28A83B82CB4ACF46B94* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9875,7 +9963,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuManager_OnClickStartGame_mD765E0
 		return;
 	}
 }
-// Method Definition Index: 76197
+// Method Definition Index: 76198
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244 (MainMenuManager_tF7A52AE15B4646A6080DC28A83B82CB4ACF46B94* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9892,7 +9980,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuManager_OnClickQuit_mC109FF7D24E
 		return;
 	}
 }
-// Method Definition Index: 76198
+// Method Definition Index: 76199
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558 (MainMenuManager_tF7A52AE15B4646A6080DC28A83B82CB4ACF46B94* __this, String_t* ___0_sceneName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9912,7 +10000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MainMenuManager_LoadSceneAsync
 		return L_1;
 	}
 }
-// Method Definition Index: 76199
+// Method Definition Index: 76200
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuManager__ctor_m9CF8E7F30CE180004AA0DFF1229FC615B531542B (MainMenuManager_tF7A52AE15B4646A6080DC28A83B82CB4ACF46B94* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9937,7 +10025,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenuManager__ctor_m9CF8E7F30CE180004
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76200
+// Method Definition Index: 76201
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneAsyncU3Ed__3__ctor_m4BFA123D46310DB1BE07821F158F4B07D850B71C (U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -9947,14 +10035,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneAsyncU3Ed__3__ctor_m4BFA123D
 		return;
 	}
 }
-// Method Definition Index: 76201
+// Method Definition Index: 76202
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneAsyncU3Ed__3_System_IDisposable_Dispose_m5BF6BFF534D77A403486CF221E101BAAB9E83CC4 (U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76202
+// Method Definition Index: 76203
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523035C90F (U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10028,7 +10116,7 @@ IL_0041:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76203
+// Method Definition Index: 76204
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97 (U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10036,7 +10124,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneAsyncU3Ed__3_Syste
 		return L_0;
 	}
 }
-// Method Definition Index: 76204
+// Method Definition Index: 76205
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C (U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10045,7 +10133,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoadSceneAsyncU3Ed__3_System_Collecti
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76205
+// Method Definition Index: 76206
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D (U3CLoadSceneAsyncU3Ed__3_tA0AFD170AA392748AE413C50168FEAB071A4096D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10061,7 +10149,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoadSceneAsyncU3Ed__3_Syste
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76206
+// Method Definition Index: 76207
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3 (PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10071,7 +10159,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_Start_m7D867A26F1EE3E8
 		return;
 	}
 }
-// Method Definition Index: 76207
+// Method Definition Index: 76208
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965 (PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10199,7 +10287,7 @@ IL_009c:
 		return;
 	}
 }
-// Method Definition Index: 76208
+// Method Definition Index: 76209
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D (PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10209,7 +10297,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_OnCancelClicked_m82F6E
 		return;
 	}
 }
-// Method Definition Index: 76209
+// Method Definition Index: 76210
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283 (PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10246,7 +10334,7 @@ IL_0017:
 		return;
 	}
 }
-// Method Definition Index: 76210
+// Method Definition Index: 76211
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF (PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10374,7 +10462,7 @@ IL_009c:
 		return;
 	}
 }
-// Method Definition Index: 76211
+// Method Definition Index: 76212
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E (PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10390,7 +10478,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseTransitionUI__ctor_mCFD78B59C46478B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76212
+// Method Definition Index: 76213
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F (ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10405,7 +10493,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet_Start_mEB3B8DE4C9EC8F6881
 		return;
 	}
 }
-// Method Definition Index: 76213
+// Method Definition Index: 76214
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E (ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11258,7 +11346,7 @@ IL_03b9:
 		return;
 	}
 }
-// Method Definition Index: 76214
+// Method Definition Index: 76215
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973 (ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* __this, int32_t ___0_itemIndex, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11554,7 +11642,7 @@ IL_0182:
 		return;
 	}
 }
-// Method Definition Index: 76215
+// Method Definition Index: 76216
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet_OnEndDayButtonClicked_mAE4CA6AA0B6C6D4D36296268E3C9FEB3601C587E (ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11591,7 +11679,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 76216
+// Method Definition Index: 76217
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet_UpdateUI_m563948B4CA23EDA00803437A7FAD33F19141B7ED (ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11700,7 +11788,7 @@ IL_00aa:
 		return;
 	}
 }
-// Method Definition Index: 76217
+// Method Definition Index: 76218
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShoppingTablet__ctor_m26BD5AC0C62C226DE6AA6E6B7C5DA8FBCA9B0DF0 (ShoppingTablet_t7E9C9888CE3809FC9D68D44AF883DD5E9E6542F2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11804,7 +11892,7 @@ IL2CPP_EXTERN_C void ShopEntry_t9A1911972813782A87BBC935D601957941CE783D_marshal
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76218
+// Method Definition Index: 76219
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0__ctor_m3BB43148A5A882AFDD8908606EE46E05BBB50465 (U3CU3Ec__DisplayClass18_0_tBEB2055CBADBC639BE2A42033D7F09E18A92287F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11812,7 +11900,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0__ctor_m3BB4314
 		return;
 	}
 }
-// Method Definition Index: 76219
+// Method Definition Index: 76220
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0_U3CPopulateCategorizedCatalogU3Eb__0_m6037FD5708DD5BAB508AE46CCB03392EEF33A9EF (U3CU3Ec__DisplayClass18_0_tBEB2055CBADBC639BE2A42033D7F09E18A92287F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11824,7 +11912,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0_U3CPopulateCat
 		return;
 	}
 }
-// Method Definition Index: 76220
+// Method Definition Index: 76221
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0_U3CPopulateCategorizedCatalogU3Eb__1_m7BF52935F0F82D36DE0AB173E49352FDAE180330 (U3CU3Ec__DisplayClass18_0_tBEB2055CBADBC639BE2A42033D7F09E18A92287F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11844,7 +11932,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0_U3CPopulateCat
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76221
+// Method Definition Index: 76222
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StorageZone_OnTriggerEnter_mF6B251728C25587B0665D955CB21A2FA900DDB98 (StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11920,7 +12008,7 @@ IL_005f:
 		return;
 	}
 }
-// Method Definition Index: 76222
+// Method Definition Index: 76223
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StorageZone_OnTriggerStay_m687F2D460121996C39B62FE52DA1D33D89A5DFA8 (StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12001,7 +12089,7 @@ IL_0062:
 		return;
 	}
 }
-// Method Definition Index: 76223
+// Method Definition Index: 76224
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StorageZone_OnTriggerExit_m36E8FAFA3CE9B4E9ACE16D0EB51E7A6F5FC4C16A (StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12081,7 +12169,7 @@ IL_005d:
 		return;
 	}
 }
-// Method Definition Index: 76224
+// Method Definition Index: 76225
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2* StorageZone_GetFoodItemFromCollider_m0E590F76BB7ACF4E3232AF4961C69E2DE4A10CE9 (StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_col, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12208,7 +12296,7 @@ IL_005f:
 		return L_22;
 	}
 }
-// Method Definition Index: 76225
+// Method Definition Index: 76226
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StorageZone__ctor_m127BE6D3BDDD01ADC5C908A61529034678C2AD09 (StorageZone_tF66924D07E7D29A305F4FB7487650762512725F1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12232,7 +12320,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StorageZone__ctor_m127BE6D3BDDD01ADC5C90
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76226
+// Method Definition Index: 76227
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrashBin_OnTriggerEnter_mD49BC205FFFECEA88AF775DC60BD6A685468EA24 (TrashBin_t1BC703CBE84DB437AF75681AE60C5E4921D2D853* __this, Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* ___0_other, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12333,7 +12421,7 @@ IL_0080:
 		return;
 	}
 }
-// Method Definition Index: 76227
+// Method Definition Index: 76228
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrashBin__ctor_mBAF50EB90BAEAF5C0BCBCFF7A6C9D9AB977522D8 (TrashBin_t1BC703CBE84DB437AF75681AE60C5E4921D2D853* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12349,7 +12437,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TrashBin__ctor_mBAF50EB90BAEAF5C0BCBCFF7
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76228
+// Method Definition Index: 76229
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* TVDisplayController_get_Instance_mFF74BEE5F4FB97049A61D76623ADB59CF64175FF (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12364,7 +12452,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TVDisplayController_tD1E37BEF937E04A712138A2F
 		return L_0;
 	}
 }
-// Method Definition Index: 76229
+// Method Definition Index: 76230
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_set_Instance_m70B01A0B2589879DDBD43ADEF1FF1CF22815E059 (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12381,7 +12469,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_set_Instance_m70B01A
 		return;
 	}
 }
-// Method Definition Index: 76230
+// Method Definition Index: 76231
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_Awake_mC27DB9D4398A106F889DE865DB62E4C0E68D108E (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12430,7 +12518,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76231
+// Method Definition Index: 76232
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_OnEnable_m3E128F5348A58A856FC25161AF838F60E45EFAC3 (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12449,7 +12537,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_OnEnable_m3E128F5348
 		return;
 	}
 }
-// Method Definition Index: 76232
+// Method Definition Index: 76233
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_OnDisable_mC92F65C2756BBD095C67691B06842379D7C935EA (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12468,7 +12556,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_OnDisable_mC92F65C27
 		return;
 	}
 }
-// Method Definition Index: 76233
+// Method Definition Index: 76234
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_Start_m97B0E96D2C5214DD093D60AC684EEB9BF57924D9 (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12480,7 +12568,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_Start_m97B0E96D2C521
 		return;
 	}
 }
-// Method Definition Index: 76234
+// Method Definition Index: 76235
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_Update_m9D46D0AD712438BC71061E433894A8302DBACF8A (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12509,7 +12597,7 @@ IL_0030:
 		return;
 	}
 }
-// Method Definition Index: 76235
+// Method Definition Index: 76236
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_SetHeaderLabels_m7F81A6F179A2E5673D66562AD255C79CC08CA183 (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12643,7 +12731,7 @@ IL_00b4:
 		return;
 	}
 }
-// Method Definition Index: 76236
+// Method Definition Index: 76237
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_RefreshDisplay_m6237F8B3610E050123D8CC671357D12BB5DBD4CE (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13098,7 +13186,7 @@ IL_026e:
 		return;
 	}
 }
-// Method Definition Index: 76237
+// Method Definition Index: 76238
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController_ClearColumns_mCE12C23B72D6AAB2D73408BA8E33D0D0CEAF9B93 (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, String_t* ___0_defaultText, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13228,7 +13316,7 @@ IL_00b0:
 		return;
 	}
 }
-// Method Definition Index: 76238
+// Method Definition Index: 76239
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController__ctor_m064CE96C05E026BB5E46B9470537B0A45AC6DFF2 (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13244,7 +13332,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TVDisplayController__ctor_m064CE96C05E02
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76239
+// Method Definition Index: 76240
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDoorToggle_Awake_m5F725E889A15C371201A7DCBC4446930E6E4EEDC (VRDoorToggle_tFDB2EECF54B2BF2C2FDD4DC9F8DF06B59879CE3B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13267,7 +13355,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDoorToggle_Awake_m5F725E889A15C371201A
 		return;
 	}
 }
-// Method Definition Index: 76240
+// Method Definition Index: 76241
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDoorToggle_ToggleDoor_mC2D9A4343F215117C04625AD78069820B6F53943 (VRDoorToggle_tFDB2EECF54B2BF2C2FDD4DC9F8DF06B59879CE3B* __this, const RuntimeMethod* method) 
 {
 	VRDoorToggle_tFDB2EECF54B2BF2C2FDD4DC9F8DF06B59879CE3B* G_B4_0 = NULL;
@@ -13346,7 +13434,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 76241
+// Method Definition Index: 76242
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRDoorToggle_AnimateDoor_m0FC5367DD8FC8494A9D7A1A45506EF09D7C70949 (VRDoorToggle_tFDB2EECF54B2BF2C2FDD4DC9F8DF06B59879CE3B* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_targetRotation, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13369,7 +13457,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VRDoorToggle_AnimateDoor_m0FC5
 		return L_2;
 	}
 }
-// Method Definition Index: 76242
+// Method Definition Index: 76243
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDoorToggle__ctor_mB0B185FBDBF176F79813F992A0BBC2A235222C53 (VRDoorToggle_tFDB2EECF54B2BF2C2FDD4DC9F8DF06B59879CE3B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13389,7 +13477,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRDoorToggle__ctor_mB0B185FBDBF176F79813
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76243
+// Method Definition Index: 76244
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimateDoorU3Ed__8__ctor_mE57A1195D20CF34007A840768B550C8F0BC80FE8 (U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13399,14 +13487,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimateDoorU3Ed__8__ctor_mE57A1195D20
 		return;
 	}
 }
-// Method Definition Index: 76244
+// Method Definition Index: 76245
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimateDoorU3Ed__8_System_IDisposable_Dispose_mD8A127F8EB80BC157C52ADA25E582C39411943E5 (U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76245
+// Method Definition Index: 76246
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimateDoorU3Ed__8_MoveNext_mE3D6294692B01F1631414CC555287423574533F0 (U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -13511,7 +13599,7 @@ IL_0064:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76246
+// Method Definition Index: 76247
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimateDoorU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m835A24F4554D807A688C98ABC2694AB3A9F83A23 (U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13519,7 +13607,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimateDoorU3Ed__8_System_C
 		return L_0;
 	}
 }
-// Method Definition Index: 76247
+// Method Definition Index: 76248
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4AE6FBAC17A3B1FE604CC50D2DAD1E79C (U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13528,7 +13616,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimateDoorU3Ed__8_System_Collections
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4AE6FBAC17A3B1FE604CC50D2DAD1E79C_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76248
+// Method Definition Index: 76249
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (U3CAnimateDoorU3Ed__8_t33184F27C0D5679E9E4C2D113F6F0599EAC17473* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13544,7 +13632,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimateDoorU3Ed__8_System_C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76249
+// Method Definition Index: 76250
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC90C99D73A3E UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13578,7 +13666,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC
 		return L_6;
 	}
 }
-// Method Definition Index: 76250
+// Method Definition Index: 76251
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tC95F24D0C6E6B77389433852BB389F39C692926E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13745,7 +13833,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SelectEnterEvent_tBA2614C8C25D879
 		return L_0;
 	}
 }
-// Method Definition Index: 76155
+// Method Definition Index: 76156
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* DayManager_get_Instance_m6205CD694B380816091A94B1D0E92B6B402BF0A3_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13760,7 +13848,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DayManager_t77CA808562B2EB0CE0EFC
 		return L_0;
 	}
 }
-// Method Definition Index: 76156
+// Method Definition Index: 76157
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DayManager_set_Instance_m2C961B50053DE7F7AB15258257DF202036577AEE_inline (DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13777,7 +13865,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DayManager_set_Instance_m2C9
 		return;
 	}
 }
-// Method Definition Index: 76160
+// Method Definition Index: 76161
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* DayPhaseManager_get_Instance_m88DBFCBCA6B57084F52D8CB6FA3BC3853462177E_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13792,7 +13880,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DayPhaseManager_t43E096AC8D3CA296
 		return L_0;
 	}
 }
-// Method Definition Index: 76161
+// Method Definition Index: 76162
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DayPhaseManager_set_Instance_mE32E59B9DA8991B7D3B6914C5A6FDAE439965C6F_inline (DayPhaseManager_t43E096AC8D3CA296ED0AAFFB014455A48EDFA0D4* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13809,7 +13897,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void DayPhaseManager_set_Instance
 		return;
 	}
 }
-// Method Definition Index: 76228
+// Method Definition Index: 76229
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* TVDisplayController_get_Instance_mFF74BEE5F4FB97049A61D76623ADB59CF64175FF_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14073,7 +14161,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 76229
+// Method Definition Index: 76230
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void TVDisplayController_set_Instance_m70B01A0B2589879DDBD43ADEF1FF1CF22815E059_inline (TVDisplayController_tD1E37BEF937E04A712138A2F6A31597D2BA40630* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

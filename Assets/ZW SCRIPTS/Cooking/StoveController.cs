@@ -13,6 +13,7 @@ public class StoveController : MonoBehaviour
 
     [Header("UI References")]
     public GameObject progressCanvas;
+    public GameObject eatMeCanvas; // "Eat Me!" prompt UI
     public TextMeshProUGUI headerText; // Header for dish name
     public TextMeshProUGUI statusText; // Ingredients progress list
 
@@ -33,6 +34,7 @@ public class StoveController : MonoBehaviour
     private void Start()
     {
         if (progressCanvas != null) progressCanvas.SetActive(false);
+        if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
         if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (dishSpawnVFX != null) dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
@@ -50,6 +52,10 @@ public class StoveController : MonoBehaviour
 
         activeRecipe = newRecipe;
         addedIngredients.Clear();
+
+        // Hide Eat Me prompt when setting up a new recipe
+        if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
+
         UpdateRecipeUI();
 
         // Trigger stove fire VFX as soon as recipe confirmation happens
@@ -71,6 +77,13 @@ public class StoveController : MonoBehaviour
         FoodItem item = other.GetComponentInParent<FoodItem>();
         if (item != null)
         {
+            // Reject expired/spoiled ingredients
+            if (item.isExpired || item.currentFreshnessDays <= 0)
+            {
+                ShowSpoiledFoodWarning();
+                return;
+            }
+
             string id = !string.IsNullOrEmpty(item.foodName) ? item.foodName : item.gameObject.name;
 
             foreach (var req in activeRecipe.ingredients)
@@ -93,6 +106,13 @@ public class StoveController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void ShowSpoiledFoodWarning()
+    {
+        if (progressCanvas != null) progressCanvas.SetActive(true);
+        if (headerText != null) headerText.text = "Warning!";
+        if (statusText != null) statusText.text = "Please do not put spoiled food inside!";
     }
 
     private void UpdateRecipeUI()
@@ -172,11 +192,24 @@ public class StoveController : MonoBehaviour
         {
             Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
             isPlateOccupied = true; // Set plate occupied status when spawned
+
+            // Show "Eat Me!" prompt once food is ready on the plate
+            if (eatMeCanvas != null)
+            {
+                eatMeCanvas.SetActive(true);
+            }
         }
 
         addedIngredients.Clear();
         isCooking = false;
         if (progressCanvas != null) progressCanvas.SetActive(false);
+    }
+
+    // Helper method to call when the player consumes the dish
+    public void ClearPlate()
+    {
+        isPlateOccupied = false;
+        if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
     }
 
     private int GetTotalRequiredIngredientsCount()

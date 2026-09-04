@@ -3227,16 +3227,16 @@ struct U3CU3Ec_t04E77827D54CC7D69F04FDFC5A84C3F7392F9A76  : public RuntimeObject
 struct U3CU3Ec_t077F63D1AD84FB9E7D0A6793234888C38925CAA7  : public RuntimeObject
 {
 };
-struct U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA  : public RuntimeObject
+struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
 {
 	String_t* ___id;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* ___U3CU3E9__0;
 };
-struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
+struct U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255  : public RuntimeObject
 {
 	String_t* ___id;
 };
-struct U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE  : public RuntimeObject
+struct U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -35365,6 +35365,7 @@ struct StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065  : public MonoB
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___dishSpawnPoint;
 	bool ___isPlateOccupied;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___progressCanvas;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___eatMeCanvas;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___headerText;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___statusText;
 	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ___stoveFireVFX;
@@ -47564,16 +47565,16 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8972[3] =
 	static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___recipeName)),static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___ingredients)),static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___cookedDishPrefab)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8973[2] = 
 {
-	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA, ___id)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass15_0_tE5299D79221BAAA9D858815A94357FB0DDBC6EFA, ___U3CU3E9__0)),};
+	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B, ___id)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B, ___U3CU3E9__0)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8974[1] = 
 {
-	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B, ___id)),};
+	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass17_0_tE1A592F620E7AA9B8E10FA8EE764F443F5927255, ___id)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8975[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__18_t23A417B2DDC24C9E2462CA70617CA57E5C1148AE, ___U3CdurationU3E5__2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8976[12] = 
+	static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__19_t24DEACFA9A5B2DA69E911D603DC6C6C40274A31B, ___U3CdurationU3E5__2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8976[13] = 
 {
-	static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___activeRecipe)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnPoint)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isPlateOccupied)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___progressCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___headerText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___statusText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___stoveFireVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___addedIngredients)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isCooking)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___cookTimer)),};
+	static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___activeRecipe)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnPoint)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isPlateOccupied)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___progressCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___eatMeCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___headerText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___statusText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___stoveFireVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___addedIngredients)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isCooking)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___cookTimer)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8977[3] = 
 {
 	static_cast<int32_t>(offsetof(DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255_StaticFields, ___U3CInstanceU3Ek__BackingField)),static_cast<int32_t>(offsetof(DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255, ___currentDay)),static_cast<int32_t>(offsetof(DayManager_t77CA808562B2EB0CE0EFC1A6A78EC9266DC73255, ___maxDays)),};
