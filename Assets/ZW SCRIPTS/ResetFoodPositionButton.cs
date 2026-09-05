@@ -10,9 +10,14 @@ public class ResetFoodPositionsButton : MonoBehaviour
     public Transform buttonPressTransform;
 
     [Header("Press Animation Settings")]
-    [Tooltip("Distance the top cylinder moves down along its local Y axis when pressed.")]
-    public float pressDistance = 0.015f;
-    public float pressSpeed = 10f;
+    [Tooltip("Target local Y position when pressed (set to 0.5 for your scale setup).")]
+    public float pressedLocalY = 0.5f;
+
+    [Tooltip("Duration of the downward/upward move (in seconds).")]
+    public float animationDuration = 0.12f;
+
+    [Tooltip("How long the button stays held down before automatically bouncing back up.")]
+    public float autoReleaseDelay = 0.2f;
 
     [Header("Respawn Configuration")]
     [Tooltip("List of spawn points where food items will be relocated.")]
@@ -31,35 +36,62 @@ public class ResetFoodPositionsButton : MonoBehaviour
     {
         if (buttonPressTransform != null)
         {
-            initialLocalPos = buttonPressTransform.localPosition;
-            pressedLocalPos = initialLocalPos - new Vector3(0f, pressDistance, 0f);
+            initialLocalPos = buttonPressTransform.localPosition; // Starts at Y = 0.9
+            pressedLocalPos = new Vector3(initialLocalPos.x, pressedLocalY, initialLocalPos.z);
         }
     }
 
     /// <summary>
-    /// Hook this method to XR Interactor's Select Entered (or Hover Entered).
+    /// Hook this method to XR Interactor's Select Entered / Hover Entered / Activated event.
     /// </summary>
     public void OnButtonPressed()
     {
-        // Animate button moving down
-        if (buttonPressTransform != null)
-        {
-            StartButtonAnimation(pressedLocalPos);
-        }
+        if (animateCoroutine != null) StopCoroutine(animateCoroutine);
+        animateCoroutine = StartCoroutine(FullButtonPressCycle());
 
         ResetAllFoodPositions();
     }
 
     /// <summary>
-    /// Hook this method to XR Interactor's Select Exited (or Hover Exited).
+    /// Optional manual trigger for XR Select Exited.
     /// </summary>
     public void OnButtonReleased()
     {
-        // Animate button returning up
         if (buttonPressTransform != null)
         {
-            StartButtonAnimation(initialLocalPos);
+            if (animateCoroutine != null) StopCoroutine(animateCoroutine);
+            animateCoroutine = StartCoroutine(AnimateToPosition(initialLocalPos));
         }
+    }
+
+    private IEnumerator FullButtonPressCycle()
+    {
+        if (buttonPressTransform == null) yield break;
+
+        // 1. Move Down
+        yield return AnimateToPosition(pressedLocalPos);
+
+        // 2. Hold momentarily
+        yield return new WaitForSeconds(autoReleaseDelay);
+
+        // 3. Move back Up
+        yield return AnimateToPosition(initialLocalPos);
+    }
+
+    private IEnumerator AnimateToPosition(Vector3 targetPos)
+    {
+        Vector3 startPos = buttonPressTransform.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < animationDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / animationDuration);
+            buttonPressTransform.localPosition = Vector3.Lerp(startPos, targetPos, Mathf.SmoothStep(0f, 1f, t));
+            yield return null;
+        }
+
+        buttonPressTransform.localPosition = targetPos;
     }
 
     public void ResetAllFoodPositions()
@@ -105,21 +137,5 @@ public class ResetFoodPositionsButton : MonoBehaviour
         }
 
         Debug.Log($"[ResetButton] Reset {foodItems.Length} food items.", this);
-    }
-
-    private void StartButtonAnimation(Vector3 targetPos)
-    {
-        if (animateCoroutine != null) StopCoroutine(animateCoroutine);
-        animateCoroutine = StartCoroutine(AnimatePress(targetPos));
-    }
-
-    private IEnumerator AnimatePress(Vector3 targetPos)
-    {
-        while (Vector3.Distance(buttonPressTransform.localPosition, targetPos) > 0.0001f)
-        {
-            buttonPressTransform.localPosition = Vector3.Lerp(buttonPressTransform.localPosition, targetPos, Time.deltaTime * pressSpeed);
-            yield return null;
-        }
-        buttonPressTransform.localPosition = targetPos;
     }
 }

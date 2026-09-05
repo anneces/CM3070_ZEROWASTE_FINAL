@@ -15,6 +15,7 @@ extern void ParticleSystem_Play_m4A59E0A2C7CA49EF75287A067305ABB314A16E62 (void)
 extern void ParticleSystem_Play_mD943E601BFE16CB9BB5D1F5E6AED5C36F5F11EF5 (void);
 extern void ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326 (void);
 extern void ParticleSystem_Stop_m6CA855033D5CE2D3AF7927B6709BC65DBCD632DF (void);
+extern void ParticleSystem_Stop_m2D8D4967496EF0F5BFEF679C49A9E65A9646C423 (void);
 extern void ParticleSystem_IsAlive_m4C919DCFF8EC256F68415875DF421DC53065AC7B (void);
 extern void ParticleSystem_Emit_m3E9E6359087607E84E0D4D35844D80D9452AD72D (void);
 extern void ParticleSystem_Emit_Internal_m54D6D9A78E8634846C9DB6445C0E0A0885E8A20E (void);
@@ -93,7 +94,7 @@ extern void ParticleSystemRenderer_set_sortingFudge_Injected_m1BA89A67AEB155177E
 extern void ParticleSystemRenderer_get_pivot_Injected_mF014DBC076458F5DDDCA4DEE4A9DF2DFE66A2092 (void);
 extern void ParticleSystemRenderer_set_pivot_Injected_mA8F222B99767EDC8F3BFE7D47921F9D0B625E1A6 (void);
 extern void ParticleSystemRenderer_GetMeshes_Injected_m6DADBA008313172FAE4E6150C67ADA770858C483 (void);
-static Il2CppMethodPointer s_methodPointers[86] = 
+static Il2CppMethodPointer s_methodPointers[87] = 
 {
 	ParticleSystem_Emit_m27ED2FE38DEE11C9C98F7D30392BB5B39B6A16ED,
 	ParticleSystem_Emit_m329091E7F55C972CE85A100CA624192AD8442688,
@@ -103,6 +104,7 @@ static Il2CppMethodPointer s_methodPointers[86] =
 	ParticleSystem_Play_mD943E601BFE16CB9BB5D1F5E6AED5C36F5F11EF5,
 	ParticleSystem_Stop_mB5761CB85083F593FFEC3D27931CACF1855A6326,
 	ParticleSystem_Stop_m6CA855033D5CE2D3AF7927B6709BC65DBCD632DF,
+	ParticleSystem_Stop_m2D8D4967496EF0F5BFEF679C49A9E65A9646C423,
 	ParticleSystem_IsAlive_m4C919DCFF8EC256F68415875DF421DC53065AC7B,
 	ParticleSystem_Emit_m3E9E6359087607E84E0D4D35844D80D9452AD72D,
 	ParticleSystem_Emit_Internal_m54D6D9A78E8634846C9DB6445C0E0A0885E8A20E,
@@ -220,44 +222,44 @@ extern void CustomDataModule_SetColor_m1314A02DD8330C806E970DA7076967273A1D2584_
 extern void CustomDataModule_SetColorInternal_mCF779AA3B9A08F87C9977899637916297D34DE85_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[36] = 
 {
-	{ 0x0600001A, MainModule__ctor_m5F7D2DD815C741DE3FA18A0C1BB2F2776612EF7A_AdjustorThunk },
-	{ 0x0600001B, MainModule_set_startDelay_mFE9F9E7F79978F670904789F7F55B96F42434F69_AdjustorThunk },
-	{ 0x0600001C, MainModule_set_startDelayBlittable_m0A7FA50490EE6F637153663A0817919170C9FEE1_AdjustorThunk },
-	{ 0x0600001D, MainModule_get_startLifetime_m09FB4B0E4B44A5B76E2DB11F177F770682BEA654_AdjustorThunk },
-	{ 0x0600001E, MainModule_set_startLifetime_mDFC2433853CB12C0C93C8BF16FEDB4EA2E0B3514_AdjustorThunk },
-	{ 0x0600001F, MainModule_get_startLifetimeBlittable_mB7E8914FC2F040588F523825DD39D88F6063AB6C_AdjustorThunk },
-	{ 0x06000020, MainModule_set_startLifetimeBlittable_m14A3D81BF2CF881F37C0153077B65FCD745B394F_AdjustorThunk },
-	{ 0x06000021, MainModule_get_startSizeXMultiplier_m92CC2E6EBE468299F1B865326C3A29282E2AD01B_AdjustorThunk },
-	{ 0x06000022, MainModule_set_startSizeXMultiplier_m97EF3367ABCA54443AB7E2DF038E1208CAFEDCC6_AdjustorThunk },
-	{ 0x06000023, MainModule_get_startSizeYMultiplier_mCADA7878245EDA4AF5A357F6E30D68F7EA4A0F41_AdjustorThunk },
-	{ 0x06000024, MainModule_set_startSizeYMultiplier_m1100BB5A064C9F3638F2F7867EC404B95AC59215_AdjustorThunk },
-	{ 0x06000025, MainModule_get_startSizeZMultiplier_mEFA4FEC23CFE506F036568620A4EB720AD6F4BCC_AdjustorThunk },
-	{ 0x06000026, MainModule_set_startSizeZMultiplier_mE3AAF9C6580F32E7D986147CA060B243E392B9E0_AdjustorThunk },
-	{ 0x06000027, MainModule_set_startRotation_m8D09FD13401B188EC3C20C489CFA1EDDA3B43079_AdjustorThunk },
-	{ 0x06000028, MainModule_set_startRotationBlittable_mDF8AE7C65AAEA2EED0EB00B87FE769541146D9B8_AdjustorThunk },
-	{ 0x06000029, MainModule_set_startColor_m504911284CAC53A7C1B97B5D01BBDD2FA67D0E7A_AdjustorThunk },
-	{ 0x0600002A, MainModule_set_startColorBlittable_m2749A717664C1823302C3C43B4BED4E5A54FD88F_AdjustorThunk },
-	{ 0x06000030, TextureSheetAnimationModule__ctor_m86AE80EB2EAF5AC13146D2856AA7DF538A9412BC_AdjustorThunk },
-	{ 0x06000031, TextureSheetAnimationModule_SetSprite_mE3F2237069C9CA6E514B65E71449335FF8EE22AB_AdjustorThunk },
-	{ 0x06000033, Particle_set_lifetime_m29360AF093721364BF46996EE1D400256DB95911_AdjustorThunk },
-	{ 0x06000034, Particle_set_position_mE9103000DB4EA6CE09D25650F5A2915731F7A63E_AdjustorThunk },
-	{ 0x06000035, Particle_set_velocity_mF4C1DE326CCABE480F44D3DF3873241E85A6303B_AdjustorThunk },
-	{ 0x06000036, Particle_set_remainingLifetime_m3E58D8B3599B0BA6790D43022C3DF16E6896D018_AdjustorThunk },
-	{ 0x06000037, Particle_set_startLifetime_mCD0B16F2B1F2E2AEED84C4FCD85D5AD96F853A77_AdjustorThunk },
-	{ 0x06000038, Particle_set_startColor_mC3031F4238B0C003DFA5BF9AB4B3141B7CF71538_AdjustorThunk },
-	{ 0x06000039, Particle_set_randomSeed_mCC3C02CCBF9C0EA80E2CE01EC47AD30F31D5F6C2_AdjustorThunk },
-	{ 0x0600003A, Particle_set_startSize_mBBEBF7365A4E68FF2044E2ECEACC562376EA4A1F_AdjustorThunk },
-	{ 0x0600003B, Particle_set_rotation3D_mC0B19BFEBA780F95C763DE14C80B29764E519D62_AdjustorThunk },
-	{ 0x0600003C, Particle_set_angularVelocity3D_m56AE22FE7AFB178DD206EA2A7E0DA64B360D7EA8_AdjustorThunk },
-	{ 0x0600003D, MinMaxCurve__ctor_m1D3846251475D7BBC7B128CCD7DFF40B16AAEF9E_AdjustorThunk },
-	{ 0x0600003E, MinMaxCurve_get_constant_m4F2B7693C00CC9FAEDE1DAD32FEEE893414FBE91_AdjustorThunk },
-	{ 0x06000044, MinMaxGradient__ctor_m982C2A8AD071EA714E5583F90727C306B126F062_AdjustorThunk },
-	{ 0x06000048, CustomDataModule__ctor_mFEC59E8A3F82DDEAD62D887E52E92D9B25B61D78_AdjustorThunk },
-	{ 0x06000049, CustomDataModule_set_enabled_m1C073CBA9E695C7B7BB85CE82EB2155CEDB86B62_AdjustorThunk },
-	{ 0x0600004A, CustomDataModule_SetColor_m1314A02DD8330C806E970DA7076967273A1D2584_AdjustorThunk },
-	{ 0x0600004B, CustomDataModule_SetColorInternal_mCF779AA3B9A08F87C9977899637916297D34DE85_AdjustorThunk },
+	{ 0x0600001B, MainModule__ctor_m5F7D2DD815C741DE3FA18A0C1BB2F2776612EF7A_AdjustorThunk },
+	{ 0x0600001C, MainModule_set_startDelay_mFE9F9E7F79978F670904789F7F55B96F42434F69_AdjustorThunk },
+	{ 0x0600001D, MainModule_set_startDelayBlittable_m0A7FA50490EE6F637153663A0817919170C9FEE1_AdjustorThunk },
+	{ 0x0600001E, MainModule_get_startLifetime_m09FB4B0E4B44A5B76E2DB11F177F770682BEA654_AdjustorThunk },
+	{ 0x0600001F, MainModule_set_startLifetime_mDFC2433853CB12C0C93C8BF16FEDB4EA2E0B3514_AdjustorThunk },
+	{ 0x06000020, MainModule_get_startLifetimeBlittable_mB7E8914FC2F040588F523825DD39D88F6063AB6C_AdjustorThunk },
+	{ 0x06000021, MainModule_set_startLifetimeBlittable_m14A3D81BF2CF881F37C0153077B65FCD745B394F_AdjustorThunk },
+	{ 0x06000022, MainModule_get_startSizeXMultiplier_m92CC2E6EBE468299F1B865326C3A29282E2AD01B_AdjustorThunk },
+	{ 0x06000023, MainModule_set_startSizeXMultiplier_m97EF3367ABCA54443AB7E2DF038E1208CAFEDCC6_AdjustorThunk },
+	{ 0x06000024, MainModule_get_startSizeYMultiplier_mCADA7878245EDA4AF5A357F6E30D68F7EA4A0F41_AdjustorThunk },
+	{ 0x06000025, MainModule_set_startSizeYMultiplier_m1100BB5A064C9F3638F2F7867EC404B95AC59215_AdjustorThunk },
+	{ 0x06000026, MainModule_get_startSizeZMultiplier_mEFA4FEC23CFE506F036568620A4EB720AD6F4BCC_AdjustorThunk },
+	{ 0x06000027, MainModule_set_startSizeZMultiplier_mE3AAF9C6580F32E7D986147CA060B243E392B9E0_AdjustorThunk },
+	{ 0x06000028, MainModule_set_startRotation_m8D09FD13401B188EC3C20C489CFA1EDDA3B43079_AdjustorThunk },
+	{ 0x06000029, MainModule_set_startRotationBlittable_mDF8AE7C65AAEA2EED0EB00B87FE769541146D9B8_AdjustorThunk },
+	{ 0x0600002A, MainModule_set_startColor_m504911284CAC53A7C1B97B5D01BBDD2FA67D0E7A_AdjustorThunk },
+	{ 0x0600002B, MainModule_set_startColorBlittable_m2749A717664C1823302C3C43B4BED4E5A54FD88F_AdjustorThunk },
+	{ 0x06000031, TextureSheetAnimationModule__ctor_m86AE80EB2EAF5AC13146D2856AA7DF538A9412BC_AdjustorThunk },
+	{ 0x06000032, TextureSheetAnimationModule_SetSprite_mE3F2237069C9CA6E514B65E71449335FF8EE22AB_AdjustorThunk },
+	{ 0x06000034, Particle_set_lifetime_m29360AF093721364BF46996EE1D400256DB95911_AdjustorThunk },
+	{ 0x06000035, Particle_set_position_mE9103000DB4EA6CE09D25650F5A2915731F7A63E_AdjustorThunk },
+	{ 0x06000036, Particle_set_velocity_mF4C1DE326CCABE480F44D3DF3873241E85A6303B_AdjustorThunk },
+	{ 0x06000037, Particle_set_remainingLifetime_m3E58D8B3599B0BA6790D43022C3DF16E6896D018_AdjustorThunk },
+	{ 0x06000038, Particle_set_startLifetime_mCD0B16F2B1F2E2AEED84C4FCD85D5AD96F853A77_AdjustorThunk },
+	{ 0x06000039, Particle_set_startColor_mC3031F4238B0C003DFA5BF9AB4B3141B7CF71538_AdjustorThunk },
+	{ 0x0600003A, Particle_set_randomSeed_mCC3C02CCBF9C0EA80E2CE01EC47AD30F31D5F6C2_AdjustorThunk },
+	{ 0x0600003B, Particle_set_startSize_mBBEBF7365A4E68FF2044E2ECEACC562376EA4A1F_AdjustorThunk },
+	{ 0x0600003C, Particle_set_rotation3D_mC0B19BFEBA780F95C763DE14C80B29764E519D62_AdjustorThunk },
+	{ 0x0600003D, Particle_set_angularVelocity3D_m56AE22FE7AFB178DD206EA2A7E0DA64B360D7EA8_AdjustorThunk },
+	{ 0x0600003E, MinMaxCurve__ctor_m1D3846251475D7BBC7B128CCD7DFF40B16AAEF9E_AdjustorThunk },
+	{ 0x0600003F, MinMaxCurve_get_constant_m4F2B7693C00CC9FAEDE1DAD32FEEE893414FBE91_AdjustorThunk },
+	{ 0x06000045, MinMaxGradient__ctor_m982C2A8AD071EA714E5583F90727C306B126F062_AdjustorThunk },
+	{ 0x06000049, CustomDataModule__ctor_mFEC59E8A3F82DDEAD62D887E52E92D9B25B61D78_AdjustorThunk },
+	{ 0x0600004A, CustomDataModule_set_enabled_m1C073CBA9E695C7B7BB85CE82EB2155CEDB86B62_AdjustorThunk },
+	{ 0x0600004B, CustomDataModule_SetColor_m1314A02DD8330C806E970DA7076967273A1D2584_AdjustorThunk },
+	{ 0x0600004C, CustomDataModule_SetColorInternal_mCF779AA3B9A08F87C9977899637916297D34DE85_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[86] = 
+static const int32_t s_InvokerIndices[87] = 
 {
 	941,
 	11553,
@@ -267,6 +269,7 @@ static const int32_t s_InvokerIndices[86] =
 	14710,
 	4653,
 	10962,
+	14710,
 	7690,
 	11096,
 	11096,
@@ -350,7 +353,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_ParticleSystemModule_Cod
 const Il2CppCodeGenModule g_UnityEngine_ParticleSystemModule_CodeGenModule = 
 {
 	"UnityEngine.ParticleSystemModule.dll",
-	86,
+	87,
 	s_methodPointers,
 	36,
 	s_adjustorThunks,
