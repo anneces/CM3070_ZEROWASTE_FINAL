@@ -12,6 +12,10 @@ public class TrashBinController : MonoBehaviour
     [Tooltip("Total CO2 penalty in kg from discarded items.")]
     public float totalCO2Penalty = 0f;
 
+    // --- Added Property Getters to fix DayManager compiler error ---
+    public float totalMoneyWasted => totalFinancialLoss;
+    public float totalCO2 => totalCO2Penalty;
+
     [Header("UI Display (Optional)")]
     public TextMeshProUGUI financialLossText;
     public TextMeshProUGUI co2PenaltyText;
