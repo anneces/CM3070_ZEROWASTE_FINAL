@@ -982,7 +982,8 @@
           {
             "name": "ParticleSystem",
             "scenes": [
-              "Assets/Scenes/MainGame.unity"
+              "Assets/Scenes/MainGame.unity",
+              "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -990,7 +991,8 @@
           {
             "name": "ParticleSystemRenderer",
             "scenes": [
-              "Assets/Scenes/MainGame.unity"
+              "Assets/Scenes/MainGame.unity",
+              "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
             "icon": null

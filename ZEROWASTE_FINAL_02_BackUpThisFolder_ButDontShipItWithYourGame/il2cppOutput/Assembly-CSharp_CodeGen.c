@@ -103,6 +103,12 @@ extern void DayPhaseManager_AdvancePhase_m83213806427A63E310AD25942B5007BA63054C
 extern void DayPhaseManager_UpdateClockUI_m8461C2AEB48D9726462B8C461238DB451A030699 (void);
 extern void DayPhaseManager_UpdateEnvironment_m8E4FE27488FACD83E17DB4AAFEC8C7166CB4E823 (void);
 extern void DayPhaseManager__ctor_mB3FF682CD82F11B1296B68B786457DED47F4A119 (void);
+extern void PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3 (void);
+extern void PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965 (void);
+extern void PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D (void);
+extern void PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283 (void);
+extern void PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF (void);
+extern void PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E (void);
 extern void FoodItem_get_FreshnessPercentage_m54126E7420A719F5C20E919FF844BF52470C0D46 (void);
 extern void FoodItem_get_FreshnessStatus_mD6D5F4C18C05F73C358CA13DCD5FF7CB461639DE (void);
 extern void FoodItem_get_FreshnessStatusColor_m4E4CB032D0F1E4D23BBFFC51C14F378FB0FFFAAD (void);
@@ -123,22 +129,6 @@ extern void FoodItemBase__ctor_mFF1E49EAB9A732BECF108CFA3850A44D7C6024B2 (void);
 extern void FoodRespawner3D_OnTriggerEnter_mA89F0EDC3DBB02FD465C4A93DD07F0A8827374FA (void);
 extern void FoodRespawner3D_ResetAllFoodPositions_m48427621431F748D729C353921915ADEE64D89F6 (void);
 extern void FoodRespawner3D__ctor_m2477AA551D5663FBC56939A684125676E8A5BB2E (void);
-extern void MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B (void);
-extern void MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244 (void);
-extern void MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558 (void);
-extern void MainMenuManager__ctor_m9CF8E7F30CE180004AA0DFF1229FC615B531542B (void);
-extern void U3CLoadSceneAsyncU3Ed__3__ctor_m4BFA123D46310DB1BE07821F158F4B07D850B71C (void);
-extern void U3CLoadSceneAsyncU3Ed__3_System_IDisposable_Dispose_m5BF6BFF534D77A403486CF221E101BAAB9E83CC4 (void);
-extern void U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523035C90F (void);
-extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97 (void);
-extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C (void);
-extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D (void);
-extern void PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3 (void);
-extern void PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965 (void);
-extern void PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D (void);
-extern void PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283 (void);
-extern void PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF (void);
-extern void PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E (void);
 extern void ResetFoodPositionsButton_Start_mB53E1EAF26913A52F627CCF6603012679FC7025F (void);
 extern void ResetFoodPositionsButton_OnButtonPressed_m67F019F5CCEF5BEF9206DF3C07BBC14C0DD3C205 (void);
 extern void ResetFoodPositionsButton_OnButtonReleased_m1B06DBA9506E0DB2B24F0875441CDCCDB4A0F216 (void);
@@ -158,6 +148,23 @@ extern void U3CFullButtonPressCycleU3Ed__14_MoveNext_m65B1059B94766D05B77B226C40
 extern void U3CFullButtonPressCycleU3Ed__14_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0A6068CBCE29522C0AC3996650C91B0BB625587C (void);
 extern void U3CFullButtonPressCycleU3Ed__14_System_Collections_IEnumerator_Reset_m1F8241A52C2A764103B971F8633BF62406F9A55E (void);
 extern void U3CFullButtonPressCycleU3Ed__14_System_Collections_IEnumerator_get_Current_m4B5E122B073158C71B39CA8DC84411009D0B209A (void);
+extern void GameSummaryUI_Start_m2255D2882EA2792880FF08F4F80312DE71CA5BD8 (void);
+extern void GameSummaryUI_CalculateAndDisplaySummary_m26FB31122F16A1AD2CFB65F9FECEC337B501A855 (void);
+extern void GameSummaryUI_ApplyGradeFeedback_mC90CAC988C095E98CC0CCBB043D31355E97C877B (void);
+extern void GameSummaryUI_TriggerConfetti_m879855067FABA42DBF836661EC284A8246F482FA (void);
+extern void GameSummaryUI_OnReplayButtonClicked_m13404B13D3FB0097C21D3AA1EA1574163A985A5F (void);
+extern void GameSummaryUI_OnQuitButtonClicked_m306BB8DE03EDD66384F3D64B86A4BB495F79A947 (void);
+extern void GameSummaryUI__ctor_mE54A3E05921E11A2A91C0BE131DC14CDA5710A17 (void);
+extern void MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B (void);
+extern void MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244 (void);
+extern void MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558 (void);
+extern void MainMenuManager__ctor_m9CF8E7F30CE180004AA0DFF1229FC615B531542B (void);
+extern void U3CLoadSceneAsyncU3Ed__3__ctor_m4BFA123D46310DB1BE07821F158F4B07D850B71C (void);
+extern void U3CLoadSceneAsyncU3Ed__3_System_IDisposable_Dispose_m5BF6BFF534D77A403486CF221E101BAAB9E83CC4 (void);
+extern void U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523035C90F (void);
+extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97 (void);
+extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C (void);
+extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D (void);
 extern void ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F (void);
 extern void ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E (void);
 extern void ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973 (void);
@@ -172,6 +179,8 @@ extern void StorageZone_OnTriggerStay_m687F2D460121996C39B62FE52DA1D33D89A5DFA8 
 extern void StorageZone_OnTriggerExit_m36E8FAFA3CE9B4E9ACE16D0EB51E7A6F5FC4C16A (void);
 extern void StorageZone_GetFoodItemFromCollider_m0E590F76BB7ACF4E3232AF4961C69E2DE4A10CE9 (void);
 extern void StorageZone__ctor_m127BE6D3BDDD01ADC5C908A61529034678C2AD09 (void);
+extern void TrashBinController_get_totalMoneyWasted_mE62E4BE1A706612AF5ADFBCA5BEA52B375412EA6 (void);
+extern void TrashBinController_get_totalCO2_m916D227ECC58F494745D5110E18E1186DB8E4209 (void);
 extern void TrashBinController_Awake_m1DC819E34EBF3E471EEC6AD4D0C357C26D7BACCE (void);
 extern void TrashBinController_Start_m0576037B2B7DF4BDCEE9C880A8C6810835595824 (void);
 extern void TrashBinController_OnTriggerEnter_m0F02F8A731452CB1726CFB7339894BB35CAE0343 (void);
@@ -202,7 +211,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[195] = 
+static Il2CppMethodPointer s_methodPointers[204] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -300,6 +309,12 @@ static Il2CppMethodPointer s_methodPointers[195] =
 	DayPhaseManager_UpdateClockUI_m8461C2AEB48D9726462B8C461238DB451A030699,
 	DayPhaseManager_UpdateEnvironment_m8E4FE27488FACD83E17DB4AAFEC8C7166CB4E823,
 	DayPhaseManager__ctor_mB3FF682CD82F11B1296B68B786457DED47F4A119,
+	PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3,
+	PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965,
+	PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D,
+	PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283,
+	PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF,
+	PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E,
 	FoodItem_get_FreshnessPercentage_m54126E7420A719F5C20E919FF844BF52470C0D46,
 	FoodItem_get_FreshnessStatus_mD6D5F4C18C05F73C358CA13DCD5FF7CB461639DE,
 	FoodItem_get_FreshnessStatusColor_m4E4CB032D0F1E4D23BBFFC51C14F378FB0FFFAAD,
@@ -320,22 +335,6 @@ static Il2CppMethodPointer s_methodPointers[195] =
 	FoodRespawner3D_OnTriggerEnter_mA89F0EDC3DBB02FD465C4A93DD07F0A8827374FA,
 	FoodRespawner3D_ResetAllFoodPositions_m48427621431F748D729C353921915ADEE64D89F6,
 	FoodRespawner3D__ctor_m2477AA551D5663FBC56939A684125676E8A5BB2E,
-	MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B,
-	MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244,
-	MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558,
-	MainMenuManager__ctor_m9CF8E7F30CE180004AA0DFF1229FC615B531542B,
-	U3CLoadSceneAsyncU3Ed__3__ctor_m4BFA123D46310DB1BE07821F158F4B07D850B71C,
-	U3CLoadSceneAsyncU3Ed__3_System_IDisposable_Dispose_m5BF6BFF534D77A403486CF221E101BAAB9E83CC4,
-	U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523035C90F,
-	U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97,
-	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C,
-	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D,
-	PhaseTransitionUI_Start_m7D867A26F1EE3E8E2943A822524723CF1AF826E3,
-	PhaseTransitionUI_OnNextPhaseClicked_mF6DA12463F284EA69A1A65596D31AB484C416965,
-	PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E088444D,
-	PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283,
-	PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF,
-	PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E,
 	ResetFoodPositionsButton_Start_mB53E1EAF26913A52F627CCF6603012679FC7025F,
 	ResetFoodPositionsButton_OnButtonPressed_m67F019F5CCEF5BEF9206DF3C07BBC14C0DD3C205,
 	ResetFoodPositionsButton_OnButtonReleased_m1B06DBA9506E0DB2B24F0875441CDCCDB4A0F216,
@@ -355,6 +354,23 @@ static Il2CppMethodPointer s_methodPointers[195] =
 	U3CFullButtonPressCycleU3Ed__14_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m0A6068CBCE29522C0AC3996650C91B0BB625587C,
 	U3CFullButtonPressCycleU3Ed__14_System_Collections_IEnumerator_Reset_m1F8241A52C2A764103B971F8633BF62406F9A55E,
 	U3CFullButtonPressCycleU3Ed__14_System_Collections_IEnumerator_get_Current_m4B5E122B073158C71B39CA8DC84411009D0B209A,
+	GameSummaryUI_Start_m2255D2882EA2792880FF08F4F80312DE71CA5BD8,
+	GameSummaryUI_CalculateAndDisplaySummary_m26FB31122F16A1AD2CFB65F9FECEC337B501A855,
+	GameSummaryUI_ApplyGradeFeedback_mC90CAC988C095E98CC0CCBB043D31355E97C877B,
+	GameSummaryUI_TriggerConfetti_m879855067FABA42DBF836661EC284A8246F482FA,
+	GameSummaryUI_OnReplayButtonClicked_m13404B13D3FB0097C21D3AA1EA1574163A985A5F,
+	GameSummaryUI_OnQuitButtonClicked_m306BB8DE03EDD66384F3D64B86A4BB495F79A947,
+	GameSummaryUI__ctor_mE54A3E05921E11A2A91C0BE131DC14CDA5710A17,
+	MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B,
+	MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244,
+	MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558,
+	MainMenuManager__ctor_m9CF8E7F30CE180004AA0DFF1229FC615B531542B,
+	U3CLoadSceneAsyncU3Ed__3__ctor_m4BFA123D46310DB1BE07821F158F4B07D850B71C,
+	U3CLoadSceneAsyncU3Ed__3_System_IDisposable_Dispose_m5BF6BFF534D77A403486CF221E101BAAB9E83CC4,
+	U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523035C90F,
+	U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97,
+	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C,
+	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D,
 	ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F,
 	ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E,
 	ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973,
@@ -369,6 +385,8 @@ static Il2CppMethodPointer s_methodPointers[195] =
 	StorageZone_OnTriggerExit_m36E8FAFA3CE9B4E9ACE16D0EB51E7A6F5FC4C16A,
 	StorageZone_GetFoodItemFromCollider_m0E590F76BB7ACF4E3232AF4961C69E2DE4A10CE9,
 	StorageZone__ctor_m127BE6D3BDDD01ADC5C908A61529034678C2AD09,
+	TrashBinController_get_totalMoneyWasted_mE62E4BE1A706612AF5ADFBCA5BEA52B375412EA6,
+	TrashBinController_get_totalCO2_m916D227ECC58F494745D5110E18E1186DB8E4209,
 	TrashBinController_Awake_m1DC819E34EBF3E471EEC6AD4D0C357C26D7BACCE,
 	TrashBinController_Start_m0576037B2B7DF4BDCEE9C880A8C6810835595824,
 	TrashBinController_OnTriggerEnter_m0F02F8A731452CB1726CFB7339894BB35CAE0343,
@@ -400,7 +418,7 @@ static Il2CppMethodPointer s_methodPointers[195] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[195] = 
+static const int32_t s_InvokerIndices[204] = 
 {
 	14499,
 	14710,
@@ -477,17 +495,23 @@ static const int32_t s_InvokerIndices[195] =
 	14499,
 	14710,
 	14499,
-	25312,
-	24153,
+	25313,
+	24154,
 	14710,
 	14710,
 	14710,
-	25312,
-	24153,
-	24153,
-	24153,
+	25313,
+	24154,
+	24154,
+	24154,
 	14430,
 	14430,
+	14710,
+	14710,
+	14710,
+	14710,
+	14710,
+	14710,
 	14710,
 	14710,
 	14710,
@@ -508,7 +532,7 @@ static const int32_t s_InvokerIndices[195] =
 	10962,
 	14710,
 	14710,
-	25415,
+	25416,
 	11163,
 	14710,
 	14710,
@@ -516,22 +540,6 @@ static const int32_t s_InvokerIndices[195] =
 	14710,
 	14710,
 	11163,
-	14710,
-	14710,
-	14710,
-	14710,
-	9565,
-	14710,
-	11096,
-	14710,
-	14297,
-	14499,
-	14710,
-	14499,
-	14710,
-	14710,
-	14710,
-	14710,
 	14710,
 	14710,
 	14710,
@@ -555,6 +563,23 @@ static const int32_t s_InvokerIndices[195] =
 	14499,
 	14710,
 	14710,
+	11163,
+	11163,
+	14710,
+	14710,
+	14710,
+	14710,
+	14710,
+	9565,
+	14710,
+	11096,
+	14710,
+	14297,
+	14499,
+	14710,
+	14499,
+	14710,
+	14710,
 	11096,
 	14710,
 	14710,
@@ -567,6 +592,8 @@ static const int32_t s_InvokerIndices[195] =
 	11163,
 	9565,
 	14710,
+	14606,
+	14606,
 	14710,
 	14710,
 	11163,
@@ -574,8 +601,8 @@ static const int32_t s_InvokerIndices[195] =
 	14710,
 	14710,
 	14710,
-	25312,
-	24153,
+	25313,
+	24154,
 	14710,
 	14710,
 	14710,
@@ -595,14 +622,14 @@ static const int32_t s_InvokerIndices[195] =
 	14499,
 	14710,
 	14499,
-	25440,
+	25441,
 	14710,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	195,
+	204,
 	s_methodPointers,
 	0,
 	NULL,
