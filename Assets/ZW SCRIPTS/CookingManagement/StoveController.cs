@@ -77,8 +77,8 @@ public class StoveController : MonoBehaviour
         FoodItem item = other.GetComponentInParent<FoodItem>();
         if (item != null)
         {
-            // Reject expired/spoiled ingredients
-            if (item.isExpired || item.currentFreshnessDays <= 0)
+            // Reject expired/spoiled ingredients using isSpoiled/isExpired check
+            if (item.isSpoiled)
             {
                 ShowSpoiledFoodWarning();
                 return;
@@ -95,6 +95,9 @@ public class StoveController : MonoBehaviour
 
                     if (currentCount < maxNeeded)
                     {
+                        // Mark as cooked before destroying to preserve item state consistency
+                        item.isCooked = true;
+
                         addedIngredients.Add(id);
                         AudioManager.Instance?.PlaySFX(AudioManager.Instance.ingredientDropClip);
                         Destroy(item.gameObject);
@@ -192,6 +195,11 @@ public class StoveController : MonoBehaviour
         {
             Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
             isPlateOccupied = true; // Set plate occupied status when spawned
+
+            // Track completed dish count for DayPhaseManager evaluation
+            int currentCooked = PlayerPrefs.GetInt("DishesCooked", 0);
+            PlayerPrefs.SetInt("DishesCooked", currentCooked + 1);
+            PlayerPrefs.Save();
 
             // Show "Eat Me!" prompt once food is ready on the plate
             if (eatMeCanvas != null)

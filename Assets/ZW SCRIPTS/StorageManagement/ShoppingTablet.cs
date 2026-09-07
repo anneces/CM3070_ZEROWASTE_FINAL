@@ -210,9 +210,9 @@ public class ShoppingTablet : MonoBehaviour
 
     public void OnEndDayButtonClicked()
     {
-        if (DayManager.Instance != null)
+        if (DayPhaseManager.Instance != null)
         {
-            DayManager.Instance.EndCurrentDay();
+            DayPhaseManager.Instance.ConfirmNextPhase();
             UpdateUI();
         }
     }
@@ -225,7 +225,7 @@ public class ShoppingTablet : MonoBehaviour
         if (totalSpentText != null)
             totalSpentText.text = $"Spent: ${totalSpent:F2}";
 
-        if (dayText != null && DayManager.Instance != null)
-            dayText.text = $"Day {DayManager.Instance.currentDay} / {DayManager.Instance.maxDays}";
+        if (dayText != null && DayPhaseManager.Instance != null)
+            dayText.text = $"Day {DayPhaseManager.Instance.CurrentDay} / 5";
     }
 }

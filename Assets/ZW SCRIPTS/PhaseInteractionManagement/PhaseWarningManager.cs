@@ -24,11 +24,11 @@ public class PhaseWarningManager : MonoBehaviour
     /// <summary>
     /// Updates station blocking according to the current phase.
     /// </summary>
-    public void UpdatePhaseRestrictions(DayManager.DayPhase currentPhase)
+    public void UpdatePhaseRestrictions(DayPhase currentPhase)
     {
         switch (currentPhase)
         {
-            case DayManager.DayPhase.Morning:
+            case DayPhase.Morning:
                 // Morning: Tablet active | Storage, TV, Stove blocked
                 if (tabletBlocker) tabletBlocker.Unblock();
                 if (storageUnitsBlocker) storageUnitsBlocker.Block(morningMessage);
@@ -36,7 +36,7 @@ public class PhaseWarningManager : MonoBehaviour
                 if (cookingStoveBlocker) cookingStoveBlocker.Block(morningMessage);
                 break;
 
-            case DayManager.DayPhase.Afternoon:
+            case DayPhase.Afternoon:
                 // Afternoon: Storage & TV active | Tablet, Stove blocked
                 if (tabletBlocker) tabletBlocker.Block(afternoonMessage);
                 if (storageUnitsBlocker) storageUnitsBlocker.Unblock();
@@ -44,10 +44,10 @@ public class PhaseWarningManager : MonoBehaviour
                 if (cookingStoveBlocker) cookingStoveBlocker.Block(afternoonMessage);
                 break;
 
-            case DayManager.DayPhase.Evening:
-                // Evening: Stove active | Tablet, Storage, TV blocked
+            case DayPhase.Evening:
+                // Evening: Stove & Storage active | Tablet, TV blocked
                 if (tabletBlocker) tabletBlocker.Block(eveningMessage);
-                if (storageUnitsBlocker) storageUnitsBlocker.Block(eveningMessage);
+                if (storageUnitsBlocker) storageUnitsBlocker.Unblock();
                 if (tvDisplayBlocker) tvDisplayBlocker.Block(eveningMessage);
                 if (cookingStoveBlocker) cookingStoveBlocker.Unblock();
                 break;

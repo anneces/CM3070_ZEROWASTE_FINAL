@@ -15,6 +15,15 @@ public class FoodItem : MonoBehaviour
     public float price = 0.80f;
     public float co2Points = 0.4f;
 
+    // Helper property to map co2Points for DayPhaseManager calculations
+    public float co2Value => co2Points;
+
+    [Header("Cooking & Spoiled State")]
+    public bool isCooked = false;
+
+    // Helper property that maps isExpired to isSpoiled so DayPhaseManager can evaluate it directly
+    public bool isSpoiled => isExpired || currentFreshnessDays <= 0f;
+
     [Header("Day-Based Expiration Settings")]
     [Tooltip("Maximum shelf life of the item in days when stored correctly.")]
     public float maxFreshnessDays = 3f;

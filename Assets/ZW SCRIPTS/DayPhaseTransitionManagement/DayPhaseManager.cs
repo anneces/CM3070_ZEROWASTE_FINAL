@@ -65,6 +65,10 @@ public class DayPhaseManager : MonoBehaviour
 
     private void Start()
     {
+        // Reset dishes cooked counter at the beginning of a game session
+        PlayerPrefs.SetInt("DishesCooked", 0);
+        PlayerPrefs.Save();
+
         if (confirmationPopupModal != null)
             confirmationPopupModal.SetActive(false);
 
@@ -131,12 +135,45 @@ public class DayPhaseManager : MonoBehaviour
             {
                 Debug.Log("End of 5-Day Simulation Reached! Loading Main Menu Summary...");
 
-                // Save performance metrics for summary UI
+                // 1. Base performance metrics from TrashBinController
                 float wastedMoney = TrashBinController.Instance != null ? TrashBinController.Instance.totalMoneyWasted : 0f;
                 float totalCO2 = TrashBinController.Instance != null ? TrashBinController.Instance.totalCO2 : 0f;
 
+                // 2. Read total dishes cooked directly from PlayerPrefs saved by StoveController
+                int dishesCooked = PlayerPrefs.GetInt("DishesCooked", 0);
+
+                // 3. Uncooked & Spoiled Food Penalty Sweep across the scene
+                FoodItem[] remainingItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
+                foreach (FoodItem item in remainingItems)
+                {
+                    if (item != null)
+                    {
+                        // Penalize spoiled food left untrashed or uncooked food left over at end of Day 5
+                        if (item.isSpoiled || !item.isCooked)
+                        {
+                            wastedMoney += item.price;
+                            totalCO2 += item.co2Value;
+                        }
+                    }
+                }
+
+                // 4. Save metrics for Summary UI
                 PlayerPrefs.SetFloat("TotalMoneyWasted", wastedMoney);
                 PlayerPrefs.SetFloat("TotalCO2", totalCO2);
+                PlayerPrefs.SetInt("DishesCooked", dishesCooked);
+
+                // 5. Minimum Meals Requirement Check
+                if (dishesCooked == 0)
+                {
+                    PlayerPrefs.SetString("FinalGrade", "F");
+                    PlayerPrefs.SetString("GradeFeedback", "Failed: No meals were cooked during the 5 days!");
+                }
+                else
+                {
+                    PlayerPrefs.DeleteKey("FinalGrade");
+                    PlayerPrefs.DeleteKey("GradeFeedback");
+                }
+
                 PlayerPrefs.SetInt("ShowGameSummaryOnLoad", 1);
                 PlayerPrefs.Save();
 
@@ -174,8 +211,8 @@ public class DayPhaseManager : MonoBehaviour
     {
         if (PhaseWarningManager.Instance != null)
         {
-            // Maps local DayPhase enum to DayManager.DayPhase enum safely
-            PhaseWarningManager.Instance.UpdatePhaseRestrictions((DayManager.DayPhase)currentPhase);
+            // Directly passes local DayPhase enum to PhaseWarningManager
+            PhaseWarningManager.Instance.UpdatePhaseRestrictions(currentPhase);
         }
     }
 
