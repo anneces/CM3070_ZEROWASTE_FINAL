@@ -85,7 +85,9 @@ extern void U3CStartCookingProcessU3Ed__20_System_Collections_IEnumerator_get_Cu
 extern void DayManager_get_Instance_m6205CD694B380816091A94B1D0E92B6B402BF0A3 (void);
 extern void DayManager_set_Instance_m2C961B50053DE7F7AB15258257DF202036577AEE (void);
 extern void DayManager_Awake_mA15E2DAA6AECC785E6854185939FBDC7E0458BAF (void);
+extern void DayManager_Start_mF09FBA9BDB01B8C037DB097DEA8BD70DEDB54333 (void);
 extern void DayManager_EndCurrentDay_m61472690321DF45F393A180C722849A71A9F83A2 (void);
+extern void DayManager_UpdatePhaseRestrictions_m6DC157A68E69B55D96BA6D4AC6D595E277926736 (void);
 extern void DayManager__ctor_m80D7B5D59842F900B2FDA0ACAFDF6B2ABE07A096 (void);
 extern void DayPhaseManager_get_Instance_m88DBFCBCA6B57084F52D8CB6FA3BC3853462177E (void);
 extern void DayPhaseManager_set_Instance_mE32E59B9DA8991B7D3B6914C5A6FDAE439965C6F (void);
@@ -165,6 +167,15 @@ extern void U3CLoadSceneAsyncU3Ed__3_MoveNext_mC59A3E54FAFD6058948452F3354E4C523
 extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97 (void);
 extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C (void);
 extern void U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D (void);
+extern void PhaseInteractionBlocker_Awake_mAED19E13FF15394206EE8FC7C55FEFC3FB2AA6AC (void);
+extern void PhaseInteractionBlocker_Block_m1EE9C85F11E526C2751B8AFCC2B253D547C91D71 (void);
+extern void PhaseInteractionBlocker_Unblock_m01CAADC34D3A39AF9A491D5C9EB9F454498514DD (void);
+extern void PhaseInteractionBlocker__ctor_mEB848F82532F9A2D50A11692A266713E85858EBE (void);
+extern void PhaseWarningManager_get_Instance_m53F101860D84314E88E46B7DC6411C142E30CDC4 (void);
+extern void PhaseWarningManager_set_Instance_m9B17F06276DDDDA539136DE2863619E1332F6422 (void);
+extern void PhaseWarningManager_Awake_m1E12C0B2602F66A6ABF12D36BD663A6A1008BA3E (void);
+extern void PhaseWarningManager_UpdatePhaseRestrictions_m9F9B52ACF26F53101EF964C972909937ED3D564B (void);
+extern void PhaseWarningManager__ctor_m762C5D0BF1040842CA80DFBEBD8EDC15A6791E91 (void);
 extern void ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F (void);
 extern void ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E (void);
 extern void ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973 (void);
@@ -211,7 +222,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[204] = 
+static Il2CppMethodPointer s_methodPointers[215] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -291,7 +302,9 @@ static Il2CppMethodPointer s_methodPointers[204] =
 	DayManager_get_Instance_m6205CD694B380816091A94B1D0E92B6B402BF0A3,
 	DayManager_set_Instance_m2C961B50053DE7F7AB15258257DF202036577AEE,
 	DayManager_Awake_mA15E2DAA6AECC785E6854185939FBDC7E0458BAF,
+	DayManager_Start_mF09FBA9BDB01B8C037DB097DEA8BD70DEDB54333,
 	DayManager_EndCurrentDay_m61472690321DF45F393A180C722849A71A9F83A2,
+	DayManager_UpdatePhaseRestrictions_m6DC157A68E69B55D96BA6D4AC6D595E277926736,
 	DayManager__ctor_m80D7B5D59842F900B2FDA0ACAFDF6B2ABE07A096,
 	DayPhaseManager_get_Instance_m88DBFCBCA6B57084F52D8CB6FA3BC3853462177E,
 	DayPhaseManager_set_Instance_mE32E59B9DA8991B7D3B6914C5A6FDAE439965C6F,
@@ -371,6 +384,15 @@ static Il2CppMethodPointer s_methodPointers[204] =
 	U3CLoadSceneAsyncU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1B4A81FCE44AB0C3F02DA55FAC673415C2A72B97,
 	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_Reset_m56F922B00A09706E3F27E840EADC8BF60319033C,
 	U3CLoadSceneAsyncU3Ed__3_System_Collections_IEnumerator_get_Current_m1E2D9A35B2D1639E3F17AAB362803748653FE56D,
+	PhaseInteractionBlocker_Awake_mAED19E13FF15394206EE8FC7C55FEFC3FB2AA6AC,
+	PhaseInteractionBlocker_Block_m1EE9C85F11E526C2751B8AFCC2B253D547C91D71,
+	PhaseInteractionBlocker_Unblock_m01CAADC34D3A39AF9A491D5C9EB9F454498514DD,
+	PhaseInteractionBlocker__ctor_mEB848F82532F9A2D50A11692A266713E85858EBE,
+	PhaseWarningManager_get_Instance_m53F101860D84314E88E46B7DC6411C142E30CDC4,
+	PhaseWarningManager_set_Instance_m9B17F06276DDDDA539136DE2863619E1332F6422,
+	PhaseWarningManager_Awake_m1E12C0B2602F66A6ABF12D36BD663A6A1008BA3E,
+	PhaseWarningManager_UpdatePhaseRestrictions_m9F9B52ACF26F53101EF964C972909937ED3D564B,
+	PhaseWarningManager__ctor_m762C5D0BF1040842CA80DFBEBD8EDC15A6791E91,
 	ShoppingTablet_Start_mEB3B8DE4C9EC8F68818F0823B94E1457CCF1462F,
 	ShoppingTablet_PopulateCategorizedCatalog_m56760D3302EFD80197E7CB1C503E89AD1C87D46E,
 	ShoppingTablet_BuyFoodItem_mDFA0F3C8B5860BB5F8B50F696002A1B3152D2973,
@@ -418,7 +440,7 @@ static Il2CppMethodPointer s_methodPointers[204] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[204] = 
+static const int32_t s_InvokerIndices[215] = 
 {
 	14499,
 	14710,
@@ -497,6 +519,8 @@ static const int32_t s_InvokerIndices[204] =
 	14499,
 	25313,
 	24154,
+	14710,
+	14710,
 	14710,
 	14710,
 	14710,
@@ -579,6 +603,15 @@ static const int32_t s_InvokerIndices[204] =
 	14710,
 	14499,
 	14710,
+	11163,
+	14710,
+	14710,
+	25313,
+	24154,
+	14710,
+	11096,
+	14710,
+	14710,
 	14710,
 	11096,
 	14710,
@@ -629,7 +662,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	204,
+	215,
 	s_methodPointers,
 	0,
 	NULL,

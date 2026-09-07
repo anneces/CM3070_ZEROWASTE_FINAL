@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public enum DayPhase
@@ -25,6 +26,9 @@ public class DayPhaseManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TMP_Text clockDisplayText;
     [SerializeField] private GameObject confirmationPopupModal;
+
+    [Header("Scene Transition Settings")]
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
 
     [Header("Lighting References")]
     [SerializeField] private Light mainDirectionalLight;
@@ -66,6 +70,7 @@ public class DayPhaseManager : MonoBehaviour
 
         UpdateEnvironment();
         UpdateClockUI();
+        UpdatePhaseRestrictions();
     }
 
     /// <summary>
@@ -107,8 +112,6 @@ public class DayPhaseManager : MonoBehaviour
 
     private void AdvancePhase()
     {
-        bool isNewDay = false;
-
         if (currentPhase == DayPhase.Morning)
         {
             currentPhase = DayPhase.Afternoon;
@@ -123,24 +126,35 @@ public class DayPhaseManager : MonoBehaviour
             {
                 currentDay++;
                 currentPhase = DayPhase.Morning;
-                isNewDay = true; // Set flag when rolling over from Evening to Morning
             }
             else
             {
-                Debug.Log("5-Day Simulation Complete!");
-                // Add end of simulation / score logic here
+                Debug.Log("End of 5-Day Simulation Reached! Loading Main Menu Summary...");
+
+                // Save performance metrics for summary UI
+                float wastedMoney = TrashBinController.Instance != null ? TrashBinController.Instance.totalMoneyWasted : 0f;
+                float totalCO2 = TrashBinController.Instance != null ? TrashBinController.Instance.totalCO2 : 0f;
+
+                PlayerPrefs.SetFloat("TotalMoneyWasted", wastedMoney);
+                PlayerPrefs.SetFloat("TotalCO2", totalCO2);
+                PlayerPrefs.SetInt("ShowGameSummaryOnLoad", 1);
+                PlayerPrefs.Save();
+
+                Time.timeScale = 1f;
+                SceneManager.LoadScene(mainMenuSceneName);
                 return;
             }
         }
 
         UpdateEnvironment();
         UpdateClockUI();
+        UpdatePhaseRestrictions();
 
-        // 1. Notify all food items in scene to execute decay tick ONLY when entering a new day
-        if (isNewDay)
+        // 1. Notify all food items in scene to execute decay tick on every phase change
+        FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
+        foreach (FoodItem food in foodItems)
         {
-            FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
-            foreach (FoodItem food in foodItems)
+            if (food != null)
             {
                 food.OnPhaseTick();
             }
@@ -154,6 +168,15 @@ public class DayPhaseManager : MonoBehaviour
 
         // 3. Broadcast phase update event to all subscribed canvases
         OnPhaseChanged?.Invoke();
+    }
+
+    private void UpdatePhaseRestrictions()
+    {
+        if (PhaseWarningManager.Instance != null)
+        {
+            // Maps local DayPhase enum to DayManager.DayPhase enum safely
+            PhaseWarningManager.Instance.UpdatePhaseRestrictions((DayManager.DayPhase)currentPhase);
+        }
     }
 
     private void UpdateClockUI()

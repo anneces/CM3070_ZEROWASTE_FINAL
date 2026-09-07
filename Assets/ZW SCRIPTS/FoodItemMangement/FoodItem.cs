@@ -17,8 +17,8 @@ public class FoodItem : MonoBehaviour
 
     [Header("Day-Based Expiration Settings")]
     [Tooltip("Maximum shelf life of the item in days when stored correctly.")]
-    public int maxFreshnessDays = 3;
-    public int currentFreshnessDays;
+    public float maxFreshnessDays = 3f;
+    public float currentFreshnessDays;
     public bool isExpired = false;
 
     [Header("Portion-Distortion Visuals")]
@@ -37,8 +37,8 @@ public class FoodItem : MonoBehaviour
     {
         get
         {
-            if (maxFreshnessDays <= 0) return 0f;
-            float pct = ((float)currentFreshnessDays / maxFreshnessDays) * 100f;
+            if (maxFreshnessDays <= 0f) return 0f;
+            float pct = (currentFreshnessDays / maxFreshnessDays) * 100f;
             return Mathf.Clamp(pct, 0f, 100f);
         }
     }
@@ -50,7 +50,7 @@ public class FoodItem : MonoBehaviour
     {
         get
         {
-            if (isExpired || currentFreshnessDays <= 0) return "Spoiled";
+            if (isExpired || currentFreshnessDays <= 0f) return "Spoiled";
 
             float pct = FreshnessPercentage;
             if (pct >= 66f) return "Fresh";
@@ -66,12 +66,12 @@ public class FoodItem : MonoBehaviour
     {
         get
         {
-            if (isExpired || currentFreshnessDays <= 0) return "#EF4444"; // Red (Spoiled)
+            if (isExpired || currentFreshnessDays <= 0f) return "#EF4444"; // Red (Spoiled)
 
             float pct = FreshnessPercentage;
             if (pct >= 66f) return "#22C55E"; // Green (Fresh)
             if (pct >= 1f) return "#EAB308";  // Yellow/Orange (Spotting)
-            return "#EF4444";                 // Red (Spoiled)
+            return "#EF4444";                  // Red (Spoiled)
         }
     }
 
@@ -91,12 +91,12 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Called by DayPhaseManager during phase shift ticks.
-    /// Drives both shelf life deduction and visual mold shader progression.
+    /// Called by DayPhaseManager during phase shift ticks (Morning -> Afternoon -> Evening).
+    /// Drives both fractional shelf life deduction and visual mold shader progression.
     /// </summary>
     public void OnPhaseTick()
     {
-        AdvanceDay();
+        AdvancePhase();
         UpdateMoldVisuals();
     }
 
@@ -134,33 +134,37 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Advances the item's shelf life based on its current storage location.
-    /// Called directly by DayManager during day transitions.
+    /// Advances the item's shelf life per phase shift (1/3 of a day per phase).
+    /// Applies 2x multiplier if stored in an improper zone.
     /// </summary>
-    public void AdvanceDay()
+    public void AdvancePhase()
     {
         if (isExpired) return;
 
-        int daysToDeduct = 1;
+        // Base decay per phase (3 phases per full day)
+        float daysToDeduct = 0.333f;
 
-        // Corrected Priority: 
-        // 1. If stored in its ideal location -> Standard 1-day decay.
-        // 2. If stored improperly anywhere else (counter, wrong zone) -> 2x Spoil Multiplier.
-        if (currentStorage == idealStorage)
+        // 1. Stored in ideal location -> Normal 0.333 decay per phase (1 full day per 3 phases)
+        // 2. Stored improperly -> 2x Spoil Multiplier (~0.666 decay per phase)
+        if (currentStorage != idealStorage)
         {
-            daysToDeduct = 1;
-        }
-        else
-        {
-            daysToDeduct = 2; // Spoil Multiplier for improper storage (e.g., milk on counter)
+            daysToDeduct *= 2.0f;
         }
 
         currentFreshnessDays -= daysToDeduct;
 
-        if (currentFreshnessDays <= 0)
+        if (currentFreshnessDays <= 0f)
         {
             ExpireItem();
         }
+    }
+
+    /// <summary>
+    /// Legacy alias retained for external day-tick calls.
+    /// </summary>
+    public void AdvanceDay()
+    {
+        AdvancePhase();
     }
 
     public void ApplyPortionDistortion(bool enableDistortion)
@@ -171,7 +175,7 @@ public class FoodItem : MonoBehaviour
     private void ExpireItem()
     {
         isExpired = true;
-        currentFreshnessDays = 0;
+        currentFreshnessDays = 0f;
         Debug.Log($"[SPOIL WARNING] {foodName} has spoiled! Financial loss: ${price:F2}, Carbon penalty: {co2Points} kg CO2.");
 
         // Darkens material to indicate rot

@@ -10,7 +10,9 @@
 extern void CanvasGroup_get_alpha_mBFEA193D2886B27CC53B31F90F7A1659B67ED6DF (void);
 extern void CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F (void);
 extern void CanvasGroup_get_interactable_mE5EE5E3AFEAD06D18E15A91C0A0E706D9FE40F76 (void);
+extern void CanvasGroup_set_interactable_m86928BB0894EF3F06BC7BE63594272FBA0DAC757 (void);
 extern void CanvasGroup_get_blocksRaycasts_mFEC4D16E66CD2480692CC66CF79FCA06DBF0307C (void);
+extern void CanvasGroup_set_blocksRaycasts_m6C17F35782D16AE3FC42FCD1A4D68E1C4A4776E0 (void);
 extern void CanvasGroup_get_ignoreParentGroups_m2F38E053B86FD01735C2DA2047E197C0B8654361 (void);
 extern void CanvasGroup_set_ignoreParentGroups_m2BE51419DAEA6EBB3C2AC8BD505AABD02B240E9D (void);
 extern void CanvasGroup_IsRaycastLocationValid_m3B745747F3BF9BAC4EFB9F76F02DE3219D8D54D1 (void);
@@ -18,7 +20,9 @@ extern void CanvasGroup__ctor_m315BFDC80521A96D478D24E9DD2DC383AE2CF89A (void);
 extern void CanvasGroup_get_alpha_Injected_mB10714AF974EEE6EA8125DD7296AD7DA9DDA4AB1 (void);
 extern void CanvasGroup_set_alpha_Injected_m29B947237CD660F5AFC607525E1DE8BD106D5820 (void);
 extern void CanvasGroup_get_interactable_Injected_mAA1CC785D5CB28E1CF9082AF9B211291BF33B86B (void);
+extern void CanvasGroup_set_interactable_Injected_m5E9F27601FA0FBD82FB061CD18DD08720DACF999 (void);
 extern void CanvasGroup_get_blocksRaycasts_Injected_mD44A7E5D0D2F2AA7A92097F48B6A192DF13E2D0F (void);
+extern void CanvasGroup_set_blocksRaycasts_Injected_m222FC028602EA5A9AA177641E08BE8487CDD8DE0 (void);
 extern void CanvasGroup_get_ignoreParentGroups_Injected_m9E23B20E8E17811FAF2F8F2084FC3EA201C52E87 (void);
 extern void CanvasGroup_set_ignoreParentGroups_Injected_mE03CAAFC2BA21BBE0A57CAFEBADDA4D7B6499A38 (void);
 extern void CanvasRenderer_set_hasPopInstruction_mDE56514A0B57434BCE041751AC7D889E9E0BD3FD (void);
@@ -184,13 +188,15 @@ extern void UISystemProfilerApi_BeginSample_m6AF893A85204DA2129D9D3D75D8A6EDD329
 extern void UISystemProfilerApi_EndSample_mAFBCEDF8073F3FB0E1644482D909F108DBE11F3D (void);
 extern void UISystemProfilerApi_AddMarker_mB0E292213D18AE3770165011E265A57B17FCF90B (void);
 extern void UISystemProfilerApi_AddMarker_Injected_m283D922C84E040D412F5DC712DE6C81FD05AC87E (void);
-static Il2CppMethodPointer s_methodPointers[178] = 
+static Il2CppMethodPointer s_methodPointers[182] = 
 {
 	NULL,
 	CanvasGroup_get_alpha_mBFEA193D2886B27CC53B31F90F7A1659B67ED6DF,
 	CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F,
 	CanvasGroup_get_interactable_mE5EE5E3AFEAD06D18E15A91C0A0E706D9FE40F76,
+	CanvasGroup_set_interactable_m86928BB0894EF3F06BC7BE63594272FBA0DAC757,
 	CanvasGroup_get_blocksRaycasts_mFEC4D16E66CD2480692CC66CF79FCA06DBF0307C,
+	CanvasGroup_set_blocksRaycasts_m6C17F35782D16AE3FC42FCD1A4D68E1C4A4776E0,
 	CanvasGroup_get_ignoreParentGroups_m2F38E053B86FD01735C2DA2047E197C0B8654361,
 	CanvasGroup_set_ignoreParentGroups_m2BE51419DAEA6EBB3C2AC8BD505AABD02B240E9D,
 	CanvasGroup_IsRaycastLocationValid_m3B745747F3BF9BAC4EFB9F76F02DE3219D8D54D1,
@@ -198,7 +204,9 @@ static Il2CppMethodPointer s_methodPointers[178] =
 	CanvasGroup_get_alpha_Injected_mB10714AF974EEE6EA8125DD7296AD7DA9DDA4AB1,
 	CanvasGroup_set_alpha_Injected_m29B947237CD660F5AFC607525E1DE8BD106D5820,
 	CanvasGroup_get_interactable_Injected_mAA1CC785D5CB28E1CF9082AF9B211291BF33B86B,
+	CanvasGroup_set_interactable_Injected_m5E9F27601FA0FBD82FB061CD18DD08720DACF999,
 	CanvasGroup_get_blocksRaycasts_Injected_mD44A7E5D0D2F2AA7A92097F48B6A192DF13E2D0F,
+	CanvasGroup_set_blocksRaycasts_Injected_m222FC028602EA5A9AA177641E08BE8487CDD8DE0,
 	CanvasGroup_get_ignoreParentGroups_Injected_m9E23B20E8E17811FAF2F8F2084FC3EA201C52E87,
 	CanvasGroup_set_ignoreParentGroups_Injected_mE03CAAFC2BA21BBE0A57CAFEBADDA4D7B6499A38,
 	CanvasRenderer_set_hasPopInstruction_mDE56514A0B57434BCE041751AC7D889E9E0BD3FD,
@@ -365,13 +373,15 @@ static Il2CppMethodPointer s_methodPointers[178] =
 	UISystemProfilerApi_AddMarker_mB0E292213D18AE3770165011E265A57B17FCF90B,
 	UISystemProfilerApi_AddMarker_Injected_m283D922C84E040D412F5DC712DE6C81FD05AC87E,
 };
-static const int32_t s_InvokerIndices[178] = 
+static const int32_t s_InvokerIndices[182] = 
 {
 	-1,
 	14606,
 	11257,
 	14297,
+	10962,
 	14297,
+	10962,
 	14297,
 	10962,
 	3608,
@@ -379,7 +389,9 @@ static const int32_t s_InvokerIndices[178] =
 	23908,
 	21312,
 	23407,
+	21307,
 	23407,
+	21307,
 	23407,
 	21307,
 	10962,
@@ -550,7 +562,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_UIModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_UIModule_CodeGenModule = 
 {
 	"UnityEngine.UIModule.dll",
-	178,
+	182,
 	s_methodPointers,
 	0,
 	NULL,

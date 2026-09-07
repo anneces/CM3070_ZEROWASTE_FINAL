@@ -43,6 +43,7 @@ public class DayManager : MonoBehaviour
         {
             currentPhase = DayPhase.Afternoon;
             Debug.Log($"================ DAY {currentDay}: AFTERNOON PHASE ================");
+            NotifyFoodItemsPhaseTick();
             UpdatePhaseRestrictions();
             return;
         }
@@ -50,6 +51,7 @@ public class DayManager : MonoBehaviour
         {
             currentPhase = DayPhase.Evening;
             Debug.Log($"================ DAY {currentDay}: EVENING PHASE ================");
+            NotifyFoodItemsPhaseTick();
             UpdatePhaseRestrictions();
             return;
         }
@@ -81,14 +83,25 @@ public class DayManager : MonoBehaviour
         currentPhase = DayPhase.Morning;
         Debug.Log($"================ ADVANCING TO DAY {currentDay}: MORNING PHASE ================");
 
-        // Find all food items currently in the scene and trigger their phase tick (decay + shader update)
+        // Trigger phase tick for food items on morning transition
+        NotifyFoodItemsPhaseTick();
+
+        UpdatePhaseRestrictions();
+    }
+
+    /// <summary>
+    /// Finds all active FoodItems in the scene and triggers decay and shader updates.
+    /// </summary>
+    private void NotifyFoodItemsPhaseTick()
+    {
         FoodItem[] allFoodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
         foreach (FoodItem item in allFoodItems)
         {
-            item.OnPhaseTick();
+            if (item != null)
+            {
+                item.OnPhaseTick();
+            }
         }
-
-        UpdatePhaseRestrictions();
     }
 
     private void UpdatePhaseRestrictions()

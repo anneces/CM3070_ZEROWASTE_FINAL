@@ -11,7 +11,7 @@ public class PhaseWarningManager : MonoBehaviour
     public PhaseInteractionBlocker cookingStoveBlocker;
 
     [Header("Warning Messages")]
-    public string morningMessage = "Procurement Phase! Go to the tablet and buy food";
+    public string morningMessage = " Procurement Phase! Go to the tablet and buy food";
     public string afternoonMessage = "Sorting Phase! Go sort the food into the storage zones";
     public string eveningMessage = "Cooking Phase! Go to the cooking zone to cook food";
 
