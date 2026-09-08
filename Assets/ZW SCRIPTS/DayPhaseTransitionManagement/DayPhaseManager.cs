@@ -15,7 +15,7 @@ public class DayPhaseManager : MonoBehaviour
 {
     public static DayPhaseManager Instance { get; private set; }
 
-    // Event broadcast for external UI components (Clock, Tablet, TV)
+    // Event broadcast for external UI components (Clock, Tablet, TV, Recipe Book)
     public static event Action OnPhaseChanged;
 
     [Header("Day & Phase Tracking")]
@@ -75,28 +75,22 @@ public class DayPhaseManager : MonoBehaviour
         UpdateEnvironment();
         UpdateClockUI();
         UpdatePhaseRestrictions();
+
+        // Broadcast phase update on initial start so all subscribers sync correctly
+        OnPhaseChanged?.Invoke();
     }
 
-    /// <summary>
-    /// Alias method to prevent CS1061 errors from external scripts calling ConfirmNextPhase.
-    /// </summary>
     public void ConfirmNextPhase()
     {
         ConfirmAdvancePhase();
     }
 
-    /// <summary>
-    /// Opens the confirmation modal ("Move to next phase?").
-    /// </summary>
     public void OpenPhaseChangeConfirmation()
     {
         if (confirmationPopupModal != null)
             confirmationPopupModal.SetActive(true);
     }
 
-    /// <summary>
-    /// Called when player confirms "Yes" on the confirmation popup modal.
-    /// </summary>
     public void ConfirmAdvancePhase()
     {
         if (confirmationPopupModal != null)
@@ -105,9 +99,6 @@ public class DayPhaseManager : MonoBehaviour
         AdvancePhase();
     }
 
-    /// <summary>
-    /// Called when player clicks "No / Cancel" on the confirmation popup modal.
-    /// </summary>
     public void CancelPhaseChange()
     {
         if (confirmationPopupModal != null)
@@ -135,20 +126,16 @@ public class DayPhaseManager : MonoBehaviour
             {
                 Debug.Log("End of 5-Day Simulation Reached! Loading Main Menu Summary...");
 
-                // 1. Base performance metrics from TrashBinController
                 float wastedMoney = TrashBinController.Instance != null ? TrashBinController.Instance.totalMoneyWasted : 0f;
                 float totalCO2 = TrashBinController.Instance != null ? TrashBinController.Instance.totalCO2 : 0f;
 
-                // 2. Read total dishes cooked directly from PlayerPrefs saved by StoveController
                 int dishesCooked = PlayerPrefs.GetInt("DishesCooked", 0);
 
-                // 3. Uncooked & Spoiled Food Penalty Sweep across the scene
                 FoodItem[] remainingItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
                 foreach (FoodItem item in remainingItems)
                 {
                     if (item != null)
                     {
-                        // Penalize spoiled food left untrashed or uncooked food left over at end of Day 5
                         if (item.isSpoiled || !item.isCooked)
                         {
                             wastedMoney += item.price;
@@ -157,12 +144,10 @@ public class DayPhaseManager : MonoBehaviour
                     }
                 }
 
-                // 4. Save metrics for Summary UI
                 PlayerPrefs.SetFloat("TotalMoneyWasted", wastedMoney);
                 PlayerPrefs.SetFloat("TotalCO2", totalCO2);
                 PlayerPrefs.SetInt("DishesCooked", dishesCooked);
 
-                // 5. Minimum Meals Requirement Check
                 if (dishesCooked == 0)
                 {
                     PlayerPrefs.SetString("FinalGrade", "F");
@@ -187,7 +172,7 @@ public class DayPhaseManager : MonoBehaviour
         UpdateClockUI();
         UpdatePhaseRestrictions();
 
-        // 1. Notify all food items in scene to execute decay tick on every phase change
+        // 1. Notify all food items in scene to execute decay tick
         FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
         foreach (FoodItem food in foodItems)
         {
@@ -211,7 +196,6 @@ public class DayPhaseManager : MonoBehaviour
     {
         if (PhaseWarningManager.Instance != null)
         {
-            // Directly passes local DayPhase enum to PhaseWarningManager
             PhaseWarningManager.Instance.UpdatePhaseRestrictions(currentPhase);
         }
     }

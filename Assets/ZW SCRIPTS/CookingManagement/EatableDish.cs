@@ -11,19 +11,19 @@ public class EatableDish : MonoBehaviour
     {
         interactable = GetComponent<XRBaseInteractable>();
 
-        // Find "bkg" in the scene hierarchy even if it is currently disabled
+        // Find "platebkg" in the scene hierarchy even if it is currently disabled
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {
-            // Ensure object matches "bkg", is in the active scene, and is not a prefab asset
-            if (obj.name == "bkg" && obj.scene.isLoaded)
+            // Ensure object matches "platebkg", is in the active scene, and is not a prefab asset
+            if (obj.name == "platebkg" && obj.scene.isLoaded)
             {
                 plateBkgObj = obj;
                 break;
             }
         }
 
-        // Enable the "bkg" UI panel (and child eatmetxt) when this dish spawns
+        // Enable the "platebkg" UI panel (and child eatmetxt) when this dish spawns
         if (plateBkgObj != null)
         {
             plateBkgObj.SetActive(true);
@@ -53,16 +53,16 @@ public class EatableDish : MonoBehaviour
 
     public void EatDish()
     {
-        // Hide the "bkg" UI panel when the dish is consumed
+        // Hide the "platebkg" UI panel when the dish is consumed
         if (plateBkgObj != null)
         {
             plateBkgObj.SetActive(false);
         }
 
-        // Reset plate state on StoveController so new dishes can be cooked
+        // Properly reset stove state, UI canvases, and recipe book interactions
         if (StoveController.Instance != null)
         {
-            StoveController.Instance.isPlateOccupied = false;
+            StoveController.Instance.ClearPlate();
         }
 
         // Play SFX if available

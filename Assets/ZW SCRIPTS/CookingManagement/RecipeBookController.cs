@@ -12,20 +12,18 @@ public class RecipeBookController : MonoBehaviour
     public GameObject recipeBookCanvas;
     public TextMeshProUGUI bookRecipeTitleText;
     public TextMeshProUGUI bookIngredientsText;
-    public GameObject confirmButton; // Drag your Confirm Button object here in the Inspector
+    public GameObject confirmButton;
 
     private int currentRecipeIndex = 0;
     private RecipeData selectedRecipe;
 
     private void OnEnable()
     {
-        // Subscribe to phase updates
         DayPhaseManager.OnPhaseChanged += OnPhaseChangedHandler;
     }
 
     private void OnDisable()
     {
-        // Unsubscribe from phase updates to prevent memory leaks
         DayPhaseManager.OnPhaseChanged -= OnPhaseChangedHandler;
     }
 
@@ -34,42 +32,34 @@ public class RecipeBookController : MonoBehaviour
         if (sparkleVFX != null)
         {
             sparkleVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-            Debug.Log("[RecipeBookController] Sparkle VFX assigned and initialized.", this);
         }
         else
         {
             Debug.LogError("[RecipeBookController] Sparkle VFX reference is MISSING in Inspector!", this);
         }
 
+        // Keep UI visible on Start
         if (recipeBookCanvas != null)
         {
-            recipeBookCanvas.SetActive(false);
+            recipeBookCanvas.SetActive(true);
         }
 
-        UpdateBookUI();
         UpdateConfirmButtonVisibility();
+        UpdateBookUI();
     }
 
     /// <summary>
-    /// Handles updates when the DayPhase changes, ensuring UI resets properly between days/phases.
+    /// Updates confirm button visibility when phase shifts without closing the book canvas.
     /// </summary>
     private void OnPhaseChangedHandler()
     {
+        currentRecipeIndex = 0;
         UpdateConfirmButtonVisibility();
-
-        // Reset canvas and index on phase updates (e.g. starting a new day in Morning phase)
-        if (DayPhaseManager.Instance != null && DayPhaseManager.Instance.CurrentPhase == DayPhase.Morning)
-        {
-            currentRecipeIndex = 0;
-            if (recipeBookCanvas != null)
-            {
-                recipeBookCanvas.SetActive(false);
-            }
-        }
+        UpdateBookUI();
     }
 
     /// <summary>
-    /// Checks the current DayPhase and shows the Confirm button ONLY during the Evening phase.
+    /// Shows the Confirm button ONLY during Evening phase.
     /// </summary>
     private void UpdateConfirmButtonVisibility()
     {
@@ -86,25 +76,18 @@ public class RecipeBookController : MonoBehaviour
 
     public void OnHoverEnter(HoverEnterEventArgs args)
     {
-        Debug.Log($"[RecipeBookController] Hover Enter triggered by Interactor: {args.interactorObject?.transform.name}", this);
-
         if (sparkleVFX != null)
         {
             sparkleVFX.gameObject.SetActive(true);
             sparkleVFX.Play();
-            Debug.Log("[RecipeBookController] Sparkle VFX playing.", this);
         }
     }
 
     public void OnHoverExit(HoverExitEventArgs args)
     {
-        Debug.Log($"[RecipeBookController] Hover Exit triggered by Interactor: {args.interactorObject?.transform.name}", this);
-
         if (sparkleVFX != null)
         {
-            // Updated to StopEmittingAndClear so the particle system resets cleanly for future hover events
             sparkleVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-            Debug.Log("[RecipeBookController] Sparkle VFX stopped.", this);
         }
     }
 
@@ -120,22 +103,23 @@ public class RecipeBookController : MonoBehaviour
 
     public void OpenRecipeBook()
     {
-        // Guard clause to prevent opening if recipes list is unavailable
         if (CookingManager.Instance == null || CookingManager.Instance.allRecipes == null || CookingManager.Instance.allRecipes.Count == 0)
         {
             Debug.LogWarning("[RecipeBookController] Cannot open book: CookingManager has no active recipes!", this);
             return;
         }
 
-        if (recipeBookCanvas != null) recipeBookCanvas.SetActive(true);
+        if (recipeBookCanvas != null)
+            recipeBookCanvas.SetActive(true);
+
         UpdateBookUI();
         UpdateConfirmButtonVisibility();
     }
 
     public void CloseRecipeBook()
     {
-        if (recipeBookCanvas != null) recipeBookCanvas.SetActive(false);
-        AudioManager.Instance?.PlayUIClick();
+        if (recipeBookCanvas != null)
+            recipeBookCanvas.SetActive(false);
     }
 
     public void NextRecipe()
@@ -164,10 +148,10 @@ public class RecipeBookController : MonoBehaviour
     {
         if (selectedRecipe == null) return;
 
-        // Route selected recipe to StoveController
         StoveController.Instance?.SetActiveRecipe(selectedRecipe);
 
-        CloseRecipeBook();
+        // Canvas is kept open continuously after selecting/confirming recipes
+        AudioManager.Instance?.PlayUIClick();
     }
 
     private void UpdateBookUI()
@@ -175,8 +159,8 @@ public class RecipeBookController : MonoBehaviour
         List<RecipeData> recipes = CookingManager.Instance?.allRecipes;
         if (recipes == null || recipes.Count == 0) return;
 
-        // Wrap safety check on current index
-        if (currentRecipeIndex >= recipes.Count) currentRecipeIndex = 0;
+        if (currentRecipeIndex < 0 || currentRecipeIndex >= recipes.Count)
+            currentRecipeIndex = 0;
 
         selectedRecipe = recipes[currentRecipeIndex];
 

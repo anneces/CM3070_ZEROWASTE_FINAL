@@ -99,6 +99,15 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        // Clean up material clone instance to prevent leaks when food items are instantiated/destroyed
+        if (foodMaterialInstance != null)
+        {
+            Destroy(foodMaterialInstance);
+        }
+    }
+
     /// <summary>
     /// Called by DayPhaseManager during phase shift ticks (Morning -> Afternoon -> Evening).
     /// Drives both fractional shelf life deduction and visual mold shader progression.
@@ -188,9 +197,9 @@ public class FoodItem : MonoBehaviour
         Debug.Log($"[SPOIL WARNING] {foodName} has spoiled! Financial loss: ${price:F2}, Carbon penalty: {co2Points} kg CO2.");
 
         // Darkens material to indicate rot
-        if (itemRenderer != null && itemRenderer.material.HasProperty("_Color"))
+        if (foodMaterialInstance != null && foodMaterialInstance.HasProperty("_Color"))
         {
-            itemRenderer.material.color = originalColor * 0.3f;
+            foodMaterialInstance.color = originalColor * 0.3f;
         }
     }
 }

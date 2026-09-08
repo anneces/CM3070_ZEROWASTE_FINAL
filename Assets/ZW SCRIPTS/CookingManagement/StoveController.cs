@@ -27,6 +27,7 @@ public class StoveController : MonoBehaviour
     private List<FoodItem> consumedIngredientPrefabs = new List<FoodItem>(); // Tracks consumed prefabs for respawning
     private bool isCooking = false;
     private float cookTimer = 0f;
+    private GameObject spawnedDish; // Reference to track the instantiated cooked dish
 
     private void Awake()
     {
@@ -41,6 +42,15 @@ public class StoveController : MonoBehaviour
         if (resetButton != null) resetButton.SetActive(false);
         if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (dishSpawnVFX != null) dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+    }
+
+    private void Update()
+    {
+        // Auto-detect when the cooked dish is destroyed/eaten and clear the plate UI state
+        if (isPlateOccupied && spawnedDish == null)
+        {
+            ClearPlate();
+        }
     }
 
     public void SetActiveRecipe(RecipeData newRecipe)
@@ -254,7 +264,7 @@ public class StoveController : MonoBehaviour
 
         if (activeRecipe.cookedDishPrefab != null && dishSpawnPoint != null)
         {
-            Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
+            spawnedDish = Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
             isPlateOccupied = true; // Set plate occupied status when spawned
 
             // Track completed dish count for DayPhaseManager evaluation
@@ -275,11 +285,26 @@ public class StoveController : MonoBehaviour
         if (progressCanvas != null) progressCanvas.SetActive(false);
     }
 
-    // Helper method to call when the player consumes the dish
+    /// <summary>
+    /// Helper method to call when the player consumes the dish.
+    /// Resets stove state variables while keeping the Recipe Book canvas visible.
+    /// </summary>
     public void ClearPlate()
     {
         isPlateOccupied = false;
-        if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
+        spawnedDish = null;
+        activeRecipe = null; // Reset active recipe reference
+
+        if (eatMeCanvas != null)
+            eatMeCanvas.SetActive(false);
+
+        if (progressCanvas != null)
+            progressCanvas.SetActive(false);
+
+        if (resetButton != null)
+            resetButton.SetActive(false);
+
+        // Recipe Book canvas is no longer closed here and stays enabled throughout gameplay
     }
 
     private int GetTotalRequiredIngredientsCount()

@@ -15,7 +15,13 @@ public class PhaseInteractionBlocker : MonoBehaviour
 
     private void Awake()
     {
-        if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
+        EnsureCanvasGroup();
+    }
+
+    private void EnsureCanvasGroup()
+    {
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
     }
 
     /// <summary>
@@ -23,7 +29,10 @@ public class PhaseInteractionBlocker : MonoBehaviour
     /// </summary>
     public void Block(string message)
     {
-        gameObject.SetActive(true);
+        EnsureCanvasGroup();
+
+        if (gameObject != null && !gameObject.activeSelf)
+            gameObject.SetActive(true);
 
         // Update single text component if assigned
         if (warningMessageText != null)
@@ -40,19 +49,28 @@ public class PhaseInteractionBlocker : MonoBehaviour
             }
         }
 
-        canvasGroup.alpha = 1f;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true; // Blocks VR controller rays from hitting objects behind it
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        }
     }
 
     /// <summary>
-    /// Unblocks interaction for the current phase.
+    /// Unblocks interaction for the current phase, explicitly allowing XR raycasts to pass through.
     /// </summary>
     public void Unblock()
     {
-        canvasGroup.alpha = 0f;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
+        EnsureCanvasGroup();
+
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false; // Ensures VR Ray Interactors pass straight through to physical objects/UI behind it
+        }
+
         gameObject.SetActive(false);
     }
 }
