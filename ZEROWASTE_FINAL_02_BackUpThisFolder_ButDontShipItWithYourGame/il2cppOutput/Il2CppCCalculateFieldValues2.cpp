@@ -35065,6 +35065,7 @@ struct FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2  : public MonoBehaviou
 	int32_t ___currentStorage;
 	float ___price;
 	float ___co2Points;
+	bool ___isCooked;
 	float ___maxFreshnessDays;
 	float ___currentFreshnessDays;
 	bool ___isExpired;
@@ -35278,6 +35279,7 @@ struct RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820  : public 
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___recipeBookCanvas;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bookRecipeTitleText;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bookIngredientsText;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___confirmButton;
 	int32_t ___currentRecipeIndex;
 	RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* ___selectedRecipe;
 };
@@ -47286,9 +47288,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8834[2] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8835[2] = 
 {
 	static_cast<int32_t>(offsetof(EatableDish_t87E8FCF8321ABE2235508351ABB6037D3288539E, ___interactable)),static_cast<int32_t>(offsetof(EatableDish_t87E8FCF8321ABE2235508351ABB6037D3288539E, ___plateBkgObj)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8836[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8836[7] = 
 {
-	static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___sparkleVFX)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___recipeBookCanvas)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___bookRecipeTitleText)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___bookIngredientsText)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___currentRecipeIndex)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___selectedRecipe)),};
+	static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___sparkleVFX)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___recipeBookCanvas)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___bookRecipeTitleText)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___bookIngredientsText)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___confirmButton)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___currentRecipeIndex)),static_cast<int32_t>(offsetof(RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820, ___selectedRecipe)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8837[2] = 
 {
 	static_cast<int32_t>(offsetof(IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0, ___foodPrefab)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(IngredientRequirement_t8189A3F7F72AEB0A01DD9E7E16536D22577A78D0, ___requiredAmount)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
@@ -47316,9 +47318,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8844[18] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8845[6] = 
 {
 	static_cast<int32_t>(offsetof(PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9, ___nextPhaseButton)),static_cast<int32_t>(offsetof(PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9, ___confirmationPanel)),static_cast<int32_t>(offsetof(PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9, ___clockText)),static_cast<int32_t>(offsetof(PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9, ___confirmButton)),static_cast<int32_t>(offsetof(PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9, ___cancelButton)),static_cast<int32_t>(offsetof(PhaseTransitionUI_t21441054246D4D5B2887F54C0A1E3272718C8CD9, ___promptText)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8846[14] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8846[15] = 
 {
-	static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___foodName)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___idealStorage)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___currentStorage)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___price)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___co2Points)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___maxFreshnessDays)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___currentFreshnessDays)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___isExpired)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___trueServingScale)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___distortedServingScale)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___itemRenderer)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___originalColor)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___foodMaterialInstance)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2_StaticFields, ___DecayAmountProperty)),};
+	static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___foodName)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___idealStorage)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___currentStorage)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___price)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___co2Points)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___isCooked)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___maxFreshnessDays)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___currentFreshnessDays)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___isExpired)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___trueServingScale)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___distortedServingScale)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___itemRenderer)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___originalColor)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2, ___foodMaterialInstance)),static_cast<int32_t>(offsetof(FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2_StaticFields, ___DecayAmountProperty)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8847[4] = 
 {
 	static_cast<int32_t>(offsetof(FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88, ___nameText)),static_cast<int32_t>(offsetof(FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88, ___priceText)),static_cast<int32_t>(offsetof(FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88, ___buyButton)),static_cast<int32_t>(offsetof(FoodItemRow_t6D32AD8D6C88DB166E79DE2A36B1134A78486A88, ___currentItem)),};

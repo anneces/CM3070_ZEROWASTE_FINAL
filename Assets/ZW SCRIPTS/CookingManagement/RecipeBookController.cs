@@ -12,9 +12,22 @@ public class RecipeBookController : MonoBehaviour
     public GameObject recipeBookCanvas;
     public TextMeshProUGUI bookRecipeTitleText;
     public TextMeshProUGUI bookIngredientsText;
+    public GameObject confirmButton; // Drag your Confirm Button object here in the Inspector
 
     private int currentRecipeIndex = 0;
     private RecipeData selectedRecipe;
+
+    private void OnEnable()
+    {
+        // Subscribe to phase updates
+        DayPhaseManager.OnPhaseChanged += UpdateConfirmButtonVisibility;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe from phase updates to prevent memory leaks
+        DayPhaseManager.OnPhaseChanged -= UpdateConfirmButtonVisibility;
+    }
 
     private void Start()
     {
@@ -34,6 +47,21 @@ public class RecipeBookController : MonoBehaviour
         }
 
         UpdateBookUI();
+        UpdateConfirmButtonVisibility();
+    }
+
+    /// <summary>
+    /// Checks the current DayPhase and shows the Confirm button ONLY during the Evening phase.
+    /// </summary>
+    private void UpdateConfirmButtonVisibility()
+    {
+        if (confirmButton == null) return;
+
+        if (DayPhaseManager.Instance != null)
+        {
+            bool isEvening = DayPhaseManager.Instance.CurrentPhase == DayPhase.Evening;
+            confirmButton.SetActive(isEvening);
+        }
     }
 
     #region XR Interaction Handlers
@@ -76,6 +104,7 @@ public class RecipeBookController : MonoBehaviour
     {
         if (recipeBookCanvas != null) recipeBookCanvas.SetActive(true);
         UpdateBookUI();
+        UpdateConfirmButtonVisibility();
     }
 
     public void CloseRecipeBook()

@@ -48,7 +48,10 @@ extern void EatableDish_OnDisable_m9C2DEFB6374F7DD785B3A82296A3DA2B307D0FF0 (voi
 extern void EatableDish_OnDishEaten_m81668045BBAC5789648D189E7D3D13DA4BDAF9ED (void);
 extern void EatableDish_EatDish_m249A62A47BB2BC9027DCCE8CC4D97E4A960D41DF (void);
 extern void EatableDish__ctor_m574EEE4EF7746871169E7B2429C2167ABD3C0DED (void);
+extern void RecipeBookController_OnEnable_m3D33908BD517F44DE42626A1556CAE43E01EAEE5 (void);
+extern void RecipeBookController_OnDisable_m5A887D671CF0679040C6EECA26FDDC743DF52434 (void);
 extern void RecipeBookController_Start_m2750114DAEC8DBF2A99AC7BB484F390925CDE9C3 (void);
+extern void RecipeBookController_UpdateConfirmButtonVisibility_mA0403D461879B1CBB65420310C5119FD6D07FBC1 (void);
 extern void RecipeBookController_OnHoverEnter_m579D285B8ADB5DA88FB5896B7F956783EE838AD8 (void);
 extern void RecipeBookController_OnHoverExit_mE2C71604DFD63DE657BF9D885FEF2781E0A8E860 (void);
 extern void RecipeBookController_OnBookClicked_m4EEB739443CEFF06253841046AE00FA8EFF19027 (void);
@@ -105,6 +108,8 @@ extern void PhaseTransitionUI_OnCancelClicked_m82F6E6CEFEF6B81723858E2A3BC99487E
 extern void PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283 (void);
 extern void PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF (void);
 extern void PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E (void);
+extern void FoodItem_get_co2Value_mB4E4A109D4024A73979604F86AAA43DD604B161C (void);
+extern void FoodItem_get_isSpoiled_m436348F9393805E967010E3DB430900DFFBD2E40 (void);
 extern void FoodItem_get_FreshnessPercentage_m54126E7420A719F5C20E919FF844BF52470C0D46 (void);
 extern void FoodItem_get_FreshnessStatus_mD6D5F4C18C05F73C358CA13DCD5FF7CB461639DE (void);
 extern void FoodItem_get_FreshnessStatusColor_m4E4CB032D0F1E4D23BBFFC51C14F378FB0FFFAAD (void);
@@ -217,7 +222,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[210] = 
+static Il2CppMethodPointer s_methodPointers[215] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -260,7 +265,10 @@ static Il2CppMethodPointer s_methodPointers[210] =
 	EatableDish_OnDishEaten_m81668045BBAC5789648D189E7D3D13DA4BDAF9ED,
 	EatableDish_EatDish_m249A62A47BB2BC9027DCCE8CC4D97E4A960D41DF,
 	EatableDish__ctor_m574EEE4EF7746871169E7B2429C2167ABD3C0DED,
+	RecipeBookController_OnEnable_m3D33908BD517F44DE42626A1556CAE43E01EAEE5,
+	RecipeBookController_OnDisable_m5A887D671CF0679040C6EECA26FDDC743DF52434,
 	RecipeBookController_Start_m2750114DAEC8DBF2A99AC7BB484F390925CDE9C3,
+	RecipeBookController_UpdateConfirmButtonVisibility_mA0403D461879B1CBB65420310C5119FD6D07FBC1,
 	RecipeBookController_OnHoverEnter_m579D285B8ADB5DA88FB5896B7F956783EE838AD8,
 	RecipeBookController_OnHoverExit_mE2C71604DFD63DE657BF9D885FEF2781E0A8E860,
 	RecipeBookController_OnBookClicked_m4EEB739443CEFF06253841046AE00FA8EFF19027,
@@ -317,6 +325,8 @@ static Il2CppMethodPointer s_methodPointers[210] =
 	PhaseTransitionUI_OnConfirmClicked_m214CC4633B7A8EB4D8C59BDB284ECE24D41B5283,
 	PhaseTransitionUI_ResetUIState_m04EFC4CD54E6C6DDC353369003CF66C8CD65C8FF,
 	PhaseTransitionUI__ctor_mCFD78B59C46478B3DBB6DB7F174007A4DAC9D95E,
+	FoodItem_get_co2Value_mB4E4A109D4024A73979604F86AAA43DD604B161C,
+	FoodItem_get_isSpoiled_m436348F9393805E967010E3DB430900DFFBD2E40,
 	FoodItem_get_FreshnessPercentage_m54126E7420A719F5C20E919FF844BF52470C0D46,
 	FoodItem_get_FreshnessStatus_mD6D5F4C18C05F73C358CA13DCD5FF7CB461639DE,
 	FoodItem_get_FreshnessStatusColor_m4E4CB032D0F1E4D23BBFFC51C14F378FB0FFFAAD,
@@ -430,7 +440,7 @@ static Il2CppMethodPointer s_methodPointers[210] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[210] = 
+static const int32_t s_InvokerIndices[215] = 
 {
 	14499,
 	14710,
@@ -471,6 +481,9 @@ static const int32_t s_InvokerIndices[210] =
 	14710,
 	14710,
 	11163,
+	14710,
+	14710,
+	14710,
 	14710,
 	14710,
 	14710,
@@ -530,6 +543,8 @@ static const int32_t s_InvokerIndices[210] =
 	14710,
 	14710,
 	14710,
+	14606,
+	14297,
 	14606,
 	14499,
 	14499,
@@ -647,7 +662,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	210,
+	215,
 	s_methodPointers,
 	0,
 	NULL,

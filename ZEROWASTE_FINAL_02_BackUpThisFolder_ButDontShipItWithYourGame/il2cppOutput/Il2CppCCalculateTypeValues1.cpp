@@ -45184,6 +45184,7 @@ struct FoodItem_tCA6A5E54C159F99EFA435A20E6779479F92712C2  : public MonoBehaviou
 	int32_t ___currentStorage;
 	float ___price;
 	float ___co2Points;
+	bool ___isCooked;
 	float ___maxFreshnessDays;
 	float ___currentFreshnessDays;
 	bool ___isExpired;
@@ -45400,6 +45401,7 @@ struct RecipeBookController_t0DF4F92155BB5E2B11D8675CA472BA16CC634820  : public 
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___recipeBookCanvas;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bookRecipeTitleText;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___bookIngredientsText;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___confirmButton;
 	int32_t ___currentRecipeIndex;
 	RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* ___selectedRecipe;
 };
