@@ -20,13 +20,13 @@ public class RecipeBookController : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to phase updates
-        DayPhaseManager.OnPhaseChanged += UpdateConfirmButtonVisibility;
+        DayPhaseManager.OnPhaseChanged += OnPhaseChangedHandler;
     }
 
     private void OnDisable()
     {
         // Unsubscribe from phase updates to prevent memory leaks
-        DayPhaseManager.OnPhaseChanged -= UpdateConfirmButtonVisibility;
+        DayPhaseManager.OnPhaseChanged -= OnPhaseChangedHandler;
     }
 
     private void Start()
@@ -48,6 +48,24 @@ public class RecipeBookController : MonoBehaviour
 
         UpdateBookUI();
         UpdateConfirmButtonVisibility();
+    }
+
+    /// <summary>
+    /// Handles updates when the DayPhase changes, ensuring UI resets properly between days/phases.
+    /// </summary>
+    private void OnPhaseChangedHandler()
+    {
+        UpdateConfirmButtonVisibility();
+
+        // Reset canvas and index on phase updates (e.g. starting a new day in Morning phase)
+        if (DayPhaseManager.Instance != null && DayPhaseManager.Instance.CurrentPhase == DayPhase.Morning)
+        {
+            currentRecipeIndex = 0;
+            if (recipeBookCanvas != null)
+            {
+                recipeBookCanvas.SetActive(false);
+            }
+        }
     }
 
     /// <summary>
@@ -102,6 +120,13 @@ public class RecipeBookController : MonoBehaviour
 
     public void OpenRecipeBook()
     {
+        // Guard clause to prevent opening if recipes list is unavailable
+        if (CookingManager.Instance == null || CookingManager.Instance.allRecipes == null || CookingManager.Instance.allRecipes.Count == 0)
+        {
+            Debug.LogWarning("[RecipeBookController] Cannot open book: CookingManager has no active recipes!", this);
+            return;
+        }
+
         if (recipeBookCanvas != null) recipeBookCanvas.SetActive(true);
         UpdateBookUI();
         UpdateConfirmButtonVisibility();
@@ -149,6 +174,9 @@ public class RecipeBookController : MonoBehaviour
     {
         List<RecipeData> recipes = CookingManager.Instance?.allRecipes;
         if (recipes == null || recipes.Count == 0) return;
+
+        // Wrap safety check on current index
+        if (currentRecipeIndex >= recipes.Count) currentRecipeIndex = 0;
 
         selectedRecipe = recipes[currentRecipeIndex];
 

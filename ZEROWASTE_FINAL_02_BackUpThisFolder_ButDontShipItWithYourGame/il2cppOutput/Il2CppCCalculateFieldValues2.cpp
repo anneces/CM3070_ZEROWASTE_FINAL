@@ -301,6 +301,7 @@ struct List_1_t437E45D007C2D93DCB30DA30023CB2745EE095D0;
 struct List_1_tF2FE88545EFEC788CAAE6C74EC2F78E937FCCAC3;
 struct List_1_t2EC26D0ED018C658813F1744B58498EF88D4A3C7;
 struct List_1_t55B85B981AC5FD6A5358491F90FE354F78BB97DE;
+struct List_1_t8459C429AF0F5AC9AEA9B3E11676FB2F02F4FC66;
 struct List_1_tA5BCD116CC751A5F35C7D3D7B96DC3A5D22B9C82;
 struct List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B;
 struct List_1_t95DB74B8EE315F8F92B7B96D93C901C8C3F6FE2C;
@@ -3235,16 +3236,16 @@ struct U3CU3Ec_t04E77827D54CC7D69F04FDFC5A84C3F7392F9A76  : public RuntimeObject
 struct U3CU3Ec_t077F63D1AD84FB9E7D0A6793234888C38925CAA7  : public RuntimeObject
 {
 };
-struct U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B  : public RuntimeObject
+struct U3CU3Ec__DisplayClass19_0_t7D80136DE7EB06F67929A4BFCE68F72E5BBA1E36  : public RuntimeObject
 {
 	String_t* ___id;
 	Predicate_1_tEB15485FDAFC48C82EE54427A8DBDB401213706C* ___U3CU3E9__0;
 };
-struct U3CU3Ec__DisplayClass18_0_t32888C2EBAE90BFFCC30E1A1B4BD210305BC5896  : public RuntimeObject
+struct U3CU3Ec__DisplayClass22_0_tEE70B860898ABC76F56D8A91203B81A5A7D178EC  : public RuntimeObject
 {
 	String_t* ___id;
 };
-struct U3CStartCookingProcessU3Ed__20_t4FC0FA460D1A41C193CF505C1FEC95E03628F95D  : public RuntimeObject
+struct U3CStartCookingProcessU3Ed__24_t3A1880801018632234E7F6345BA78F3F78709110  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -35380,14 +35381,17 @@ struct StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065  : public MonoB
 {
 	RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED* ___activeRecipe;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___dishSpawnPoint;
+	TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* ___ingredientRespawnPoints;
 	bool ___isPlateOccupied;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___progressCanvas;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___eatMeCanvas;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___resetButton;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___headerText;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___statusText;
 	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ___stoveFireVFX;
 	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ___dishSpawnVFX;
 	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ___addedIngredients;
+	List_1_t8459C429AF0F5AC9AEA9B3E11676FB2F02F4FC66* ___consumedIngredientPrefabs;
 	bool ___isCooking;
 	float ___cookTimer;
 };
@@ -47299,16 +47303,16 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8838[3] =
 	static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___recipeName)),static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___ingredients)),static_cast<int32_t>(offsetof(RecipeData_t6DED7397C8F2F37D613D40A7CEFE73F076E109ED, ___cookedDishPrefab)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8839[2] = 
 {
-	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B, ___id)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass16_0_tEDC29A33BD4CD0C7F57A9F365E3D067E64041D1B, ___U3CU3E9__0)),};
+	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass19_0_t7D80136DE7EB06F67929A4BFCE68F72E5BBA1E36, ___id)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass19_0_t7D80136DE7EB06F67929A4BFCE68F72E5BBA1E36, ___U3CU3E9__0)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8840[1] = 
 {
-	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass18_0_t32888C2EBAE90BFFCC30E1A1B4BD210305BC5896, ___id)),};
+	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass22_0_tEE70B860898ABC76F56D8A91203B81A5A7D178EC, ___id)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8841[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__20_t4FC0FA460D1A41C193CF505C1FEC95E03628F95D, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__20_t4FC0FA460D1A41C193CF505C1FEC95E03628F95D, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__20_t4FC0FA460D1A41C193CF505C1FEC95E03628F95D, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__20_t4FC0FA460D1A41C193CF505C1FEC95E03628F95D, ___U3CdurationU3E5__2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8842[13] = 
+	static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__24_t3A1880801018632234E7F6345BA78F3F78709110, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__24_t3A1880801018632234E7F6345BA78F3F78709110, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__24_t3A1880801018632234E7F6345BA78F3F78709110, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CStartCookingProcessU3Ed__24_t3A1880801018632234E7F6345BA78F3F78709110, ___U3CdurationU3E5__2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8842[16] = 
 {
-	static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___activeRecipe)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnPoint)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isPlateOccupied)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___progressCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___eatMeCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___headerText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___statusText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___stoveFireVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___addedIngredients)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isCooking)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___cookTimer)),};
+	static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___activeRecipe)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnPoint)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___ingredientRespawnPoints)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isPlateOccupied)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___progressCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___eatMeCanvas)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___resetButton)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___headerText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___statusText)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___stoveFireVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___dishSpawnVFX)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___addedIngredients)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___consumedIngredientPrefabs)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___isCooking)),static_cast<int32_t>(offsetof(StoveController_t112B7DA4E3FE6B10DCB17E358F9F37D71C2AB065, ___cookTimer)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable8843[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};

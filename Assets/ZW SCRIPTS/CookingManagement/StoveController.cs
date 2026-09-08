@@ -9,11 +9,13 @@ public class StoveController : MonoBehaviour
     [Header("Recipe & Spawn Settings")]
     public RecipeData activeRecipe;
     public Transform dishSpawnPoint;
+    public Transform[] ingredientRespawnPoints; // Drag your SpawnPoint_1, SpawnPoint_2, SpawnPoint_3 here!
     public bool isPlateOccupied = false; // Tracks if plate already has a cooked dish
 
     [Header("UI References")]
     public GameObject progressCanvas;
     public GameObject eatMeCanvas; // "Eat Me!" prompt UI
+    public GameObject resetButton; // Drag your Reset UI Button here
     public TextMeshProUGUI headerText; // Header for dish name
     public TextMeshProUGUI statusText; // Ingredients progress list
 
@@ -22,6 +24,7 @@ public class StoveController : MonoBehaviour
     public ParticleSystem dishSpawnVFX;
 
     private List<string> addedIngredients = new List<string>();
+    private List<FoodItem> consumedIngredientPrefabs = new List<FoodItem>(); // Tracks consumed prefabs for respawning
     private bool isCooking = false;
     private float cookTimer = 0f;
 
@@ -35,6 +38,7 @@ public class StoveController : MonoBehaviour
     {
         if (progressCanvas != null) progressCanvas.SetActive(false);
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
+        if (resetButton != null) resetButton.SetActive(false);
         if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (dishSpawnVFX != null) dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
@@ -52,6 +56,7 @@ public class StoveController : MonoBehaviour
 
         activeRecipe = newRecipe;
         addedIngredients.Clear();
+        consumedIngredientPrefabs.Clear();
 
         // Hide Eat Me prompt when setting up a new recipe
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
@@ -95,6 +100,9 @@ public class StoveController : MonoBehaviour
 
                     if (currentCount < maxNeeded)
                     {
+                        // Save reference to prefab before destroying item instance
+                        consumedIngredientPrefabs.Add(req.foodPrefab);
+
                         // Mark as cooked before destroying to preserve item state consistency
                         item.isCooked = true;
 
@@ -109,6 +117,52 @@ public class StoveController : MonoBehaviour
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Resets current cooking progress, respawns added ingredients back at spawn points,
+    /// and resets the stove state.
+    /// </summary>
+    public void ResetStove()
+    {
+        if (isCooking) return; // Prevent reset mid-cook routine
+
+        // Respawn consumed ingredients across assigned spawn points
+        for (int i = 0; i < consumedIngredientPrefabs.Count; i++)
+        {
+            FoodItem prefab = consumedIngredientPrefabs[i];
+            if (prefab != null)
+            {
+                Vector3 spawnPos = transform.position + Vector3.up * 0.5f;
+                Quaternion spawnRot = Quaternion.identity;
+
+                if (ingredientRespawnPoints != null && ingredientRespawnPoints.Length > 0)
+                {
+                    // Pick matching index, or wrap around if ingredients exceed available spawn points
+                    Transform targetSpawn = ingredientRespawnPoints[i % ingredientRespawnPoints.Length];
+                    if (targetSpawn != null)
+                    {
+                        spawnPos = targetSpawn.position;
+                        spawnRot = targetSpawn.rotation;
+                    }
+                }
+
+                Instantiate(prefab, spawnPos, spawnRot);
+            }
+        }
+
+        // Clear tracked ingredient data
+        addedIngredients.Clear();
+        consumedIngredientPrefabs.Clear();
+
+        // Turn off fire VFX if resetting before cooking
+        if (stoveFireVFX != null)
+        {
+            stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+
+        UpdateRecipeUI();
+        AudioManager.Instance?.PlayUIClick();
     }
 
     private void ShowSpoiledFoodWarning()
@@ -147,6 +201,12 @@ public class StoveController : MonoBehaviour
                 }
                 statusText.text = progressList.TrimEnd();
             }
+
+            // Display reset button only when at least one ingredient has been added and not cooking
+            if (resetButton != null)
+            {
+                resetButton.SetActive(addedIngredients.Count > 0 && !isCooking);
+            }
         }
     }
 
@@ -162,6 +222,7 @@ public class StoveController : MonoBehaviour
     private System.Collections.IEnumerator StartCookingProcess()
     {
         isCooking = true;
+        if (resetButton != null) resetButton.SetActive(false);
         cookTimer = 0f;
 
         float duration = 5f;
@@ -209,6 +270,7 @@ public class StoveController : MonoBehaviour
         }
 
         addedIngredients.Clear();
+        consumedIngredientPrefabs.Clear();
         isCooking = false;
         if (progressCanvas != null) progressCanvas.SetActive(false);
     }
