@@ -1,44 +1,119 @@
-using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static AudioManager Instance { get; private set; }
 
     [Header("Audio Sources")]
-    public AudioSource sfxSource;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource bgmSource;
 
-    [Header("Audio Clips")]
-    public AudioClip uiClickClip;
-    public AudioClip ingredientDropClip;
-    public AudioClip trashDropClip;
-    public AudioClip phaseTransitionClip;
+    [Header("UI & Phase SFX")]
+    public AudioClip uiclickbtn;
+    public AudioClip threedbutton_press_cut;
+    public AudioClip alert;
+    public AudioClip phasetransition;
+
+    [Header("Interaction & Environment SFX")]
+    public AudioClip grab_drop_item;
+    public AudioClip door_open_close;
+    public AudioClip trashcan;
+    public AudioClip purchase_cut;
+    public AudioClip spoiled_food_cut;
+
+    [Header("Cooking SFX")]
+    public AudioClip sizzle_cooking;
+    public AudioClip poof_cloud;
+
+    [Header("Game Summary SFX")]
+    public AudioClip mission_gradeA;
+    public AudioClip mission_gradeB_C;
+    public AudioClip mission_gradeF;
+
+    [Header("Background Music Tracks")]
+    public AudioClip mainmenutheme;
+    public AudioClip maingametheme;
+
+    // --- ALIAS PROPERTIES FOR BACKWARD COMPATIBILITY ---
+    public AudioClip uiClickClip => uiclickbtn;
+    public AudioClip ingredientDropClip => grab_drop_item;
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        // Singleton Setup
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Ensure AudioSources exist
+        if (sfxSource == null) sfxSource = gameObject.AddComponent<AudioSource>();
+        if (bgmSource == null) bgmSource = gameObject.AddComponent<AudioSource>();
+
+        bgmSource.loop = true;
     }
 
+    #region Public Play Helper Functions
+
+    /// <summary>
+    /// Plays a one-shot SFX clip.
+    /// </summary>
     public void PlaySFX(AudioClip clip)
     {
         if (clip != null && sfxSource != null)
+        {
             sfxSource.PlayOneShot(clip);
+        }
     }
 
-    public void PlayUIClick()
+    /// <summary>
+    /// Plays background music seamlessly.
+    /// </summary>
+    public void PlayBGM(AudioClip clip)
     {
-        PlaySFX(uiClickClip);
+        if (clip == null || bgmSource == null) return;
+        if (bgmSource.clip == clip && bgmSource.isPlaying) return;
+
+        bgmSource.clip = clip;
+        bgmSource.Play();
     }
 
-    public void PlayDelayedPhaseAlert(float delaySeconds = 1.0f)
+    /// <summary>
+    /// Stops current BGM track.
+    /// </summary>
+    public void StopBGM()
     {
-        StartCoroutine(DelayedPhaseAlertRoutine(delaySeconds));
+        if (bgmSource != null)
+        {
+            bgmSource.Stop();
+        }
     }
 
-    private IEnumerator DelayedPhaseAlertRoutine(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        PlaySFX(phaseTransitionClip);
-    }
+    #endregion
+
+    #region Direct Call Shortcuts
+
+    public void PlayUIClick() => PlaySFX(uiclickbtn);
+    public void Play3DButtonPressed() => PlaySFX(threedbutton_press_cut);
+    public void PlayAlert() => PlaySFX(alert);
+    public void PlayPhaseTransition() => PlaySFX(phasetransition);
+    public void PlayGrabDropItem() => PlaySFX(grab_drop_item);
+    public void PlayDoorOpenClose() => PlaySFX(door_open_close);
+    public void PlayTrashCan() => PlaySFX(trashcan);
+    public void PlayPurchase() => PlaySFX(purchase_cut);
+    public void PlaySpoiledFood() => PlaySFX(spoiled_food_cut);
+    public void PlayCookingSizzle() => PlaySFX(sizzle_cooking);
+    public void PlayPoofCloud() => PlaySFX(poof_cloud);
+
+    public void PlayGradeA() => PlaySFX(mission_gradeA);
+    public void PlayGradeBC() => PlaySFX(mission_gradeB_C);
+    public void PlayGradeF() => PlaySFX(mission_gradeF);
+
+    public void PlayMainMenuTheme() => PlayBGM(mainmenutheme);
+    public void PlayMainGameTheme() => PlayBGM(maingametheme);
+
+    #endregion
 }
