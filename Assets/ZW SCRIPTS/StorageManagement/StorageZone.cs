@@ -44,6 +44,13 @@ public class StorageZone : MonoBehaviour
         // Only revert to KitchenCounter if the item is exiting the EXACT zone it is currently assigned to
         if (item != null && item.currentStorage == zoneType)
         {
+            // Verify if any collider of this item is still inside this storage trigger volume
+            // (Prevents VR hand/grab interactions from causing false exit resets)
+            if (IsItemStillInZone(item))
+            {
+                return;
+            }
+
             // Revert back to KitchenCounter status when removed from this zone
             item.currentStorage = ZoneType.KitchenCounter;
             Debug.Log($"[StorageZone] {item.foodName} removed from {zoneType}. Defaulted to KitchenCounter.");
@@ -54,6 +61,25 @@ public class StorageZone : MonoBehaviour
                 TVDisplayController.Instance.RefreshDisplay();
             }
         }
+    }
+
+    /// <summary>
+    /// Checks if any colliders attached to the FoodItem are still inside this zone's trigger bounds.
+    /// </summary>
+    private bool IsItemStillInZone(FoodItem item)
+    {
+        Collider zoneCollider = GetComponent<Collider>();
+        if (zoneCollider == null) return false;
+
+        Collider[] itemColliders = item.GetComponentsInChildren<Collider>();
+        foreach (var col in itemColliders)
+        {
+            if (col.enabled && zoneCollider.bounds.Intersects(col.bounds))
+            {
+                return true; // Item is still inside the zone
+            }
+        }
+        return false;
     }
 
     /// <summary>

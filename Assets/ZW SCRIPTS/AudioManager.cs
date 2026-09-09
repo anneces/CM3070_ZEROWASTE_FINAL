@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -34,6 +35,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip mainmenutheme;
     public AudioClip maingametheme;
 
+    [Header("Scene Names (Must Match Build Settings)")]
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
+    [SerializeField] private string mainGameSceneName = "MainGame";
+
     // --- ALIAS PROPERTIES FOR BACKWARD COMPATIBILITY ---
     public AudioClip uiClickClip => uiclickbtn;
     public AudioClip ingredientDropClip => grab_drop_item;
@@ -54,6 +59,29 @@ public class AudioManager : MonoBehaviour
         if (bgmSource == null) bgmSource = gameObject.AddComponent<AudioSource>();
 
         bgmSource.loop = true;
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Automatically plays the corresponding track when the scene loads
+        if (scene.name == mainMenuSceneName)
+        {
+            PlayMainMenuTheme();
+        }
+        else if (scene.name == mainGameSceneName)
+        {
+            PlayMainGameTheme();
+        }
     }
 
     #region Public Play Helper Functions
@@ -100,7 +128,11 @@ public class AudioManager : MonoBehaviour
     public void Play3DButtonPressed() => PlaySFX(threedbutton_press_cut);
     public void PlayAlert() => PlaySFX(alert);
     public void PlayPhaseTransition() => PlaySFX(phasetransition);
+
+    // Added PlayGrabDrop alias for Option B compatibility
+    public void PlayGrabDrop() => PlaySFX(grab_drop_item);
     public void PlayGrabDropItem() => PlaySFX(grab_drop_item);
+
     public void PlayDoorOpenClose() => PlaySFX(door_open_close);
     public void PlayTrashCan() => PlaySFX(trashcan);
     public void PlayPurchase() => PlaySFX(purchase_cut);

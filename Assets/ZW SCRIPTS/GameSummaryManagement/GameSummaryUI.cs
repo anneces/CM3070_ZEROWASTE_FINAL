@@ -96,17 +96,20 @@ public class GameSummaryUI : MonoBehaviour
             case "A":
                 if (performanceMessageText) performanceMessageText.text = "Excellent Job!";
                 if (gradeFeedbackImage && happySprite) gradeFeedbackImage.sprite = happySprite;
+                AudioManager.Instance?.PlayGradeA();
                 break;
 
             case "B":
             case "C":
                 if (performanceMessageText) performanceMessageText.text = "Great Work!";
                 if (gradeFeedbackImage && smileySprite) gradeFeedbackImage.sprite = smileySprite;
+                AudioManager.Instance?.PlayGradeBC();
                 break;
 
             default: // Grade F
                 if (performanceMessageText) performanceMessageText.text = "You can do better!";
                 if (gradeFeedbackImage && sadSprite) gradeFeedbackImage.sprite = sadSprite;
+                AudioManager.Instance?.PlayGradeF();
                 break;
         }
     }
@@ -127,6 +130,7 @@ public class GameSummaryUI : MonoBehaviour
     /// </summary>
     public void OnReplayButtonClicked()
     {
+        AudioManager.Instance?.PlayUIClick();
         if (gameSummaryCanvas) gameSummaryCanvas.SetActive(false);
         if (mainMenuCanvas) mainMenuCanvas.SetActive(true);
     }
@@ -136,6 +140,7 @@ public class GameSummaryUI : MonoBehaviour
     /// </summary>
     public void OnQuitButtonClicked()
     {
+        AudioManager.Instance?.PlayUIClick();
         Debug.Log("[GameSummary] Exiting Application...");
         Application.Quit();
     }

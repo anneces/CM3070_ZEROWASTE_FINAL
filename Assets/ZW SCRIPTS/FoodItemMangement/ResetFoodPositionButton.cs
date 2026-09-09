@@ -46,6 +46,9 @@ public class ResetFoodPositionsButton : MonoBehaviour
     /// </summary>
     public void OnButtonPressed()
     {
+        // Play 3D Button Press SFX
+        AudioManager.Instance?.Play3DButtonPressed();
+
         if (animateCoroutine != null) StopCoroutine(animateCoroutine);
         animateCoroutine = StartCoroutine(FullButtonPressCycle());
 

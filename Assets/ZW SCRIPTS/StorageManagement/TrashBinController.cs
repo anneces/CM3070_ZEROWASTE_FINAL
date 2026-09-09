@@ -12,7 +12,7 @@ public class TrashBinController : MonoBehaviour
     [Tooltip("Total CO2 penalty in kg from discarded items.")]
     public float totalCO2Penalty = 0f;
 
-    // --- Added Property Getters to fix DayManager compiler error ---
+    // Property Getters for DayManager compatibility
     public float totalMoneyWasted => totalFinancialLoss;
     public float totalCO2 => totalCO2Penalty;
 
@@ -61,9 +61,14 @@ public class TrashBinController : MonoBehaviour
             trashVFX.Play();
         }
 
+        // Play Trash Can SFX via AudioManager
         if (trashDropSFX != null && AudioManager.Instance != null)
         {
             AudioManager.Instance.PlaySFX(trashDropSFX);
+        }
+        else
+        {
+            AudioManager.Instance?.PlayTrashCan();
         }
 
         // Update UI counters

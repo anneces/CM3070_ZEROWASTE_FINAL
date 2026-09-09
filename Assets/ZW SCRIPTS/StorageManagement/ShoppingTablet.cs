@@ -90,7 +90,6 @@ public class ShoppingTablet : MonoBehaviour
             TMP_Text headerText = sectionObj.GetComponentInChildren<TMP_Text>();
             if (headerText != null)
             {
-                // Format display name (e.g., FruitsAndVegetables -> FRUITS & VEGETABLES)
                 if (pair.Key == FoodCategory.FruitsAndVegetables)
                 {
                     headerText.text = "FRUITS & VEGETABLES";
@@ -187,7 +186,7 @@ public class ShoppingTablet : MonoBehaviour
 
         if (walletBalance >= price)
         {
-            lastBuyTime = Time.time; // Update timestamp upon successful purchase check
+            lastBuyTime = Time.time;
 
             walletBalance -= price;
             totalSpent += price;
@@ -198,6 +197,9 @@ public class ShoppingTablet : MonoBehaviour
             Instantiate(prefabToSpawn, spawnPosition, targetPoint.rotation);
 
             currentSpawnIndex = (currentSpawnIndex + 1) % spawnPoints.Length;
+
+            // Play Purchase Sound
+            AudioManager.Instance?.PlayPurchase();
 
             UpdateUI();
             Debug.Log($"Purchased {name} for ${price:F2}. Spawned at Spot {currentSpawnIndex + 1}.");
@@ -210,6 +212,7 @@ public class ShoppingTablet : MonoBehaviour
 
     public void OnEndDayButtonClicked()
     {
+        AudioManager.Instance?.PlayUIClick();
         if (DayPhaseManager.Instance != null)
         {
             DayPhaseManager.Instance.ConfirmNextPhase();

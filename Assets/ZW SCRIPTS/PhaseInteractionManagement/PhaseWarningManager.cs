@@ -29,10 +29,10 @@ public class PhaseWarningManager : MonoBehaviour
         switch (currentPhase)
         {
             case DayPhase.Morning:
-                // Morning: Tablet active | Storage, TV, Stove blocked
+                // Morning: Tablet active | Storage, Stove blocked | TV unblocked
                 if (tabletBlocker) tabletBlocker.Unblock();
                 if (storageUnitsBlocker) storageUnitsBlocker.Block(morningMessage);
-                if (tvDisplayBlocker) tvDisplayBlocker.Block(morningMessage);
+                if (tvDisplayBlocker) tvDisplayBlocker.Unblock();
                 if (cookingStoveBlocker) cookingStoveBlocker.Block(morningMessage);
                 break;
 
@@ -45,12 +45,20 @@ public class PhaseWarningManager : MonoBehaviour
                 break;
 
             case DayPhase.Evening:
-                // Evening: Stove & Storage active | Tablet, TV blocked
+                // Evening: Stove & Storage & TV active | Tablet blocked
                 if (tabletBlocker) tabletBlocker.Block(eveningMessage);
                 if (storageUnitsBlocker) storageUnitsBlocker.Unblock();
-                if (tvDisplayBlocker) tvDisplayBlocker.Block(eveningMessage);
+                if (tvDisplayBlocker) tvDisplayBlocker.Unblock();
                 if (cookingStoveBlocker) cookingStoveBlocker.Unblock();
                 break;
         }
+    }
+
+    /// <summary>
+    /// Call this method when a player attempts an invalid action for feedback sound.
+    /// </summary>
+    public void PlayWarningAlertSound()
+    {
+        AudioManager.Instance?.PlayAlert();
     }
 }

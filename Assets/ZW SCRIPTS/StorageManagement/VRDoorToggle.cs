@@ -30,6 +30,9 @@ public class VRDoorToggle : MonoBehaviour
     {
         isOpen = !isOpen;
 
+        // Play Door Sound
+        AudioManager.Instance?.PlayDoorOpenClose();
+
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);

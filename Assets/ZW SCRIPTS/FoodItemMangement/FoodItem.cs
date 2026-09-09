@@ -39,6 +39,8 @@ public class FoodItem : MonoBehaviour
     private Material foodMaterialInstance;
     private static readonly int DecayAmountProperty = Shader.PropertyToID("_DecayAmount");
 
+    private XRGrabInteractable grabInteractable;
+
     /// <summary>
     /// Calculates the remaining freshness percentage.
     /// </summary>
@@ -97,6 +99,37 @@ public class FoodItem : MonoBehaviour
                 originalColor = foodMaterialInstance.color;
             }
         }
+
+        // Get the attached XRGrabInteractable component automatically
+        grabInteractable = GetComponent<XRGrabInteractable>();
+    }
+
+    private void OnEnable()
+    {
+        if (grabInteractable != null)
+        {
+            grabInteractable.selectEntered.AddListener(OnGrab);
+            grabInteractable.selectExited.AddListener(OnDrop);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (grabInteractable != null)
+        {
+            grabInteractable.selectEntered.RemoveListener(OnGrab);
+            grabInteractable.selectExited.RemoveListener(OnDrop);
+        }
+    }
+
+    private void OnGrab(SelectEnterEventArgs args)
+    {
+        AudioManager.Instance?.PlayGrabDrop();
+    }
+
+    private void OnDrop(SelectExitEventArgs args)
+    {
+        AudioManager.Instance?.PlayGrabDrop();
     }
 
     private void OnDestroy()

@@ -289,6 +289,7 @@ MonoBehaviour:
   currentStorage: 3
   price: 0.8
   co2Points: 0.4
+  isCooked: 0
   maxFreshnessDays: 3
   currentFreshnessDays: 0
   isExpired: 0

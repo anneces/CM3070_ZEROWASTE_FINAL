@@ -87,6 +87,7 @@ public class DayPhaseManager : MonoBehaviour
 
     public void OpenPhaseChangeConfirmation()
     {
+        AudioManager.Instance?.PlayUIClick();
         if (confirmationPopupModal != null)
             confirmationPopupModal.SetActive(true);
     }
@@ -101,12 +102,16 @@ public class DayPhaseManager : MonoBehaviour
 
     public void CancelPhaseChange()
     {
+        AudioManager.Instance?.PlayUIClick();
         if (confirmationPopupModal != null)
             confirmationPopupModal.SetActive(false);
     }
 
     private void AdvancePhase()
     {
+        // Play phase transition audio
+        AudioManager.Instance?.PlayPhaseTransition();
+
         if (currentPhase == DayPhase.Morning)
         {
             currentPhase = DayPhase.Afternoon;
