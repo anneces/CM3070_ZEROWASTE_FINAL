@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource bgmSource;
+    [SerializeField] private AudioSource sizzleSource; // Dedicated AudioSource for looping sizzle SFX
 
     [Header("UI & Phase SFX")]
     public AudioClip uiclickbtn;
@@ -57,8 +58,10 @@ public class AudioManager : MonoBehaviour
         // Ensure AudioSources exist
         if (sfxSource == null) sfxSource = gameObject.AddComponent<AudioSource>();
         if (bgmSource == null) bgmSource = gameObject.AddComponent<AudioSource>();
+        if (sizzleSource == null) sizzleSource = gameObject.AddComponent<AudioSource>();
 
         bgmSource.loop = true;
+        sizzleSource.loop = true;
     }
 
     private void OnEnable()
@@ -95,6 +98,10 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(clip);
         }
+        else
+        {
+            Debug.LogWarning("[AudioManager] SFX clip or sfxSource is missing!");
+        }
     }
 
     /// <summary>
@@ -120,6 +127,32 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts looping sizzling SFX continuously while food is cooking.
+    /// </summary>
+    public void StartCookingSizzle()
+    {
+        if (sizzle_cooking != null && sizzleSource != null)
+        {
+            if (!sizzleSource.isPlaying)
+            {
+                sizzleSource.clip = sizzle_cooking;
+                sizzleSource.Play();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Stops looping sizzling SFX when food is done or removed from the pan.
+    /// </summary>
+    public void StopCookingSizzle()
+    {
+        if (sizzleSource != null && sizzleSource.isPlaying)
+        {
+            sizzleSource.Stop();
+        }
+    }
+
     #endregion
 
     #region Direct Call Shortcuts
@@ -137,7 +170,7 @@ public class AudioManager : MonoBehaviour
     public void PlayTrashCan() => PlaySFX(trashcan);
     public void PlayPurchase() => PlaySFX(purchase_cut);
     public void PlaySpoiledFood() => PlaySFX(spoiled_food_cut);
-    public void PlayCookingSizzle() => PlaySFX(sizzle_cooking);
+    public void PlayCookingSizzle() => StartCookingSizzle();
     public void PlayPoofCloud() => PlaySFX(poof_cloud);
 
     public void PlayGradeA() => PlaySFX(mission_gradeA);
