@@ -7035,7 +7035,7 @@ Transform:
   m_GameObject: {fileID: 956241691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.16, z: -0.265}
+  m_LocalPosition: {x: 0, y: 1.16, z: -0.209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7887,7 +7887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153982007679157697, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_MoveSpeed
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 942810691211101373, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_StartingGroupMembers.Array.size
@@ -7911,7 +7911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -51.8
+      value: 67.7
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11169,7 +11169,7 @@ Transform:
   m_GameObject: {fileID: 1437502113}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.256, z: 0.191}
+  m_LocalPosition: {x: 0, y: 1.256, z: 0.173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16255,7 +16255,7 @@ Transform:
   m_GameObject: {fileID: 1943465964}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.893, z: -0.4}
+  m_LocalPosition: {x: 0, y: 0.984, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18351,6 +18351,10 @@ PrefabInstance:
     - target: {fileID: 1020104074028842097, guid: 739ec33814f130e4181d52a2d3381864, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747872962624184127, guid: 739ec33814f130e4181d52a2d3381864, type: 3}
+      propertyPath: sfxVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5895161183685360310, guid: 739ec33814f130e4181d52a2d3381864, type: 3}
       propertyPath: m_LocalPosition.x

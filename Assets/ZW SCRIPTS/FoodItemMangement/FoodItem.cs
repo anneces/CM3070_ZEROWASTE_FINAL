@@ -81,14 +81,19 @@ public class FoodItem : MonoBehaviour
 
             float pct = FreshnessPercentage;
             if (pct >= 66f) return "#22C55E"; // Green (Fresh)
-            if (pct >= 1f) return "#EAB308";  // Yellow/Orange (Spotting)
+            if (pct >= 1f) return "#EAB308";   // Yellow/Orange (Spotting)
             return "#EF4444";                  // Red (Spoiled)
         }
     }
 
     private void Awake()
     {
-        currentFreshnessDays = maxFreshnessDays;
+        // Only set default freshness if it hasn't been set prior to Awake execution
+        if (currentFreshnessDays <= 0f && !isExpired)
+        {
+            currentFreshnessDays = maxFreshnessDays;
+        }
+
         itemRenderer = GetComponentInChildren<Renderer>();
         if (itemRenderer != null)
         {
@@ -102,6 +107,11 @@ public class FoodItem : MonoBehaviour
 
         // Get the attached XRGrabInteractable component automatically
         grabInteractable = GetComponent<XRGrabInteractable>();
+    }
+
+    private void Start()
+    {
+        UpdateMoldVisuals();
     }
 
     private void OnEnable()
@@ -124,12 +134,31 @@ public class FoodItem : MonoBehaviour
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        AudioManager.Instance?.PlayGrabDrop();
+        if (isSpoiled)
+        {
+            PlaySpoiledAudio();
+        }
+        else
+        {
+            AudioManager.Instance?.PlayGrabDrop();
+        }
     }
 
     private void OnDrop(SelectExitEventArgs args)
     {
-        AudioManager.Instance?.PlayGrabDrop();
+        if (isSpoiled)
+        {
+            PlaySpoiledAudio();
+        }
+        else
+        {
+            AudioManager.Instance?.PlayGrabDrop();
+        }
+    }
+
+    private void PlaySpoiledAudio()
+    {
+        AudioManager.Instance?.PlaySpoiledFood();
     }
 
     private void OnDestroy()
@@ -142,11 +171,34 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
+    /// Explicitly sets freshness state without resetting back to max capacity. Updates visuals.
+    /// </summary>
+    public void SetFreshnessDays(float savedDays)
+    {
+        currentFreshnessDays = Mathf.Clamp(savedDays, 0f, maxFreshnessDays);
+        if (currentFreshnessDays <= 0f)
+        {
+            ExpireItem();
+        }
+        else
+        {
+            isExpired = false;
+        }
+        UpdateMoldVisuals();
+    }
+
+    /// <summary>
     /// Called by DayPhaseManager during phase shift ticks (Morning -> Afternoon -> Evening).
     /// Drives both fractional shelf life deduction and visual mold shader progression.
     /// </summary>
     public void OnPhaseTick()
     {
+        // FIX: Prevent decay if called during Afternoon phase (transitioned from Morning)
+        if (DayPhaseManager.Instance != null && DayPhaseManager.Instance.CurrentPhase == DayPhase.Afternoon)
+        {
+            return;
+        }
+
         AdvancePhase();
         UpdateMoldVisuals();
     }
@@ -155,7 +207,7 @@ public class FoodItem : MonoBehaviour
     /// Updates the _DecayAmount property on the custom Shader Graph material 
     /// (0.0 = Fresh, scales 0.0 to 1.0 during Spotting, 1.0 = Fully Moldy).
     /// </summary>
-    private void UpdateMoldVisuals()
+    public void UpdateMoldVisuals()
     {
         if (foodMaterialInstance == null) return;
 

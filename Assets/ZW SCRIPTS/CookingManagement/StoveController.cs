@@ -23,8 +23,15 @@ public class StoveController : MonoBehaviour
     public ParticleSystem stoveFireVFX;
     public ParticleSystem dishSpawnVFX;
 
+    // Struct to preserve ingredient identity and exact freshness state prior to reset
+    private struct ConsumedIngredientData
+    {
+        public FoodItem prefab;
+        public float savedFreshnessDays; // Saved exact freshness
+    }
+
     private List<string> addedIngredients = new List<string>();
-    private List<FoodItem> consumedIngredientPrefabs = new List<FoodItem>(); // Tracks consumed prefabs for respawning
+    private List<ConsumedIngredientData> consumedIngredientsData = new List<ConsumedIngredientData>();
     private bool isCooking = false;
     private float cookTimer = 0f;
     private GameObject spawnedDish; // Reference to track the instantiated cooked dish
@@ -66,14 +73,14 @@ public class StoveController : MonoBehaviour
 
         activeRecipe = newRecipe;
         addedIngredients.Clear();
-        consumedIngredientPrefabs.Clear();
+        consumedIngredientsData.Clear();
 
         // Hide Eat Me prompt when setting up a new recipe
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
 
         UpdateRecipeUI();
 
-        // Trigger stove fire VFX as soon as recipe confirmation happens
+        // Trigger stove fire VFX and continuous sizzling SFX as soon as recipe confirmation happens
         if (stoveFireVFX != null)
         {
             stoveFireVFX.gameObject.SetActive(true);
@@ -82,6 +89,8 @@ public class StoveController : MonoBehaviour
                 stoveFireVFX.Play();
             }
         }
+
+        AudioManager.Instance?.StartCookingSizzle();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -110,8 +119,12 @@ public class StoveController : MonoBehaviour
 
                     if (currentCount < maxNeeded)
                     {
-                        // Save reference to prefab before destroying item instance
-                        consumedIngredientPrefabs.Add(req.foodPrefab);
+                        // Save reference to prefab along with exact current freshness days state before destroying
+                        consumedIngredientsData.Add(new ConsumedIngredientData
+                        {
+                            prefab = req.foodPrefab,
+                            savedFreshnessDays = item.currentFreshnessDays
+                        });
 
                         // Mark as cooked before destroying to preserve item state consistency
                         item.isCooked = true;
@@ -131,17 +144,20 @@ public class StoveController : MonoBehaviour
 
     /// <summary>
     /// Resets current cooking progress, respawns added ingredients back at spawn points,
-    /// and resets the stove state.
+    /// preserves their original freshness state, and resets the stove state.
     /// </summary>
     public void ResetStove()
     {
         if (isCooking) return; // Prevent reset mid-cook routine
 
-        // Respawn consumed ingredients across assigned spawn points
-        for (int i = 0; i < consumedIngredientPrefabs.Count; i++)
+        // Stop sizzle audio if active during reset
+        AudioManager.Instance?.StopCookingSizzle();
+
+        // Respawn consumed ingredients across assigned spawn points preserving saved freshness days
+        for (int i = 0; i < consumedIngredientsData.Count; i++)
         {
-            FoodItem prefab = consumedIngredientPrefabs[i];
-            if (prefab != null)
+            ConsumedIngredientData data = consumedIngredientsData[i];
+            if (data.prefab != null)
             {
                 Vector3 spawnPos = transform.position + Vector3.up * 0.5f;
                 Quaternion spawnRot = Quaternion.identity;
@@ -157,13 +173,20 @@ public class StoveController : MonoBehaviour
                     }
                 }
 
-                Instantiate(prefab, spawnPos, spawnRot);
+                GameObject spawnedObj = Instantiate(data.prefab.gameObject, spawnPos, spawnRot);
+                FoodItem spawnedItem = spawnedObj.GetComponent<FoodItem>();
+                if (spawnedItem != null)
+                {
+                    // Preserves exact freshness days state and updates mold visuals without resetting to max days
+                    spawnedItem.SetFreshnessDays(data.savedFreshnessDays);
+                    spawnedItem.isCooked = false;
+                }
             }
         }
 
         // Clear tracked ingredient data
         addedIngredients.Clear();
-        consumedIngredientPrefabs.Clear();
+        consumedIngredientsData.Clear();
 
         // Turn off fire VFX if resetting before cooking
         if (stoveFireVFX != null)
@@ -235,6 +258,9 @@ public class StoveController : MonoBehaviour
         if (resetButton != null) resetButton.SetActive(false);
         cookTimer = 0f;
 
+        // Ensure sizzle sound is actively playing during cook routine
+        AudioManager.Instance?.StartCookingSizzle();
+
         float duration = 5f;
 
         while (cookTimer < duration)
@@ -248,6 +274,10 @@ public class StoveController : MonoBehaviour
 
     private void SpawnDish()
     {
+        // Stop looping sizzle SFX and trigger poof cloud SFX when dish spawns
+        AudioManager.Instance?.StopCookingSizzle();
+        AudioManager.Instance?.PlayPoofCloud();
+
         // Stop stove fire VFX when food spawns
         if (stoveFireVFX != null)
         {
@@ -280,7 +310,7 @@ public class StoveController : MonoBehaviour
         }
 
         addedIngredients.Clear();
-        consumedIngredientPrefabs.Clear();
+        consumedIngredientsData.Clear();
         isCooking = false;
         if (progressCanvas != null) progressCanvas.SetActive(false);
     }

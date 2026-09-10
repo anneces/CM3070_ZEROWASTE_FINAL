@@ -82,7 +82,7 @@ public class GameSummaryUI : MonoBehaviour
         if (dishesCookedText) dishesCookedText.text = $"Dishes Cooked (Bonus): {dishesCooked} (+{bonusPoints} pts)";
         if (finalGradeText) finalGradeText.text = $"Grade: {grade}";
 
-        // 4. Update Images & Messages
+        // 4. Update Images & Messages (schedules delayed audio call to respect initialization)
         ApplyGradeFeedback(grade);
 
         // 5. Trigger Left and Right Confetti
@@ -96,20 +96,45 @@ public class GameSummaryUI : MonoBehaviour
             case "A":
                 if (performanceMessageText) performanceMessageText.text = "Excellent Job!";
                 if (gradeFeedbackImage && happySprite) gradeFeedbackImage.sprite = happySprite;
-                AudioManager.Instance?.PlayGradeA();
                 break;
 
             case "B":
             case "C":
                 if (performanceMessageText) performanceMessageText.text = "Great Work!";
                 if (gradeFeedbackImage && smileySprite) gradeFeedbackImage.sprite = smileySprite;
-                AudioManager.Instance?.PlayGradeBC();
                 break;
 
             default: // Grade F
                 if (performanceMessageText) performanceMessageText.text = "You can do better!";
                 if (gradeFeedbackImage && sadSprite) gradeFeedbackImage.sprite = sadSprite;
-                AudioManager.Instance?.PlayGradeF();
+                break;
+        }
+
+        // Delay audio playback by one frame to prevent muted/skipped audio during scene initialization
+        StartCoroutine(PlayGradeAudioDelayed(grade));
+    }
+
+    /// <summary>
+    /// Waits until the end of the frame before requesting audio playback from AudioManager.
+    /// Ensures volume levels and AudioSources are fully ready.
+    /// </summary>
+    private IEnumerator PlayGradeAudioDelayed(string grade)
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (AudioManager.Instance == null) yield break;
+
+        switch (grade)
+        {
+            case "A":
+                AudioManager.Instance.PlayGradeA();
+                break;
+            case "B":
+            case "C":
+                AudioManager.Instance.PlayGradeBC();
+                break;
+            default:
+                AudioManager.Instance.PlayGradeF();
                 break;
         }
     }

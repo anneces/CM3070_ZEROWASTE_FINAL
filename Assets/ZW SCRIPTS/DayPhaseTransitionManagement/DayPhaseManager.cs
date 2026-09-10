@@ -109,6 +109,9 @@ public class DayPhaseManager : MonoBehaviour
 
     private void AdvancePhase()
     {
+        // Track previous phase to handle specific transition rules
+        DayPhase previousPhase = currentPhase;
+
         // Play phase transition audio
         AudioManager.Instance?.PlayPhaseTransition();
 
@@ -178,12 +181,20 @@ public class DayPhaseManager : MonoBehaviour
         UpdatePhaseRestrictions();
 
         // 1. Notify all food items in scene to execute decay tick
-        FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
-        foreach (FoodItem food in foodItems)
+        // FIX: Skip freshness decay when transitioning from Morning -> Afternoon
+        if (previousPhase == DayPhase.Morning && currentPhase == DayPhase.Afternoon)
         {
-            if (food != null)
+            Debug.Log("[DayPhaseManager] Transitioning Morning -> Afternoon: Freshness degradation skipped as storage was locked.");
+        }
+        else
+        {
+            FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
+            foreach (FoodItem food in foodItems)
             {
-                food.OnPhaseTick();
+                if (food != null)
+                {
+                    food.OnPhaseTick();
+                }
             }
         }
 

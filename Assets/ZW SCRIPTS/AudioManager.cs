@@ -8,7 +8,10 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource bgmSource;
-    [SerializeField] private AudioSource sizzleSource; // Dedicated AudioSource for looping sizzle SFX
+
+    [Header("Volume Settings")]
+    [Range(0f, 1f)][SerializeField] private float bgmVolume = 0.5f;
+    [Range(0f, 1f)][SerializeField] private float sfxVolume = 1.0f;
 
     [Header("UI & Phase SFX")]
     public AudioClip uiclickbtn;
@@ -44,6 +47,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip uiClickClip => uiclickbtn;
     public AudioClip ingredientDropClip => grab_drop_item;
 
+    public float BGMVolume => bgmVolume;
+
+    // Private internal AudioSource created dynamically to prevent inspector conflicts
+    private AudioSource runtimeSizzleSource;
+
     private void Awake()
     {
         // Singleton Setup
@@ -55,13 +63,17 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Ensure AudioSources exist
+        // Ensure primary AudioSources exist
         if (sfxSource == null) sfxSource = gameObject.AddComponent<AudioSource>();
         if (bgmSource == null) bgmSource = gameObject.AddComponent<AudioSource>();
-        if (sizzleSource == null) sizzleSource = gameObject.AddComponent<AudioSource>();
+
+        // Dynamically create dedicated loop source for sizzle
+        runtimeSizzleSource = gameObject.AddComponent<AudioSource>();
+        runtimeSizzleSource.loop = true;
 
         bgmSource.loop = true;
-        sizzleSource.loop = true;
+
+        ApplyVolumes();
     }
 
     private void OnEnable()
@@ -76,7 +88,6 @@ public class AudioManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Automatically plays the corresponding track when the scene loads
         if (scene.name == mainMenuSceneName)
         {
             PlayMainMenuTheme();
@@ -87,16 +98,46 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void ApplyVolumes()
+    {
+        if (bgmSource != null) bgmSource.volume = bgmVolume;
+        if (sfxSource != null) sfxSource.volume = sfxVolume;
+        if (runtimeSizzleSource != null) runtimeSizzleSource.volume = sfxVolume;
+    }
+
+    #region Volume Control Functions
+
+    public void SetBGMVolume(float volume)
+    {
+        bgmVolume = Mathf.Clamp01(volume);
+        if (bgmSource != null)
+        {
+            bgmSource.volume = bgmVolume;
+        }
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxVolume = Mathf.Clamp01(volume);
+        if (sfxSource != null)
+        {
+            sfxSource.volume = sfxVolume;
+        }
+        if (runtimeSizzleSource != null)
+        {
+            runtimeSizzleSource.volume = sfxVolume;
+        }
+    }
+
+    #endregion
+
     #region Public Play Helper Functions
 
-    /// <summary>
-    /// Plays a one-shot SFX clip.
-    /// </summary>
     public void PlaySFX(AudioClip clip)
     {
         if (clip != null && sfxSource != null)
         {
-            sfxSource.PlayOneShot(clip);
+            sfxSource.PlayOneShot(clip, sfxVolume);
         }
         else
         {
@@ -104,21 +145,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Plays background music seamlessly.
-    /// </summary>
     public void PlayBGM(AudioClip clip)
     {
         if (clip == null || bgmSource == null) return;
         if (bgmSource.clip == clip && bgmSource.isPlaying) return;
 
         bgmSource.clip = clip;
+        bgmSource.volume = bgmVolume;
         bgmSource.Play();
     }
 
-    /// <summary>
-    /// Stops current BGM track.
-    /// </summary>
     public void StopBGM()
     {
         if (bgmSource != null)
@@ -127,29 +163,24 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Starts looping sizzling SFX continuously while food is cooking.
-    /// </summary>
     public void StartCookingSizzle()
     {
-        if (sizzle_cooking != null && sizzleSource != null)
+        if (sizzle_cooking != null && runtimeSizzleSource != null)
         {
-            if (!sizzleSource.isPlaying)
+            if (!runtimeSizzleSource.isPlaying)
             {
-                sizzleSource.clip = sizzle_cooking;
-                sizzleSource.Play();
+                runtimeSizzleSource.clip = sizzle_cooking;
+                runtimeSizzleSource.volume = sfxVolume;
+                runtimeSizzleSource.Play();
             }
         }
     }
 
-    /// <summary>
-    /// Stops looping sizzling SFX when food is done or removed from the pan.
-    /// </summary>
     public void StopCookingSizzle()
     {
-        if (sizzleSource != null && sizzleSource.isPlaying)
+        if (runtimeSizzleSource != null && runtimeSizzleSource.isPlaying)
         {
-            sizzleSource.Stop();
+            runtimeSizzleSource.Stop();
         }
     }
 
@@ -162,7 +193,6 @@ public class AudioManager : MonoBehaviour
     public void PlayAlert() => PlaySFX(alert);
     public void PlayPhaseTransition() => PlaySFX(phasetransition);
 
-    // Added PlayGrabDrop alias for Option B compatibility
     public void PlayGrabDrop() => PlaySFX(grab_drop_item);
     public void PlayGrabDropItem() => PlaySFX(grab_drop_item);
 
