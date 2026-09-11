@@ -198,6 +198,21 @@ extern void U3CPlayGradeAudioDelayedU3Ed__18_MoveNext_mA9CC004581223596208EE37BB
 extern void U3CPlayGradeAudioDelayedU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE6490C18E22FD018C55E1D8C64AB0A540FC6144B (void);
 extern void U3CPlayGradeAudioDelayedU3Ed__18_System_Collections_IEnumerator_Reset_m08B83A70D0BB67802FBF97A32C1B2662FBB91259 (void);
 extern void U3CPlayGradeAudioDelayedU3Ed__18_System_Collections_IEnumerator_get_Current_m86DC3DC2B8AA899498058C4886299AEB81409933 (void);
+extern void InstructionBoardInteractable_Awake_m56716470373BF6AC56996160A4D6F6D317A3CC4C (void);
+extern void InstructionBoardInteractable_OnEnable_m6B6DA4FF42AE5DD101B27ACE2F2B22B25B06CAD1 (void);
+extern void InstructionBoardInteractable_OnDisable_mED3B4F2CEFF3B3A4AFE97BFAE6A2606392F5548B (void);
+extern void InstructionBoardInteractable_OnBoardClicked_m9F60421264E7712AA5F8D7D55CB6D6896DD912FD (void);
+extern void InstructionBoardInteractable__ctor_mBE8AE7B962BE4C37D98CB996B8F66FCF0F3D9A73 (void);
+extern void InstructionManager_Awake_mFFFD31F88F129148554278FDC293632531CF1D97 (void);
+extern void InstructionManager_Start_m717F9A3916A513424D11B105FAD7867B40787A4C (void);
+extern void InstructionManager_ToggleOrOpenCanvas_mA33A3EE0F4918DA2C99EFDA0CDDB9F929CE93B18 (void);
+extern void InstructionManager_CloseCanvas_mC354A047403AEE9553D1DE8F542AF8FAC685A17A (void);
+extern void InstructionManager_SetStep_mA14BF075EA35039CF06E8968AA4920312F09FA07 (void);
+extern void InstructionManager_NextStep_m52DE0F7C33B656119DECBD0ABC6CE26C13AE8D96 (void);
+extern void InstructionManager_PreviousStep_mE8D13AF2984CE43A5ACF6C772094D48367BF1D5D (void);
+extern void InstructionManager_UpdateInstructionUI_m31B9075F882F1D70D3DBD6DD9F3175EB85E1869C (void);
+extern void InstructionManager_SetText_mFB9EBD092D4C9DC5F1901E29F292C13AF15AE742 (void);
+extern void InstructionManager__ctor_mFD1795F3D6B236490BBD62B50D98FDD93869EA2C (void);
 extern void MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B (void);
 extern void MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244 (void);
 extern void MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558 (void);
@@ -266,7 +281,7 @@ extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_Reset_m70C7FFF4
 extern void U3CAnimateDoorU3Ed__8_System_Collections_IEnumerator_get_Current_mEE7EDF966A8E31398B9F024CCF63BE327417963B (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[259] = 
+static Il2CppMethodPointer s_methodPointers[274] = 
 {
 	FreebieCameraHookupScript_get_SecurityCamera_m8174549AEB161C50C0AE701F1B854B40C4DE163B,
 	FreebieCameraHookupScript_Awake_m5BF1EFCFEFC6B28BB460299B4F0FD7424C5B4C95,
@@ -459,6 +474,21 @@ static Il2CppMethodPointer s_methodPointers[259] =
 	U3CPlayGradeAudioDelayedU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE6490C18E22FD018C55E1D8C64AB0A540FC6144B,
 	U3CPlayGradeAudioDelayedU3Ed__18_System_Collections_IEnumerator_Reset_m08B83A70D0BB67802FBF97A32C1B2662FBB91259,
 	U3CPlayGradeAudioDelayedU3Ed__18_System_Collections_IEnumerator_get_Current_m86DC3DC2B8AA899498058C4886299AEB81409933,
+	InstructionBoardInteractable_Awake_m56716470373BF6AC56996160A4D6F6D317A3CC4C,
+	InstructionBoardInteractable_OnEnable_m6B6DA4FF42AE5DD101B27ACE2F2B22B25B06CAD1,
+	InstructionBoardInteractable_OnDisable_mED3B4F2CEFF3B3A4AFE97BFAE6A2606392F5548B,
+	InstructionBoardInteractable_OnBoardClicked_m9F60421264E7712AA5F8D7D55CB6D6896DD912FD,
+	InstructionBoardInteractable__ctor_mBE8AE7B962BE4C37D98CB996B8F66FCF0F3D9A73,
+	InstructionManager_Awake_mFFFD31F88F129148554278FDC293632531CF1D97,
+	InstructionManager_Start_m717F9A3916A513424D11B105FAD7867B40787A4C,
+	InstructionManager_ToggleOrOpenCanvas_mA33A3EE0F4918DA2C99EFDA0CDDB9F929CE93B18,
+	InstructionManager_CloseCanvas_mC354A047403AEE9553D1DE8F542AF8FAC685A17A,
+	InstructionManager_SetStep_mA14BF075EA35039CF06E8968AA4920312F09FA07,
+	InstructionManager_NextStep_m52DE0F7C33B656119DECBD0ABC6CE26C13AE8D96,
+	InstructionManager_PreviousStep_mE8D13AF2984CE43A5ACF6C772094D48367BF1D5D,
+	InstructionManager_UpdateInstructionUI_m31B9075F882F1D70D3DBD6DD9F3175EB85E1869C,
+	InstructionManager_SetText_mFB9EBD092D4C9DC5F1901E29F292C13AF15AE742,
+	InstructionManager__ctor_mFD1795F3D6B236490BBD62B50D98FDD93869EA2C,
 	MainMenuManager_OnClickStartGame_mD765E092E6243D3DEDBBBBF5920F8A57060C369B,
 	MainMenuManager_OnClickQuit_mC109FF7D24E793A1AE2FEDCE8D7B068F644EC244,
 	MainMenuManager_LoadSceneAsync_m36A14B1152979E8D0F04AD00D53DFE988CF20558,
@@ -528,7 +558,7 @@ static Il2CppMethodPointer s_methodPointers[259] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[259] = 
+static const int32_t s_InvokerIndices[274] = 
 {
 	14512,
 	14723,
@@ -723,6 +753,21 @@ static const int32_t s_InvokerIndices[259] =
 	14512,
 	14723,
 	14723,
+	14723,
+	11172,
+	14723,
+	14723,
+	14723,
+	14723,
+	14723,
+	11105,
+	14723,
+	14723,
+	14723,
+	5659,
+	14723,
+	14723,
+	14723,
 	9574,
 	14723,
 	11105,
@@ -794,7 +839,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	259,
+	274,
 	s_methodPointers,
 	0,
 	NULL,
