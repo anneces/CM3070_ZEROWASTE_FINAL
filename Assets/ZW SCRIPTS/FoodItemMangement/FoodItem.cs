@@ -41,6 +41,11 @@ public class FoodItem : MonoBehaviour
 
     private XRGrabInteractable grabInteractable;
 
+    // Spawn tracking for resetting/respawning position
+    private Vector3 initialSpawnPosition;
+    private Quaternion initialSpawnRotation;
+    private Rigidbody rb;
+
     /// <summary>
     /// Calculates the remaining freshness percentage.
     /// </summary>
@@ -88,6 +93,11 @@ public class FoodItem : MonoBehaviour
 
     private void Awake()
     {
+        // Cache initial spawn position and rotation
+        initialSpawnPosition = transform.position;
+        initialSpawnRotation = transform.rotation;
+        rb = GetComponent<Rigidbody>();
+
         // Only set default freshness if it hasn't been set prior to Awake execution
         if (currentFreshnessDays <= 0f && !isExpired)
         {
@@ -168,6 +178,21 @@ public class FoodItem : MonoBehaviour
         {
             Destroy(foodMaterialInstance);
         }
+    }
+
+    /// <summary>
+    /// Teleports the food item back to its original spawn point and resets physics velocities.
+    /// </summary>
+    public void RespawnToOriginalPoint()
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        transform.position = initialSpawnPosition;
+        transform.rotation = initialSpawnRotation;
     }
 
     /// <summary>

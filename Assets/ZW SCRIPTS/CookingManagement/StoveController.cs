@@ -105,6 +105,30 @@ public class StoveController : MonoBehaviour
             if (item.isSpoiled)
             {
                 ShowSpoiledFoodWarning();
+
+                // Teleport spoiled item back to designated spawn point
+                Vector3 targetSpawnPos = transform.position + Vector3.up * 0.5f;
+                Quaternion targetSpawnRot = Quaternion.identity;
+
+                if (ingredientRespawnPoints != null && ingredientRespawnPoints.Length > 0)
+                {
+                    Transform spawnPoint = ingredientRespawnPoints[0];
+                    if (spawnPoint != null)
+                    {
+                        targetSpawnPos = spawnPoint.position;
+                        targetSpawnRot = spawnPoint.rotation;
+                    }
+                }
+
+                Rigidbody rb = item.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                }
+
+                item.transform.position = targetSpawnPos;
+                item.transform.rotation = targetSpawnRot;
                 return;
             }
 
@@ -202,7 +226,7 @@ public class StoveController : MonoBehaviour
     {
         if (progressCanvas != null) progressCanvas.SetActive(true);
         if (headerText != null) headerText.text = "Warning!";
-        if (statusText != null) statusText.text = "Please do not put spoiled food inside!";
+        if (statusText != null) statusText.text = "Do not add spoiled food inside!";
     }
 
     private void UpdateRecipeUI()
