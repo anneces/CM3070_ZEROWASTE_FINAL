@@ -8360,12 +8360,14 @@ MonoBehaviour:
   nextButton: {fileID: 1616603042}
   stepSprites:
   - {fileID: -8199572676820879924, guid: 0a48137e74ea3cf4ba3c1d5d5fe27e78, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b01cd092bf672d04c8202a400240a745, type: 3}
+  - {fileID: 21300000, guid: 5275789e98fa80e4596eacbb5c2d3615, type: 3}
+  - {fileID: 21300000, guid: 1148152564d2d144e88a65a1cbe611eb, type: 3}
+  - {fileID: 21300000, guid: d8b2ad160a93e034c9395743aecd170a, type: 3}
+  - {fileID: 21300000, guid: d750d5c422b38634a965071d08392247, type: 3}
+  - {fileID: 21300000, guid: c022d3aeb88723c40a6cacb8f49c4ec9, type: 3}
+  - {fileID: 21300000, guid: f30fab647cc232f40b37316c3d5de2d8, type: 3}
+  - {fileID: 21300000, guid: 64d0e1466415f3d43b5c58a146b1bf75, type: 3}
   currentStep: 0
 --- !u!1 &1037125131
 GameObject:

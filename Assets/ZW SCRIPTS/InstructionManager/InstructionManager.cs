@@ -9,14 +9,15 @@ public class InstructionManager : MonoBehaviour
     public enum GameStep
     {
         Welcome = 0,
-        ShoppingTablet = 1,
-        StorageUnit = 2,
-        TVDashboard = 3,
-        ClockPhaseTransition = 4,
-        CookingStove = 5,
-        TrashBin = 6,
-        ResetButton = 7,
-        Completed = 8
+        XRControls = 1,
+        ShoppingTablet = 2,
+        StorageUnit = 3,
+        TVDashboard = 4,
+        ClockPhaseTransition = 5,
+        CookingStove = 6,
+        TrashBin = 7,
+        ResetButton = 8,
+        Completed = 9
     }
 
     [Header("UI Canvas References")]
@@ -29,7 +30,7 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private Button nextButton;
 
     [Header("Step Visual Assets")]
-    [Tooltip("Order must match GameStep enum: 0=Welcome, 1=Shopping, 2=Storage, 3=TV, 4=Clock, 5=Stove, 6=Trash, 7=Reset")]
+    [Tooltip("Order must match GameStep enum: 0=Welcome, 1=XR Controls, 2=Shopping, 3=Storage, 4=TV, 5=Clock, 6=Stove, 7=Trash, 8=Reset")]
     [SerializeField] private Sprite[] stepSprites; // Array of visual sprites
 
     [Header("Current Progress")]
@@ -133,38 +134,43 @@ public class InstructionManager : MonoBehaviour
                         "Learn to manage food sustainably! Your goal is to prepare delicious recipes while properly storing ingredients, minimizing food waste, and staying within budget.");
                 break;
 
+            case GameStep.XRControls:
+                SetText("Step 1: XR Movement & Controls",
+                        "• Navigation: Use the Joystick to move around the kitchen.\n• Interact UI: Press the Trigger button to click UI buttons.\n• Grab Items: Use the Grip button to grab and hold ingredients.\n• Crouch (Right Hand Primary Button - A/X): Crouch down to reach items on the floor.\n• Stand Tall (Right Hand Secondary Button - B/Y): Gain extra height to reach high fridge or pantry shelves.");
+                break;
+
             case GameStep.ShoppingTablet:
-                SetText("Step 1: Shopping Tablet Zone",
+                SetText("Step 2: Shopping Tablet Zone",
                         "Order fresh food items to prepare your meals. Keep an eye on your budget while selecting ingredients.");
                 break;
 
             case GameStep.StorageUnit:
-                SetText("Step 2: Food Storage",
+                SetText("Step 3: Food Storage",
                         "Place your purchased items into their ideal storage zones (Fridge, Freezer, or Pantry). Storing items incorrectly doubles their spoilage rate!");
                 break;
 
             case GameStep.TVDashboard:
-                SetText("Step 3: TV Dashboard",
+                SetText("Step 4: TV Dashboard",
                         "Check the TV screen to monitor the food items freshness as they change day by day.");
                 break;
 
             case GameStep.ClockPhaseTransition:
-                SetText("Step 4: Clock & Day Phase",
+                SetText("Step 5: Clock & Day Phase",
                         "Interact with the clock to advance to the next day phase. Watch how food freshness and storage conditions progress over time.");
                 break;
 
             case GameStep.CookingStove:
-                SetText("Step 5: Cooking Stove",
-                        "Select a target recipe at the stove station. Place fresh ingredients into the pot to cook your dish—be careful not to add spoiled items!");
+                SetText("Step 6: Cooking Stove",
+                        "Select a target recipe at the stove station. Place fresh ingredients into the pot to cook your dish—be careful not to add spoiled items!\n\nOnce cooked, click on the spawned dish to eat it!");
                 break;
 
             case GameStep.TrashBin:
-                SetText("Step 6: Utility Tools (Trash Bin)",
+                SetText("Step 7: Utility Tools (Trash Bin)",
                         "Dispose of spoiled, unusable, or incorrect food items in the trash bin to keep your workspace clear.");
                 break;
 
             case GameStep.ResetButton:
-                SetText("Step 7: Utility Tools (Reset Button)",
+                SetText("Step 8: Utility Tools (Reset Button)",
                         "Use the reset button to return active ingredients from the stove area back to their original spawn points.");
                 break;
         }
@@ -186,7 +192,7 @@ public class InstructionManager : MonoBehaviour
 
         if (stepProgressText != null)
         {
-            stepProgressText.text = $"Step {stepIndex + 1} / 8";
+            stepProgressText.text = $"Step {stepIndex + 1} / 9";
         }
     }
 
