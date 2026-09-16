@@ -49,6 +49,12 @@ public class StoveController : MonoBehaviour
         if (resetButton != null) resetButton.SetActive(false);
         if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (dishSpawnVFX != null) dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
+        // Auto-find spawn points if array is empty or unassigned
+        if (ingredientRespawnPoints == null || ingredientRespawnPoints.Length == 0 || ingredientRespawnPoints[0] == null)
+        {
+            FindCounterSpawnPoints();
+        }
     }
 
     private void Update()
@@ -58,6 +64,22 @@ public class StoveController : MonoBehaviour
         {
             ClearPlate();
         }
+    }
+
+    /// <summary>
+    /// Finds SpawnPoint_1, SpawnPoint_2, and SpawnPoint_3 in hierarchy if unassigned.
+    /// </summary>
+    private void FindCounterSpawnPoints()
+    {
+        ingredientRespawnPoints = new Transform[3];
+
+        GameObject sp1 = GameObject.Find("SpawnPoint_1");
+        GameObject sp2 = GameObject.Find("SpawnPoint_2");
+        GameObject sp3 = GameObject.Find("SpawnPoint_3");
+
+        if (sp1 != null) ingredientRespawnPoints[0] = sp1.transform;
+        if (sp2 != null) ingredientRespawnPoints[1] = sp2.transform;
+        if (sp3 != null) ingredientRespawnPoints[2] = sp3.transform;
     }
 
     public void SetActiveRecipe(RecipeData newRecipe)
@@ -174,6 +196,12 @@ public class StoveController : MonoBehaviour
     {
         if (isCooking) return; // Prevent reset mid-cook routine
 
+        // Ensure array references exist before respawning
+        if (ingredientRespawnPoints == null || ingredientRespawnPoints.Length == 0 || ingredientRespawnPoints[0] == null)
+        {
+            FindCounterSpawnPoints();
+        }
+
         // Stop sizzle audio if active during reset
         AudioManager.Instance?.StopCookingSizzle();
 
@@ -212,10 +240,10 @@ public class StoveController : MonoBehaviour
         addedIngredients.Clear();
         consumedIngredientsData.Clear();
 
-        // Turn off fire VFX if resetting before cooking
+        // Turn off fire VFX instantly when resetting state or switching phases
         if (stoveFireVFX != null)
         {
-            stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
         UpdateRecipeUI();
@@ -227,6 +255,9 @@ public class StoveController : MonoBehaviour
         if (progressCanvas != null) progressCanvas.SetActive(true);
         if (headerText != null) headerText.text = "Warning!";
         if (statusText != null) statusText.text = "Do not add spoiled food inside!";
+
+        // Play alert audio clip when spoiled food warning is shown
+        AudioManager.Instance?.PlayAlert();
     }
 
     private void UpdateRecipeUI()

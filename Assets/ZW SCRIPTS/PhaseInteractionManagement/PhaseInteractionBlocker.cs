@@ -71,6 +71,9 @@ public class PhaseInteractionBlocker : MonoBehaviour
             canvasGroup.blocksRaycasts = false; // Ensures VR Ray Interactors pass straight through to physical objects/UI behind it
         }
 
-        gameObject.SetActive(false);
+        if (gameObject != null && gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

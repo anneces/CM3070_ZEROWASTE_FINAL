@@ -109,6 +109,12 @@ public class DayPhaseManager : MonoBehaviour
 
     private void AdvancePhase()
     {
+        // Eject any unfinished food items left in stove back to counter spawn points preserving freshness
+        if (StoveController.Instance != null)
+        {
+            StoveController.Instance.ResetStove();
+        }
+
         // Track previous phase to handle specific transition rules
         DayPhase previousPhase = currentPhase;
 

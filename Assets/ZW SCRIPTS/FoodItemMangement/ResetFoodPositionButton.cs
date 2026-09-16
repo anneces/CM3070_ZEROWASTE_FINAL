@@ -46,7 +46,7 @@ public class ResetFoodPositionsButton : MonoBehaviour
     /// </summary>
     public void OnButtonPressed()
     {
-        // Play 3D Button Press SFX
+        // Plays threedbutton_press_cut SFX via AudioManager
         AudioManager.Instance?.Play3DButtonPressed();
 
         if (animateCoroutine != null) StopCoroutine(animateCoroutine);
@@ -129,9 +129,14 @@ public class ResetFoodPositionsButton : MonoBehaviour
             food.transform.rotation = targetSpawn.rotation;
         }
 
+        // Play SFX directly from AudioManager if local fields are unassigned
         if (buttonAudioSource != null && pressSFX != null)
         {
             buttonAudioSource.PlayOneShot(pressSFX);
+        }
+        else
+        {
+            AudioManager.Instance?.Play3DButtonPressed();
         }
 
         if (resetVFX != null)
