@@ -19,6 +19,10 @@ public class StoveController : MonoBehaviour
     public TextMeshProUGUI headerText;
     public TextMeshProUGUI statusText;
 
+    [Header("UI Default Messages")]
+    [TextArea(2, 4)]
+    public string defaultInstructionMessage = "Select a recipe and Click on the confirm button to begin cooking";
+
     [Header("VFX References")]
     public ParticleSystem stoveFireVFX;
     public ParticleSystem dishSpawnVFX;
@@ -43,7 +47,6 @@ public class StoveController : MonoBehaviour
 
     private void Start()
     {
-        if (progressCanvas != null) progressCanvas.SetActive(false);
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
         if (resetButton != null) resetButton.SetActive(false);
         if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
@@ -53,6 +56,9 @@ public class StoveController : MonoBehaviour
         {
             FindCounterSpawnPoints();
         }
+
+        // Show default instruction message on startup
+        ShowDefaultInstruction();
     }
 
     private void Update()
@@ -74,6 +80,16 @@ public class StoveController : MonoBehaviour
         if (sp1 != null) ingredientRespawnPoints[0] = sp1.transform;
         if (sp2 != null) ingredientRespawnPoints[1] = sp2.transform;
         if (sp3 != null) ingredientRespawnPoints[2] = sp3.transform;
+    }
+
+    /// <summary>
+    /// Displays the default instruction message on the stove canvas.
+    /// </summary>
+    public void ShowDefaultInstruction()
+    {
+        if (progressCanvas != null) progressCanvas.SetActive(true);
+        if (headerText != null) headerText.text = "Stove";
+        if (statusText != null) statusText.text = defaultInstructionMessage;
     }
 
     public void SetActiveRecipe(RecipeData newRecipe)
@@ -221,8 +237,45 @@ public class StoveController : MonoBehaviour
             stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
-        UpdateRecipeUI();
+        if (activeRecipe != null)
+        {
+            UpdateRecipeUI();
+        }
+        else
+        {
+            ShowDefaultInstruction();
+        }
+
         AudioManager.Instance?.PlayUIClick();
+    }
+
+    /// <summary>
+    /// Call this method from your Day/Phase Manager when transitioning to the next phase (e.g. Morning)
+    /// to reset stove state and display the default instruction message.
+    /// </summary>
+    public void ResetStoveToDefault()
+    {
+        isCooking = false;
+        isPlateOccupied = false;
+        activeRecipe = null;
+        addedIngredients.Clear();
+        consumedIngredientsData.Clear();
+
+        if (spawnedDish != null)
+        {
+            Destroy(spawnedDish);
+            spawnedDish = null;
+        }
+
+        if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
+        if (resetButton != null) resetButton.SetActive(false);
+
+        if (stoveFireVFX != null)
+        {
+            stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+
+        ShowDefaultInstruction();
     }
 
     private void ShowSpoiledFoodWarning()
@@ -266,6 +319,10 @@ public class StoveController : MonoBehaviour
             {
                 resetButton.SetActive(addedIngredients.Count > 0 && !isCooking);
             }
+        }
+        else
+        {
+            ShowDefaultInstruction();
         }
     }
 
@@ -341,7 +398,8 @@ public class StoveController : MonoBehaviour
         addedIngredients.Clear();
         consumedIngredientsData.Clear();
         isCooking = false;
-        if (progressCanvas != null) progressCanvas.SetActive(false);
+
+        ShowDefaultInstruction();
     }
 
     public void ClearPlate()
@@ -351,8 +409,9 @@ public class StoveController : MonoBehaviour
         activeRecipe = null;
 
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
-        if (progressCanvas != null) progressCanvas.SetActive(false);
         if (resetButton != null) resetButton.SetActive(false);
+
+        ShowDefaultInstruction();
     }
 
     private int GetTotalRequiredIngredientsCount()

@@ -135,6 +135,9 @@ public class DayPhaseManager : MonoBehaviour
             {
                 currentDay++;
                 currentPhase = DayPhase.Morning;
+
+                // Reset Stove state and restore default instructions for the new day
+                StoveController.Instance?.ResetStoveToDefault();
             }
             else
             {
