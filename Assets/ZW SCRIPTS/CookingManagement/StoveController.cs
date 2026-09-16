@@ -9,32 +9,31 @@ public class StoveController : MonoBehaviour
     [Header("Recipe & Spawn Settings")]
     public RecipeData activeRecipe;
     public Transform dishSpawnPoint;
-    public Transform[] ingredientRespawnPoints; // Drag your SpawnPoint_1, SpawnPoint_2, SpawnPoint_3 here!
-    public bool isPlateOccupied = false; // Tracks if plate already has a cooked dish
+    public Transform[] ingredientRespawnPoints;
+    public bool isPlateOccupied = false;
 
     [Header("UI References")]
     public GameObject progressCanvas;
-    public GameObject eatMeCanvas; // "Eat Me!" prompt UI
-    public GameObject resetButton; // Drag your Reset UI Button here
-    public TextMeshProUGUI headerText; // Header for dish name
-    public TextMeshProUGUI statusText; // Ingredients progress list
+    public GameObject eatMeCanvas;
+    public GameObject resetButton;
+    public TextMeshProUGUI headerText;
+    public TextMeshProUGUI statusText;
 
     [Header("VFX References")]
     public ParticleSystem stoveFireVFX;
     public ParticleSystem dishSpawnVFX;
 
-    // Struct to preserve ingredient identity and exact freshness state prior to reset
     private struct ConsumedIngredientData
     {
         public FoodItem prefab;
-        public float savedFreshnessDays; // Saved exact freshness
+        public float savedFreshnessDays;
     }
 
     private List<string> addedIngredients = new List<string>();
     private List<ConsumedIngredientData> consumedIngredientsData = new List<ConsumedIngredientData>();
     private bool isCooking = false;
     private float cookTimer = 0f;
-    private GameObject spawnedDish; // Reference to track the instantiated cooked dish
+    private GameObject spawnedDish;
 
     private void Awake()
     {
@@ -50,7 +49,6 @@ public class StoveController : MonoBehaviour
         if (stoveFireVFX != null) stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (dishSpawnVFX != null) dishSpawnVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
-        // Auto-find spawn points if array is empty or unassigned
         if (ingredientRespawnPoints == null || ingredientRespawnPoints.Length == 0 || ingredientRespawnPoints[0] == null)
         {
             FindCounterSpawnPoints();
@@ -59,16 +57,12 @@ public class StoveController : MonoBehaviour
 
     private void Update()
     {
-        // Auto-detect when the cooked dish is destroyed/eaten and clear the plate UI state
         if (isPlateOccupied && spawnedDish == null)
         {
             ClearPlate();
         }
     }
 
-    /// <summary>
-    /// Finds SpawnPoint_1, SpawnPoint_2, and SpawnPoint_3 in hierarchy if unassigned.
-    /// </summary>
     private void FindCounterSpawnPoints()
     {
         ingredientRespawnPoints = new Transform[3];
@@ -84,7 +78,6 @@ public class StoveController : MonoBehaviour
 
     public void SetActiveRecipe(RecipeData newRecipe)
     {
-        // Don't start a new recipe if a dish is currently on the plate
         if (isPlateOccupied)
         {
             if (progressCanvas != null) progressCanvas.SetActive(true);
@@ -97,12 +90,10 @@ public class StoveController : MonoBehaviour
         addedIngredients.Clear();
         consumedIngredientsData.Clear();
 
-        // Hide Eat Me prompt when setting up a new recipe
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
 
         UpdateRecipeUI();
 
-        // Trigger stove fire VFX and continuous sizzling SFX as soon as recipe confirmation happens
         if (stoveFireVFX != null)
         {
             stoveFireVFX.gameObject.SetActive(true);
@@ -117,18 +108,15 @@ public class StoveController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Block ingredient processing if plate is occupied or currently cooking
         if (isCooking || activeRecipe == null || isPlateOccupied) return;
 
         FoodItem item = other.GetComponentInParent<FoodItem>();
         if (item != null)
         {
-            // Reject expired/spoiled ingredients using isSpoiled/isExpired check
             if (item.isSpoiled)
             {
                 ShowSpoiledFoodWarning();
 
-                // Teleport spoiled item back to designated spawn point
                 Vector3 targetSpawnPos = transform.position + Vector3.up * 0.5f;
                 Quaternion targetSpawnRot = Quaternion.identity;
 
@@ -165,14 +153,12 @@ public class StoveController : MonoBehaviour
 
                     if (currentCount < maxNeeded)
                     {
-                        // Save reference to prefab along with exact current freshness days state before destroying
                         consumedIngredientsData.Add(new ConsumedIngredientData
                         {
                             prefab = req.foodPrefab,
                             savedFreshnessDays = item.currentFreshnessDays
                         });
 
-                        // Mark as cooked before destroying to preserve item state consistency
                         item.isCooked = true;
 
                         addedIngredients.Add(id);
@@ -188,24 +174,17 @@ public class StoveController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Resets current cooking progress, respawns added ingredients back at spawn points,
-    /// preserves their original freshness state, and resets the stove state.
-    /// </summary>
     public void ResetStove()
     {
-        if (isCooking) return; // Prevent reset mid-cook routine
+        if (isCooking) return;
 
-        // Ensure array references exist before respawning
         if (ingredientRespawnPoints == null || ingredientRespawnPoints.Length == 0 || ingredientRespawnPoints[0] == null)
         {
             FindCounterSpawnPoints();
         }
 
-        // Stop sizzle audio if active during reset
         AudioManager.Instance?.StopCookingSizzle();
 
-        // Respawn consumed ingredients across assigned spawn points preserving saved freshness days
         for (int i = 0; i < consumedIngredientsData.Count; i++)
         {
             ConsumedIngredientData data = consumedIngredientsData[i];
@@ -216,7 +195,6 @@ public class StoveController : MonoBehaviour
 
                 if (ingredientRespawnPoints != null && ingredientRespawnPoints.Length > 0)
                 {
-                    // Pick matching index, or wrap around if ingredients exceed available spawn points
                     Transform targetSpawn = ingredientRespawnPoints[i % ingredientRespawnPoints.Length];
                     if (targetSpawn != null)
                     {
@@ -229,18 +207,15 @@ public class StoveController : MonoBehaviour
                 FoodItem spawnedItem = spawnedObj.GetComponent<FoodItem>();
                 if (spawnedItem != null)
                 {
-                    // Preserves exact freshness days state and updates mold visuals without resetting to max days
                     spawnedItem.SetFreshnessDays(data.savedFreshnessDays);
                     spawnedItem.isCooked = false;
                 }
             }
         }
 
-        // Clear tracked ingredient data
         addedIngredients.Clear();
         consumedIngredientsData.Clear();
 
-        // Turn off fire VFX instantly when resetting state or switching phases
         if (stoveFireVFX != null)
         {
             stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
@@ -256,7 +231,6 @@ public class StoveController : MonoBehaviour
         if (headerText != null) headerText.text = "Warning!";
         if (statusText != null) statusText.text = "Do not add spoiled food inside!";
 
-        // Play alert audio clip when spoiled food warning is shown
         AudioManager.Instance?.PlayAlert();
     }
 
@@ -266,13 +240,11 @@ public class StoveController : MonoBehaviour
 
         if (activeRecipe != null)
         {
-            // Set Header Text (Dish Name)
             if (headerText != null)
             {
                 headerText.text = activeRecipe.recipeName;
             }
 
-            // Set Progress Text (Individual ingredient counts e.g. Carrot 0/2)
             if (statusText != null)
             {
                 string progressList = "";
@@ -290,7 +262,6 @@ public class StoveController : MonoBehaviour
                 statusText.text = progressList.TrimEnd();
             }
 
-            // Display reset button only when at least one ingredient has been added and not cooking
             if (resetButton != null)
             {
                 resetButton.SetActive(addedIngredients.Count > 0 && !isCooking);
@@ -313,7 +284,6 @@ public class StoveController : MonoBehaviour
         if (resetButton != null) resetButton.SetActive(false);
         cookTimer = 0f;
 
-        // Ensure sizzle sound is actively playing during cook routine
         AudioManager.Instance?.StartCookingSizzle();
 
         float duration = 5f;
@@ -329,17 +299,14 @@ public class StoveController : MonoBehaviour
 
     private void SpawnDish()
     {
-        // Stop looping sizzle SFX and trigger poof cloud SFX when dish spawns
         AudioManager.Instance?.StopCookingSizzle();
         AudioManager.Instance?.PlayPoofCloud();
 
-        // Stop stove fire VFX when food spawns
         if (stoveFireVFX != null)
         {
             stoveFireVFX.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
 
-        // Trigger cloud / poof VFX when progress finishes and food spawns
         if (dishSpawnVFX != null)
         {
             dishSpawnVFX.gameObject.SetActive(true);
@@ -350,14 +317,21 @@ public class StoveController : MonoBehaviour
         if (activeRecipe.cookedDishPrefab != null && dishSpawnPoint != null)
         {
             spawnedDish = Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
-            isPlateOccupied = true; // Set plate occupied status when spawned
+            isPlateOccupied = true;
 
-            // Track completed dish count for DayPhaseManager evaluation
-            int currentCooked = PlayerPrefs.GetInt("DishesCooked", 0);
-            PlayerPrefs.SetInt("DishesCooked", currentCooked + 1);
-            PlayerPrefs.Save();
+            // FIX: Notify CookingManager to increment and save TotalDishesCooked
+            if (CookingManager.Instance != null)
+            {
+                CookingManager.Instance.RegisterDishCooked();
+            }
+            else
+            {
+                // Fallback direct save if CookingManager instance isn't in scene
+                int currentCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0) + 1;
+                PlayerPrefs.SetInt("TotalDishesCooked", currentCooked);
+                PlayerPrefs.Save();
+            }
 
-            // Show "Eat Me!" prompt once food is ready on the plate
             if (eatMeCanvas != null)
             {
                 eatMeCanvas.SetActive(true);
@@ -370,26 +344,15 @@ public class StoveController : MonoBehaviour
         if (progressCanvas != null) progressCanvas.SetActive(false);
     }
 
-    /// <summary>
-    /// Helper method to call when the player consumes the dish.
-    /// Resets stove state variables while keeping the Recipe Book canvas visible.
-    /// </summary>
     public void ClearPlate()
     {
         isPlateOccupied = false;
         spawnedDish = null;
-        activeRecipe = null; // Reset active recipe reference
+        activeRecipe = null;
 
-        if (eatMeCanvas != null)
-            eatMeCanvas.SetActive(false);
-
-        if (progressCanvas != null)
-            progressCanvas.SetActive(false);
-
-        if (resetButton != null)
-            resetButton.SetActive(false);
-
-        // Recipe Book canvas is no longer closed here and stays enabled throughout gameplay
+        if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
+        if (progressCanvas != null) progressCanvas.SetActive(false);
+        if (resetButton != null) resetButton.SetActive(false);
     }
 
     private int GetTotalRequiredIngredientsCount()
