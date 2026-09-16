@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -17,7 +18,8 @@ public class InstructionManager : MonoBehaviour
         CookingStove = 6,
         TrashBin = 7,
         ResetButton = 8,
-        Completed = 9
+        Step9_GoodLuck = 9,
+        Completed = 10
     }
 
     [Header("UI Canvas References")]
@@ -30,7 +32,7 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private Button nextButton;
 
     [Header("Step Visual Assets")]
-    [Tooltip("Order must match GameStep enum: 0=Welcome, 1=XR Controls, 2=Shopping, 3=Storage, 4=TV, 5=Clock, 6=Stove, 7=Trash, 8=Reset")]
+    [Tooltip("Order must match GameStep enum: 0=Welcome through 9=GoodLuck")]
     [SerializeField] private Sprite[] stepSprites; // Array of visual sprites
 
     [Header("Current Progress")]
@@ -48,11 +50,13 @@ public class InstructionManager : MonoBehaviour
 
         if (closeButton != null)
         {
+            closeButton.onClick.RemoveListener(CloseCanvas);
             closeButton.onClick.AddListener(CloseCanvas);
         }
 
         if (nextButton != null)
         {
+            nextButton.onClick.RemoveListener(NextStep);
             nextButton.onClick.AddListener(NextStep);
         }
 
@@ -68,6 +72,12 @@ public class InstructionManager : MonoBehaviour
 
             if (!isActive)
             {
+                // Reset to Welcome if opening while in Completed state
+                if (currentStep == GameStep.Completed)
+                {
+                    currentStep = GameStep.Welcome;
+                }
+
                 UpdateInstructionUI();
                 AudioManager.Instance?.PlayUIClick();
             }
@@ -79,6 +89,7 @@ public class InstructionManager : MonoBehaviour
         if (instructionCanvas != null)
         {
             instructionCanvas.SetActive(false);
+            currentStep = GameStep.Completed;
             AudioManager.Instance?.PlayUIClick();
         }
     }
@@ -101,11 +112,16 @@ public class InstructionManager : MonoBehaviour
 
     public void NextStep()
     {
-        if (currentStep < GameStep.Completed)
+        if (currentStep < GameStep.Step9_GoodLuck)
         {
             currentStep++;
             UpdateInstructionUI();
             AudioManager.Instance?.PlayUIClick();
+        }
+        else if (currentStep == GameStep.Step9_GoodLuck)
+        {
+            currentStep = GameStep.Completed;
+            CloseCanvas();
         }
     }
 
@@ -173,7 +189,18 @@ public class InstructionManager : MonoBehaviour
                 SetText("Step 8: Utility Tools (Reset Button)",
                         "Use the reset button to return active ingredients from the stove area back to their original spawn points.");
                 break;
+
+            case GameStep.Step9_GoodLuck:
+                SetText("Step 9: Ready to Start!",
+                        "You're all set! Every small choice in the kitchen helps build a greener, zero-waste future.\n\nTake your time, plan your meals wisely, and most importantly—have fun cooking! If you are still unsure, click the chalkboard for help!");
+                break;
         }
+
+        // Toggle Buttons: Show Close/Start on Step 9, Next on earlier steps
+        bool isLastStep = (currentStep == GameStep.Step9_GoodLuck);
+
+        if (nextButton != null) nextButton.gameObject.SetActive(!isLastStep);
+        if (closeButton != null) closeButton.gameObject.SetActive(isLastStep);
 
         // Update Step Image Visual
         int stepIndex = (int)currentStep;
@@ -190,9 +217,10 @@ public class InstructionManager : MonoBehaviour
             }
         }
 
+        int totalVisibleSteps = Enum.GetValues(typeof(GameStep)).Length - 1; // Exclude Completed (10 steps total, 0 to 9)
         if (stepProgressText != null)
         {
-            stepProgressText.text = $"Step {stepIndex + 1} / 9";
+            stepProgressText.text = $"Step {stepIndex + 1} / {totalVisibleSteps}";
         }
     }
 

@@ -1,2 +1,0 @@
-C:\CM3070\CM3070_ZEROWASTE_FINAL\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
-C:\CM3070\CM3070_ZEROWASTE_FINAL\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

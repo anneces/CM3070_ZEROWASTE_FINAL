@@ -13,7 +13,21 @@
 # Unity generated/cached files
 [Mm]emoryCaptures/
 [Rr]ecordings/
-[Uu]ser[Ss]ettings/
+
+# ==============================
+# Builds & Android/IL2CPP Outputs
+# ==============================
+
+*.apk
+*.aab
+/*.utmp/
+/*_BackUpThisFolder_ButDontShipItWithYourGame/
+
+# ==============================
+# Unity Recovery & Auto-Saves
+# ==============================
+
+[Aa]ssets/_Recovery/
 
 # ==============================
 # Visual Studio / IDE files
