@@ -47,6 +47,11 @@ public class ShoppingTablet : MonoBehaviour
 
     private void Start()
     {
+        // Reset saved spent amount on new run start
+        totalSpent = 0.0f;
+        PlayerPrefs.SetFloat("TotalMoneySpent", 0.0f);
+        PlayerPrefs.Save();
+
         walletBalance = startingBudget;
         PopulateCategorizedCatalog();
         UpdateUI();
@@ -190,6 +195,10 @@ public class ShoppingTablet : MonoBehaviour
 
             walletBalance -= price;
             totalSpent += price;
+
+            // Save actual total spent amount to PlayerPrefs
+            PlayerPrefs.SetFloat("TotalMoneySpent", totalSpent);
+            PlayerPrefs.Save();
 
             Transform targetPoint = spawnPoints[currentSpawnIndex];
             Vector3 spawnPosition = targetPoint.position + (Vector3.up * spawnHeightOffset);

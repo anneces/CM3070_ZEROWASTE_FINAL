@@ -58,11 +58,11 @@ public class GameSummaryUI : MonoBehaviour
 
     public void CalculateAndDisplaySummary()
     {
-        // 1. Retrieve saved totals
-        float totalMoneySpent = PlayerPrefs.GetFloat("TotalMoneySpent", 150.0f);
-        float totalMoneyWasted = PlayerPrefs.GetFloat("TotalMoneyWasted", 25.0f);
-        float totalCO2 = PlayerPrefs.GetFloat("TotalCO2", 12.5f);
-        int dishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 8);
+        // 1. Retrieve saved totals (Defaults set to 0 to prevent showing old dummy values)
+        float totalMoneySpent = PlayerPrefs.GetFloat("TotalMoneySpent", 0.0f);
+        float totalMoneyWasted = PlayerPrefs.GetFloat("TotalMoneyWasted", 0.0f);
+        float totalCO2 = PlayerPrefs.GetFloat("TotalCO2", 0.0f);
+        int dishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0);
 
         // 2. Calculate Final Score & Grade
         float baseScore = 100f - (totalMoneyWasted * 1.5f) - (totalCO2 * 0.5f);

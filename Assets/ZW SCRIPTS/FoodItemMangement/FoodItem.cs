@@ -21,8 +21,8 @@ public class FoodItem : MonoBehaviour
     [Header("Cooking & Spoiled State")]
     public bool isCooked = false;
 
-    // Helper property that maps isExpired to isSpoiled so DayPhaseManager can evaluate it directly
-    public bool isSpoiled => isExpired || currentFreshnessDays <= 0f;
+    // Updated: Helper property that maps isExpired or <= 15% freshness to isSpoiled
+    public bool isSpoiled => isExpired || currentFreshnessDays <= 0f || FreshnessPercentage <= 15f;
 
     [Header("Day-Based Expiration Settings")]
     [Tooltip("Maximum shelf life of the item in days when stored correctly.")]
@@ -60,7 +60,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns Status text: Fresh (100%-66%), Spotting (65%-1%), or Spoiled (0%).
+    /// Updated: Returns Status text: Fresh (100%-66%), Spotting (65%-16%), or Spoiled (15% or less).
     /// </summary>
     public string FreshnessStatus
     {
@@ -70,13 +70,13 @@ public class FoodItem : MonoBehaviour
 
             float pct = FreshnessPercentage;
             if (pct >= 66f) return "Fresh";
-            if (pct >= 1f) return "Spotting";
+            if (pct > 15f) return "Spotting";
             return "Spoiled";
         }
     }
 
     /// <summary>
-    /// Returns color codes for TextMeshPro UI formatting matching the freshness stage.
+    /// Updated: Returns color codes for TextMeshPro UI formatting matching the freshness stage.
     /// </summary>
     public string FreshnessStatusColor
     {
@@ -86,8 +86,8 @@ public class FoodItem : MonoBehaviour
 
             float pct = FreshnessPercentage;
             if (pct >= 66f) return "#22C55E"; // Green (Fresh)
-            if (pct >= 1f) return "#EAB308";   // Yellow/Orange (Spotting)
-            return "#EF4444";                  // Red (Spoiled)
+            if (pct > 15f) return "#EAB308";  // Yellow/Orange (Spotting)
+            return "#EF4444";                  // Red (Spoiled: 15% or less)
         }
     }
 
@@ -201,7 +201,7 @@ public class FoodItem : MonoBehaviour
     public void SetFreshnessDays(float savedDays)
     {
         currentFreshnessDays = Mathf.Clamp(savedDays, 0f, maxFreshnessDays);
-        if (currentFreshnessDays <= 0f)
+        if (currentFreshnessDays <= 0f || FreshnessPercentage <= 15f)
         {
             ExpireItem();
         }
@@ -229,8 +229,8 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the _DecayAmount property on the custom Shader Graph material 
-    /// (0.0 = Fresh, scales 0.0 to 1.0 during Spotting, 1.0 = Fully Moldy).
+    /// Updated: Updates the _DecayAmount property on the custom Shader Graph material 
+    /// (0.0 = Fresh, scales 0.0 to 1.0 during Spotting 65%-16%, 1.0 = Fully Moldy at <= 15%).
     /// </summary>
     public void UpdateMoldVisuals()
     {
@@ -244,14 +244,14 @@ public class FoodItem : MonoBehaviour
             // Fresh phase: Texture clean, Decay set to 0
             decayNormalized = 0f;
         }
-        else if (pct >= 1f)
+        else if (pct > 15f)
         {
-            // Spotting phase: Remap 65%..1% to 0.0..1.0 linearly
-            decayNormalized = Mathf.InverseLerp(65f, 1f, pct);
+            // Spotting phase: Remap 65%..16% to 0.0..1.0 linearly
+            decayNormalized = Mathf.InverseLerp(65f, 16f, pct);
         }
         else
         {
-            // Spoiled phase: Maximum mold & darkened surface (1.0)
+            // Spoiled phase (<= 15%): Maximum mold & darkened surface (1.0)
             decayNormalized = 1.0f;
         }
 
@@ -281,7 +281,7 @@ public class FoodItem : MonoBehaviour
 
         currentFreshnessDays -= daysToDeduct;
 
-        if (currentFreshnessDays <= 0f)
+        if (currentFreshnessDays <= 0f || FreshnessPercentage <= 15f)
         {
             ExpireItem();
         }
@@ -303,7 +303,6 @@ public class FoodItem : MonoBehaviour
     private void ExpireItem()
     {
         isExpired = true;
-        currentFreshnessDays = 0f;
         Debug.Log($"[SPOIL WARNING] {foodName} has spoiled! Financial loss: ${price:F2}, Carbon penalty: {co2Points} kg CO2.");
 
         // Darkens material to indicate rot
