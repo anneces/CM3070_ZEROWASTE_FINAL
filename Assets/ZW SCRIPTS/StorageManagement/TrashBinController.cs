@@ -12,6 +12,9 @@ public class TrashBinController : MonoBehaviour
     [Tooltip("Total CO2 penalty in kg from discarded items.")]
     public float totalCO2Penalty = 0f;
 
+    [Tooltip("Total count of discarded food items.")]
+    public int totalItemsDiscarded = 0;
+
     // Property Getters for DayManager compatibility
     public float totalMoneyWasted => totalFinancialLoss;
     public float totalCO2 => totalCO2Penalty;
@@ -32,6 +35,11 @@ public class TrashBinController : MonoBehaviour
 
     private void Start()
     {
+        // Load persistent totals or fallback to 0
+        totalFinancialLoss = PlayerPrefs.GetFloat("TotalMoneyWasted", 0f);
+        totalCO2Penalty = PlayerPrefs.GetFloat("TotalCO2", 0f);
+        totalItemsDiscarded = PlayerPrefs.GetInt("TotalItemsDiscarded", 0);
+
         UpdateUI();
     }
 
@@ -49,10 +57,17 @@ public class TrashBinController : MonoBehaviour
         // Add item values to running totals
         totalFinancialLoss += item.price;
         totalCO2Penalty += item.co2Points;
+        totalItemsDiscarded++;
+
+        // Save totals for GameSummaryUI evaluation
+        PlayerPrefs.SetFloat("TotalMoneyWasted", totalFinancialLoss);
+        PlayerPrefs.SetFloat("TotalCO2", totalCO2Penalty);
+        PlayerPrefs.SetInt("TotalItemsDiscarded", totalItemsDiscarded);
+        PlayerPrefs.Save();
 
         // Log waste type for analytics/debugging
         string status = (item.isExpired || item.currentFreshnessDays <= 0) ? "Rotted/Expired" : "Fresh Leftover";
-        Debug.Log($"[TRASH] Discarded {status} {item.foodName} | Lost: ${item.price:F2} | CO2 Impact: {item.co2Points} kg");
+        Debug.Log($"[TRASH] Discarded {status} {item.foodName} | Lost: ${item.price:F2} | CO2 Impact: {item.co2Points} kg | Total Discarded: {totalItemsDiscarded}");
 
         // Play feedback effects
         if (trashVFX != null)
@@ -98,6 +113,13 @@ public class TrashBinController : MonoBehaviour
     {
         totalFinancialLoss = 0f;
         totalCO2Penalty = 0f;
+        totalItemsDiscarded = 0;
+
+        PlayerPrefs.SetFloat("TotalMoneyWasted", 0f);
+        PlayerPrefs.SetFloat("TotalCO2", 0f);
+        PlayerPrefs.SetInt("TotalItemsDiscarded", 0);
+        PlayerPrefs.Save();
+
         UpdateUI();
     }
 }

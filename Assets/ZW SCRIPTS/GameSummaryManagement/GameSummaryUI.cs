@@ -63,29 +63,45 @@ public class GameSummaryUI : MonoBehaviour
         float totalMoneyWasted = PlayerPrefs.GetFloat("TotalMoneyWasted", 0.0f);
         float totalCO2 = PlayerPrefs.GetFloat("TotalCO2", 0.0f);
         int dishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0);
+        int itemsDiscarded = PlayerPrefs.GetInt("TotalItemsDiscarded", 0);
 
-        // 2. Calculate Final Score & Grade
+        // 2. Calculate Base Numerical Score
         float baseScore = 100f - (totalMoneyWasted * 1.5f) - (totalCO2 * 0.5f);
         float bonusPoints = dishesCooked * 10f;
         float finalScore = Mathf.Max(0f, baseScore + bonusPoints);
 
+        // 3. Evaluate Grade with Strict Waste Penalties
         string grade;
-        if (finalScore >= 90f) grade = "A";
-        else if (finalScore >= 70f) grade = "B";
-        else if (finalScore >= 50f) grade = "C";
-        else grade = "F";
 
-        // 3. Update Text Labels
+        if (finalScore >= 90f && itemsDiscarded <= dishesCooked)
+        {
+            grade = "A"; // Requires both high score AND low waste ratio
+        }
+        else if (itemsDiscarded >= dishesCooked * 2 || finalScore < 50f)
+        {
+            // Severe waste (e.g. 3 items thrown away for 1 dish cooked) drops grade heavily
+            grade = (finalScore < 30f) ? "F" : "C";
+        }
+        else if (finalScore >= 70f || itemsDiscarded > dishesCooked)
+        {
+            grade = "B"; // Moderate score or minor over-discarding
+        }
+        else
+        {
+            grade = "F";
+        }
+
+        // 4. Update Text Labels
         if (moneySpentText) moneySpentText.text = $"Total Money Spent: ${totalMoneySpent:F2}";
         if (moneyWastedText) moneyWastedText.text = $"Total Money Wasted: ${totalMoneyWasted:F2}";
         if (co2PointsText) co2PointsText.text = $"Total CO2 Points: {totalCO2:F1}";
         if (dishesCookedText) dishesCookedText.text = $"Dishes Cooked (Bonus): {dishesCooked} (+{bonusPoints} pts)";
         if (finalGradeText) finalGradeText.text = $"Grade: {grade}";
 
-        // 4. Update Images & Messages (schedules delayed audio call to respect initialization)
+        // 5. Update Images & Messages
         ApplyGradeFeedback(grade);
 
-        // 5. Trigger Left and Right Confetti
+        // 6. Trigger Left and Right Confetti
         TriggerConfetti(grade);
     }
 
