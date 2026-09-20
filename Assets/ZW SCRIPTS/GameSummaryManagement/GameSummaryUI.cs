@@ -58,34 +58,52 @@ public class GameSummaryUI : MonoBehaviour
 
     public void CalculateAndDisplaySummary()
     {
-        // 1. Retrieve saved totals (Defaults set to 0 to prevent showing old dummy values)
+        // 1. Retrieve saved totals
         float totalMoneySpent = PlayerPrefs.GetFloat("TotalMoneySpent", 0.0f);
         float totalMoneyWasted = PlayerPrefs.GetFloat("TotalMoneyWasted", 0.0f);
         float totalCO2 = PlayerPrefs.GetFloat("TotalCO2", 0.0f);
         int dishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0);
-        int itemsDiscarded = PlayerPrefs.GetInt("TotalItemsDiscarded", 0);
 
-        // 2. Calculate Base Numerical Score
-        float baseScore = 100f - (totalMoneyWasted * 1.5f) - (totalCO2 * 0.5f);
-        float bonusPoints = dishesCooked * 10f;
-        float finalScore = Mathf.Max(0f, baseScore + bonusPoints);
+        // 2. Adjust CO2 Weighting Local to Summary Calculation
+        float wastePenalty = totalMoneyWasted * 1.5f;
+        float co2Penalty = totalCO2 * 0.05f;
 
-        // 3. Evaluate Grade with Strict Waste Penalties
+        float baseScore = 100f - wastePenalty - co2Penalty;
+        float bonusPoints = dishesCooked * 15f; // Award 15 pts per cooked dish
+        float finalScore = Mathf.Clamp(baseScore + bonusPoints, 0f, 100f);
+
+        // Debug diagnostic log to pinpoint exact values during end-game summary evaluation
+        Debug.Log($"[SUMMARY EVALUATION] Dishes Cooked: {dishesCooked} | Spent: ${totalMoneySpent:F2} | Wasted: ${totalMoneyWasted:F2} | CO2: {totalCO2:F1} | Final Score: {finalScore}");
+
+        // 3. Clean Grade Evaluation
         string grade;
 
-        if (finalScore >= 90f && itemsDiscarded <= dishesCooked)
+        // Check explicit override first (e.g. Failure setting from DayPhaseManager)
+        if (PlayerPrefs.HasKey("FinalGrade"))
         {
-            grade = "A"; // Requires both high score AND low waste ratio
+            grade = PlayerPrefs.GetString("FinalGrade", "F");
         }
-        else if (itemsDiscarded >= dishesCooked * 2 || finalScore < 50f)
+        // Fail if no meals were cooked
+        else if (dishesCooked == 0)
         {
-            // Severe waste (e.g. 3 items thrown away for 1 dish cooked) drops grade heavily
-            grade = (finalScore < 30f) ? "F" : "C";
+            grade = "F";
         }
-        else if (finalScore >= 70f || itemsDiscarded > dishesCooked)
+        // Grade A: Cooking at least 3 dishes with minimal waste or achieving high overall score
+        else if (dishesCooked >= 3 && (totalMoneyWasted <= 5.0f || finalScore >= 80f))
         {
-            grade = "B"; // Moderate score or minor over-discarding
+            grade = "A";
         }
+        // Grade B: Moderate score or good productivity with low waste
+        else if (finalScore >= 60f || (dishesCooked >= 2 && totalMoneyWasted < 10f))
+        {
+            grade = "B";
+        }
+        // Grade C: Minimal passing score
+        else if (finalScore >= 40f || dishesCooked >= 1)
+        {
+            grade = "C";
+        }
+        // Grade F: High waste or severe penalty
         else
         {
             grade = "F";

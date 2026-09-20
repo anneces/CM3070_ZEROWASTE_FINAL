@@ -15,7 +15,6 @@ public class DayPhaseManager : MonoBehaviour
 {
     public static DayPhaseManager Instance { get; private set; }
 
-    // Event broadcast for external UI components (Clock, Tablet, TV, Recipe Book)
     public static event Action OnPhaseChanged;
 
     [Header("Day & Phase Tracking")]
@@ -65,9 +64,14 @@ public class DayPhaseManager : MonoBehaviour
 
     private void Start()
     {
-        // Reset dishes cooked counter at the beginning of a game session
-        PlayerPrefs.SetInt("DishesCooked", 0);
+        // Reset counters at the start of a new run session
+        PlayerPrefs.SetInt("TotalDishesCooked", 0);
         PlayerPrefs.Save();
+
+        if (TrashBinController.Instance != null)
+        {
+            TrashBinController.Instance.ResetCounters();
+        }
 
         if (confirmationPopupModal != null)
             confirmationPopupModal.SetActive(false);
@@ -76,7 +80,6 @@ public class DayPhaseManager : MonoBehaviour
         UpdateClockUI();
         UpdatePhaseRestrictions();
 
-        // Broadcast phase update on initial start so all subscribers sync correctly
         OnPhaseChanged?.Invoke();
     }
 
@@ -109,16 +112,12 @@ public class DayPhaseManager : MonoBehaviour
 
     private void AdvancePhase()
     {
-        // Eject any unfinished food items left in stove back to counter spawn points preserving freshness
         if (StoveController.Instance != null)
         {
             StoveController.Instance.ResetStove();
         }
 
-        // Track previous phase to handle specific transition rules
         DayPhase previousPhase = currentPhase;
-
-        // Play phase transition audio
         AudioManager.Instance?.PlayPhaseTransition();
 
         if (currentPhase == DayPhase.Morning)
@@ -136,7 +135,6 @@ public class DayPhaseManager : MonoBehaviour
                 currentDay++;
                 currentPhase = DayPhase.Morning;
 
-                // Reset Stove state and restore default instructions for the new day
                 StoveController.Instance?.ResetStoveToDefault();
             }
             else
@@ -146,24 +144,25 @@ public class DayPhaseManager : MonoBehaviour
                 float wastedMoney = TrashBinController.Instance != null ? TrashBinController.Instance.totalMoneyWasted : 0f;
                 float totalCO2 = TrashBinController.Instance != null ? TrashBinController.Instance.totalCO2 : 0f;
 
-                int dishesCooked = PlayerPrefs.GetInt("DishesCooked", 0);
+                int dishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0);
 
+                // Check un-trashed items remaining on counters at simulation end
                 FoodItem[] remainingItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
                 foreach (FoodItem item in remainingItems)
                 {
                     if (item != null)
                     {
-                        if (item.isSpoiled || !item.isCooked)
+                        if (item.isSpoiled || item.isExpired || item.currentFreshnessDays <= 0)
                         {
                             wastedMoney += item.price;
-                            totalCO2 += item.co2Value;
+                            totalCO2 += item.co2Points;
                         }
                     }
                 }
 
                 PlayerPrefs.SetFloat("TotalMoneyWasted", wastedMoney);
                 PlayerPrefs.SetFloat("TotalCO2", totalCO2);
-                PlayerPrefs.SetInt("DishesCooked", dishesCooked);
+                PlayerPrefs.SetInt("TotalDishesCooked", dishesCooked);
 
                 if (dishesCooked == 0)
                 {
@@ -189,8 +188,6 @@ public class DayPhaseManager : MonoBehaviour
         UpdateClockUI();
         UpdatePhaseRestrictions();
 
-        // 1. Notify all food items in scene to execute decay tick
-        // FIX: Skip freshness decay when transitioning from Morning -> Afternoon
         if (previousPhase == DayPhase.Morning && currentPhase == DayPhase.Afternoon)
         {
             Debug.Log("[DayPhaseManager] Transitioning Morning -> Afternoon: Freshness degradation skipped as storage was locked.");
@@ -207,13 +204,11 @@ public class DayPhaseManager : MonoBehaviour
             }
         }
 
-        // 2. Refresh TV Display UI values
         if (TVDisplayController.Instance != null)
         {
             TVDisplayController.Instance.RefreshDisplay();
         }
 
-        // 3. Broadcast phase update event to all subscribed canvases
         OnPhaseChanged?.Invoke();
     }
 

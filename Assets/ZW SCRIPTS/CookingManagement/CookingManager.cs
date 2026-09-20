@@ -25,10 +25,8 @@ public class CookingManager : MonoBehaviour
 
     private void Start()
     {
-        // Reset dishes cooked count on new run start
-        totalDishesCooked = 0;
-        PlayerPrefs.SetInt("TotalDishesCooked", 0);
-        PlayerPrefs.Save();
+        // Load persistent dish count across phases instead of overwriting to 0 on scene reload
+        totalDishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0);
     }
 
     /// <summary>
