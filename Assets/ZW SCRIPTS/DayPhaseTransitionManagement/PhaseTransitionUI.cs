@@ -12,13 +12,17 @@ public class PhaseTransitionUI : MonoBehaviour
     public GameObject cancelButton;        // Specific reference to cancelbtn
     public GameObject promptText;          // Specific reference to prompttxt
 
+    /// <summary>
+    /// Restores default UI panel visibility states on initialization.
+    /// </summary>
     private void Start()
     {
-        // Ensure default state on start
         ResetUIState();
     }
 
-    // Called when user clicks the initial "Next Phase" button
+    /// <summary>
+    /// Hides the main phase transition button and displays the confirmation modal controls.
+    /// </summary>
     public void OnNextPhaseClicked()
     {
         if (nextPhaseButton != null) nextPhaseButton.SetActive(false);
@@ -31,25 +35,30 @@ public class PhaseTransitionUI : MonoBehaviour
         if (cancelButton != null) cancelButton.SetActive(true);
     }
 
-    // Called when user clicks "CANCEL"
+    /// <summary>
+    /// Resets the UI back to default state when the user cancels phase advancement.
+    /// </summary>
     public void OnCancelClicked()
     {
         ResetUIState();
     }
 
-    // Called when user clicks "CONFIRM"
+    /// <summary>
+    /// Triggers phase confirmation logic on DayPhaseManager and restores standard UI layout.
+    /// </summary>
     public void OnConfirmClicked()
     {
-        // Advance your game state
         if (DayPhaseManager.Instance != null)
         {
             DayPhaseManager.Instance.ConfirmNextPhase();
         }
 
-        // Return UI to normal state for the next phase
         ResetUIState();
     }
 
+    /// <summary>
+    /// Restores default canvas visibility by showing clock/main button and hiding popup dialog elements.
+    /// </summary>
     private void ResetUIState()
     {
         if (nextPhaseButton != null) nextPhaseButton.SetActive(true);

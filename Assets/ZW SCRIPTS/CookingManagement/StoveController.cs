@@ -39,12 +39,19 @@ public class StoveController : MonoBehaviour
     private float cookTimer = 0f;
     private GameObject spawnedDish;
 
+    /// <summary>
+    /// Sets up the Singleton instance for global access by stove triggers and recipe books.
+    /// </summary>
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Initializes initial stove UI states, stops active fire/smoke VFX, locates fallback ingredient
+    /// respawn transforms, and displays default setup instructions.
+    /// </summary>
     private void Start()
     {
         if (eatMeCanvas != null) eatMeCanvas.SetActive(false);
@@ -61,6 +68,10 @@ public class StoveController : MonoBehaviour
         ShowDefaultInstruction();
     }
 
+    /// <summary>
+    /// Constantly monitors stove plate state—if a cooked dish was consumed or deleted externally,
+    /// it triggers ClearPlate() to unblock the stove for the next meal.
+    /// </summary>
     private void Update()
     {
         if (isPlateOccupied && spawnedDish == null)
@@ -69,6 +80,9 @@ public class StoveController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Automatic scene recovery fallback that searches for counter spawn points by name if references were lost in the Inspector.
+    /// </summary>
     private void FindCounterSpawnPoints()
     {
         ingredientRespawnPoints = new Transform[3];
@@ -83,7 +97,7 @@ public class StoveController : MonoBehaviour
     }
 
     /// <summary>
-    /// Displays the default instruction message on the stove canvas.
+    /// Resets stove header and body UI text to prompt the player to choose a recipe from the recipe book.
     /// </summary>
     public void ShowDefaultInstruction()
     {
@@ -92,6 +106,10 @@ public class StoveController : MonoBehaviour
         if (statusText != null) statusText.text = defaultInstructionMessage;
     }
 
+    /// <summary>
+    /// Binds a chosen RecipeData instance from the RecipeBook to the stove. Prevents selection if an unconsumed meal 
+    /// occupies the plate, resets ingredient lists, updates HUD UI, and plays cooking sizzle audio with fire VFX.
+    /// </summary>
     public void SetActiveRecipe(RecipeData newRecipe)
     {
         if (isPlateOccupied)
@@ -122,6 +140,10 @@ public class StoveController : MonoBehaviour
         AudioManager.Instance?.StartCookingSizzle();
     }
 
+    /// <summary>
+    /// Detects physical VR food ingredients entering the stove's trigger volume. Rejects spoiled food with a warning,
+    /// validates required ingredients against active recipe requirements, updates ingredient counts, saves freshness stats, and triggers cooking checks.
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (isCooking || activeRecipe == null || isPlateOccupied) return;
@@ -129,6 +151,7 @@ public class StoveController : MonoBehaviour
         FoodItem item = other.GetComponentInParent<FoodItem>();
         if (item != null)
         {
+            // Reject spoiled food to reinforce ZeroWaste educational goals
             if (item.isSpoiled)
             {
                 ShowSpoiledFoodWarning();
@@ -169,6 +192,7 @@ public class StoveController : MonoBehaviour
 
                     if (currentCount < maxNeeded)
                     {
+                        // Record consumed food state for potential stove resets
                         consumedIngredientsData.Add(new ConsumedIngredientData
                         {
                             prefab = req.foodPrefab,
@@ -190,6 +214,10 @@ public class StoveController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Cancels ingredient collection, restores pre-added raw food items back onto the kitchen counter 
+    /// with their exact original freshness levels retained, and stops stove audio/VFX.
+    /// </summary>
     public void ResetStove()
     {
         if (isCooking) return;
@@ -250,8 +278,8 @@ public class StoveController : MonoBehaviour
     }
 
     /// <summary>
-    /// Call this method from your Day/Phase Manager when transitioning to the next phase (e.g. Morning)
-    /// to reset stove state and display the default instruction message.
+    /// Called by DayPhaseManager when shifting to new days or phases (e.g. Morning). 
+    /// Fully clears active dishes, recipes, and UI alerts to return stove to pristine default state.
     /// </summary>
     public void ResetStoveToDefault()
     {
@@ -278,6 +306,10 @@ public class StoveController : MonoBehaviour
         ShowDefaultInstruction();
     }
 
+    /// <summary>
+    /// Displays an alert on the stove's UI panel and plays an audio warning when a player attempts
+    /// to drop rotten/spoiled ingredients into the pot.
+    /// </summary>
     private void ShowSpoiledFoodWarning()
     {
         if (progressCanvas != null) progressCanvas.SetActive(true);
@@ -287,6 +319,10 @@ public class StoveController : MonoBehaviour
         AudioManager.Instance?.PlayAlert();
     }
 
+    /// <summary>
+    /// Updates the text screen mounted on the stove with current ingredient counts (e.g., "Tomato 1/2"),
+    /// giving real-time feedback on remaining items needed.
+    /// </summary>
     private void UpdateRecipeUI()
     {
         if (progressCanvas != null) progressCanvas.SetActive(true);
@@ -326,6 +362,10 @@ public class StoveController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Evaluates whether all required quantities for the active recipe have been dropped into the stove.
+    /// If complete, triggers the timed cooking process coroutine.
+    /// </summary>
     private void CheckRecipeCompletion()
     {
         int totalRequiredCount = GetTotalRequiredIngredientsCount();
@@ -335,6 +375,9 @@ public class StoveController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Simulates a timed cooking duration (5 seconds) with sizzle audio, locking ingredient entry until complete.
+    /// </summary>
     private System.Collections.IEnumerator StartCookingProcess()
     {
         isCooking = true;
@@ -354,6 +397,10 @@ public class StoveController : MonoBehaviour
         SpawnDish();
     }
 
+    /// <summary>
+    /// Handles final meal creation—instantiates the cooked dish prefab on the stove plate,
+    /// triggers poof particle/VFX, logs cooked metrics via CookingManager, and prompts the user with "Eat Me" UI.
+    /// </summary>
     private void SpawnDish()
     {
         AudioManager.Instance?.StopCookingSizzle();
@@ -376,7 +423,7 @@ public class StoveController : MonoBehaviour
             spawnedDish = Instantiate(activeRecipe.cookedDishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation);
             isPlateOccupied = true;
 
-            // FIX: Notify CookingManager to increment and save TotalDishesCooked
+            // Notify CookingManager to increment and save TotalDishesCooked
             if (CookingManager.Instance != null)
             {
                 CookingManager.Instance.RegisterDishCooked();
@@ -402,6 +449,10 @@ public class StoveController : MonoBehaviour
         ShowDefaultInstruction();
     }
 
+    /// <summary>
+    /// Resets stove occupancy flags when a cooked dish is eaten or removed, clearing UI popups
+    /// and enabling new recipe selection.
+    /// </summary>
     public void ClearPlate()
     {
         isPlateOccupied = false;
@@ -414,6 +465,9 @@ public class StoveController : MonoBehaviour
         ShowDefaultInstruction();
     }
 
+    /// <summary>
+    /// Helper function that calculates the total sum of all individual ingredient amounts required for the active recipe.
+    /// </summary>
     private int GetTotalRequiredIngredientsCount()
     {
         if (activeRecipe == null || activeRecipe.ingredients == null) return 0;

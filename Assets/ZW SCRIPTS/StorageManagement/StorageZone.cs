@@ -1,15 +1,29 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles trigger detection for storage areas (Pantry, Fridge, Freezer, Counter),
+/// updating the current storage location state on entering food items.
+/// </summary>
 public class StorageZone : MonoBehaviour
 {
+    // CONFIGURATION
+
+    /// <summary>
+    /// Defines the specific type of storage location this zone represents.
+    /// </summary>
     public enum ZoneType { Pantry, Fridge, Freezer, KitchenCounter }
+
+    [Tooltip("The storage zone type assigned to this trigger area.")]
     public ZoneType zoneType;
+
+    // TRIGGER EVENTS
 
     private void OnTriggerEnter(Collider other)
     {
         FoodItem item = GetFoodItemFromCollider(other);
         if (item != null)
         {
+            // Update storage location on entry
             item.currentStorage = zoneType;
             Debug.Log($"[StorageZone] {item.foodName} placed in {zoneType}. Ideal: {item.idealStorage}");
 
@@ -41,6 +55,7 @@ public class StorageZone : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         FoodItem item = GetFoodItemFromCollider(other);
+
         // Only revert to KitchenCounter if the item is exiting the EXACT zone it is currently assigned to
         if (item != null && item.currentStorage == zoneType)
         {
@@ -63,9 +78,13 @@ public class StorageZone : MonoBehaviour
         }
     }
 
+    // HELPER METHODS
+
     /// <summary>
     /// Checks if any colliders attached to the FoodItem are still inside this zone's trigger bounds.
     /// </summary>
+    /// <param name="item">FoodItem component being checked.</param>
+    /// <returns>True if any collider intersects zone bounds; false otherwise.</returns>
     private bool IsItemStillInZone(FoodItem item)
     {
         Collider zoneCollider = GetComponent<Collider>();
@@ -85,6 +104,8 @@ public class StorageZone : MonoBehaviour
     /// <summary>
     /// Helper method to search child colliders, parent objects, and root objects for the FoodItem component.
     /// </summary>
+    /// <param name="col">Collider triggering the event.</param>
+    /// <returns>The FoodItem reference if found; null otherwise.</returns>
     private FoodItem GetFoodItemFromCollider(Collider col)
     {
         if (col == null) return null;

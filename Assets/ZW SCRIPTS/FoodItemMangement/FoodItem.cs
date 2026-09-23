@@ -15,13 +15,17 @@ public class FoodItem : MonoBehaviour
     public float price = 0.80f;
     public float co2Points = 0.4f;
 
-    // Helper property to map co2Points for DayPhaseManager calculations
+    /// <summary>
+    /// Helper property to map co2Points for DayPhaseManager metrics calculations.
+    /// </summary>
     public float co2Value => co2Points;
 
     [Header("Cooking & Spoiled State")]
     public bool isCooked = false;
 
-    // Updated: Helper property that maps isExpired or <= 15% freshness to isSpoiled
+    /// <summary>
+    /// Helper property that evaluates whether the food item is considered spoiled based on expiration, remaining days, or freshness threshold.
+    /// </summary>
     public bool isSpoiled => isExpired || currentFreshnessDays <= 0f || FreshnessPercentage <= 15f;
 
     [Header("Day-Based Expiration Settings")]
@@ -47,7 +51,7 @@ public class FoodItem : MonoBehaviour
     private Rigidbody rb;
 
     /// <summary>
-    /// Calculates the remaining freshness percentage.
+    /// Calculates the remaining freshness percentage based on max vs current freshness days.
     /// </summary>
     public float FreshnessPercentage
     {
@@ -60,7 +64,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Updated: Returns Status text: Fresh (100%-66%), Spotting (65%-16%), or Spoiled (15% or less).
+    /// Returns the descriptive freshness stage text: Fresh (100%-66%), Spotting (65%-16%), or Spoiled (15% or less).
     /// </summary>
     public string FreshnessStatus
     {
@@ -76,7 +80,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Updated: Returns color codes for TextMeshPro UI formatting matching the freshness stage.
+    /// Returns hex color codes for TextMeshPro UI formatting matching the current freshness stage.
     /// </summary>
     public string FreshnessStatusColor
     {
@@ -91,6 +95,9 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Caches spawn transforms, initializes references, instantiates unique material instances, and defaults freshness capacity.
+    /// </summary>
     private void Awake()
     {
         // Cache initial spawn position and rotation
@@ -119,11 +126,17 @@ public class FoodItem : MonoBehaviour
         grabInteractable = GetComponent<XRGrabInteractable>();
     }
 
+    /// <summary>
+    /// Updates mold shader parameters on initialization to reflect starting freshness.
+    /// </summary>
     private void Start()
     {
         UpdateMoldVisuals();
     }
 
+    /// <summary>
+    /// Registers grab and drop event listeners on the XR grab interactable.
+    /// </summary>
     private void OnEnable()
     {
         if (grabInteractable != null)
@@ -133,6 +146,9 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Unsubscribes grab and drop event listeners when the object is disabled.
+    /// </summary>
     private void OnDisable()
     {
         if (grabInteractable != null)
@@ -142,6 +158,9 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Triggers appropriate audio feedback when the player grabs the item.
+    /// </summary>
     private void OnGrab(SelectEnterEventArgs args)
     {
         if (isSpoiled)
@@ -154,6 +173,9 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Triggers appropriate audio feedback when the player releases the item.
+    /// </summary>
     private void OnDrop(SelectExitEventArgs args)
     {
         if (isSpoiled)
@@ -166,14 +188,19 @@ public class FoodItem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Plays sound effect specific to handling rotten or spoiled food items.
+    /// </summary>
     private void PlaySpoiledAudio()
     {
         AudioManager.Instance?.PlaySpoiledFood();
     }
 
+    /// <summary>
+    /// Cleans up dynamically instantiated material clones to prevent memory leaks upon destruction.
+    /// </summary>
     private void OnDestroy()
     {
-        // Clean up material clone instance to prevent leaks when food items are instantiated/destroyed
         if (foodMaterialInstance != null)
         {
             Destroy(foodMaterialInstance);
@@ -181,7 +208,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Teleports the food item back to its original spawn point and resets physics velocities.
+    /// Teleports the food item back to its initial spawn position and resets linear and angular velocities.
     /// </summary>
     public void RespawnToOriginalPoint()
     {
@@ -196,7 +223,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Explicitly sets freshness state without resetting back to max capacity. Updates visuals.
+    /// Sets specific freshness days without resetting to maximum capacity and updates corresponding visuals.
     /// </summary>
     public void SetFreshnessDays(float savedDays)
     {
@@ -213,12 +240,11 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Called by DayPhaseManager during phase shift ticks (Morning -> Afternoon -> Evening).
-    /// Drives both fractional shelf life deduction and visual mold shader progression.
+    /// Called by DayPhaseManager during phase shift ticks to advance shelf life degradation and update mold visuals.
     /// </summary>
     public void OnPhaseTick()
     {
-        // FIX: Prevent decay if called during Afternoon phase (transitioned from Morning)
+        // Prevent decay if called during Afternoon phase transition
         if (DayPhaseManager.Instance != null && DayPhaseManager.Instance.CurrentPhase == DayPhase.Afternoon)
         {
             return;
@@ -229,8 +255,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Updated: Updates the _DecayAmount property on the custom Shader Graph material 
-    /// (0.0 = Fresh, scales 0.0 to 1.0 during Spotting 65%-16%, 1.0 = Fully Moldy at <= 15%).
+    /// Updates the _DecayAmount shader graph property based on the current freshness stage.
     /// </summary>
     public void UpdateMoldVisuals()
     {
@@ -262,8 +287,7 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Advances the item's shelf life per phase shift (1/3 of a day per phase).
-    /// Applies 2x multiplier if stored in an improper zone.
+    /// Advances shelf life degradation per phase shift, applying accelerated decay if stored in an improper storage zone.
     /// </summary>
     public void AdvancePhase()
     {
@@ -272,8 +296,7 @@ public class FoodItem : MonoBehaviour
         // Base decay per phase (3 phases per full day)
         float daysToDeduct = 0.333f;
 
-        // 1. Stored in ideal location -> Normal 0.333 decay per phase (1 full day per 3 phases)
-        // 2. Stored improperly -> 2x Spoil Multiplier (~0.666 decay per phase)
+        // Apply 2x Spoil Multiplier if stored outside ideal storage location
         if (currentStorage != idealStorage)
         {
             daysToDeduct *= 2.0f;
@@ -288,18 +311,24 @@ public class FoodItem : MonoBehaviour
     }
 
     /// <summary>
-    /// Legacy alias retained for external day-tick calls.
+    /// Alias method to advance a single phase shift tick.
     /// </summary>
     public void AdvanceDay()
     {
         AdvancePhase();
     }
 
+    /// <summary>
+    /// Adjusts the local transform scale between true serving dimensions and distorted serving dimensions.
+    /// </summary>
     public void ApplyPortionDistortion(bool enableDistortion)
     {
         transform.localScale = enableDistortion ? distortedServingScale : trueServingScale;
     }
 
+    /// <summary>
+    /// Marks the item as expired, logs economic and environmental penalties, and darkens material color.
+    /// </summary>
     private void ExpireItem()
     {
         isExpired = true;

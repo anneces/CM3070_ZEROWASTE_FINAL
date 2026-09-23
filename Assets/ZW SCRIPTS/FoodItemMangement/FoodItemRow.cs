@@ -10,6 +10,10 @@ public class FoodItemRow : MonoBehaviour
 
     private FoodItem currentItem;
 
+    /// <summary>
+    /// Binds food item properties to the UI row components and configures button click listeners.
+    /// </summary>
+    /// <param name="itemData">The food item data instance to render in this UI row.</param>
     public void SetupRow(FoodItem itemData)
     {
         currentItem = itemData;
@@ -29,6 +33,9 @@ public class FoodItemRow : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Locates the active ShoppingTablet instance in the scene and executes the purchase command for this row's food item.
+    /// </summary>
     private void OnBuyButtonClicked()
     {
         // Locate the main tablet manager in the scene

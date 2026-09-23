@@ -1,9 +1,17 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Singleton manager for the trash bin trigger area. Handles discarded food processing,
+/// financial/CO2 penalties accumulation, UI updates, and persistent player stats saving.
+/// </summary>
 public class TrashBinController : MonoBehaviour
 {
+    // SINGLETON INSTANCE
+
     public static TrashBinController Instance;
+
+    // RUNNING TOTALS
 
     [Header("Running Totals")]
     [Tooltip("Total money lost from discarded items.")]
@@ -15,20 +23,33 @@ public class TrashBinController : MonoBehaviour
     [Tooltip("Total count of discarded food items.")]
     public int totalItemsDiscarded = 0;
 
+    // PROPERTY GETTERS
+
     // Property Getters for DayManager compatibility
     public float totalMoneyWasted => totalFinancialLoss;
     public float totalCO2 => totalCO2Penalty;
 
+    // UI & FEEDBACK REFERENCES
+
     [Header("UI Display (Optional)")]
+    [Tooltip("Text display showing accumulated financial loss.")]
     public TextMeshProUGUI financialLossText;
+
+    [Tooltip("Text display showing accumulated CO2 penalties.")]
     public TextMeshProUGUI co2PenaltyText;
 
     [Header("VFX & Audio (Optional)")]
+    [Tooltip("Particle effect played when an item is discarded.")]
     public ParticleSystem trashVFX;
+
+    [Tooltip("Custom SFX audio clip for discarding items.")]
     public AudioClip trashDropSFX;
+
+    // MONOBEHAVIOUR LIFECYCLE
 
     private void Awake()
     {
+        // Enforce Singleton Pattern
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
@@ -43,6 +64,8 @@ public class TrashBinController : MonoBehaviour
         UpdateUI();
     }
 
+    // TRIGGER DETECTION & PROCESSING
+
     private void OnTriggerEnter(Collider other)
     {
         FoodItem item = other.GetComponentInParent<FoodItem>();
@@ -52,6 +75,10 @@ public class TrashBinController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Processes a thrown-away food item, accumulates waste penalties, updates statistics, and triggers feedback.
+    /// </summary>
+    /// <param name="item">The discarded FoodItem component.</param>
     private void ProcessDiscardedItem(FoodItem item)
     {
         // Add item values to running totals
@@ -69,7 +96,7 @@ public class TrashBinController : MonoBehaviour
         string status = (item.isExpired || item.currentFreshnessDays <= 0) ? "Rotted/Expired" : "Fresh Leftover";
         Debug.Log($"[TRASH] Discarded {status} {item.foodName} | Lost: ${item.price:F2} | CO2 Impact: {item.co2Points} kg | Total Discarded: {totalItemsDiscarded}");
 
-        // Play feedback effects
+        // Play visual feedback effects
         if (trashVFX != null)
         {
             trashVFX.transform.position = item.transform.position;
@@ -89,10 +116,15 @@ public class TrashBinController : MonoBehaviour
         // Update UI counters
         UpdateUI();
 
-        // Destroy discarded food item
+        // Destroy discarded food item GameObject
         Destroy(item.gameObject);
     }
 
+    // UI & RESET METHODS
+
+    /// <summary>
+    /// Updates on-screen UI text components with current penalty totals.
+    /// </summary>
     public void UpdateUI()
     {
         if (financialLossText != null)

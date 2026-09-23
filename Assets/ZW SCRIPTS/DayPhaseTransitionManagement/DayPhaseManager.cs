@@ -50,6 +50,9 @@ public class DayPhaseManager : MonoBehaviour
     public int CurrentDay => currentDay;
     public DayPhase CurrentPhase => currentPhase;
 
+    /// <summary>
+    /// Initializes the singleton instance for global access and destroys duplicate manager instances.
+    /// </summary>
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -62,6 +65,9 @@ public class DayPhaseManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets persistent run metrics, hides modal popups, and initializes environment lighting and UI.
+    /// </summary>
     private void Start()
     {
         // Reset counters at the start of a new run session
@@ -83,11 +89,17 @@ public class DayPhaseManager : MonoBehaviour
         OnPhaseChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Public helper wrapper that executes phase advancement directly.
+    /// </summary>
     public void ConfirmNextPhase()
     {
         ConfirmAdvancePhase();
     }
 
+    /// <summary>
+    /// Plays UI interaction audio and opens the phase confirmation modal.
+    /// </summary>
     public void OpenPhaseChangeConfirmation()
     {
         AudioManager.Instance?.PlayUIClick();
@@ -95,6 +107,9 @@ public class DayPhaseManager : MonoBehaviour
             confirmationPopupModal.SetActive(true);
     }
 
+    /// <summary>
+    /// Closes the confirmation modal and executes phase progression logic.
+    /// </summary>
     public void ConfirmAdvancePhase()
     {
         if (confirmationPopupModal != null)
@@ -103,6 +118,9 @@ public class DayPhaseManager : MonoBehaviour
         AdvancePhase();
     }
 
+    /// <summary>
+    /// Dismisses the phase transition confirmation modal and plays button click audio.
+    /// </summary>
     public void CancelPhaseChange()
     {
         AudioManager.Instance?.PlayUIClick();
@@ -110,6 +128,10 @@ public class DayPhaseManager : MonoBehaviour
             confirmationPopupModal.SetActive(false);
     }
 
+    /// <summary>
+    /// Manages the full cycle between day phases, updates food freshness, resets cooking equipment,
+    /// and handles game-over summary calculations when completing the 5-day simulation.
+    /// </summary>
     private void AdvancePhase()
     {
         if (StoveController.Instance != null)
@@ -212,6 +234,9 @@ public class DayPhaseManager : MonoBehaviour
         OnPhaseChanged?.Invoke();
     }
 
+    /// <summary>
+    /// Notifies the PhaseWarningManager to update active interaction limits based on the new phase.
+    /// </summary>
     private void UpdatePhaseRestrictions()
     {
         if (PhaseWarningManager.Instance != null)
@@ -220,6 +245,9 @@ public class DayPhaseManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Formats and updates the HUD clock text with current day and phase information.
+    /// </summary>
     private void UpdateClockUI()
     {
         if (clockDisplayText != null)
@@ -228,6 +256,9 @@ public class DayPhaseManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adjusts scene skyboxes, directional light color, and intensity to reflect the current phase of the day.
+    /// </summary>
     private void UpdateEnvironment()
     {
         if (mainDirectionalLight == null) return;

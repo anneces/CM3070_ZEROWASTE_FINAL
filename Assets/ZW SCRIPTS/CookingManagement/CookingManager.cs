@@ -11,6 +11,10 @@ public class CookingManager : MonoBehaviour
     [Header("Cooked Metrics")]
     public int totalDishesCooked = 0;
 
+    /// <summary>
+    /// Implements the Singleton pattern to guarantee only one instance 
+    /// of CookingManager exists in the scene so other scripts can easily query recipe data.
+    /// </summary>
     private void Awake()
     {
         if (Instance == null)
@@ -23,6 +27,10 @@ public class CookingManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads the persistent dish count from PlayerPrefs upon initialization.
+    /// Ensures cumulative cooking metrics are retained across different day/phase scene reloads for final grading.
+    /// </summary>
     private void Start()
     {
         // Load persistent dish count across phases instead of overwriting to 0 on scene reload
@@ -30,7 +38,8 @@ public class CookingManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Call this method in your StoveController/EatableDish script right when a cooked dish is spawned!
+    /// Increments the global cooked dish counter and immediately saves it to disk (PlayerPrefs).
+    /// Called when a dish finishes cooking so end-of-simulation summary screens accurately reflect productivity.
     /// </summary>
     public void RegisterDishCooked()
     {

@@ -3,10 +3,17 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/// <summary>
+/// Singleton manager handling the step-by-step tutorial instructional overlay canvas.
+/// Controls tutorial progression, UI text updates, step counter formatting, and visual sprite illustrations.
+/// </summary>
 public class InstructionManager : MonoBehaviour
 {
     public static InstructionManager Instance;
 
+    /// <summary>
+    /// Tutorial workflow steps representing each gameplay mechanic introduction.
+    /// </summary>
     public enum GameStep
     {
         Welcome = 0,
@@ -27,27 +34,33 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI stepTitleText;
     [SerializeField] private TextMeshProUGUI stepDescriptionText;
     [SerializeField] private TextMeshProUGUI stepProgressText;
-    [SerializeField] private Image stepImageDisplay; // Image UI element on canvas
+    [SerializeField] private Image stepImageDisplay; // Image display on the instruction canvas
     [SerializeField] private Button closeButton;
     [SerializeField] private Button nextButton;
 
     [Header("Step Visual Assets")]
-    [Tooltip("Order must match GameStep enum: 0=Welcome through 9=GoodLuck")]
-    [SerializeField] private Sprite[] stepSprites; // Array of visual sprites
+    [Tooltip("Order must match GameStep enum indices: 0=Welcome through 9=GoodLuck")]
+    [SerializeField] private Sprite[] stepSprites; // Array of tutorial illustrations/sprites
 
     [Header("Current Progress")]
+    [Tooltip("The current active step in the tutorial sequence.")]
     public GameStep currentStep = GameStep.Welcome;
+
+    #region Unity Lifecycle Methods
 
     private void Awake()
     {
+        // Enforce Singleton instance pattern
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
     private void Start()
     {
+        // Ensure instruction canvas is active at game start
         if (instructionCanvas != null) instructionCanvas.SetActive(true);
 
+        // Bind button click listeners safely
         if (closeButton != null)
         {
             closeButton.onClick.RemoveListener(CloseCanvas);
@@ -60,9 +73,17 @@ public class InstructionManager : MonoBehaviour
             nextButton.onClick.AddListener(NextStep);
         }
 
+        // Initialize UI content for the starting step
         UpdateInstructionUI();
     }
 
+    #endregion
+
+    #region Canvas & Visibility Controls
+
+    /// <summary>
+    /// Toggles the instruction canvas visibility. Restarts tutorial from Step 0 if re-opened after completion.
+    /// </summary>
     public void ToggleOrOpenCanvas()
     {
         if (instructionCanvas != null)
@@ -72,7 +93,7 @@ public class InstructionManager : MonoBehaviour
 
             if (!isActive)
             {
-                // Reset to Welcome if opening while in Completed state
+                // Reset back to Welcome step if re-opening after full completion
                 if (currentStep == GameStep.Completed)
                 {
                     currentStep = GameStep.Welcome;
@@ -84,6 +105,9 @@ public class InstructionManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Closes the tutorial canvas and sets the current state to Completed.
+    /// </summary>
     public void CloseCanvas()
     {
         if (instructionCanvas != null)
@@ -94,12 +118,21 @@ public class InstructionManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Tutorial Step Navigation
+
+    /// <summary>
+    /// Sets the tutorial to a specific step if it represents forward progression.
+    /// </summary>
+    /// <param name="newStep">The target GameStep enum value.</param>
     public void SetStep(GameStep newStep)
     {
         if ((int)newStep > (int)currentStep)
         {
             currentStep = newStep;
 
+            // Automatically reveal canvas if it was closed during phase transitions
             if (instructionCanvas != null && !instructionCanvas.activeSelf && currentStep != GameStep.Completed)
             {
                 instructionCanvas.SetActive(true);
@@ -110,6 +143,9 @@ public class InstructionManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Advances the tutorial to the next chronological step or closes the canvas at final step.
+    /// </summary>
     public void NextStep()
     {
         if (currentStep < GameStep.Step9_GoodLuck)
@@ -125,6 +161,9 @@ public class InstructionManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reverts the tutorial to the previous step.
+    /// </summary>
     public void PreviousStep()
     {
         if (currentStep > GameStep.Welcome)
@@ -135,6 +174,13 @@ public class InstructionManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region UI Rendering & Updating
+
+    /// <summary>
+    /// Refreshes title text, body copy, images, and button states matching the current GameStep.
+    /// </summary>
     private void UpdateInstructionUI()
     {
         if (currentStep == GameStep.Completed)
@@ -143,6 +189,7 @@ public class InstructionManager : MonoBehaviour
             return;
         }
 
+        // Set title and body copy depending on current step
         switch (currentStep)
         {
             case GameStep.Welcome:
@@ -196,13 +243,13 @@ public class InstructionManager : MonoBehaviour
                 break;
         }
 
-        // Toggle Buttons: Show Close/Start on Step 9, Next on earlier steps
+        // Toggle action buttons: Show Close/Start button on final step, Next button on earlier steps
         bool isLastStep = (currentStep == GameStep.Step9_GoodLuck);
 
         if (nextButton != null) nextButton.gameObject.SetActive(!isLastStep);
         if (closeButton != null) closeButton.gameObject.SetActive(isLastStep);
 
-        // Update Step Image Visual
+        // Update corresponding step illustration sprite
         int stepIndex = (int)currentStep;
         if (stepImageDisplay != null && stepSprites != null && stepIndex < stepSprites.Length)
         {
@@ -213,20 +260,26 @@ public class InstructionManager : MonoBehaviour
             }
             else
             {
-                stepImageDisplay.gameObject.SetActive(false); // Hide if sprite is missing
+                stepImageDisplay.gameObject.SetActive(false); // Hide image container if sprite is unassigned
             }
         }
 
-        int totalVisibleSteps = Enum.GetValues(typeof(GameStep)).Length - 1; // Exclude Completed (10 steps total, 0 to 9)
+        // Format step progress text (e.g., "Step 1 / 10")
+        int totalVisibleSteps = Enum.GetValues(typeof(GameStep)).Length - 1; // Excludes Completed state
         if (stepProgressText != null)
         {
             stepProgressText.text = $"Step {stepIndex + 1} / {totalVisibleSteps}";
         }
     }
 
+    /// <summary>
+    /// Helper method to assign header and body text components.
+    /// </summary>
     private void SetText(string title, string description)
     {
         if (stepTitleText != null) stepTitleText.text = title;
         if (stepDescriptionText != null) stepDescriptionText.text = description;
     }
+
+    #endregion
 }

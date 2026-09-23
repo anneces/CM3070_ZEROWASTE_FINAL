@@ -2,9 +2,17 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 
+/// <summary>
+/// Singleton manager for the World-Space TV display UI canvas in the kitchen.
+/// Aggregates all FoodItem instances in real-time to render detailed status columns.
+/// </summary>
 public class TVDisplayController : MonoBehaviour
 {
+    // SINGLETON INSTANCE
+
     public static TVDisplayController Instance { get; private set; }
+
+    // UI HEADER REFERENCES
 
     [Header("Headers")]
     [SerializeField] private TMP_Text foodHeader;
@@ -14,6 +22,8 @@ public class TVDisplayController : MonoBehaviour
     [SerializeField] private TMP_Text co2Header;
     [SerializeField] private TMP_Text storageHeader;
 
+    // DATA COLUMN REFERENCES
+
     [Header("Data Columns")]
     [SerializeField] private TMP_Text foodColumn;
     [SerializeField] private TMP_Text placementColumn;
@@ -22,11 +32,23 @@ public class TVDisplayController : MonoBehaviour
     [SerializeField] private TMP_Text co2Column;
     [SerializeField] private TMP_Text storageColumn;
 
+    // UPDATE TIMING
+
+    /// <summary>
+    /// Accumulator timer for throttling UI updates.
+    /// </summary>
     private float updateTimer = 0f;
-    private const float UPDATE_INTERVAL = 0.2f; // Refreshes 5 times per second instead of every frame
+
+    /// <summary>
+    /// Refresh interval (0.2s = 5 updates/sec) to optimize performance in VR.
+    /// </summary>
+    private const float UPDATE_INTERVAL = 0.2f;
+
+    // MONOBEHAVIOUR LIFECYCLE
 
     private void Awake()
     {
+        // Enforce Singleton Pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -39,11 +61,13 @@ public class TVDisplayController : MonoBehaviour
 
     private void OnEnable()
     {
+        // Subscribe to phase change events
         DayPhaseManager.OnPhaseChanged += RefreshDisplay;
     }
 
     private void OnDisable()
     {
+        // Unsubscribe from phase change events
         DayPhaseManager.OnPhaseChanged -= RefreshDisplay;
     }
 
@@ -64,6 +88,11 @@ public class TVDisplayController : MonoBehaviour
         }
     }
 
+    // DISPLAY LOGIC
+
+    /// <summary>
+    /// Sets default static header strings for the TV UI columns.
+    /// </summary>
     private void SetHeaderLabels()
     {
         if (foodHeader != null) foodHeader.text = "FOOD";
@@ -81,12 +110,14 @@ public class TVDisplayController : MonoBehaviour
     {
         FoodItem[] allFood = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);
 
+        // Clear display if no food items are present in the scene
         if (allFood.Length == 0)
         {
             ClearColumns("<color=#888888>None</color>");
             return;
         }
 
+        // String builders for each column to avoid string allocation overhead
         StringBuilder foodSb = new StringBuilder();
         StringBuilder placementSb = new StringBuilder();
         StringBuilder statusSb = new StringBuilder();
@@ -101,7 +132,7 @@ public class TVDisplayController : MonoBehaviour
             string placementText = isOptimal ? "Optimal" : "Sub-Optimal";
             string placementColor = isOptimal ? "#22C55E" : "#EF4444"; // Green vs Red
 
-            // Raw values
+            // Format raw values
             string foodNameText = food.foodName;
             string statusText = food.FreshnessStatus;
             string freshPctText = $"{Mathf.RoundToInt(food.FreshnessPercentage)}%";
@@ -126,6 +157,10 @@ public class TVDisplayController : MonoBehaviour
         if (storageColumn != null) storageColumn.text = storageSb.ToString();
     }
 
+    /// <summary>
+    /// Clears text content from all columns and displays default empty message.
+    /// </summary>
+    /// <param name="defaultText">Text string to display in the main food column.</param>
     private void ClearColumns(string defaultText)
     {
         if (foodColumn != null) foodColumn.text = defaultText;

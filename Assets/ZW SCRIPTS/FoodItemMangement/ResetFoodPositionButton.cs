@@ -32,6 +32,9 @@ public class ResetFoodPositionsButton : MonoBehaviour
     private Vector3 pressedLocalPos;
     private Coroutine animateCoroutine;
 
+    /// <summary>
+    /// Caches the default and pressed local positions for the 3D button mesh.
+    /// </summary>
     private void Start()
     {
         if (buttonPressTransform != null)
@@ -42,7 +45,7 @@ public class ResetFoodPositionsButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Hook this method to XR Interactor's Select Entered / Hover Entered / Activated event.
+    /// Event handler for VR interaction; triggers button press audio, mechanical animation sequence, and food repositioning.
     /// </summary>
     public void OnButtonPressed()
     {
@@ -56,7 +59,7 @@ public class ResetFoodPositionsButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Optional manual trigger for XR Select Exited.
+    /// Manual release trigger that animates the button mesh back to its resting state.
     /// </summary>
     public void OnButtonReleased()
     {
@@ -67,6 +70,9 @@ public class ResetFoodPositionsButton : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Manages the full physical button press animation cycle including down-stroke, hold delay, and up-stroke.
+    /// </summary>
     private IEnumerator FullButtonPressCycle()
     {
         if (buttonPressTransform == null) yield break;
@@ -81,6 +87,10 @@ public class ResetFoodPositionsButton : MonoBehaviour
         yield return AnimateToPosition(initialLocalPos);
     }
 
+    /// <summary>
+    /// Smoothly interpolates the button mesh transform toward a targeted local position over time.
+    /// </summary>
+    /// <param name="targetPos">The target local position vector.</param>
     private IEnumerator AnimateToPosition(Vector3 targetPos)
     {
         Vector3 startPos = buttonPressTransform.localPosition;
@@ -97,6 +107,9 @@ public class ResetFoodPositionsButton : MonoBehaviour
         buttonPressTransform.localPosition = targetPos;
     }
 
+    /// <summary>
+    /// Distributes all scene food items across defined respawn points, resets their velocity, and triggers feedback effects.
+    /// </summary>
     public void ResetAllFoodPositions()
     {
         FoodItem[] foodItems = FindObjectsByType<FoodItem>(FindObjectsSortMode.None);

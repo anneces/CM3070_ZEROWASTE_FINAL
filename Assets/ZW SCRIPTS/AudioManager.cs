@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private string mainMenuSceneName = "MainMenu";
     [SerializeField] private string mainGameSceneName = "MainGame";
 
-    // --- ALIAS PROPERTIES FOR BACKWARD COMPATIBILITY ---
+    // Alias properties for backward compatibility
     public AudioClip uiClickClip => uiclickbtn;
     public AudioClip ingredientDropClip => grab_drop_item;
 
