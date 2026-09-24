@@ -10,7 +10,7 @@ You do **not** need to build the project from source code to evaluate the applic
 ### **Installation Steps**
 1. **Download & Extract Archive**:
    * Download `ZEROWASTE_FINAL_02.zip` directly from the repository root directory (or click on the file and hit **Download**).
-   * Extract/unzip the contents to locate the `.apk` file (e.g., `com.UnityTechnologies.com.unity.template.urpblank.apk` or `ZeroWasteVR.apk`).
+   * Extract/unzip the contents to locate the `.apk` file ('ZEROWASTE_FINAL_02') .
 2. **Connect Headset**: Connect your VR headset to your PC using a USB-C data cable.
 3. **Sideload via SideQuest**:
    * Open **SideQuest** on your computer.
