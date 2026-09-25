@@ -60,9 +60,6 @@ public class ShoppingTablet : MonoBehaviour
     [Tooltip("Text component displaying total money spent.")]
     public TMP_Text totalSpentText;
 
-    [Tooltip("Text component displaying the current day progress.")]
-    public TMP_Text dayText;
-
     [Tooltip("UI Container/Panel object displayed when funds are insufficient.")]
     public GameObject warningLabel;
 
@@ -358,8 +355,5 @@ public class ShoppingTablet : MonoBehaviour
 
         if (totalSpentText != null)
             totalSpentText.text = $"Spent: ${totalSpent:F2}";
-
-        if (dayText != null && DayPhaseManager.Instance != null)
-            dayText.text = $"Day {DayPhaseManager.Instance.CurrentDay} / 5";
     }
 }
