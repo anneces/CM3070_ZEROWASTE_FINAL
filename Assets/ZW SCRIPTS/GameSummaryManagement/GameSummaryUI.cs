@@ -19,12 +19,28 @@ public class GameSummaryUI : MonoBehaviour
     public GameObject gameSummaryCanvas;
 
     [Header("UI Metric Labels")]
+    [Tooltip("Optional reference to the scoreboard title text object.")]
+    public TextMeshProUGUI gameScoreboardText;
     public TextMeshProUGUI moneySpentText;
     public TextMeshProUGUI moneyWastedText;
     public TextMeshProUGUI co2PointsText;
     public TextMeshProUGUI dishesCookedText;
     public TextMeshProUGUI finalGradeText;
     public TextMeshProUGUI performanceMessageText;
+
+    [Header("Summary Line Icons")]
+    public Image targetIconImage;
+    public Image cashIconImage;
+    public Image trashIconImage;
+    public Image skullIconImage;
+    public Image starIconImage;
+
+    [Header("Icon Sprites")]
+    public Sprite targetSprite;
+    public Sprite cashSprite;
+    public Sprite trashSprite;
+    public Sprite skullSprite;
+    public Sprite starSprite;
 
     [Header("Grade Images")]
     public Image gradeFeedbackImage;
@@ -135,12 +151,20 @@ public class GameSummaryUI : MonoBehaviour
             grade = "F";
         }
 
-        // Step 4: Update text labels on the summary UI
+        // Step 4: Update text labels without tags
+        if (gameScoreboardText) gameScoreboardText.text = "GAME SCOREBOARD";
         if (moneySpentText) moneySpentText.text = $"Total Money Spent: ${totalMoneySpent:F2}";
         if (moneyWastedText) moneyWastedText.text = $"Total Money Wasted: ${totalMoneyWasted:F2}";
         if (co2PointsText) co2PointsText.text = $"Total CO2 Points: {totalCO2:F1}";
         if (dishesCookedText) dishesCookedText.text = $"Dishes Cooked (Bonus): {dishesCooked} (+{bonusPoints} pts)";
         if (finalGradeText) finalGradeText.text = $"Grade: {grade}";
+
+        // Optionally set/verify the icon image sprites directly via script
+        if (targetIconImage && targetSprite) targetIconImage.sprite = targetSprite;
+        if (cashIconImage && cashSprite) cashIconImage.sprite = cashSprite;
+        if (trashIconImage && trashSprite) trashIconImage.sprite = trashSprite;
+        if (skullIconImage && skullSprite) skullIconImage.sprite = skullSprite;
+        if (starIconImage && starSprite) starIconImage.sprite = starSprite;
 
         // Step 5: Update feedback image sprites and performance messages
         ApplyGradeFeedback(grade);
