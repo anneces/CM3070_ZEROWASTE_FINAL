@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
   foodName: Chicken Breast
-  idealStorage: 1
+  idealStorage: 2
   currentStorage: 3
   price: 5.5
   co2Points: 6.9

@@ -13,20 +13,33 @@ public class InstructionManager : MonoBehaviour
 
     /// <summary>
     /// Tutorial workflow steps representing each gameplay mechanic introduction.
+    /// Index 0: Welcome
+    /// Index 1: XR Movement & Primary Interactions (xr_grip_trigger_joystick)
+    /// Index 2: Height Adjustment Controls (xr_stand_crouch)
+    /// Index 3: Shopping Tablet (tablet)
+    /// Index 4: Food Storage (storage)
+    /// Index 5: TV Dashboard (tvdsbd)
+    /// Index 6: Clock & Day Phase (clock)
+    /// Index 7: Cooking Stove (stoveck)
+    /// Index 8: Trash Bin (trash)
+    /// Index 9: Reset Button (resetbtn)
+    /// Index 10: Ready to Start / Good Luck
+    /// Index 11: Completed (Canvas Closed)
     /// </summary>
     public enum GameStep
     {
         Welcome = 0,
         XRControls = 1,
-        ShoppingTablet = 2,
-        StorageUnit = 3,
-        TVDashboard = 4,
-        ClockPhaseTransition = 5,
-        CookingStove = 6,
-        TrashBin = 7,
-        ResetButton = 8,
-        Step9_GoodLuck = 9,
-        Completed = 10
+        XRCrouchStand = 2,
+        ShoppingTablet = 3,
+        StorageUnit = 4,
+        TVDashboard = 5,
+        ClockPhaseTransition = 6,
+        CookingStove = 7,
+        TrashBin = 8,
+        ResetButton = 9,
+        Step10_GoodLuck = 10,
+        Completed = 11
     }
 
     [Header("UI Canvas References")]
@@ -39,7 +52,7 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private Button nextButton;
 
     [Header("Step Visual Assets")]
-    [Tooltip("Order must match GameStep enum indices: 0=Welcome through 9=GoodLuck")]
+    [Tooltip("Must match GameStep order: 0=Welcome, 1=xr_grip_trigger_joystick, 2=xr_stand_crouch, 3=tablet, 4=storage, 5=tvdsbd, 6=clock, 7=stoveck, 8=trash, 9=resetbtn, 10=GoodLuck Sprite")]
     [SerializeField] private Sprite[] stepSprites; // Array of tutorial illustrations/sprites
 
     [Header("Current Progress")]
@@ -148,13 +161,13 @@ public class InstructionManager : MonoBehaviour
     /// </summary>
     public void NextStep()
     {
-        if (currentStep < GameStep.Step9_GoodLuck)
+        if (currentStep < GameStep.Step10_GoodLuck)
         {
             currentStep++;
             UpdateInstructionUI();
             AudioManager.Instance?.PlayUIClick();
         }
-        else if (currentStep == GameStep.Step9_GoodLuck)
+        else if (currentStep == GameStep.Step10_GoodLuck)
         {
             currentStep = GameStep.Completed;
             CloseCanvas();
@@ -194,57 +207,62 @@ public class InstructionManager : MonoBehaviour
         {
             case GameStep.Welcome:
                 SetText("Welcome to ZeroWaste Kitchen!",
-                        "Learn to manage food sustainably! Your goal is to prepare delicious recipes while properly storing ingredients, minimizing food waste, and staying within budget.");
+                        "Learn how to run a sustainable kitchen!\n\nYour goal is to cook delicious meals while managing your budget, storing food correctly, and preventing spoilage.");
                 break;
 
             case GameStep.XRControls:
-                SetText("Step 1: XR Movement & Controls",
-                        "• Navigation: Use the Joystick to move around the kitchen.\n• Interact UI: Press the Trigger button to click UI buttons.\n• Grab Items: Use the Grip button to grab and hold ingredients.\n• Crouch (Right Hand Primary Button - A/X): Crouch down to reach items on the floor.\n• Stand Tall (Right Hand Secondary Button - B/Y): Gain extra height to reach high fridge or pantry shelves.");
+                SetText("Movement & Hands",
+                        "• Move Around: Use the Left or Right Joystick to walk.\n• Pick Up Items: Hold the Grip button on the side of your controller.\n• Select UI: Press the Trigger button to click buttons.");
+                break;
+
+            case GameStep.XRCrouchStand:
+                SetText("Adjusting Height",
+                        "• Crouch Down: Press Primary Button (A) to reach low shelves or items on the floor.\n• Stand Tall: Press Secondary Button (B) to reach high shelves in the fridge or pantry.");
                 break;
 
             case GameStep.ShoppingTablet:
-                SetText("Step 2: Shopping Tablet Zone",
-                        "Order fresh food items to prepare your meals. Keep an eye on your budget while selecting ingredients.");
+                SetText("Shopping Tablet Zone",
+                        "• Use the Shopping Tablet to purchase fresh ingredients.\n• Keep an eye on your remaining budget while selecting items!");
                 break;
 
             case GameStep.StorageUnit:
-                SetText("Step 3: Food Storage",
-                        "Place your purchased items into their ideal storage zones (Fridge, Freezer, or Pantry). Storing items incorrectly doubles their spoilage rate!");
+                SetText("Smart Food Storage",
+                        "• Store groceries in their ideal zones (Fridge, Freezer, or Pantry).\n• Storing items incorrectly doubles their spoilage rate!");
                 break;
 
             case GameStep.TVDashboard:
-                SetText("Step 4: TV Dashboard",
-                        "Check the TV screen to monitor the food items freshness as they change day by day.");
+                SetText("TV Freshness Tracker",
+                        "• Check the TV screen to monitor ingredient quality and freshness day by day.");
                 break;
 
             case GameStep.ClockPhaseTransition:
-                SetText("Step 5: Clock & Day Phase",
-                        "Interact with the clock to advance to the next day phase. Watch how food freshness and storage conditions progress over time.");
+                SetText("Clock & Day Phase",
+                        "• Interact with the Clock to advance to the next time of day.\n• Watch how ingredients age and storage conditions change!");
                 break;
 
             case GameStep.CookingStove:
-                SetText("Step 6: Cooking Stove",
-                        "Select a target recipe at the stove station. Place fresh ingredients into the pot to cook your dish—be careful not to add spoiled items!\n\nOnce cooked, click on the spawned dish to eat it!");
+                SetText("Cooking Station",
+                        "• Select a target recipe on the stove canvas.\n• Place fresh ingredients into the pot to cook your dish—avoid spoiled items!\n\n• Once cooked, tap the spawned dish to eat it!");
                 break;
 
             case GameStep.TrashBin:
-                SetText("Step 7: Utility Tools (Trash Bin)",
-                        "Dispose of spoiled, unusable, or incorrect food items in the trash bin to keep your workspace clear.");
+                SetText("Utility Tools (Trash Bin)",
+                        "• Throw spoiled, unusable, or incorrect food items into the trash bin to keep your workspace clean.");
                 break;
 
             case GameStep.ResetButton:
-                SetText("Step 8: Utility Tools (Reset Button)",
-                        "Use the reset button to return active ingredients from the stove area back to their original spawn points.");
+                SetText("Utility Tools (Reset Button)",
+                        "• Use the reset button to return active ingredients from the stove area back to their original spawn points.");
                 break;
 
-            case GameStep.Step9_GoodLuck:
-                SetText("Step 9: Ready to Start!",
-                        "You're all set! Every small choice in the kitchen helps build a greener, zero-waste future.\n\nTake your time, plan your meals wisely, and most importantly—have fun cooking! If you are still unsure, click the chalkboard for help!");
+            case GameStep.Step10_GoodLuck:
+                SetText("Ready to Start!",
+                        "You're all set! Every small choice in the kitchen helps build a greener, zero-waste future.\n\nTake your time, plan your meals, and have fun cooking! If you get stuck, click the chalkboard for help.");
                 break;
         }
 
         // Toggle action buttons: Show Close/Start button on final step, Next button on earlier steps
-        bool isLastStep = (currentStep == GameStep.Step9_GoodLuck);
+        bool isLastStep = (currentStep == GameStep.Step10_GoodLuck);
 
         if (nextButton != null) nextButton.gameObject.SetActive(!isLastStep);
         if (closeButton != null) closeButton.gameObject.SetActive(isLastStep);
@@ -264,7 +282,7 @@ public class InstructionManager : MonoBehaviour
             }
         }
 
-        // Format step progress text (e.g., "Step 1 / 10")
+        // Format step progress text (e.g., "Step 1 / 11")
         int totalVisibleSteps = Enum.GetValues(typeof(GameStep)).Length - 1; // Excludes Completed state
         if (stepProgressText != null)
         {

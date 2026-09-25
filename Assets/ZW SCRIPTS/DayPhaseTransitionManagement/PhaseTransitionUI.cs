@@ -12,6 +12,10 @@ public class PhaseTransitionUI : MonoBehaviour
     public GameObject cancelButton;        // Specific reference to cancelbtn
     public GameObject promptText;          // Specific reference to prompttxt
 
+    [Header("External World Canvas References")]
+    [Tooltip("Canvas that displays 'Click Me'. Will be hidden automatically when ClockCanvas is active.")]
+    public GameObject clickMeCanvas;
+
     /// <summary>
     /// Restores default UI panel visibility states on initialization.
     /// </summary>
@@ -21,10 +25,30 @@ public class PhaseTransitionUI : MonoBehaviour
     }
 
     /// <summary>
+    /// Synchronizes clickMeCanvas visibility to be active only when this clock canvas is inactive.
+    /// </summary>
+    private void Update()
+    {
+        if (clickMeCanvas != null)
+        {
+            // If this GameObject (ClockCanvas) is active, clickMeCanvas becomes inactive.
+            // If this GameObject (ClockCanvas) is inactive, clickMeCanvas becomes active.
+            bool shouldShowClickMe = !gameObject.activeSelf;
+
+            if (clickMeCanvas.activeSelf != shouldShowClickMe)
+            {
+                clickMeCanvas.SetActive(shouldShowClickMe);
+            }
+        }
+    }
+
+    /// <summary>
     /// Hides the main phase transition button and displays the confirmation modal controls.
     /// </summary>
     public void OnNextPhaseClicked()
     {
+        AudioManager.Instance?.PlayUIClick();
+
         if (nextPhaseButton != null) nextPhaseButton.SetActive(false);
         if (confirmationPanel != null) confirmationPanel.SetActive(true);
 
@@ -40,6 +64,7 @@ public class PhaseTransitionUI : MonoBehaviour
     /// </summary>
     public void OnCancelClicked()
     {
+        AudioManager.Instance?.PlayUIClick();
         ResetUIState();
     }
 
@@ -48,6 +73,8 @@ public class PhaseTransitionUI : MonoBehaviour
     /// </summary>
     public void OnConfirmClicked()
     {
+        AudioManager.Instance?.PlayUIClick();
+
         if (DayPhaseManager.Instance != null)
         {
             DayPhaseManager.Instance.ConfirmNextPhase();

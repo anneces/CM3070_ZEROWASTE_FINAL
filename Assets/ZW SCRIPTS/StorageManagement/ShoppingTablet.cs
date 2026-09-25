@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,6 @@ using TMPro;
 public class ShoppingTablet : MonoBehaviour
 {
     // ENUMS & STRUCTS
-    
 
     /// <summary>
     /// Food categories used for organizing items in the shop interface.
@@ -28,7 +28,6 @@ public class ShoppingTablet : MonoBehaviour
         public GameObject foodPrefab;
     }
 
-    
     // BUDGET & WALLET SETTINGS
 
     [Header("Budget & Wallet Settings")]
@@ -63,6 +62,14 @@ public class ShoppingTablet : MonoBehaviour
 
     [Tooltip("Text component displaying the current day progress.")]
     public TMP_Text dayText;
+
+    [Tooltip("UI Container/Panel object displayed when funds are insufficient.")]
+    public GameObject warningLabel;
+
+    [Tooltip("How long in seconds the warning label remains visible.")]
+    public float warningDuration = 2.0f;
+
+    private Coroutine activeWarningCoroutine;
 
     // SPAWN SETTINGS
 
@@ -100,6 +107,9 @@ public class ShoppingTablet : MonoBehaviour
 
     private void Start()
     {
+        // Hide warning label on start
+        if (warningLabel != null) warningLabel.SetActive(false);
+
         // Reset saved spent amount on new run start
         totalSpent = 0.0f;
         PlayerPrefs.SetFloat("TotalMoneySpent", 0.0f);
@@ -291,8 +301,36 @@ public class ShoppingTablet : MonoBehaviour
         }
         else
         {
+            // Play alert SFX
+            AudioManager.Instance?.PlayAlert();
+
+            // Trigger warning label feedback
+            ShowInsufficientFundsWarning();
             Debug.LogWarning($"Insufficient Funds! Wallet: ${walletBalance:F2}, Item Price: ${price:F2}");
         }
+    }
+
+    /// <summary>
+    /// Displays the warning label for a temporary duration.
+    /// </summary>
+    private void ShowInsufficientFundsWarning()
+    {
+        if (warningLabel != null)
+        {
+            if (activeWarningCoroutine != null)
+            {
+                StopCoroutine(activeWarningCoroutine);
+            }
+            activeWarningCoroutine = StartCoroutine(ShowWarningRoutine());
+        }
+    }
+
+    private IEnumerator ShowWarningRoutine()
+    {
+        warningLabel.SetActive(true);
+        yield return new WaitForSeconds(warningDuration);
+        warningLabel.SetActive(false);
+        activeWarningCoroutine = null;
     }
 
     // UI HANDLERS & REFRESH
