@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 97550014}
   - component: {fileID: 97550015}
   - component: {fileID: 97550016}
+  - component: {fileID: 97550017}
   m_Layer: 0
   m_Name: PantryZone_03
   m_TagString: PantryZone
@@ -684,6 +685,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StorageZone
   zoneType: 0
+--- !u!114 &97550017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97550013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88b06e649c96db4ca19528d09393033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockedZoneFoodEjector
+  phaseBlocker: {fileID: 1835358289}
+  counterSpawnPoints:
+  - {fileID: 541690476}
+  - {fileID: 1089844401}
+  - {fileID: 802733427}
+  foodItemTag: FoodItem
 --- !u!1 &102067194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8748500131873809389, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -2611,69 +2630,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5227642334631983026, guid: 6193058feee16f34aaa82c253523ec43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 938225130}
+    - targetCorrespondingSourceObject: {fileID: 5227642334631983026, guid: 6193058feee16f34aaa82c253523ec43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 938225131}
   m_SourcePrefab: {fileID: 100100000, guid: 6193058feee16f34aaa82c253523ec43, type: 3}
 --- !u!4 &302402152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4884014901107371272, guid: 6193058feee16f34aaa82c253523ec43, type: 3}
   m_PrefabInstance: {fileID: 302402151}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &303825620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 303825621}
-  - component: {fileID: 303825622}
-  m_Layer: 0
-  m_Name: stoveblocker_physical (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &303825621
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303825620}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 8.086201}
-  m_LocalScale: {x: 30, y: 60, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605954142}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103.499985, y: 3.1463985}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &303825622
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303825620}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &304286165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,8 +3398,6 @@ MonoBehaviour:
   canvasGroup: {fileID: 345749304}
   warningMessageText: {fileID: 1941531057}
   warningMessageTexts: []
-  physicalBlockerCollider: {fileID: 0}
-  physicalBlockerColliders: []
   xrInteractablesToDisable: []
 --- !u!225 &345749304
 CanvasGroup:
@@ -3542,63 +3505,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361996890}
   m_CullTransparentMesh: 1
---- !u!1 &378003353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 378003354}
-  - component: {fileID: 378003355}
-  m_Layer: 0
-  m_Name: fridgeblocker_physical
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &378003354
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378003353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0, z: 44.3862}
-  m_LocalScale: {x: 50, y: 70, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605954142}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.399986, y: 3.4463968}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &378003355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 378003353}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &392961853
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,12 +5100,6 @@ Transform:
   - {fileID: 773214486}
   - {fileID: 1954553769}
   - {fileID: 344476276}
-  - {fileID: 378003354}
-  - {fileID: 2074350340}
-  - {fileID: 1058464534}
-  - {fileID: 2076950755}
-  - {fileID: 1919306894}
-  - {fileID: 303825621}
   - {fileID: 1494663679}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7895,6 +7795,24 @@ MonoBehaviour:
     cooking
   stoveFireVFX: {fileID: 859548890}
   dishSpawnVFX: {fileID: 1340064434}
+--- !u!114 &938225131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938225124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88b06e649c96db4ca19528d09393033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockedZoneFoodEjector
+  phaseBlocker: {fileID: 1569396245}
+  counterSpawnPoints:
+  - {fileID: 541690476}
+  - {fileID: 1089844401}
+  - {fileID: 802733427}
+  foodItemTag: FoodItem
 --- !u!1 &942637377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8684,63 +8602,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037125131}
   m_CullTransparentMesh: 1
---- !u!1 &1058464533
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1058464534}
-  - component: {fileID: 1058464535}
-  m_Layer: 0
-  m_Name: freezerblocker_physical
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1058464534
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058464533}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -21.6138}
-  m_LocalScale: {x: 50, y: 30, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605954142}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.20002, y: -19.853601}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1058464535
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058464533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1071469841
 GameObject:
   m_ObjectHideFlags: 0
@@ -14958,11 +14819,6 @@ MonoBehaviour:
   warningMessageText: {fileID: 1524853908}
   warningMessageTexts:
   - {fileID: 1524853908}
-  physicalBlockerCollider: {fileID: 0}
-  physicalBlockerColliders:
-  - {fileID: 1919306895}
-  - {fileID: 2076950756}
-  - {fileID: 303825622}
   xrInteractablesToDisable: []
 --- !u!225 &1569396246
 CanvasGroup:
@@ -15749,6 +15605,7 @@ GameObject:
   - component: {fileID: 1684610190}
   - component: {fileID: 1684610191}
   - component: {fileID: 1684610192}
+  - component: {fileID: 1684610193}
   m_Layer: 0
   m_Name: PantryZone_01
   m_TagString: PantryZone
@@ -15805,6 +15662,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StorageZone
   zoneType: 0
+--- !u!114 &1684610193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684610189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88b06e649c96db4ca19528d09393033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockedZoneFoodEjector
+  phaseBlocker: {fileID: 1835358289}
+  counterSpawnPoints:
+  - {fileID: 541690476}
+  - {fileID: 1089844401}
+  - {fileID: 802733427}
+  foodItemTag: FoodItem
 --- !u!1 &1685803232
 GameObject:
   m_ObjectHideFlags: 0
@@ -17061,6 +16936,7 @@ GameObject:
   - component: {fileID: 1812533722}
   - component: {fileID: 1812533723}
   - component: {fileID: 1812533724}
+  - component: {fileID: 1812533725}
   m_Layer: 0
   m_Name: PantryZone_04
   m_TagString: PantryZone
@@ -17117,6 +16993,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StorageZone
   zoneType: 0
+--- !u!114 &1812533725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812533721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88b06e649c96db4ca19528d09393033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockedZoneFoodEjector
+  phaseBlocker: {fileID: 1835358289}
+  counterSpawnPoints:
+  - {fileID: 541690476}
+  - {fileID: 1089844401}
+  - {fileID: 802733427}
+  foodItemTag: FoodItem
 --- !u!1 &1819398764
 GameObject:
   m_ObjectHideFlags: 0
@@ -17259,12 +17153,13 @@ MonoBehaviour:
   - {fileID: 532066840}
   - {fileID: 2042717698}
   - {fileID: 1381598807}
-  physicalBlockerCollider: {fileID: 0}
-  physicalBlockerColliders:
-  - {fileID: 378003355}
-  - {fileID: 2074350341}
-  - {fileID: 1058464535}
-  xrInteractablesToDisable: []
+  xrInteractablesToDisable:
+  - {fileID: 1545520752}
+  - {fileID: 1545520749}
+  - {fileID: 794954250}
+  - {fileID: 1448689005}
+  - {fileID: 1896552071}
+  - {fileID: 1448689002}
 --- !u!225 &1835358290
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18584,63 +18479,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900582548}
   m_CullTransparentMesh: 1
---- !u!1 &1919306893
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1919306894}
-  - component: {fileID: 1919306895}
-  m_Layer: 0
-  m_Name: stoveblocker_physical (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1919306894
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919306893}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -14.643801}
-  m_LocalScale: {x: 30, y: 60, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605954142}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103.499985, y: 3.1463985}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1919306895
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919306893}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1927316818 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1402545329552356, guid: c7760dfa98aa38f4ab95b48239b2b553, type: 3}
@@ -21101,120 +20939,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069962641}
   m_CullTransparentMesh: 1
---- !u!1 &2074350339
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2074350340}
-  - component: {fileID: 2074350341}
-  m_Layer: 0
-  m_Name: pantryblocker_physical
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2074350340
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074350339}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0, z: 52.6862}
-  m_LocalScale: {x: 70, y: 70, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605954142}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.20002, y: 3.4463968}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &2074350341
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074350339}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2076950754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2076950755}
-  - component: {fileID: 2076950756}
-  m_Layer: 0
-  m_Name: stoveblocker_physical (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2076950755
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076950754}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -1.2138002}
-  m_LocalScale: {x: 30, y: 60, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605954142}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87.79999, y: 3.1463985}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &2076950756
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076950754}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2124577748
 GameObject:
   m_ObjectHideFlags: 0
@@ -21368,6 +21092,7 @@ GameObject:
   - component: {fileID: 2125519899}
   - component: {fileID: 2125519900}
   - component: {fileID: 2125519901}
+  - component: {fileID: 2125519902}
   m_Layer: 0
   m_Name: PantryZone_02
   m_TagString: PantryZone
@@ -21424,6 +21149,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StorageZone
   zoneType: 0
+--- !u!114 &2125519902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125519898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88b06e649c96db4ca19528d09393033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockedZoneFoodEjector
+  phaseBlocker: {fileID: 1835358289}
+  counterSpawnPoints:
+  - {fileID: 541690476}
+  - {fileID: 1089844401}
+  - {fileID: 802733427}
+  foodItemTag: FoodItem
 --- !u!1 &2125806934
 GameObject:
   m_ObjectHideFlags: 0
