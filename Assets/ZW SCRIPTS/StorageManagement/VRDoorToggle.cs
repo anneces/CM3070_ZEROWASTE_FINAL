@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
 /// Controls smooth rotation opening and closing transitions for VR interactive doors/appliances (Fridge, Pantry).
-/// Compatible with XR Interactable events. Automatically closes open doors during phase transitions.
+/// Compatible with XR Interactable events.
 /// </summary>
 public class VRDoorToggle : MonoBehaviour
 {
@@ -19,9 +19,24 @@ public class VRDoorToggle : MonoBehaviour
 
     // STATE & ROTATION TRACKING
 
+    /// <summary>
+    /// Current door state (true = open, false = closed).
+    /// </summary>
     private bool isOpen = false;
+
+    /// <summary>
+    /// Default closed local rotation captured on Awake.
+    /// </summary>
     private Quaternion closedRotation;
+
+    /// <summary>
+    /// Target open local rotation calculated from hinge offset angle.
+    /// </summary>
     private Quaternion openRotation;
+
+    /// <summary>
+    /// Active animation coroutine instance.
+    /// </summary>
     private Coroutine animationCoroutine;
 
     // MONOBEHAVIOUR LIFECYCLE
@@ -33,18 +48,6 @@ public class VRDoorToggle : MonoBehaviour
 
         // Calculate target open rotation relative to initial rotation
         openRotation = closedRotation * Quaternion.Euler(0f, openYAngle, 0f);
-    }
-
-    private void OnEnable()
-    {
-        // Subscribe to the phase change event
-        DayPhaseManager.OnPhaseChanged += ForceCloseDoor;
-    }
-
-    private void OnDisable()
-    {
-        // Unsubscribe to prevent memory leaks or null references
-        DayPhaseManager.OnPhaseChanged -= ForceCloseDoor;
     }
 
     // INTERACTION LOGIC
@@ -71,25 +74,9 @@ public class VRDoorToggle : MonoBehaviour
     }
 
     /// <summary>
-    /// Automatically closes the door if it is currently open when a phase transition occurs.
-    /// </summary>
-    public void ForceCloseDoor()
-    {
-        if (!isOpen) return;
-
-        isOpen = false;
-
-        if (animationCoroutine != null)
-        {
-            StopCoroutine(animationCoroutine);
-        }
-
-        animationCoroutine = StartCoroutine(AnimateDoor(closedRotation));
-    }
-
-    /// <summary>
     /// Coroutine that smoothly interpolates door rotation toward the target quaternion using Slerp.
     /// </summary>
+    /// <param name="targetRotation">Target Quaternion rotation to animate toward.</param>
     private IEnumerator AnimateDoor(Quaternion targetRotation)
     {
         while (Quaternion.Angle(transform.localRotation, targetRotation) > 0.1f)
