@@ -105,6 +105,7 @@ public class GameSummaryUI : MonoBehaviour
         float totalMoneyWasted = PlayerPrefs.GetFloat("TotalMoneyWasted", 0.0f);
         float totalCO2 = PlayerPrefs.GetFloat("TotalCO2", 0.0f);
         int dishesCooked = PlayerPrefs.GetInt("TotalDishesCooked", 0);
+        int itemsDiscarded = PlayerPrefs.GetInt("TotalItemsDiscarded", 0); // Retrieved from TrashBinController
 
         // Step 2: Calculate overall performance score (0 to 100 scale)
         float wastePenalty = totalMoneyWasted * 1.5f;
@@ -115,7 +116,7 @@ public class GameSummaryUI : MonoBehaviour
         float finalScore = Mathf.Clamp(baseScore + bonusPoints, 0f, 100f);
 
         // Log diagnostic values for debugging end-game calculations
-        Debug.Log($"[SUMMARY EVALUATION] Dishes Cooked: {dishesCooked} | Spent: ${totalMoneySpent:F2} | Wasted: ${totalMoneyWasted:F2} | CO2: {totalCO2:F1} | Final Score: {finalScore}");
+        Debug.Log($"[SUMMARY EVALUATION] Dishes Cooked: {dishesCooked} | Discarded: {itemsDiscarded} | Spent: ${totalMoneySpent:F2} | Wasted: ${totalMoneyWasted:F2} | CO2: {totalCO2:F1} | Final Score: {finalScore}");
 
         // Step 3: Determine final letter grade
         string grade;
@@ -130,13 +131,18 @@ public class GameSummaryUI : MonoBehaviour
         {
             grade = "F";
         }
-        // Grade A: Cooked at least 3 meals with minimal waste or achieved high score
-        else if (dishesCooked >= 3 && (totalMoneyWasted <= 5.0f || finalScore >= 80f))
+        // Severe waste ratio penalty: Grade C cap if discarded items are at least double the dishes cooked
+        else if (itemsDiscarded >= dishesCooked * 2)
+        {
+            grade = "C";
+        }
+        // Grade A: Cooked at least 3 meals with minimal waste and controlled discarded items
+        else if (dishesCooked >= 3 && totalMoneyWasted <= 5.0f && itemsDiscarded < 2 && finalScore >= 80f)
         {
             grade = "A";
         }
-        // Grade B: Moderate score or good productivity with low overall waste
-        else if (finalScore >= 60f || (dishesCooked >= 2 && totalMoneyWasted < 10f))
+        // Grade B: Moderate score or good productivity with low waste ratio
+        else if (finalScore >= 60f && itemsDiscarded < dishesCooked * 2)
         {
             grade = "B";
         }
