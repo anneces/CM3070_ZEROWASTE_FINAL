@@ -2036,7 +2036,6 @@ GameObject:
   - component: {fileID: 253197539}
   - component: {fileID: 253197543}
   - component: {fileID: 253197542}
-  - component: {fileID: 253197541}
   - component: {fileID: 253197540}
   m_Layer: 5
   m_Name: InstructionCanvas
@@ -2053,8 +2052,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253197538}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -27.972229}
-  m_LocalScale: {x: 0.033333324, y: 0.033333335, z: 0.033333324}
+  m_LocalPosition: {x: 0, y: 0, z: -27.8}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2069962642}
@@ -2062,7 +2061,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.6666627, y: 5.438}
+  m_AnchoredPosition: {x: 0.667, y: 5.518}
   m_SizeDelta: {x: 1256.3334, y: 367.6667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253197540
@@ -2084,23 +2083,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &253197541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 253197538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &253197542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4543,7 +4525,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547940657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.9}
+  m_LocalPosition: {x: 0, y: 0, z: 3.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4552,7 +4534,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -10.000008, y: 35.399994}
-  m_SizeDelta: {x: 150, y: 200}
+  m_SizeDelta: {x: 170, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547940659
 MonoBehaviour:
@@ -8916,7 +8898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.9
+      value: -71.2
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8924,7 +8906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40
+      value: 54.2
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9702,7 +9684,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093383515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -9962,7 +9944,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093383516}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -13739,7 +13721,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -97.17757, y: 7.4724274, z: -97.141716, w: -68.71528}
+  m_margin: {x: -97.17757, y: -41.52288, z: -97.141716, w: -68.71528}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14227,7 +14209,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 17.068542, y: -14.842377, z: 115.76456, w: -18.553654}
+  m_margin: {x: 17.068542, y: -22.039948, z: 115.76456, w: -18.553654}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14754,7 +14736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 37.7, y: -13.4}
+  m_AnchoredPosition: {x: 35, y: -13.4}
   m_SizeDelta: {x: 815.5, y: 306.49997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569396243
@@ -15168,6 +15150,7 @@ MonoBehaviour:
   stepImageDisplay: {fileID: 1778197850}
   closeButton: {fileID: 1851740797}
   nextButton: {fileID: 828285180}
+  chalkboardObject: {fileID: 0}
   stepSprites:
   - {fileID: -8199572676820879924, guid: 0a48137e74ea3cf4ba3c1d5d5fe27e78, type: 3}
   - {fileID: 21300000, guid: b01cd092bf672d04c8202a400240a745, type: 3}
@@ -15181,6 +15164,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 64d0e1466415f3d43b5c58a146b1bf75, type: 3}
   - {fileID: 170680371954149730, guid: cfd28c4685f7c504c8541bb8903d4ec8, type: 3}
   currentStep: 0
+  buttonClickCooldown: 0.25
 --- !u!1001 &1621560492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15371,7 +15355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 41.6}
+  m_AnchoredPosition: {x: 0, y: 43.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626174807
@@ -16612,8 +16596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 6.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 13.1}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778197850
 MonoBehaviour:
@@ -17801,7 +17785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 29.200073}
+  m_AnchoredPosition: {x: 0, y: 33.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867479030
@@ -19663,6 +19647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dbbc65c8c67c9246a0313ca5192ff32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InstructionBoardInteractable
+  boardVisualObject: {fileID: 1975374831}
 --- !u!114 &1975374834
 MonoBehaviour:
   m_ObjectHideFlags: 0

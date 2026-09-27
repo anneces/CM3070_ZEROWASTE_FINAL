@@ -12,17 +12,34 @@ public class InstructionBoardInteractable : MonoBehaviour
 {
     private XRSimpleInteractable simpleInteractable;
 
+    [Header("Board Visual / Canvas Reference")]
+    [Tooltip("Drag the Instructions_ChalkBoard GameObject or ChalkboardCanvas here to hide it when the UI appears.")]
+    [SerializeField] private GameObject boardVisualObject;
+
     #region Unity Lifecycle Methods
 
     private void Awake()
     {
-        // Cache reference to the simple interactable component
         simpleInteractable = GetComponent<XRSimpleInteractable>();
+
+        // Fallback: If no visual object assigned, use this gameObject
+        if (boardVisualObject == null)
+        {
+            boardVisualObject = gameObject;
+        }
+    }
+
+    private void Start()
+    {
+        // Register this board with the InstructionManager
+        if (InstructionManager.Instance != null)
+        {
+            InstructionManager.Instance.RegisterChalkboard(boardVisualObject);
+        }
     }
 
     private void OnEnable()
     {
-        // Subscribe to XR select event when enabled
         if (simpleInteractable != null)
         {
             simpleInteractable.selectEntered.AddListener(OnBoardClicked);
@@ -31,7 +48,6 @@ public class InstructionBoardInteractable : MonoBehaviour
 
     private void OnDisable()
     {
-        // Unsubscribe from XR select event when disabled to prevent memory leaks
         if (simpleInteractable != null)
         {
             simpleInteractable.selectEntered.RemoveListener(OnBoardClicked);
@@ -42,11 +58,6 @@ public class InstructionBoardInteractable : MonoBehaviour
 
     #region XR Interaction Handlers
 
-    /// <summary>
-    /// Event callback triggered when an XR controller selects/clicks this chalkboard interactable.
-    /// Opens or toggles the Instruction Manager UI canvas.
-    /// </summary>
-    /// <param name="args">Arguments containing XR interactor event data.</param>
     private void OnBoardClicked(SelectEnterEventArgs args)
     {
         if (InstructionManager.Instance != null)

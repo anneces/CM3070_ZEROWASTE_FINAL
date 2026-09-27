@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Singleton manager handling the step-by-step tutorial instructional overlay canvas.
-/// Controls tutorial progression, UI text updates, step counter formatting, and visual sprite illustrations.
+/// Controls tutorial progression, UI text updates, step counter formatting, visual sprite illustrations,
+/// and physical chalkboard object visibility synchronization.
 /// </summary>
 public class InstructionManager : MonoBehaviour
 {
@@ -51,6 +52,10 @@ public class InstructionManager : MonoBehaviour
     [SerializeField] private Button closeButton;
     [SerializeField] private Button nextButton;
 
+    [Header("Chalkboard Reference")]
+    [Tooltip("Reference to the physical instruction chalkboard GameObject in the scene.")]
+    [SerializeField] private GameObject chalkboardObject;
+
     [Header("Step Visual Assets")]
     [Tooltip("Must match GameStep order: 0=Welcome, 1=xr_grip_trigger_joystick, 2=xr_stand_crouch, 3=tablet, 4=storage, 5=tvdsbd, 6=clock, 7=stoveck, 8=trash, 9=resetbtn, 10=GoodLuck Sprite")]
     [SerializeField] private Sprite[] stepSprites; // Array of tutorial illustrations/sprites
@@ -58,6 +63,11 @@ public class InstructionManager : MonoBehaviour
     [Header("Current Progress")]
     [Tooltip("The current active step in the tutorial sequence.")]
     public GameStep currentStep = GameStep.Welcome;
+
+    [Header("Input Cooldown (VR Fix)")]
+    [Tooltip("Prevents XR raycast input double-triggering in VR headset.")]
+    [SerializeField] private float buttonClickCooldown = 0.25f;
+    private float lastClickTime = 0f;
 
     #region Unity Lifecycle Methods
 
@@ -73,16 +83,19 @@ public class InstructionManager : MonoBehaviour
         // Ensure instruction canvas is active at game start
         if (instructionCanvas != null) instructionCanvas.SetActive(true);
 
-        // Bind button click listeners safely
+        // Synchronize board visibility on startup
+        SyncChalkboardVisibility();
+
+        // Safely bind button click listeners by clearing any pre-existing listeners first
         if (closeButton != null)
         {
-            closeButton.onClick.RemoveListener(CloseCanvas);
+            closeButton.onClick.RemoveAllListeners();
             closeButton.onClick.AddListener(CloseCanvas);
         }
 
         if (nextButton != null)
         {
-            nextButton.onClick.RemoveListener(NextStep);
+            nextButton.onClick.RemoveAllListeners();
             nextButton.onClick.AddListener(NextStep);
         }
 
@@ -92,7 +105,27 @@ public class InstructionManager : MonoBehaviour
 
     #endregion
 
-    #region Canvas & Visibility Controls
+    #region Canvas & Board Visibility Controls
+
+    /// <summary>
+    /// Registers the physical chalkboard object dynamically from the interactable script.
+    /// </summary>
+    public void RegisterChalkboard(GameObject board)
+    {
+        chalkboardObject = board;
+        SyncChalkboardVisibility();
+    }
+
+    /// <summary>
+    /// Shows or hides the physical chalkboard based on whether the instruction canvas is active.
+    /// </summary>
+    private void SyncChalkboardVisibility()
+    {
+        if (chalkboardObject != null && instructionCanvas != null)
+        {
+            chalkboardObject.SetActive(!instructionCanvas.activeSelf);
+        }
+    }
 
     /// <summary>
     /// Toggles the instruction canvas visibility. Restarts tutorial from Step 0 if re-opened after completion.
@@ -106,7 +139,6 @@ public class InstructionManager : MonoBehaviour
 
             if (!isActive)
             {
-                // Reset back to Welcome step if re-opening after full completion
                 if (currentStep == GameStep.Completed)
                 {
                     currentStep = GameStep.Welcome;
@@ -115,6 +147,8 @@ public class InstructionManager : MonoBehaviour
                 UpdateInstructionUI();
                 AudioManager.Instance?.PlayUIClick();
             }
+
+            SyncChalkboardVisibility();
         }
     }
 
@@ -123,12 +157,15 @@ public class InstructionManager : MonoBehaviour
     /// </summary>
     public void CloseCanvas()
     {
+        currentStep = GameStep.Completed;
+
         if (instructionCanvas != null)
         {
             instructionCanvas.SetActive(false);
-            currentStep = GameStep.Completed;
-            AudioManager.Instance?.PlayUIClick();
         }
+
+        AudioManager.Instance?.PlayUIClick();
+        SyncChalkboardVisibility();
     }
 
     #endregion
@@ -145,12 +182,12 @@ public class InstructionManager : MonoBehaviour
         {
             currentStep = newStep;
 
-            // Automatically reveal canvas if it was closed during phase transitions
             if (instructionCanvas != null && !instructionCanvas.activeSelf && currentStep != GameStep.Completed)
             {
                 instructionCanvas.SetActive(true);
             }
 
+            SyncChalkboardVisibility();
             UpdateInstructionUI();
             AudioManager.Instance?.PlayUIClick();
         }
@@ -161,6 +198,14 @@ public class InstructionManager : MonoBehaviour
     /// </summary>
     public void NextStep()
     {
+        // Ignore clicks if they occur faster than the cooldown threshold (VR Raycast fix)
+        if (Time.time - lastClickTime < buttonClickCooldown)
+        {
+            return;
+        }
+
+        lastClickTime = Time.time;
+
         if (currentStep < GameStep.Step10_GoodLuck)
         {
             currentStep++;
@@ -169,7 +214,6 @@ public class InstructionManager : MonoBehaviour
         }
         else if (currentStep == GameStep.Step10_GoodLuck)
         {
-            currentStep = GameStep.Completed;
             CloseCanvas();
         }
     }
@@ -179,6 +223,13 @@ public class InstructionManager : MonoBehaviour
     /// </summary>
     public void PreviousStep()
     {
+        if (Time.time - lastClickTime < buttonClickCooldown)
+        {
+            return;
+        }
+
+        lastClickTime = Time.time;
+
         if (currentStep > GameStep.Welcome)
         {
             currentStep--;
@@ -196,9 +247,9 @@ public class InstructionManager : MonoBehaviour
     /// </summary>
     private void UpdateInstructionUI()
     {
+        // Prevent execution if the tutorial is closed or completed
         if (currentStep == GameStep.Completed)
         {
-            CloseCanvas();
             return;
         }
 
@@ -206,58 +257,81 @@ public class InstructionManager : MonoBehaviour
         switch (currentStep)
         {
             case GameStep.Welcome:
-                SetText("Welcome to ZeroWaste Kitchen!",
-                        "Learn how to run a sustainable kitchen!\n\nYour goal is to cook delicious meals while managing your budget, storing food correctly, and preventing spoilage.");
+                SetText("Welcome to ZeroWaste!",
+                        "Goal: Plan meals on a budget across 5 days while minimizing food waste.\n" +
+                        "Each day consists of 3 phases:\n" +
+                        "1. Morning (Procurement)\n" +
+                        "2. Afternoon (Sorting)\n" +
+                        "3. Evening (Cooking)\n" +
+                        "Pay attention to Orange Canvas blockers—they act as game hints and restrict stations per phase!");
                 break;
 
             case GameStep.XRControls:
-                SetText("Movement & Hands",
-                        "• Move Around: Use the Left or Right Joystick to walk.\n• Pick Up Items: Hold the Grip button on the side of your controller.\n• Select UI: Press the Trigger button to click buttons.");
+                SetText("Movement & Grabbing",
+                        "• Joystick: Move around the kitchen.\n" +
+                        "• Grip Button: Grab food items and objects.\n" +
+                        "• Trigger Button: Interact with UI buttons.\n\n" +
+                        "Note: If you have trouble grabbing food items, use the 3D Reset Button to return them to the kitchen counter.");
                 break;
 
             case GameStep.XRCrouchStand:
-                SetText("Adjusting Height",
-                        "• Crouch Down: Press Primary Button (A) to reach low shelves or items on the floor.\n• Stand Tall: Press Secondary Button (B) to reach high shelves in the fridge or pantry.");
+                SetText("Height Adjustments",
+                        "• Left Controller Button A: Crouch down to reach lower places and floor items.\n" +
+                        "• Left Controller Button B: Stand tall to reach high shelves in the fridge or pantry.");
                 break;
 
             case GameStep.ShoppingTablet:
-                SetText("Shopping Tablet Zone",
-                        "• Use the Shopping Tablet to purchase fresh ingredients.\n• Keep an eye on your remaining budget while selecting items!");
+                SetText("Morning: Procurement Phase",
+                        "• Go to the Shopping Tablet to purchase food items within your budget.\n" +
+                        "• Refer to the Blue Recipe Panel next to the stove if you want to buy specific ingredients for planned dishes.");
                 break;
 
             case GameStep.StorageUnit:
-                SetText("Smart Food Storage",
-                        "• Store groceries in their ideal zones (Fridge, Freezer, or Pantry).\n• Storing items incorrectly doubles their spoilage rate!");
+                SetText("Afternoon: Food Storage",
+                        "• Pick up food items from the counter and sort them into the Fridge, Pantry, or Freezer.\n" +
+                        "• Proper placement is critical—improperly stored food will spoil rapidly!");
                 break;
 
             case GameStep.TVDashboard:
-                SetText("TV Freshness Tracker",
-                        "• Check the TV screen to monitor ingredient quality and freshness day by day.");
+                SetText("TV Freshness & Placement Tracker",
+                        "• Check placement status: 'Optimal' means correct storage; 'Sub-Optimal' means wrong storage.\n" +
+                        "• Monitor fresh status and freshness percentage.\n" +
+                        "• Watch for visual cues directly on ingredients, such as dark spots or spoilage signs.");
                 break;
 
             case GameStep.ClockPhaseTransition:
-                SetText("Clock & Day Phase",
-                        "• Interact with the Clock to advance to the next time of day.\n• Watch how ingredients age and storage conditions change!");
+                SetText("Clock Phase Transition",
+                        "• Once you complete your tasks for a phase, click the Clock to advance to the next phase.\n" +
+                        "• Complete Day 5 Evening to finish the game session!");
                 break;
 
             case GameStep.CookingStove:
-                SetText("Cooking Station",
-                        "• Select a target recipe on the stove canvas.\n• Place fresh ingredients into the pot to cook your dish—avoid spoiled items!\n\n• Once cooked, tap the spawned dish to eat it!");
+                SetText("Evening: Cooking Phase",
+                        "1. Go to the stove station and select a dish from the blue recipe panel.\n" +
+                        "2. Confirm to start cooking—a progress bar will appear.\n" +
+                        "3. Place required items into the pan. (Cooking spoiled food is forbidden!)\n" +
+                        "4. Missing an item? Click to reset progress—food will respawn on the counter for future phases.");
                 break;
 
             case GameStep.TrashBin:
-                SetText("Utility Tools (Trash Bin)",
-                        "• Throw spoiled, unusable, or incorrect food items into the trash bin to keep your workspace clean.");
+                SetText("Trash Bin & Penalties",
+                        "• Place spoiled or unusable food into the Trash Bin.\n" +
+                        "• Warning: Items thrown into the trash, along with total CO2 points from spoiled food, will penalize your final score!");
                 break;
 
             case GameStep.ResetButton:
-                SetText("Utility Tools (Reset Button)",
-                        "• Use the reset button to return active ingredients from the stove area back to their original spawn points.");
+                SetText("3D Food Respawn Button",
+                        "• If food items become hard to grab or get stuck in awkward locations, press the 3D Reset Button.\n" +
+                        "• Ingredients will safely return to the main kitchen counter.");
                 break;
 
             case GameStep.Step10_GoodLuck:
-                SetText("Ready to Start!",
-                        "You're all set! Every small choice in the kitchen helps build a greener, zero-waste future.\n\nTake your time, plan your meals, and have fun cooking! If you get stuck, click the chalkboard for help.");
+                SetText("Ready to Cook!",
+                        "Your score will be calculated by:\n" +
+                        "• Points earned for dishes cooked\n" +
+                        "• Total CO2 points from spoiled items\n" +
+                        "• Items discarded in the trash\n\n" +
+                        "Need to re-read instructions later? Click the Chalkboard anytime. Good luck!");
                 break;
         }
 
@@ -278,7 +352,7 @@ public class InstructionManager : MonoBehaviour
             }
             else
             {
-                stepImageDisplay.gameObject.SetActive(false); // Hide image container if sprite is unassigned
+                stepImageDisplay.gameObject.SetActive(false);
             }
         }
 
